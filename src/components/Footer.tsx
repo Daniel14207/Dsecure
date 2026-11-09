@@ -1,20 +1,20 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowUpRight, Lock } from 'lucide-react';
 import { ActiveSection } from '../types/product';
 import { getDirectWhatsAppUrl } from '../utils/whatsapp';
 import { DSecureLogo } from './DSecureLogo';
+import { OfficialWhatsAppIcon, OfficialGmailIcon, OfficialFacebookIcon } from './OfficialSocialIcons';
 
 interface FooterProps {
   onNavigate: (section: ActiveSection) => void;
-  onOpenQA: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQA }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-[#080808] border-t border-zinc-900 text-zinc-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Col 1: Brand & Presentation matching design reference */}
+          {/* Col 1: Brand & Presentation */}
           <div className="lg:col-span-2 space-y-4">
             <DSecureLogo variant="dark" size="md" />
 
@@ -22,55 +22,39 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQA }) => {
               D SECURE est votre partenaire de confiance pour tous vos besoins en sécurité électronique à Madagascar : vidéosurveillance CCTV, alarmes anti-intrusion et contrôle d'accès.
             </p>
 
-            {/* Social Icons matching design reference (FB, IG, YT, WA) */}
+            {/* Official Social Icons matching design reference */}
             <div className="flex items-center gap-3 pt-2">
-              {/* Facebook */}
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-sm"
+                className="hover:scale-110 transition-transform"
                 aria-label="Facebook D SECURE"
               >
-                <span className="font-black text-xs">f</span>
+                <OfficialFacebookIcon size={32} />
               </a>
 
-              {/* Instagram */}
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center transition-opacity hover:opacity-90 shadow-sm"
-                aria-label="Instagram D SECURE"
-              >
-                <span className="font-bold text-[10px]">IG</span>
-              </a>
-
-              {/* YouTube */}
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center transition-colors shadow-sm"
-                aria-label="YouTube D SECURE"
-              >
-                <span className="font-bold text-[10px]">YT</span>
-              </a>
-
-              {/* WhatsApp */}
               <a
                 href={getDirectWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center transition-colors shadow-sm"
+                className="hover:scale-110 transition-transform"
                 aria-label="WhatsApp D SECURE"
               >
-                <Phone className="w-4 h-4 fill-white" />
+                <OfficialWhatsAppIcon size={32} />
+              </a>
+
+              <a
+                href="mailto:dsecure.mg@gmail.com"
+                className="hover:scale-110 transition-transform"
+                aria-label="Email D SECURE"
+              >
+                <OfficialGmailIcon size={32} />
               </a>
             </div>
           </div>
 
-          {/* Col 2: LIENS SERVICES matching design-reference.png */}
+          {/* Col 2: LIENS SERVICES */}
           <div className="space-y-3">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
               LIENS SERVICES
@@ -137,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQA }) => {
             </ul>
           </div>
 
-          {/* Col 3: NOS PRODUITS matching design-reference.png */}
+          {/* Col 3: NOS PRODUITS */}
           <div className="space-y-3">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
               NOS PRODUITS
@@ -210,37 +194,33 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQA }) => {
             </ul>
           </div>
 
-          {/* Col 4: CONTACTEZ-NOUS & HORAIRES matching design-reference.png */}
+          {/* Col 4: CONTACTEZ-NOUS & HORAIRES */}
           <div className="space-y-3">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
               CONTACTEZ-NOUS
             </h4>
-            <div className="space-y-2.5">
+            <div className="space-y-3">
               <a
                 href={getDirectWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
+                className="flex items-center gap-2.5 hover:text-white transition-colors text-zinc-300 group"
               >
-                <div className="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center text-white shrink-0">
-                  <Phone className="w-3 h-3 fill-white" />
-                </div>
-                <span>+261 33 75 565 84</span>
+                <OfficialWhatsAppIcon size={20} />
+                <span className="font-bold group-hover:text-emerald-400 transition-colors">+261 33 75 565 84</span>
               </a>
 
               <a
-                href="mailto:dscure.mg@gmail.com"
-                className="flex items-center gap-2 hover:text-white transition-colors text-zinc-300"
+                href="mailto:dsecure.mg@gmail.com"
+                className="flex items-center gap-2.5 hover:text-white transition-colors text-zinc-300 group"
               >
-                <div className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white shrink-0 font-bold text-[10px]">
-                  M
-                </div>
-                <span>dscure.mg@gmail.com</span>
+                <OfficialGmailIcon size={20} />
+                <span className="font-medium group-hover:text-red-400 transition-colors">dsecure.mg@gmail.com</span>
               </a>
 
               <a
                 href="mailto:camhtech.mg@gmail.com"
-                className="flex items-center gap-2 hover:text-white transition-colors text-zinc-400"
+                className="flex items-center gap-2.5 hover:text-white transition-colors text-zinc-400 group text-[11px]"
               >
                 <Mail className="w-4 h-4 text-zinc-500 shrink-0" />
                 <span>camhtech.mg@gmail.com</span>
@@ -252,26 +232,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQA }) => {
                 <p>Dimanche : Sur rendez-vous</p>
                 <p className="text-zinc-500">Antananarivo, Madagascar</p>
               </div>
-
-              <div className="pt-2">
-                <button
-                  onClick={onOpenQA}
-                  className="text-zinc-500 hover:text-zinc-300 transition-colors text-[10px] underline"
-                >
-                  Audit et conformité des données Excel
-                </button>
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar matching design reference */}
+        {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-500 text-[11px]">
           <p>© 2025 D SECURE. Tous droits réservés.</p>
           <div className="flex items-center gap-4">
             <span className="hover:text-zinc-400 cursor-pointer">Mentions légales</span>
             <span>|</span>
             <span className="hover:text-zinc-400 cursor-pointer">Politique de confidentialité</span>
+            <span>|</span>
+            {/* Discrete owner access link to the administrative portal */}
+            <button
+              onClick={() => onNavigate('admin')}
+              className="text-zinc-600 hover:text-zinc-400 transition-colors flex items-center gap-1"
+              title="Portail de gestion interne"
+            >
+              <Lock className="w-3 h-3" />
+              <span>Accès Gestionnaire</span>
+            </button>
           </div>
         </div>
       </div>

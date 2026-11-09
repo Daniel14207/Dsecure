@@ -1,21 +1,40 @@
 export interface Product {
   id: string;
-  sourceWorkbook: string;
-  sourceSheet: string;
-  sourceRow: string;
   category: string;
   name: string;
   reference: string;
   description: string;
-  originalPriceAr: number | null;
   sellingPriceAr: number | null;
   formattedPrice: string;
   currency: string;
   image: string | null;
   images: string[];
+  topSection: 'cameras' | 'alarms' | 'packs' | 'dvr_nvr' | 'accessories' | 'hdd' | 'network' | 'monitors';
+}
+
+export interface AdminProduct extends Product {
+  originalPriceAr: number | null;
+  sourceWorkbook: string;
+  sourceSheet: string;
+  sourceRow: string;
   validationStatus: string;
   issue: string | null;
-  topSection: 'cameras' | 'alarms' | 'packs' | 'dvr_nvr' | 'accessories' | 'hdd' | 'network' | 'monitors';
+  marginAr: number | null;
+  marginPercentage: number | null;
+}
+
+export interface AdminAuditSummary {
+  totalCount: number;
+  withImageCount: number;
+  withoutImageCount: number;
+  withPriceCount: number;
+  missingPriceCount: number;
+  flaggedCount: number;
+  totalPurchaseValueAr: number;
+  totalSellingValueAr: number;
+  grossMarginAr: number;
+  averageMarginPercent: number;
+  sheetDistribution: { [key: string]: number };
 }
 
 export interface CartItem {
@@ -44,4 +63,4 @@ export type ActiveSection =
   | 'about'
   | 'testimonials'
   | 'contact'
-  | 'data-qa';
+  | 'admin';

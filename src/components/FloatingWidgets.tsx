@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ArrowUp, MessageSquare, Phone, X, Send } from 'lucide-react';
 import { getDirectWhatsAppUrl } from '../utils/whatsapp';
 
+import { OfficialWhatsAppIcon } from './OfficialSocialIcons';
+
 interface FloatingWidgetsProps {
   onOpenLiveChat?: () => void;
 }
@@ -51,10 +53,10 @@ export const FloatingWidgets: React.FC<FloatingWidgetsProps> = () => {
           href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite passer commande.')}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#1faa53] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95"
+          className="w-12 h-12 rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95 flex items-center justify-center"
           aria-label="Contacter via WhatsApp"
         >
-          <Phone className="w-6 h-6 fill-white" />
+          <OfficialWhatsAppIcon size={48} />
         </a>
 
         {/* Scroll To Top Button */}

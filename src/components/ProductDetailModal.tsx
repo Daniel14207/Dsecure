@@ -76,17 +76,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <div className="flex flex-col items-center justify-center text-center p-6 text-zinc-400">
                   <ShieldCheck className="w-16 h-16 text-zinc-300 mb-3" />
                   <span className="font-mono text-zinc-700 font-bold">{product.reference}</span>
-                  <p className="text-xs text-zinc-500 mt-2">
-                    Photographie originale issue du catalogue officiel Hikvision.
+                  <p className="text-xs text-zinc-500 mt-2 font-medium">
+                    Photo officielle sur demande · Équipement certifié original Hikvision.
                   </p>
-                </div>
-              )}
-
-              {/* Tag / Quality Flag */}
-              {product.issue && (
-                <div className="absolute top-3 left-3 bg-amber-50 border border-amber-200 text-amber-800 text-xs px-2.5 py-1 rounded-md flex items-center gap-1.5 font-bold">
-                  <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
-                  <span>Note catalogue: {product.issue}</span>
                 </div>
               )}
             </div>
@@ -131,9 +123,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     {product.formattedPrice}
                   </span>
                 </div>
-                {product.originalPriceAr && (
-                  <span className="text-xs text-zinc-500 font-medium">
-                    Calculé selon le barème officiel
+                {product.sellingPriceAr ? (
+                  <span className="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                    Garantie & Support inclus
+                  </span>
+                ) : (
+                  <span className="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                    Sur devis personnalisé
                   </span>
                 )}
               </div>

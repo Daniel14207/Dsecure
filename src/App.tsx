@@ -14,7 +14,7 @@ import { ServicesSection } from './components/ServicesSection';
 import { AboutSection } from './components/AboutSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
-import { DataQualityModal } from './components/DataQualityModal';
+import { AdminPortal } from './components/AdminPortal';
 import { FloatingWidgets } from './components/FloatingWidgets';
 import { Footer } from './components/Footer';
 import { ArrowRight, ShoppingCart, ShieldCheck } from 'lucide-react';
@@ -37,7 +37,6 @@ export default function App() {
   const [singleOrderProduct, setSingleOrderProduct] = useState<{ product: Product; quantity: number } | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [initialQuoteService, setInitialQuoteService] = useState('Étude et devis gratuit');
-  const [isQAOpen, setIsQAOpen] = useState(false);
 
   // Subcategory filters for main catalog sections
   const [cameraSubCat, setCameraSubCat] = useState('Tous');
@@ -152,7 +151,7 @@ export default function App() {
     return PRODUCTS.filter(
       (p) =>
         p.id !== selectedProduct.id &&
-        (p.category === selectedProduct.category || p.sourceSheet === selectedProduct.sourceSheet)
+        (p.category === selectedProduct.category || p.topSection === selectedProduct.topSection)
     ).slice(0, 4);
   }, [selectedProduct]);
 
@@ -194,7 +193,6 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        onOpenQA={() => setIsQAOpen(true)}
       />
 
       <main className="flex-1">
@@ -434,6 +432,11 @@ export default function App() {
 
         {/* VIEW: CONTACT */}
         {activeSection === 'contact' && <ContactSection />}
+
+        {/* VIEW: GESTIONNAIRE / PORTAIL ADMINISTRATEUR PRIVÉ */}
+        {activeSection === 'admin' && (
+          <AdminPortal onBackToPublicSite={() => handleNavigate('home')} />
+        )}
       </main>
 
       {/* Floating Action Buttons & Chat En Ligne Widget */}
@@ -483,16 +486,8 @@ export default function App() {
         initialService={initialQuoteService}
       />
 
-      {/* Excel Data Quality Audit Modal */}
-      <DataQualityModal
-        isOpen={isQAOpen}
-        onClose={() => setIsQAOpen(false)}
-        products={PRODUCTS}
-        onSelectProduct={setSelectedProduct}
-      />
-
-      {/* Footer matching design reference */}
-      <Footer onNavigate={handleNavigate} onOpenQA={() => setIsQAOpen(true)} />
+      {/* Footer matching design reference with discreet owner login gate */}
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 }

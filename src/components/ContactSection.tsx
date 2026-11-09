@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Clock, MapPin, Send, MessageSquare, User } from 'lucide-react';
 import { getDirectWhatsAppUrl } from '../utils/whatsapp';
+import { OfficialWhatsAppIcon, OfficialGmailIcon, OfficialFacebookIcon } from './OfficialSocialIcons';
 
 export const ContactSection: React.FC = () => {
   const [name, setName] = useState('');
@@ -49,30 +50,41 @@ export const ContactSection: React.FC = () => {
                   href={getDirectWhatsAppUrl('Bonjour D SECURE, je vous écris pour une demande de renseignements.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 bg-zinc-50 hover:bg-red-50/50 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                  className="p-3.5 bg-zinc-50 hover:bg-emerald-50/40 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <Phone className="w-5 h-5 fill-white" />
-                  </div>
+                  <OfficialWhatsAppIcon size={36} />
                   <div>
                     <span className="text-zinc-500 block text-[11px] font-bold">WhatsApp Direct</span>
-                    <strong className="text-sm font-mono text-zinc-950 group-hover:text-[#D71920] transition-colors">
+                    <strong className="text-sm font-mono text-zinc-950 group-hover:text-emerald-600 transition-colors">
                       +261 33 75 565 84
                     </strong>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:dscure.mg@gmail.com"
-                  className="p-3.5 bg-zinc-50 hover:bg-zinc-100 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                  href="mailto:dsecure.mg@gmail.com"
+                  className="p-3.5 bg-zinc-50 hover:bg-red-50/40 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center shrink-0 shadow-sm font-bold text-sm">
-                    M
-                  </div>
+                  <OfficialGmailIcon size={36} />
                   <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">Email Principal</span>
-                    <strong className="text-sm text-zinc-950 group-hover:text-[#D71920] transition-colors">
-                      dscure.mg@gmail.com
+                    <span className="text-zinc-500 block text-[11px] font-bold">Email Officiel</span>
+                    <strong className="text-sm text-zinc-950 group-hover:text-red-600 transition-colors">
+                      dsecure.mg@gmail.com
+                    </strong>
+                  </div>
+                </a>
+
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 bg-zinc-50 hover:bg-blue-50/40 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                >
+                  <OfficialFacebookIcon size={36} />
+                  <div>
+                    <span className="text-zinc-500 block text-[11px] font-bold">Facebook Officiel</span>
+                    <strong className="text-sm text-zinc-950 group-hover:text-blue-600 transition-colors">
+                      D SECURE
                     </strong>
                   </div>
                 </a>

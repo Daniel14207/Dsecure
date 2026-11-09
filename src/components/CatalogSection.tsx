@@ -42,7 +42,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
     // Subcategory filter
     if (activeSubCategory !== 'Tous') {
       result = result.filter(
-        (p) => p.category === activeSubCategory || p.sourceSheet === activeSubCategory
+        (p) => p.category === activeSubCategory
       );
     }
 

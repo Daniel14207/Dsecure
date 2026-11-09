@@ -1,202 +1,406 @@
-import React from 'react';
-import { Shield, ArrowRight, CheckCircle2, ShieldCheck, Wrench, Headphones, Smartphone } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ActiveSection } from '../types/product';
-import { getDirectWhatsAppUrl } from '../utils/whatsapp';
+import {
+  ShieldCheck,
+  Wrench,
+  Headphones,
+  Smartphone,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  Pause,
+  Play,
+} from 'lucide-react';
+import { OfficialContactStrip } from './OfficialSocialIcons';
 
 interface HeroProps {
   onNavigate: (section: ActiveSection) => void;
   onOpenQuote: () => void;
 }
 
+interface SlideData {
+  id: number;
+  tag: string;
+  titleLight: string;
+  titleBold: string;
+  description: string;
+  ctaText: string;
+  ctaSection: ActiveSection;
+  secondaryCtaText?: string;
+  image: string;
+  badges: { label: string; sub?: string }[];
+}
+
+const HERO_SLIDES: SlideData[] = [
+  {
+    id: 1,
+    tag: 'D SECURE · EXPERT VIDÉOSURVEILLANCE & ALARME',
+    titleLight: 'VOTRE SÉCURITÉ,',
+    titleBold: 'NOTRE PRIORITÉ.',
+    description:
+      'Vente, installation et maintenance certifiée de systèmes de vidéosurveillance Hikvision, alarme anti-intrusion et contrôle d’accès à Madagascar.',
+    ctaText: 'DÉCOUVRIR NOS OFFRES',
+    ctaSection: 'cameras',
+    secondaryCtaText: 'Demander un devis',
+    image: '/assets/aistudio/Image_ChatGPT_9_nov._2026__14_09_41_38cf813c.png',
+    badges: [
+      { label: 'Matériels Originaux' },
+      { label: 'Installation Offerte*', sub: '(sur packs)' },
+      { label: 'Support Rapide' },
+      { label: 'Surveillance à Distance' },
+    ],
+  },
+  {
+    id: 2,
+    tag: 'CAMÉRAS HIKVISION COLORVU & ACUSENSE',
+    titleLight: 'VISION COULEUR 24/7,',
+    titleBold: 'INTELLIGENCE ACUSENSE.',
+    description:
+      'Caméras Ultra HD 4K avec vision nocturne en couleur permanente et intelligence artificielle pour distinguer humains et véhicules sans fausse alerte.',
+    ctaText: 'VOIR LES CAMÉRAS HIKVISION',
+    ctaSection: 'cameras',
+    secondaryCtaText: 'Tous les modèles IP',
+    image: '/assets/aistudio/Image_ChatGPT_9_nov._2026__14_10_11_4747ef2d.png',
+    badges: [
+      { label: 'Vision Nocturne Couleur' },
+      { label: 'Détection IA AcuSense' },
+      { label: 'Résolution 4K Ultra HD' },
+      { label: 'Garantie Constructeur' },
+    ],
+  },
+  {
+    id: 3,
+    tag: 'SURVEILLANCE AUTONOME SANS FIL',
+    titleLight: 'CAMÉRAS SOLAIRES 4G,',
+    titleBold: 'ZÉRO CÂBLE, 100% AUTONOMIE.',
+    description:
+      'Idéales pour chantiers, exploitations agricoles, villas isolées et résidences secondaires. Panneau solaire intégré, batterie longue durée et connexion 4G.',
+    ctaText: 'DÉCOUVRIR LES CAMÉRAS SOLAIRES',
+    ctaSection: 'cameras',
+    secondaryCtaText: 'Fiche technique 4G',
+    image: '/assets/hero/hero_solar_camera_1794223397190.jpg',
+    badges: [
+      { label: '100% Autonome Solaire' },
+      { label: 'Connexion 4G LTE' },
+      { label: 'Sites Isolés & Chantiers' },
+      { label: 'Batterie Haute Capacité' },
+    ],
+  },
+  {
+    id: 4,
+    tag: 'CAMÉRAS PTZ MOTORISÉES',
+    titleLight: 'ZOOM OPTIQUE 32X,',
+    titleBold: 'SURVEILLANCE LONGUE DISTANCE.',
+    description:
+      'Contrôle panoramique 360° et inclinaison avec suivi automatique des cibles. Sécurisez les grands espaces, périmètres industriels et domaines privés.',
+    ctaText: 'EXPLORER LA GAMME PTZ',
+    ctaSection: 'cameras',
+    secondaryCtaText: 'Spécifications optiques',
+    image: '/assets/hero/hero_ptz_surveillance_1794223399799.jpg',
+    badges: [
+      { label: 'Zoom Optique 32x' },
+      { label: 'Rotation 360° Rapide' },
+      { label: 'Auto-Tracking Cibles' },
+      { label: 'Vision Nocturne 150m+' },
+    ],
+  },
+  {
+    id: 5,
+    tag: 'SYSTÈMES ANTI-INTRUSION HIKVISION',
+    titleLight: 'ALARMES AX PRO,',
+    titleBold: 'PROTECTION SANS FAILLE.',
+    description:
+      'Centrales d’alarme sans fil AX PRO avec détecteurs PIRCAM photo instantanée, claviers tactiles, sirènes puissantes 110dB et télécommandes sécurisées.',
+    ctaText: 'DÉCOUVRIR LES SYSTÈMES D’ALARME',
+    ctaSection: 'alarms',
+    secondaryCtaText: 'Calcul des tarifs × 2',
+    image: '/assets/hero/hero_alarm_axpro_1794223400199.jpg',
+    badges: [
+      { label: 'Technologie Sans Fil Tri-X' },
+      { label: 'Levée de Doute Photo PIRCAM' },
+      { label: 'Sirène Extérieure 110dB' },
+      { label: 'Batterie de Secours' },
+    ],
+  },
+  {
+    id: 6,
+    tag: 'KITS & PACKS TOUT COMPRIS',
+    titleLight: 'PACKS CLÉ EN MAIN,',
+    titleBold: 'INSTALLATION OFFERTE.',
+    description:
+      'Packs 4, 8, 16 et 32 caméras avec enregistreur NVR 4K, disque dur Seagate SkyHawk certifié 24/7, câbles réseau et pose professionnelle par nos équipes.',
+    ctaText: 'CHOISIR VOTRE PACK',
+    ctaSection: 'packs',
+    secondaryCtaText: 'Devis personnalisé',
+    image: '/assets/hero/hero_complete_packs_1794223458459.jpg',
+    badges: [
+      { label: 'Enregistreur NVR Inclus' },
+      { label: 'Disque Dur Surveillance' },
+      { label: 'Câblage Complet Cat6' },
+      { label: 'Installation Antananarivo' },
+    ],
+  },
+  {
+    id: 7,
+    tag: 'SÉCURITÉ COMMERCIALE & INDUSTRIELLE',
+    titleLight: 'ENTREPRISES & DÉPÔTS,',
+    titleBold: 'SURVEILLANCE GRAND COMPTE.',
+    description:
+      'Infrastructures robustes pour entrepôts, commerces et banques : switchs PoE industriels 300m, baies 19 pouces, stockage haute capacité et monitoring centralisé.',
+    ctaText: 'SOLUTIONS ENTREPRISES',
+    ctaSection: 'network',
+    secondaryCtaText: 'Étude de site gratuite',
+    image: '/assets/hero/hero_enterprise_cctv_1794223400955.jpg',
+    badges: [
+      { label: 'Switchs PoE Longue Portée' },
+      { label: 'Baies & Coffrets Muraux' },
+      { label: 'Stockage Multi-Téraoctets' },
+      { label: 'Supervision Multi-Sites' },
+    ],
+  },
+  {
+    id: 8,
+    tag: 'CONTRÔLE D’ACCÈS BIOMÉTRIQUE',
+    titleLight: 'RECONNAISSANCE FACIALE,',
+    titleBold: 'ET EMPREINTES MINMOE.',
+    description:
+      'Terminaux d’accès intelligents sans contact Hikvision MinMoe avec reconnaissance faciale en moins de 0.2 seconde, lecteurs d’empreintes et badges RFID.',
+    ctaText: 'VOIR LE CONTRÔLE D’ACCÈS',
+    ctaSection: 'accessories',
+    secondaryCtaText: 'Demander une démonstration',
+    image: '/assets/hero/hero_access_control_1794223456623.jpg',
+    badges: [
+      { label: 'Reconnaissance < 0.2s' },
+      { label: 'Lecteur Empreinte & Badge' },
+      { label: 'Gestion Présence & Horaires' },
+      { label: 'Anti-Usurpation Photo' },
+    ],
+  },
+  {
+    id: 9,
+    tag: 'SERVICE TECHNIQUE CERTIFIÉ',
+    titleLight: 'INSTALLATION EXPERTE,',
+    titleBold: 'MAINTENANCE & GARANTIE.',
+    description:
+      'Nos techniciens qualifiés assurent la pose minutieuse, le paramétrage sécurisé du réseau et la maintenance préventive de vos équipements à Madagascar.',
+    ctaText: 'DÉCOUVRIR NOS SERVICES',
+    ctaSection: 'services',
+    secondaryCtaText: 'Prendre rendez-vous',
+    image: '/assets/hero/hero_technician_install_1794223400609.jpg',
+    badges: [
+      { label: 'Techniciens Certifiés' },
+      { label: 'Câblage Propre & Sécurisé' },
+      { label: 'Contrat de Maintenance' },
+      { label: 'Garantie Pièces & Main d’œuvre' },
+    ],
+  },
+  {
+    id: 10,
+    tag: 'APPLICATION MOBILE & CLOUD',
+    titleLight: 'SURVEILLANCE EN DIRECT,',
+    titleBold: 'SUR SMARTPHONE & PC.',
+    description:
+      'Gardez un œil sur votre domicile ou votre entreprise depuis n’importe où dans le monde grâce à l’application Hik-Connect. Alertes instantanées et relecture facile.',
+    ctaText: 'CONFIGURER VOTRE ACCÈS DISTANT',
+    ctaSection: 'contact',
+    secondaryCtaText: 'Support Hik-Connect',
+    image: '/assets/hero/hero_mobile_monitoring_1794223401054.jpg',
+    badges: [
+      { label: 'Application Hik-Connect' },
+      { label: 'iOS & Android' },
+      { label: 'Notifications Push en Direct' },
+      { label: 'Relecture & Enregistrements' },
+    ],
+  },
+];
+
 export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenQuote }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  }, []);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  // Autoplay effect every 5 seconds (5000ms) with smooth pause on hover
+  useEffect(() => {
+    if (isPaused) {
+      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
+      return;
+    }
+
+    autoPlayTimerRef.current = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => {
+      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
+    };
+  }, [isPaused, nextSlide]);
+
+  const currentSlide = HERO_SLIDES[currentIndex];
+
   return (
-    <div>
-      {/* High-Impact Hero Banner matching design reference */}
-      <section className="relative overflow-hidden bg-[#080808] text-white border-b border-zinc-900">
-        {/* Subtle grid pattern background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#D71920]/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-red-950/20 rounded-full blur-3xl pointer-events-none" />
+    <div className="relative bg-[#080808] text-white overflow-hidden">
+      {/* HERO SLIDER CONTAINER */}
+      <section
+        className="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] flex items-center justify-center select-none"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+        aria-label="Carrousel de présentations D SECURE"
+      >
+        {/* Background Slide Images with smooth fade transition */}
+        {HERO_SLIDES.map((slide, index) => {
+          const isActive = index === currentIndex;
+          return (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+            >
+              {/* Slide Background Image */}
+              <img
+                src={slide.image}
+                alt={slide.titleBold}
+                className="w-full h-full object-cover object-center scale-100 transform transition-transform duration-10000 ease-out"
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left Content (7 cols) */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-balance">
-                VOTRE SÉCURITÉ,<br />
-                <span className="text-[#D71920]">NOTRE PRIORITÉ.</span>
-              </h1>
+              {/* Contrast scrim & cinematic gradient overlay ensuring 100% text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/75 to-black/45" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-black/30" />
 
-              {/* Subheading */}
-              <p className="text-base sm:text-lg text-zinc-300 max-w-xl font-normal leading-relaxed">
-                Vente, installation et maintenance de systèmes de vidéosurveillance, alarme et contrôle d'accès à Madagascar.
-              </p>
+              {/* Decorative Red Security Angle Line matching reference */}
+              <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-red-600/10 to-transparent pointer-events-none" />
+            </div>
+          );
+        })}
 
-              {/* 4 Feature Badges matching design-reference.png */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div className="flex flex-col items-center sm:items-start gap-1 p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800 text-center sm:text-left">
-                  <ShieldCheck className="w-5 h-5 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-zinc-200">
-                    Matériels Originaux
-                  </span>
+        {/* Slide Content Overlay */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
+          <div className="max-w-2xl lg:max-w-3xl">
+            {/* Tag / Category lead-in */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[#D71920] font-mono text-[11px] sm:text-xs font-black tracking-widest uppercase mb-4 sm:mb-6 animate-fade-in">
+              <span className="w-2 h-2 rounded-full bg-[#D71920] animate-pulse" />
+              <span className="text-white">{currentSlide.tag}</span>
+            </div>
+
+            {/* Dynamic Headlines with Brand Red Emphasis */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight uppercase leading-[1.08] text-white">
+              <span className="block text-zinc-100">{currentSlide.titleLight}</span>
+              <span className="block text-[#D71920] mt-1">{currentSlide.titleBold}</span>
+            </h1>
+
+            {/* Description */}
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-zinc-300 font-medium leading-relaxed max-w-xl">
+              {currentSlide.description}
+            </p>
+
+            {/* Trust Badges Strip matching design-reference */}
+            <div className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 py-3 border-y border-white/10">
+              {currentSlide.badges.map((badge, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-xs text-zinc-200">
+                  {idx === 0 && <ShieldCheck className="w-4 h-4 text-[#D71920] shrink-0" />}
+                  {idx === 1 && <Wrench className="w-4 h-4 text-[#D71920] shrink-0" />}
+                  {idx === 2 && <Headphones className="w-4 h-4 text-[#D71920] shrink-0" />}
+                  {idx === 3 && <Smartphone className="w-4 h-4 text-[#D71920] shrink-0" />}
+                  <div>
+                    <span className="font-bold text-[11px] sm:text-xs block leading-tight">
+                      {badge.label}
+                    </span>
+                    {badge.sub && (
+                      <span className="text-[10px] text-zinc-400 block">{badge.sub}</span>
+                    )}
+                  </div>
                 </div>
+              ))}
+            </div>
 
-                <div className="flex flex-col items-center sm:items-start gap-1 p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800 text-center sm:text-left">
-                  <Wrench className="w-5 h-5 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-zinc-200">
-                    Installation Offerte (Packs)
-                  </span>
-                </div>
+            {/* CTAs */}
+            <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => onNavigate(currentSlide.ctaSection)}
+                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-lg shadow-lg shadow-red-700/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>{currentSlide.ctaText}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-                <div className="flex flex-col items-center sm:items-start gap-1 p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800 text-center sm:text-left">
-                  <Headphones className="w-5 h-5 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-zinc-200">
-                    Support Rapide
-                  </span>
-                </div>
+              <button
+                onClick={onOpenQuote}
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg border border-white/20 backdrop-blur-md transition-colors"
+              >
+                <span>{currentSlide.secondaryCtaText || 'Demander un devis'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-                <div className="flex flex-col items-center sm:items-start gap-1 p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800 text-center sm:text-left">
-                  <Smartphone className="w-5 h-5 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-zinc-200">
-                    Surveillance à distance
-                  </span>
-                </div>
-              </div>
+        {/* Previous Button */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 hover:bg-[#D71920] text-white border border-white/20 flex items-center justify-center transition-all backdrop-blur-md shadow-lg"
+          aria-label="Slide précédente"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
 
-              {/* Red CTA Button with Arrow */}
-              <div className="pt-2">
+        {/* Next Button */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 hover:bg-[#D71920] text-white border border-white/20 flex items-center justify-center transition-all backdrop-blur-md shadow-lg"
+          aria-label="Slide suivante"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Pagination & Slide Counter (10 slides) */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/15">
+          {/* Pause / Play Indicator */}
+          <button
+            onClick={() => setIsPaused(!isPaused)}
+            className="text-zinc-400 hover:text-white transition-colors p-1"
+            title={isPaused ? 'Reprendre le défilement automatique' : 'Mettre en pause'}
+          >
+            {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
+          </button>
+
+          <span className="text-[11px] font-mono text-zinc-400 font-bold px-1">
+            {currentIndex + 1} / {HERO_SLIDES.length}
+          </span>
+
+          <div className="flex items-center gap-1.5 ml-1">
+            {HERO_SLIDES.map((_, index) => {
+              const isActive = index === currentIndex;
+              return (
                 <button
-                  onClick={() => onNavigate('packs')}
-                  className="inline-flex items-center gap-3 px-8 py-3.5 text-sm font-extrabold tracking-wider uppercase text-white bg-[#D71920] hover:bg-[#b8141a] rounded-md shadow-lg shadow-red-900/40 transition-all hover:translate-x-1"
-                >
-                  <span>DÉCOUVRIR NOS OFFRES</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Visual Montage (5 cols) - Hikvision cameras & NVR showcase */}
-            <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="relative w-full max-w-lg aspect-4/3 rounded-2xl bg-gradient-to-br from-zinc-900/80 to-zinc-950 p-6 border border-zinc-800/80 shadow-2xl flex flex-col justify-between overflow-hidden group">
-                {/* Glowing subtle ring */}
-                <div className="absolute inset-0 bg-radial from-red-600/10 via-transparent to-transparent opacity-50" />
-
-                <div className="flex items-center justify-between relative z-10 text-xs">
-                  <span className="font-black text-red-500 tracking-wider font-mono">HIKVISION CERTIFIED</span>
-                  <span className="px-2 py-0.5 rounded bg-red-600/20 text-red-400 font-bold text-[10px]">
-                    GARANTIE OFFICIELLE
-                  </span>
-                </div>
-
-                {/* Collage of real Hikvision hardware */}
-                <div className="relative my-4 flex items-center justify-center h-48 z-10">
-                  <div className="absolute -left-2 bottom-4 w-28 h-28 bg-white/5 rounded-xl p-2 border border-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg transform -rotate-6 transition-transform group-hover:rotate-0">
-                    <img
-                      src="/assets/aistudio/ip-1-0_r46_c1_18_9897ae6b.jpg"
-                      alt="Caméra IP Hikvision ColorVu"
-                      className="max-h-full max-w-full object-contain drop-shadow-md"
-                    />
-                  </div>
-
-                  <div className="w-44 h-36 bg-zinc-900/90 rounded-2xl p-2 border border-zinc-700/80 flex items-center justify-center shadow-2xl z-20">
-                    <img
-                      src="/assets/aistudio/nvr_r6_c1_8_d5977e04.jpg"
-                      alt="Enregistreur NVR Hikvision 4K"
-                      className="max-h-full max-w-full object-contain drop-shadow-lg"
-                    />
-                  </div>
-
-                  <div className="absolute -right-2 top-2 w-28 h-28 bg-white/5 rounded-xl p-2 border border-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg transform rotate-6 transition-transform group-hover:rotate-0">
-                    <img
-                      src="/assets/aistudio/analog_r23_c1_17_2896f0f9.jpg"
-                      alt="Caméra Turret Hikvision Smart Light"
-                      className="max-h-full max-w-full object-contain drop-shadow-md"
-                    />
-                  </div>
-                </div>
-
-                {/* Equipment Brand Label */}
-                <div className="relative z-10 pt-2 border-t border-zinc-800 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="font-extrabold tracking-widest text-white text-sm">HIKVISION</span>
-                    <span className="text-[10px] text-zinc-400">· NVR & Caméras IA</span>
-                  </div>
-                  <span className="text-xs font-bold text-[#D71920]">Vision Nocturne Colorée</span>
-                </div>
-              </div>
-            </div>
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    isActive ? 'w-6 bg-[#D71920]' : 'w-2 bg-white/30 hover:bg-white/60'
+                  }`}
+                  aria-label={`Aller à la slide ${index + 1}`}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Quick Contact Bar - matching design-reference.png */}
-      <section className="bg-white border-b border-zinc-200 py-3.5 px-4 shadow-xs">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          {/* WhatsApp column */}
-          <a
-            href={getDirectWhatsAppUrl('Bonjour D SECURE, j\'aimerais me renseigner sur vos équipements de sécurité.')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3.5 p-2 rounded-lg hover:bg-zinc-50 transition-colors group"
-          >
-            <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-white shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.188 8.188 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 012.41 5.82c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
-              </svg>
-            </div>
-            <div>
-              <div className="font-extrabold uppercase tracking-wider text-zinc-900 text-[11px]">
-                WHATSAPP
-              </div>
-              <div className="font-bold text-sm text-zinc-900 group-hover:text-[#25D366] transition-colors">
-                +261 33 75 565 84
-              </div>
-              <div className="text-[10px] text-zinc-600 font-medium">Réponse rapide garantie</div>
-            </div>
-          </a>
-
-          {/* Gmail column */}
-          <a
-            href="mailto:dscure.mg@gmail.com"
-            className="flex items-center gap-3.5 p-2 rounded-lg hover:bg-zinc-50 transition-colors group"
-          >
-            <div className="w-10 h-10 rounded-full bg-[#EA4335] flex items-center justify-center text-white shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-              <span className="font-black text-lg">M</span>
-            </div>
-            <div>
-              <div className="font-extrabold uppercase tracking-wider text-zinc-900 text-[11px]">
-                GMAIL
-              </div>
-              <div className="font-bold text-sm text-zinc-900 group-hover:text-[#EA4335] transition-colors">
-                dscure.mg@gmail.com
-              </div>
-              <div className="text-[10px] text-zinc-600 font-medium">Réponse sous 24h</div>
-            </div>
-          </a>
-
-          {/* Facebook column */}
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3.5 p-2 rounded-lg hover:bg-zinc-50 transition-colors group"
-          >
-            <div className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-              <span className="font-black text-lg">f</span>
-            </div>
-            <div>
-              <div className="font-extrabold uppercase tracking-wider text-zinc-900 text-[11px]">
-                FACEBOOK
-              </div>
-              <div className="font-bold text-sm text-zinc-900 group-hover:text-[#1877F2] transition-colors">
-                D SECURE
-              </div>
-              <div className="text-[10px] text-zinc-600 font-medium">Suivez nos actualités</div>
-            </div>
-          </a>
-        </div>
-      </section>
+      {/* THREE OFFICIAL CONTACT CARDS STRIP MATCHING REFERENCE IMAGE */}
+      <OfficialContactStrip />
     </div>
   );
 };

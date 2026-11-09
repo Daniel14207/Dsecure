@@ -61,10 +61,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           />
         ) : (
           /* Graceful Fallback Container (Zero-Broken-Image Policy) */
-          <div className="w-full h-full flex flex-col items-center justify-center text-center p-3 text-zinc-400 bg-zinc-50">
+          <div className="w-full h-full flex flex-col items-center justify-center text-center p-3 text-zinc-400 bg-zinc-50/80">
             <ShieldCheck className="w-10 h-10 text-zinc-300 mb-2 group-hover:text-[#D71920] transition-colors" />
             <span className="text-xs font-mono text-zinc-700 font-bold">{product.reference}</span>
-            <span className="text-[10px] text-zinc-400 mt-1">Photo originale sur devis</span>
+            <span className="text-[10px] text-zinc-400 mt-1 font-medium">Photo officielle sur demande</span>
           </div>
         )}
 
@@ -73,19 +73,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <span className="text-zinc-700 bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded shadow-xs border border-zinc-200/80">
             {product.category}
           </span>
-          {product.issue ? (
-            <span
-              className="text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 flex items-center gap-1"
-              title={product.issue}
-            >
-              <AlertCircle className="w-3 h-3 text-amber-600" />
-              <span>À vérifier</span>
-            </span>
-          ) : (
-            <span className="text-[#D71920] bg-red-50/90 px-1.5 py-0.5 rounded border border-red-100">
-              Hikvision
-            </span>
-          )}
+          <span className="text-[#D71920] bg-red-50/90 px-1.5 py-0.5 rounded border border-red-100">
+            Hikvision
+          </span>
         </div>
 
         {/* Quick view button overlay */}
@@ -104,8 +94,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <span className="font-mono text-xs font-black text-[#D71920] tracking-wider truncate">
               {product.reference}
             </span>
-            <span className="text-[10px] text-zinc-400 font-mono">
-              {product.sourceSheet}
+            <span className="text-[10px] text-zinc-400 font-medium">
+              Certifié Original
             </span>
           </div>
 

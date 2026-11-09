@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Product } from '../types/product';
+import { AdminProduct } from '../types/product';
 import { X, AlertCircle, CheckCircle2, FileSpreadsheet, Image, DollarSign, Search } from 'lucide-react';
 
 interface DataQualityModalProps {
   isOpen: boolean;
   onClose: () => void;
-  products: Product[];
-  onSelectProduct: (p: Product) => void;
+  products: AdminProduct[];
+  onSelectProduct?: (p: AdminProduct) => void;
 }
 
 export const DataQualityModal: React.FC<DataQualityModalProps> = ({
@@ -170,7 +170,7 @@ export const DataQualityModal: React.FC<DataQualityModalProps> = ({
               <div
                 key={item.id}
                 onClick={() => {
-                  onSelectProduct(item);
+                  onSelectProduct?.(item);
                   onClose();
                 }}
                 className="p-3 bg-zinc-50 hover:bg-zinc-100/80 rounded-xl border border-zinc-200 flex items-center justify-between gap-4 cursor-pointer transition-colors"

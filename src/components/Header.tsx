@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ActiveSection } from '../types/product';
-import { ShoppingBag, Phone, Menu, X, Search, CheckCircle2, MessageCircle } from 'lucide-react';
+import { ShoppingBag, Menu, X, Search, MapPin } from 'lucide-react';
 import { getDirectWhatsAppUrl } from '../utils/whatsapp';
 import { DSecureLogo } from './DSecureLogo';
+import { OfficialWhatsAppIcon, OfficialGmailIcon, OfficialFacebookIcon } from './OfficialSocialIcons';
 
 interface HeaderProps {
   activeSection: ActiveSection;
@@ -11,7 +12,6 @@ interface HeaderProps {
   onOpenCart: () => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
-  onOpenQA: () => void;
   onOpenLiveChat?: () => void;
 }
 
@@ -22,16 +22,13 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenCart,
   searchQuery,
   onSearchChange,
-  onOpenQA,
   onOpenLiveChat,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showCatalogDropdown, setShowCatalogDropdown] = useState(false);
 
   const handleNavClick = (section: ActiveSection) => {
     onNavigate(section);
     setMobileMenuOpen(false);
-    setShowCatalogDropdown(false);
   };
 
   const navItems: { label: string; section: ActiveSection }[] = [
@@ -46,64 +43,68 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-zinc-200/90 shadow-xs">
-      {/* Top micro bar for fast trust and customer service */}
-      <div className="bg-[#080808] px-4 py-1.5 text-xs text-zinc-300">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-white font-medium">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#D71920] animate-pulse" />
-              D SECURE Madagascar
-            </span>
-            <span className="hidden sm:inline text-zinc-600">|</span>
-            <span className="hidden sm:inline text-zinc-300">Votre sécurité, notre priorité.</span>
-            <span className="hidden md:inline text-zinc-600">|</span>
-            <span className="hidden md:inline text-zinc-400">Équipements Hikvision Certifiés 100% Originaux</span>
-          </div>
-
-          <div className="flex items-center gap-4 text-xs">
-            <button
-              onClick={onOpenQA}
-              className="text-zinc-400 hover:text-white transition-colors flex items-center gap-1 text-[11px]"
-              title="Audit conformité Excel & Catalogue officiel"
-            >
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#D71920]" />
-              <span className="hidden sm:inline">Audit Données Excel</span>
-            </button>
-            <span className="text-zinc-600 hidden lg:inline">|</span>
+    <header className="sticky top-0 z-50 bg-white/98 backdrop-blur-md border-b border-zinc-200/90 shadow-xs">
+      {/* Top Micro Bar with Official Logos matching Image_ChatGPT reference */}
+      <div className="bg-[#080808] px-4 py-2 text-xs text-zinc-300">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          {/* Left: WhatsApp + Phone & Gmail */}
+          <div className="flex items-center gap-5">
             <a
-              href="mailto:camhtech.mg@gmail.com"
-              className="hidden lg:inline text-zinc-300 hover:text-white transition-colors"
-            >
-              camhtech.mg@gmail.com
-            </a>
-            <span className="text-zinc-600 hidden sm:inline">|</span>
-            <a
-              href={getDirectWhatsAppUrl('Bonjour D SECURE, j\'aimerais me renseigner sur vos équipements.')}
+              href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite me renseigner sur vos équipements.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-white hover:text-red-400 font-bold transition-colors"
+              className="flex items-center gap-2 text-white hover:text-emerald-400 font-bold transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#D71920]" />
-              <span>+261 33 75 565 84</span>
+              <OfficialWhatsAppIcon size={18} />
+              <span className="tracking-wide">+261 33 75 565 84</span>
             </a>
+
+            <span className="text-zinc-700 hidden sm:inline">|</span>
+
+            <a
+              href="mailto:dsecure.mg@gmail.com"
+              className="hidden sm:flex items-center gap-2 text-zinc-300 hover:text-white transition-colors"
+            >
+              <OfficialGmailIcon size={18} />
+              <span>dsecure.mg@gmail.com</span>
+            </a>
+          </div>
+
+          {/* Right: Facebook + Location */}
+          <div className="flex items-center gap-4 text-xs">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-zinc-300 hover:text-blue-400 font-medium transition-colors"
+            >
+              <OfficialFacebookIcon size={18} />
+              <span className="hidden md:inline">D SECURE</span>
+            </a>
+
+            <span className="text-zinc-700 hidden lg:inline">|</span>
+
+            <div className="hidden lg:flex items-center gap-1 text-zinc-400">
+              <MapPin className="w-3.5 h-3.5 text-[#D71920]" />
+              <span>Antananarivo, Madagascar</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-        {/* Brand Wordmark & True Logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between gap-4">
+        {/* Brand Real Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="focus:outline-none transition-transform hover:scale-[1.01] active:scale-[0.99] text-left"
+          className="focus:outline-none transition-transform hover:scale-[1.01] active:scale-[0.99] text-left shrink-0"
           aria-label="Accueil D SECURE"
         >
           <DSecureLogo variant="light" size="md" />
         </button>
 
-        {/* Center Navigation Links (Upper-case matching design reference) */}
-        <nav className="hidden xl:flex items-center gap-6 text-[13px] font-bold tracking-wider text-zinc-800">
+        {/* Center Navigation Links */}
+        <nav className="hidden xl:flex items-center gap-7 text-[13px] font-bold tracking-wider text-zinc-800">
           {navItems.map((item) => {
             const isActive = activeSection === item.section;
             return (
@@ -132,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({
               placeholder="Rechercher caméra, référence..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-44 lg:w-52 bg-zinc-100 hover:bg-zinc-50 text-xs text-zinc-900 placeholder-zinc-500 rounded-full pl-8 pr-7 py-2 border border-zinc-200 focus:outline-none focus:border-[#D71920] focus:ring-1 focus:ring-[#D71920] transition-all"
+              className="w-44 lg:w-56 bg-zinc-100 hover:bg-zinc-50 text-xs text-zinc-900 placeholder-zinc-500 rounded-full pl-8 pr-7 py-2 border border-zinc-200 focus:outline-none focus:border-[#D71920] focus:ring-1 focus:ring-[#D71920] transition-all"
             />
             <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-2.5 pointer-events-none" />
             {searchQuery && (
@@ -159,14 +160,14 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </button>
 
-          {/* Red WhatsApp Button - matching design-reference.png */}
+          {/* Red WhatsApp Button matching design reference */}
           <a
             href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite passer commande / demander un devis.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-black tracking-wider uppercase text-white bg-[#D71920] hover:bg-[#b8141a] rounded-md shadow-md shadow-red-700/20 transition-all hover:shadow-lg hover:shadow-red-700/30"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-black tracking-wider uppercase text-white bg-[#D71920] hover:bg-[#b8141a] rounded-lg shadow-md shadow-red-700/20 transition-all hover:shadow-lg hover:shadow-red-700/30"
           >
-            <MessageCircle className="w-4 h-4 fill-white" />
+            <OfficialWhatsAppIcon size={18} />
             <span>WHATSAPP</span>
           </a>
 
@@ -258,19 +259,9 @@ export const Header: React.FC<HeaderProps> = ({
               rel="noopener noreferrer"
               className="w-full py-3 text-center text-xs font-black uppercase text-white bg-[#D71920] rounded-lg shadow-md flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
-              Commander via WhatsApp (+261 33 75 565 84)
+              <OfficialWhatsAppIcon size={20} />
+              <span>Commander via WhatsApp (+261 33 75 565 84)</span>
             </a>
-            <button
-              onClick={() => {
-                onOpenQA();
-                setMobileMenuOpen(false);
-              }}
-              className="text-xs text-zinc-500 py-1 text-center hover:text-zinc-800 flex items-center justify-center gap-1"
-            >
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#D71920]" />
-              Audit des données et conformité Excel
-            </button>
           </div>
         </div>
       )}
