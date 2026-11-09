@@ -1,0 +1,767 @@
+﻿id,source_workbook,source_sheet,source_row,category,name,reference,description,original_price_ar,selling_price_ar,currency,images,validation_status
+surveillance-analog-2,Hikvision Price 2026 Q4.xlsx,Analog,2,Caméras analogiques,DS-2CE16D0T-EXIPF(3.6mm)(O-STD),DS-2CE16D0T-EXIPF(3.6mm)(O-STD),"2MP CMOS Sensor, 1 pcs EXIR LEDs, 20m IR, Outdoor EXIR Bullet, ICR, 0.02 Lux/F1.2, 12 VDC, Smart IR, DNR, IP66, 2.8/3.6mm Lens, Support TVI/AHD/CVI/CVBS video signal output",70000,140000,MGA,images/analog_r2_c1_9.jpg,à vérifier les données et l'image
+surveillance-analog-3,Hikvision Price 2026 Q4.xlsx,Analog,3,Caméras analogiques,DS-2CE76D0T-EXIPF(2.8mm)(O-STD),DS-2CE76D0T-EXIPF(2.8mm)(O-STD),"2MP CMOS Sensor, 1 pcs EXIR LEDs, 20m IR, Indoor EXIR Turret, ICR, 0.02 Lux/F1.2, 12 VDC, Smart IR, DNR, 2.8/3.6mm Lens, Support TVI/AHD/CVI/CVBS video signal output",70000,140000,MGA,images/analog_r3_c1_10.jpg,à vérifier les données et l'image
+surveillance-analog-4,Hikvision Price 2026 Q4.xlsx,Analog,4,Caméras analogiques,DS-2CE16U0T-ITF 3.6MM (new),DS-2CE16U0T-ITF 3.6MM (new),"8 MP bullet camera
+EXIR 2.0: advanced infrared technology with 30 m IR distance
+Water and dust resistant (IP67)
+4 in 1 (4 signals switchable TVI/AHD/CVI/CVBS).",190000,380000,MGA,images/analog_r4_c1_12.png,à vérifier les données et l'image
+surveillance-analog-5,Hikvision Price 2026 Q4.xlsx,Analog,5,Caméras analogiques,DS-2CE76U0T-ITMF 2.8MM (new),DS-2CE76U0T-ITMF 2.8MM (new),"8 MP turret camera
+EXIR 2.0: advanced infrared technology with 30 m IR distance
+Water and dust resistant (IP67)
+4 in 1 (4 signals switchable TVI/AHD/CVI/CVBS).",190000,380000,MGA,images/analog_r5_c1_13.png,à vérifier les données et l'image
+surveillance-analog-7,Hikvision Price 2026 Q4.xlsx,Analog,7,Caméras analogiques,THC-B120-PC 3.6MM,THC-B120-PC 3.6MM,"2MP CMOS Sensor, 1 pcs EXIR LEDs, 20m IR, Outdoor EXIR Bullet, ICR, 0.02 Lux/F1.2, 12 VDC, Smart IR, DNR, IP66, 2.8/3.6mm Lens, Support TVI/AHD/CVI/CVBS video signal output",60000,120000,MGA,images/analog_r7_c1_19.jpg,à vérifier les données et l'image
+surveillance-analog-8,Hikvision Price 2026 Q4.xlsx,Analog,8,Caméras analogiques,THC-T120-PC 2.8MM,THC-T120-PC 2.8MM,"2MP CMOS Sensor, 1 pcs EXIR LEDs, 20m IR, Indoor EXIR Turret, ICR, 0.02 Lux/F1.2, 12 VDC, Smart IR, DNR, 2.8/3.6mm Lens, Support TVI/AHD/CVI/CVBS video signal output",60000,120000,MGA,images/analog_r8_c1_20.jpg,à vérifier les données et l'image
+surveillance-analog-10,Hikvision Price 2026 Q4.xlsx,Analog,10,Caméras analogiques,DS-2CE16D0T-LPXTS 3.6MM,DS-2CE16D0T-LPXTS 3.6MM,"2MP CMOS Sensor, 1080P@25fps(P)(Default)/30fps(N),EXIR, 30m IR+20m White Light, Outdoor Smart-hybrid-light Bullet, ICR, 0.01 Lux/F1.2, 12 VDC, Smart IR, DNR,Smart Lighting（With Acusense DVR）,OSD Menu(Up the Coax), IP67,2.8/3.6mm Lens,Built-in mic and speaker,Intelligent noise reduction,Up to 5 meters of two-way audio with echo cancellation ,built-in bule & red light for Live Guard with visual and auditory warnings,",150000,300000,MGA,images/analog_r10_c1_3.png,à vérifier les données et l'image
+surveillance-analog-11,Hikvision Price 2026 Q4.xlsx,Analog,11,Caméras analogiques,DS-2CE70D0T-PTLXTS 2.8MM,DS-2CE70D0T-PTLXTS 2.8MM,"2MP CMOS Sensor, 1080P@25fps(P)(Default)/30fps(N),EXIR, 30m IR+20m White Light, Outdoor Smart-hybrid-light PT Turret, ICR, 0.01 Lux/F1.2, 12 VDC, Smart IR, DNR,Smart Lighting（With Acusense DVR）,OSD Menu(Up the Coax), IP67,2.8/3.6mm Lens,Built-in mic and speaker,Intelligent noise reduction,Up to 5 meters of two-way audio with echo cancellation ,built-in bule & red light for Live Guard with visual and auditory warnings,",210000,420000,MGA,images/analog_r11_c1_18.png,à vérifier les données et l'image
+surveillance-analog-13,Hikvision Price 2026 Q4.xlsx,Analog,13,Caméras analogiques,DS-2CE17K0T-LTS(3.6mm)(O-STD),DS-2CE17K0T-LTS(3.6mm)(O-STD),"High quality imaging with 3K, 2960 × 1665 resolution
+2.8 mm, 3.6 mm fixed focal lens
+Up to 40 m white light and 40 m IR distance for bright night imaging
+Smart-Hybrid Light, optimize your security with flexible lighting options
+High quality audio with audio over coaxial cable, built-in mic, and built-in speaker
+Provide real-time communication via built-in two-way audio
+Water and dust resistant (IP67)",220000,440000,MGA,images/analog_r13_c1_21.jpg,à vérifier les données et l'image
+surveillance-analog-14,Hikvision Price 2026 Q4.xlsx,Analog,14,Caméras analogiques,DS-2CE70K0T-PTLTS(3.6mm)(O-STD),DS-2CE70K0T-PTLTS(3.6mm)(O-STD),"High quality imaging with 3K, 2960 × 1665 resolution
+2.8 mm, 3.6 mm fixed focal lens
+Up to 20 m white light and 25 m IR distance for bright night imaging
+Smart-Hybrid Light, optimize your security with flexible lighting options
+High quality audio with audio over coaxial cable, built-in mic, and built-in speaker
+Provide real-time communication via built-in two-way audio",230000,460000,MGA,images/analog_r14_c1_4.png,à vérifier les données et l'image
+surveillance-analog-16,Hikvision Price 2026 Q4.xlsx,Analog,16,Caméras analogiques,DS-2CE19H0T-AIT3ZF 2.7-13.5MM,DS-2CE19H0T-AIT3ZF 2.7-13.5MM,"High quality imaging with 5 MP, 2560 × 1944 resolution
+2.7 mm to 13.5 mm motorized varifocal lens
+Up to 40 m IR distance for bright night imaging
+One port for four switchable signals (TVI/AHD/CVI/CVBS)
+Water and dust resistant (IP67)",310000,620000,MGA,images/analog_r16_c1_15.jpg,à vérifier les données et l'image
+surveillance-analog-18,Hikvision Price 2026 Q4.xlsx,Analog,18,Caméras analogiques,DS-2CE12DF3T-PIRXOS 3.6MM （new),DS-2CE12DF3T-PIRXOS 3.6MM （new),"High quality imaging with 2 MP, 1920 × 1080 resolution
+24/7 color imaging with F1.0 aperture
+Clear imaging against strong back light due to 130 dB true WDR technology
+3D DNR technology delivers clean and sharp images
+2.8 mm, 3.6 mm, 6 mm fixed focal lens
+Up to 40 m white light distance for bright night imaging
+Detects human body through heat-sensitive passive infrared (PIR)
+Active strobe light and audio alarm to warn intruders off
+High quality audio with audio over coaxial cable, built-in mic, and built-in speaker
+Water and dust resistant (IP67)",295000,590000,MGA,images/analog_r18_c1_14.jpg,à vérifier les données et l'image
+surveillance-analog-20,Hikvision Price 2026 Q4.xlsx,Analog,20,Caméras analogiques,DS-2CE16D0T-LPFS 3.6MM,DS-2CE16D0T-LPFS 3.6MM,"2MP CMOS Sensor, 1080P@25fps(P)(Default)/30fps(N),EXIR, 25m IR+20m White Light, Outdoor Dual-light Bullet, ICR, 0.01 Lux/F1.2, 12 VDC, Smart IR, DNR, Built-in Mic,Audio up Coaxial(Only TVI),Smart Lighting（With Acusense DVR）,OSD Menu(Up the Coax), IP67,2.8/3.6mm Lens，Support TVI/AHD/CVI/CVBS video signal output",100000,200000,MGA,images/analog_r20_c1_1.png,à vérifier les données et l'image
+surveillance-analog-21,Hikvision Price 2026 Q4.xlsx,Analog,21,Caméras analogiques,DS-2CE76D0T-LPFS 2.8MM,DS-2CE76D0T-LPFS 2.8MM,"2MP CMOS Sensor, 1080P@25fps(P)(Default)/30fps(N),EXIR, 20m IR+20m White Light, indoor Dual-light Turret, ICR, 0.01 Lux/F1.2, 12 VDC, Smart IR, DNR, Built-in Mic,Audio up Coaxial(Only TVI),Smart Lighting（With Acusense DVR）,OSD Menu(Up the Coax), 2.8/3.6mm Lens，Support TVI/AHD/CVI/CVBS video signal output",100000,200000,MGA,images/analog_r21_c1_2.png,à vérifier les données et l'image
+surveillance-analog-22,Hikvision Price 2026 Q4.xlsx,Analog,22,Caméras analogiques,DS-2CE16K0T-LPFS 3.6MM (new),DS-2CE16K0T-LPFS 3.6MM (new),"High quality imaging with 3K, 2960 × 1665 resolution
+2.8 mm and 3.6 mm fixed focal lens
+Up to 25 m IR distance for bright night imaging
+Up to 20 m white light distance for bright night imaging
+One port for four switchable signals (TVI/AHD/CVI/CVBS）
+Water and dust resistant (IP67)
+High quality audio with audio over coaxial cable, built-in mic
+Smart-Hybrid light, optimize your security with flexible lighting options",125000,250000,MGA,images/analog_r22_c1_16.jpg,à vérifier les données et l'image
+surveillance-analog-23,Hikvision Price 2026 Q4.xlsx,Analog,23,Caméras analogiques,DS-2CE76K0T-LPFS 2.8mm (new),DS-2CE76K0T-LPFS 2.8mm (new),"High quality imaging with 3K, 2960 × 1665 resolution
+2.8 mm and 3.6 mm fixed focal lens
+Up to 20 m IR distance for bright night imaging
+Up to 20 m white light distance for bright night imaging
+One port for four switchable signals (TVI/AHD/CVI/CVBS）
+High quality audio with audio over coaxial cable, built-in mic
+Smart-Hybrid light, optimize your security with flexible lighting options",125000,250000,MGA,images/analog_r23_c1_17.jpg,à vérifier les données et l'image
+surveillance-analog-24,Hikvision Price 2026 Q4.xlsx,Analog,24,Caméras analogiques,DS-2CE16K0T-LFS 3.6MM (new),DS-2CE16K0T-LFS 3.6MM (new),"High quality imaging with 3K, 2960 × 1665 resolution
+2.8 mm and 3.6 mm fixed focal lens
+Up to 30 m IR distance for bright night imaging
+Up to 20 m white light distance for bright night imaging
+One port for four switchable signals (TVI/AHD/CVI/CVBS）
+Water and dust resistant (IP67)
+High quality audio with audio over coaxial cable, built-in mic
+Smart-Hybrid light, optimize your security with flexible lighting options",125000,250000,MGA,images/analog_r24_c1_11.png,à vérifier les données et l'image
+surveillance-analog-26,Hikvision Price 2026 Q4.xlsx,Analog,26,Caméras analogiques,DS-2CE10DF0T-LPFS 3.6MM),DS-2CE10DF0T-LPFS 3.6MM),"2M CMOS Sensor, Outdoor Bullet,0.001Lux/F1.0,0 Lux with white Light,20m,3D DNR,12 VDC,OSD Menu(Up the Coax),  IP67, 2.8/3.6/6mm Lens,24H  Color，Support TVI/AHD/CVI/CVBS video signal output.",130000,260000,MGA,images/analog_r26_c1_5.jpg,à vérifier les données et l'image
+surveillance-analog-27,Hikvision Price 2026 Q4.xlsx,Analog,27,Caméras analogiques,DS-2CE70DF0T-LPFS 2.8MM,DS-2CE70DF0T-LPFS 2.8MM,"2M CMOS Sensor, Indoor Turret,0.001Lux/F1.0,0 Lux with white Light,20m,3D DNR,12 VDC,OSD Menu(Up the Coax),  2.8/3.6/6mm Lens,24H  Color，Support TVI/AHD/CVI/CVBS video signal output.",130000,260000,MGA,images/analog_r27_c1_6.jpg,à vérifier les données et l'image
+surveillance-analog-28,Hikvision Price 2026 Q4.xlsx,Analog,28,Caméras analogiques,DS-2CE10KF0T-PFS,DS-2CE10KF0T-PFS,"5M BSI CMOS Sensor,5MP@20fps, 4MP@25fps(P)/30fps(N)(Default),Outdoor Bullet,0.0005Lux/F1.0, 0 Lux with Friendly Lighting,20m,3D DNR,12 VDC,OSD Menu(Up the Coax), 130dB True WDR, IP67, 3.6/6mm Lens,24H Color，Support TVI/AHD/CVI/CVBS video signal output",200000,400000,MGA,images/analog_r28_c1_7.jpg,à vérifier les données et l'image
+surveillance-analog-29,Hikvision Price 2026 Q4.xlsx,Analog,29,Caméras analogiques,DS-2CE70KF0T-PFS,DS-2CE70KF0T-PFS,"5M BSI CMOS Sensor,5MP@20fps, 4MP@25fps(P)/30fps(N)(Default),Outdoor Turret,0.0005Lux/F1.0, 0 Lux with Friendly Lighting,20m,3D DNR,12 VDC,OSD Menu(Up the Coax), 130dB True WDR, IP67, 3.6/6mm Lens,24H Color ，Support TVI/AHD/CVI/CVBS video signal output",200000,400000,MGA,images/analog_r29_c1_8.jpg,à vérifier les données et l'image
+surveillance-dvr-3,Hikvision Price 2026 Q4.xlsx,DVR,3,Enregistreurs vidéo,DS-7204HGHI-M1/T,DS-7204HGHI-M1/T,"Support HDTVI Two-way Audio technology, full-channel motion detection 2.0 ,4 Turbo HD/AHD/Analog interface input, 4-ch HDTVI coaxial video&audio input, 1-ch RCA audio input, 1-ch IP video input (up to 5-ch), 1 SATA interface, Live view: 1080P Lite: 25(P)/30(N) fps/ch, Up to 1080p Lite@15fps/ch encoding capability, 260 1U case",250000,500000,MGA,images/dvr_r3_c1_11.jpg,à vérifier les données et l'image
+surveillance-dvr-4,Hikvision Price 2026 Q4.xlsx,DVR,4,Enregistreurs vidéo,DS-7208HGHI-M1/T,DS-7208HGHI-M1/T,"Support HDTVI Two-way Audio technology,full-channel motion detection 2.0 ,8 Turbo HD/AHD/Analog interface input,8-ch HDTVI coaxial video&audio input, 1-ch RCA audio input, 2-ch IP video input (up to 10-ch), HDMI & VGA Output, 1 SATA interface, Live view: 1080P Lite: 25(P)/30(N) fps/ch, Up to 1080p Lite@15fps/ch encoding capability, 260 1U case",315000,630000,MGA,images/dvr_r4_c1_12.jpg,à vérifier les données et l'image
+surveillance-dvr-5,Hikvision Price 2026 Q4.xlsx,DVR,5,Enregistreurs vidéo,DS-7216HGHI-M1/T,DS-7216HGHI-M1/T,"Support HDTVI Two-way Audio technology,full-channel motion detection 2.0 ,16Turbo HD/AHD/Analog interface input,16-ch HDTVI coaxial video&audio input, 1-ch RCA audio input, 2-ch IP video input (up to 18-ch), HDMI & VGA Output, 1 SATA interface, Live view: 1080P Lite: 25(P)/30(N) fps/ch, Up to 1080p Lite@15fps/ch encoding capability, 260 1U case",540000,1080000,MGA,images/dvr_r5_c1_13.jpg,à vérifier les données et l'image
+surveillance-dvr-6,Hikvision Price 2026 Q4.xlsx,DVR,6,Enregistreurs vidéo,DS-7232HGHI-M2,DS-7232HGHI-M2,"32 Turbo HD/AHD/Analog interface input, 32-ch video&1-ch audio input, 2-ch IP video input, HDMI & VGA Output, 2 SATA interface, HD1080P Lite: 15fps/ch, 380 1U case",1350000,2700000,MGA,images/dvr_r6_c1_7.jpg,à vérifier les données et l'image
+surveillance-dvr-7,Hikvision Price 2026 Q4.xlsx,DVR,7,Enregistreurs vidéo,iDS-7204HQHI-M1/S(STD)(C),iDS-7204HQHI-M1/S(STD)(C),"1-ch face detection or 2-ch false alarm filter, 4 Turbo HD/CVI / AHD / CVBS self-adaptive interfaces input, 4-ch video&1-ch audio input, H.265/H.265+ compression, 1 SATA interface,CH01: 3MP @ 15fps, CH01-04:1920×1080P @15 fps, 4MP Lite@15fps/ch, support CVBS output, standalone 1U case",355000,710000,MGA,images/dvr_r7_c1_5.jpg,à vérifier les données et l'image
+surveillance-dvr-8,Hikvision Price 2026 Q4.xlsx,DVR,8,Enregistreurs vidéo,iDS-7208HQHI-M1/S(STD)(C),iDS-7208HQHI-M1/S(STD)(C),"1-ch face detection or 4-ch false alarm filter,  8 Turbo HD/CVI / AHD / CVBS self-adaptive interfaces input, 8-ch video&1-ch audio input, H.265/H.265+ compression, 1 SATA interface,CH01 & 02: 3MP @ 15fps, CH01-08:1920×1080P @15 fps, 4MP Lite@15fps/ch, support CVBS output, standalone 1U case",485000,970000,MGA,images/dvr_r8_c1_6.jpg,à vérifier les données et l'image
+surveillance-dvr-9,Hikvision Price 2026 Q4.xlsx,DVR,9,Enregistreurs vidéo,iDS-7216HQHI-M1/XT,iDS-7216HQHI-M1/XT,"16 channels and 1 HDD 1U AcuSense DVR
+Support 4-ch Facial Recognition or 8-ch advanced model Perimeter Protection based on Deep Learning algorithm
+Support 16-ch AcuSearch Technology
+Efficient H.265 pro+ compression technology
+Encoding ability up to 3K/5MP Lite@12fps
+Up to 24-ch IP camera inputs, each channel up to 6MP
+Up to 24*1080P@30fps decoding ability
+5 signals input adaptively (HDTVI/AHD/CVI/CVBS/IP)
+Support All channels Motion Detection Technology
+Support All channels HDTVI Two-Way Audio Technology",930000,1860000,MGA,images/dvr_r9_c1_8.jpg,à vérifier les données et l'image
+surveillance-dvr-10,Hikvision Price 2026 Q4.xlsx,DVR,10,Enregistreurs vidéo,IDS-7232HQHI-M2/S,IDS-7232HQHI-M2/S,"32 Turbo HD/CVI / AHD / CVBS interface input, 32-ch video&4-ch audio input, 16-ch IP video input(up to 48-ch IP), H.265 Pro+/H.265 Pro/H.265 video compression, 4 SATA interface,CH01-04: 3MP @ 15fps, CH01-32:1920×1080P @15 fps,4MP Lite @ 15fps/ch,Extended transmission distance over coax cable,  4K UHD output, 1.5U 19"" case",1800000,3600000,MGA,images/dvr_r10_c1_1.png,à vérifier les données et l'image
+surveillance-dvr-11,Hikvision Price 2026 Q4.xlsx,DVR,11,Enregistreurs vidéo,IDS-7204HUHI-M1/XT,IDS-7204HUHI-M1/XT,"4-ch Motion Detection 2.0 or  4-ch false alarm filter,  4 Turbo HD/CVI / AHD / CVBS self-adaptive interfaces input, 4-ch video&1-ch audio input, 1 SATA interface,  H.265/H.265+ compression, 5MP: 12fps, 4MP: 15fps, 3MP: 18fps, 1920×1080P: 25(P)/30(N) fps/ch, support CVBS output, standalone 1U case",750000,1500000,MGA,images/dvr_r11_c1_4.png,à vérifier les données et l'image
+surveillance-dvr-12,Hikvision Price 2026 Q4.xlsx,DVR,12,Enregistreurs vidéo,IDS-7208HUHI-M1/XT,IDS-7208HUHI-M1/XT,"8 Turbo HD/CVI / AHD / CVBS self-adaptive interfaces input, 8-ch HDTVI  coaxial video&audio input, 8-ch IP video input(up to 16-ch IP), 1 SATA interface, H.265/H.265 Pro/H.265 Pro+ compression, 8MP: 8fps, 5MP: 12fps, 4MP: 15fps, 3MP: 18fps, 1920×1080P: 25(P)/30(N) fps/ch, 4K UHD output, alarm I/O: 8/4, support CVBS output,  315 1U case",1350000,2700000,MGA,images/dvr_r12_c1_2.png,à vérifier les données et l'image
+surveillance-dvr-13,Hikvision Price 2026 Q4.xlsx,DVR,13,Enregistreurs vidéo,IDS-7216HUHI-M2/XT,IDS-7216HUHI-M2/XT,"16 Turbo HD/CVI / AHD / CVBS self-adaptive interfaces input, 16-ch HDTVI  coaxial video&audio input, 16-ch IP video input(up to 32-ch IP), 2 SATA interfaces, H.265/H.265 Pro/H.265 Pro+ compression, 8MP: 8fps, 5MP: 12fps, 4MP: 15fps, 3MP: 18fps, 1920×1080P: 25(P)/30(N) fps/ch, 4K UHD output, alarm I/O: 16/4, support CVBS output,  380 1U case",2680000,5360000,MGA,images/dvr_r13_c1_3.png,à vérifier les données et l'image
+surveillance-dvr-14,Hikvision Price 2026 Q4.xlsx,DVR,14,Enregistreurs vidéo,IDS-7332HUHI-M4/S,IDS-7332HUHI-M4/S,"32Turbo HD/CVI / AHD / CVBS self-adaptive interfaces input, 32-ch video&4-ch audio input,32-ch IP video input(up to 64-ch IP),H.264/H.264+/H.265+/H.265 video compression,4 SATA interfaces, 8MP: 8fps/ch,  5MP: 12 fps/ch, 4MP: 15 fps/ch,Extended transmission distance over coax cable, 4K UHD output,alarm I/O: 16/4, 1.5U 19"" case",5350000,10700000,MGA,images/dvr_r14_c1_10.jpg,à vérifier les données et l'image
+surveillance-dvr-16,Hikvision Price 2026 Q4.xlsx,DVR,16,Enregistreurs vidéo,DS-E04HGHI-B,DS-E04HGHI-B,"full-channel motion detection 2.0 ,4 Turbo HD/AHD/Analog interface input, 4-ch HDTVI  coaxial video&audio input,1-ch IP video input,Build-in eSSD 330GB, (300 GB available), HD1080P Lite: 25(P)/30(N) fps/ch, metal mini case",350000,700000,MGA,images/dvr_r16_c1_9.jpg,à vérifier les données et l'image
+surveillance-dvr-17,Hikvision Price 2026 Q4.xlsx,DVR,17,Enregistreurs vidéo,DS-E08HGHI-B,DS-E08HGHI-B,"full-channel motion detection 2.0 ,8 Turbo HD/AHD/Analog interface input,8-ch HDTVI  coaxial video&audio input,2-ch IP video input,Build-in eSSD 512GB, (480 GB available), HD1080P Lite: 15 fps/ch, metal mini case",415000,830000,MGA,,à vérifier
+surveillance-hikvision-kit-3,Hikvision Price 2026 Q4.xlsx,Hikvision KIT,3,Kits vidéosurveillance,DS-J142I/7204HGHI-M1+2+2CAM/HYBRID,DS-J142I/7204HGHI-M1+2+2CAM/HYBRID,"1 * DS-7204HGHI-B (DVR)
+2 * DS-2CE16DF0T-LPFS(3.6mm) + 2 * DS-2CE76DF0T-LPFS(2.8mm)
+Power:1pcs Power cable/1pcs Power adaptor/1pcs Power transfer cable
+Cable: 4 * 18.3m(60ft) Video and power cable",700000,1400000,MGA,images/hikvision-kit_r3_c1_1.jpg,à vérifier les données et l'image
+surveillance-hikvision-kit-4,Hikvision Price 2026 Q4.xlsx,Hikvision KIT,4,Kits vidéosurveillance,DS-J142I/7208HGHI-M1+4+4CAM/HYBRID,DS-J142I/7208HGHI-M1+4+4CAM/HYBRID,"1 * DS-7208HGHI-B (DVR)
+4 * DS-2CE16DF0T-LPFS(3.6mm) + 4 * DS-2CE76DF0T-LPFS(2.8mm)
+Power:1pcs Power cable/1pcs Power adaptor/1pcs Power transfer cable
+Cable: 4 * 18.3m(60ft) Video and power cable",1200000,2400000,MGA,,à vérifier
+surveillance-hikvision-kit-6,Hikvision Price 2026 Q4.xlsx,Hikvision KIT,6,Kits vidéosurveillance,DS-J142I(STD)/NKS422W02H,DS-J142I(STD)/NKS422W02H,"● Easy and quick wireless installation
+● All cameras can be linked with NVS at one time
+● Secure and integrated video storage, all videos are stored in NVS
+● Up to 512 GB Micro SD card storage capacity
+● Remote mobile phone management, all functions can be performed through Hik-Connect, such as camera adding, two-way audio, live view, playback, etc.
+● Accurate motion detection function
+● Smart IR and white light
+● Built-in mic and speaker for two-way audio
+● 1 fixed PT turret camera and 1 fixed bullet camera, both with 2 MP resolution and 2.8 mm focal length",415000,830000,MGA,images/hikvision-kit_r6_c1_2.png,à vérifier les données et l'image
+surveillance-ip-2-0-2,Hikvision Price 2026 Q4.xlsx,IP 2.0,2,Caméras IP,DS-2CD2043G2-I(4mm)(O-STD),DS-2CD2043G2-I(4mm)(O-STD),"1/3"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG;
+Color: 0.005 Lux @ (F1.6, AGC ON), 0 lux with IR; 25fps/30fps(2688×1520, 1920×1080); VCA functions; 3 streams; 3D DNR; BLC/HLC; ICR; EXIR, up to 40m; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service
+* -U:Built-in Microphone",495000,990000,MGA,images/ip-2-0_r2_c1_5.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-3,Hikvision Price 2026 Q4.xlsx,IP 2.0,3,Caméras IP,DS-2CD2143G2-I 2.8mm,DS-2CD2143G2-I 2.8mm,"1/3"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG;
+Color: 0.005 Lux @ (F1.6, AGC ON), 0 lux with IR; 25fps/30fps(2688×1520, 1920×1080); VCA functions; 3 streams; 3D DNR; BLC/HLC; ICR; EXIR, up to 30m; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service
+*-S model: Audio/Alarm IO",495000,990000,MGA,images/ip-2-0_r3_c1_6.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-4,Hikvision Price 2026 Q4.xlsx,IP 2.0,4,Caméras IP,DS-2CD2T43G2-2I 4mm,DS-2CD2T43G2-2I 4mm,"1/3"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG;
+Color: 0.005 Lux @ (F1.6, AGC ON), 0 lux with IR; 25fps/30fps(2688×1520, 1920×1080); VCA functions; 3 streams; 3D DNR; BLC/HLC; ICR; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service
+*-2I/4I model: up to 60m/80m IR distance",575000,1150000,MGA,images/ip-2-0_r4_c1_2.png,à vérifier les données et l'image
+surveillance-ip-2-0-5,Hikvision Price 2026 Q4.xlsx,IP 2.0,5,Caméras IP,DS-2CD2083G2-I(4mm)(O-STD),DS-2CD2083G2-I(4mm)(O-STD),"1/2.8"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+ Color: 0.005 lux@(F1.6, AGC ON), 0 lux with IR; 
+20fps(3840×2160), 25fps/30fps (3200x1800, 2688×1520, 1920×1080); VCA functions; 3 streams; 3D DNR; BLC/HLC; ICR; EXIR, up to 40m; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service;
+*-U: built-in microphone",670000,1340000,MGA,images/ip-2-0_r5_c1_8.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-6,Hikvision Price 2026 Q4.xlsx,IP 2.0,6,Caméras IP,DS-2CD2183G2-I(2.8mm)(O-STD),DS-2CD2183G2-I(2.8mm)(O-STD),"1/2.8"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+ Color: 0.005 lux@(F1.6, AGC ON), 0 lux with IR; 
+20fps(3840×2160), 25fps/30fps (3200x1800, 2688×1520, 1920×1080); VCA functions; 3 streams; 3D DNR; BLC/HLC; ICR; EXIR, up to 30m; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service;
+*-S model: Audio/Alarm IO",670000,1340000,MGA,images/ip-2-0_r6_c1_7.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-8,Hikvision Price 2026 Q4.xlsx,IP 2.0,8,Caméras IP,DS-2TD1217-3/QA(O-STD),DS-2TD1217-3/QA(O-STD),"160 × 120 resolution, 17 μm, VOx UFPA, NETD < 40 mK (25 °C, F# = 1.1)
+High accuracy temperature exception alarm, -20 °C to 150 °C (-4 °F to 302 °F) ± 8 °C (±14.4 °F)
+Image processing technology: linear, histogram, self-adaptive thermal AGC mode, DDE, 3D DNR",1650000,3300000,MGA,images/ip-2-0_r8_c1_9.png,à vérifier les données et l'image
+surveillance-ip-2-0-9,Hikvision Price 2026 Q4.xlsx,IP 2.0,9,Caméras IP,DS-2TD2617-3/QA(O-STD),DS-2TD2617-3/QA(O-STD),"160 × 120 resolution, 17 μm, VOx UFPA, NETD < 40 mK (25 °C, F# = 1.1)
+High accuracy temperature exception alarm, -20 °C to 150 °C (-4 °F to 302 °F), ± 8 °C (±14.4 °F)
+Image processing technology: linear, histogram, self-adaptive thermal AGC mode, DDE, 3D DNR",1650000,3300000,MGA,images/ip-2-0_r9_c1_10.png,à vérifier les données et l'image
+surveillance-ip-2-0-11,Hikvision Price 2026 Q4.xlsx,IP 2.0,11,Caméras IP,DS-2CD2935FWD-IS(1.16mm)(O-STD),DS-2CD2935FWD-IS(1.16mm)(O-STD),"1/2.8"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+Color: 0.016 lux @(F2.2, AGC ON), 0 lux with IR; 
+25fps/30fps(2048×1536, 1920×1080); F2.2, field of view: 180°(H)x180°(V); 120dB WDR; 2 streams; 3D DNR; BLC; ICR; up to 10m IR(optional); DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service
+*-I model: support IR, up to 20m
+*-S model: Audio/Alarm I/O",695000,1390000,MGA,images/ip-2-0_r11_c1_4.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-12,Hikvision Price 2026 Q4.xlsx,IP 2.0,12,Caméras IP,DS-2CD2955G0-ISU 1.05MM,DS-2CD2955G0-ISU 1.05MM,"1/2.9"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+Color: 0.016 lux@(F2.2, AGC ON), 0 lux with IR; 
+20fps(2944×1656), 25fps/30fps(2560×1440, 2048×1536, 1920×1080); F2.2, field of view: 180°(H)x180°(V); 120dB WDR; 2 streams; 3D DNR; BLC; ICR; EXIR, up to 10m(optional); DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service
+*-I model: support IR, up to 8m
+*-S model: Audio/Alarm I/O",775000,1550000,MGA,,à vérifier
+surveillance-ip-2-0-14,Hikvision Price 2026 Q4.xlsx,IP 2.0,14,Caméras IP,DS-2CD2523G2-I 2.8MM D,DS-2CD2523G2-I 2.8MM D,"1/2.8"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG;
+Color: 0.005 Lux @ (F1.6, AGC ON), 0 lux with IR; 25fps/30fps(1920×1080); VCA functions; 3 streams; 3D DNR; BLC/HLC; ICR; EXIR, up to 30m; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service;Built-in microphone
+*-S model: Audio/Alarm IO",590000,1180000,MGA,images/ip-2-0_r14_c1_11.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-15,Hikvision Price 2026 Q4.xlsx,IP 2.0,15,Caméras IP,DS-3WF0AC-2NT,DS-3WF0AC-2NT,"Elevator 2.4GHz wireless bridge, Max.distance 100m,  2×2 MIMO antenna with 300Mbps thoughput, 8dBi gain, output power 20dBm, IEEE802.11 b/g/n, Angle H: 65° V: 30°,1 10/100M RJ45 with 12v/1A passive PoE input",290000,580000,MGA,images/ip-2-0_r15_c1_12.jpg,à vérifier les données et l'image
+surveillance-ip-2-0-17,Hikvision Price 2026 Q4.xlsx,IP 2.0,17,Caméras IP,DS-2CD2027G1-L,DS-2CD2027G1-L,"1/2.8"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+Color: 0.0035 lux @(F1.0, AGC ON), 0 lux with LED on; 
+25fps/30fps(1920×1080); VCA functions; 3 streams; 3D DNR; BLC; ICR; 3000K Warm LED; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service;",495000,990000,MGA,images/ip-2-0_r17_c1_3.png,à vérifier les données et l'image
+surveillance-ip-2-0-18,Hikvision Price 2026 Q4.xlsx,IP 2.0,18,Caméras IP,DS-2CD2327G3E-L,DS-2CD2327G3E-L,"1/2.8"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+Color: 0.0035 lux @(F1.0, AGC ON), 0 lux with LED on; 25fps/30fps(1920×1080); VCA functions; 3 streams; 3D DNR; BLC; ICR; 3000K Warm LED; DC12V&PoE; Built-in micro SD/SDHC/SDXC slot; HIK-Connect cloud service",495000,990000,MGA,images/ip-2-0_r18_c1_1.png,à vérifier les données et l'image
+surveillance-ip-1-0-3,Hikvision Price 2026 Q4.xlsx,IP 1.0,3,Caméras IP,DS-2CD1021G0-I 4MM T,DS-2CD1021G0-I 4MM T,"2 MP Fixed Bullet Network Camera
+High quality imaging with 2 MP resolution
+Water and dust resistant (IP67)
+Easy installation with Power over Ethernet (PoE) technology",150000,300000,MGA,images/ip-1-0_r3_c1_32.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-4,Hikvision Price 2026 Q4.xlsx,IP 1.0,4,Caméras IP,DS-2CD1321G0-I 2.8MM T,DS-2CD1321G0-I 2.8MM T,"2 MP Fixed Turret Network Camera
+High quality imaging with 2 MP resolution
+Water and dust resistant (IP67)
+Easy installation with Power over Ethernet (PoE) technology",160000,320000,MGA,images/ip-1-0_r4_c1_33.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-6,Hikvision Price 2026 Q4.xlsx,IP 1.0,6,Caméras IP,DS-2CD1023G2-LIU 4MM （new),DS-2CD1023G2-LIU 4MM （new),"1/3"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect;
+*Build-in microphone
+*power supply is not included",215000,430000,MGA,images/ip-1-0_r6_c1_14.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-7,Hikvision Price 2026 Q4.xlsx,IP 1.0,7,Caméras IP,DS-2CD1123G2-LIU 2.8MM （new),DS-2CD1123G2-LIU 2.8MM （new),"1/3"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect;
+*Build-in microphone
+*power supply is not included",235000,470000,MGA,images/ip-1-0_r7_c1_16.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-8,Hikvision Price 2026 Q4.xlsx,IP 1.0,8,Caméras IP,DS-2CD1043G2-LIU 4MM （new),DS-2CD1043G2-LIU 4MM （new),"1/3"" Progressive CMOS, ICR,2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect;
+*Build-in microphone
+*power supply is not included",325000,650000,MGA,images/ip-1-0_r8_c1_15.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-9,Hikvision Price 2026 Q4.xlsx,IP 1.0,9,Caméras IP,DS-2CD1143G2-LIU 2.8MM （new),DS-2CD1143G2-LIU 2.8MM （new),"1/3"" Progressive CMOS, ICR,2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect;
+*Build-in microphone
+*power supply is not included",345000,690000,MGA,images/ip-1-0_r9_c1_17.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-11,Hikvision Price 2026 Q4.xlsx,IP 1.0,11,Caméras IP,DS-2CD1027G2H-LIUF/SL(4mm),DS-2CD1027G2H-LIUF/SL(4mm),"1/3"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in SD card slot (up to 512GB), Built-in microphone & speaker, audio & strobe light alarm, DC12V & PoE, Support mobile monitoring via Hik-Connect;
+*(R&B): Red and blue strobe light.
+*power supply is not included",325000,650000,MGA,images/ip-1-0_r11_c1_27.png;images/ip-1-0_r11_c1_28.png,à vérifier les données et l'image
+surveillance-ip-1-0-12,Hikvision Price 2026 Q4.xlsx,IP 1.0,12,Caméras IP,DS-2CD1327G2H-LIUF/SL(2.8mm),DS-2CD1327G2H-LIUF/SL(2.8mm),"1/3"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in SD card slot (up to 512GB), Built-in microphone & speaker, audio & strobe light alarm, DC12V & PoE, Support mobile monitoring via Hik-Connect;
+*(R&B): Red and blue strobe light.
+*power supply is not included",325000,650000,MGA,,à vérifier
+surveillance-ip-1-0-13,Hikvision Price 2026 Q4.xlsx,IP 1.0,13,Caméras IP,DS-2CD1B27G2H-LIUF/SL(4mm),DS-2CD1B27G2H-LIUF/SL(4mm),"1/3"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 50m, Built-in SD card slot (up to 512GB), Built-in microphone & speaker, audio & strobe light alarm, DC12V & PoE, Support mobile monitoring via Hik-Connect;",380000,760000,MGA,images/ip-1-0_r13_c1_29.png,à vérifier les données et l'image
+surveillance-ip-1-0-14,Hikvision Price 2026 Q4.xlsx,IP 1.0,14,Caméras IP,DS-2CD1047G2H-LIUF/SL(4mm)(O-STD),DS-2CD1047G2H-LIUF/SL(4mm)(O-STD),"1/3"" Progressive CMOS, ICR, 2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+/H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in SD card slot, Built-in microphone & speaker, audio & strobe light alarm, DC12V & PoE, Support mobile monitoring via Hik-Connect *power supply is not included",475000,950000,MGA,images/ip-1-0_r14_c1_30.png,à vérifier les données et l'image
+surveillance-ip-1-0-15,Hikvision Price 2026 Q4.xlsx,IP 1.0,15,Caméras IP,DS-2CD1347G2H-LIUF/SL(2.8mm),DS-2CD1347G2H-LIUF/SL(2.8mm),"1/3"" Progressive CMOS, ICR, 2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+/H.264, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in SD card slot, Built-in microphone & speaker, audio & strobe light alarm, DC12V & PoE, Support mobile monitoring via Hik-Connect *power supply is not included",475000,950000,MGA,images/ip-1-0_r15_c1_31.png,à vérifier les données et l'image
+surveillance-ip-1-0-17,Hikvision Price 2026 Q4.xlsx,IP 1.0,17,Caméras IP,DS-2CD1T47G3-LIU/LSRB 4MM,DS-2CD1T47G3-LIU/LSRB 4MM,"SoundMax produces a louder alarm sound to deter trespassers
+HikAI-ISP for excellent noise reduction effect
+Super clear 24/7 colorful imaging with ColorVu 3.0 technology
+Motion Detection 3.0, more accurate on person and vehicle detection
+-LSL/-LSRB: Strobe Light & Audio Alarm to deter intruders
+-LSL/-LSRB: Two-Way Audio via camera and Hik-Connect
+Smart Hybrid Light: integrates IR and white lights, 3 supplemental lighting modes
+-F: On-board storage with SD card up to 512 GB (Optional)
+Water and dust resistant (IP67)",825000,1650000,MGA,images/ip-1-0_r17_c1_34.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-18,Hikvision Price 2026 Q4.xlsx,IP 1.0,18,Caméras IP,DS-2CD1T27G3-LIU/LSRB 4MM,DS-2CD1T27G3-LIU/LSRB 4MM,"SoundMax produces a louder alarm sound to deter trespassers
+HikAI-ISP for excellent noise reduction effect
+Super clear 24/7 colorful imaging with ColorVu 3.0 technology
+Motion Detection 3.0, more accurate on person and vehicle detection
+-LSL/-LSRB: Strobe Light & Audio Alarm to deter intruders
+-LSL/-LSRB: Two-Way Audio via camera and Hik-Connect
+Smart Hybrid Light: integrates IR and white lights, 3 supplemental lighting modes
+-F: On-board storage with SD card up to 512 GB (Optional)
+Water and dust resistant (IP67)",615000,1230000,MGA,images/ip-1-0_r18_c1_35.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-20,Hikvision Price 2026 Q4.xlsx,IP 1.0,20,Caméras IP,DS-2CD1063G2-LIU(4mm)(O-STD),DS-2CD1063G2-LIU(4mm)(O-STD),"1/3"" Progressive CMOS, ICR,3200 × 1800: 20fps(P/N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",365000,730000,MGA,images/ip-1-0_r20_c1_21.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-21,Hikvision Price 2026 Q4.xlsx,IP 1.0,21,Caméras IP,DS-2CD1163G2-LIU(2.8mm)(O-STD),DS-2CD1163G2-LIU(2.8mm)(O-STD),"1/3"" Progressive CMOS, ICR,3200 × 1800: 20fps(P/N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",380000,760000,MGA,images/ip-1-0_r21_c1_23.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-22,Hikvision Price 2026 Q4.xlsx,IP 1.0,22,Caméras IP,DS-2CD1083G2-LIU(4mm)(O-STD),DS-2CD1083G2-LIU(4mm)(O-STD),"1/3"" Progressive CMOS, ICR, 3840 × 2160: 12.5fps(P)/15fps(N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",410000,820000,MGA,images/ip-1-0_r22_c1_22.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-23,Hikvision Price 2026 Q4.xlsx,IP 1.0,23,Caméras IP,DS-2CD1183G2-LIU(2.8mm)(O-STD),DS-2CD1183G2-LIU(2.8mm)(O-STD),"1/3"" Progressive CMOS, ICR, 3840 × 2160: 12.5fps(P)/15fps(N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",430000,860000,MGA,images/ip-1-0_r23_c1_24.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-24,Hikvision Price 2026 Q4.xlsx,IP 1.0,24,Caméras IP,DS-2CD1T43G0-I(4mm)(C)(O-STD),DS-2CD1T43G0-I(4mm)(C)(O-STD),"1/3"" Progressive CMOS, ICR, 2560x1440:20fps(N),
+H.265+/H.264+&H.264, WDR, 3D DNR, BLC, IR range: up to 50m, DC12V & PoE, Support mobile monitoring via Hik-Connect *power supply not included",320000,640000,MGA,images/ip-1-0_r24_c1_3.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-25,Hikvision Price 2026 Q4.xlsx,IP 1.0,25,Caméras IP,DS-2CD1643G0-IZ(2.8-12mm)(C)(O-STD),DS-2CD1643G0-IZ(2.8-12mm)(C)(O-STD),"1/3"" Progressive CMOS, ICR, 2560x1440:20fps(P)/(N), 2304x1296:25fps(P)/30fps(N),
+H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR range: up to 30m, DC12V & PoE, TF card slot, Support mobile monitoring via Hik-Connect *power supply no included
+-Z: motorized vari-focal lens",515000,1030000,MGA,images/ip-1-0_r25_c1_2.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-26,Hikvision Price 2026 Q4.xlsx,IP 1.0,26,Caméras IP,DS-2CD1743G0-IZ(2.8-12mm)(C)(O-STD),DS-2CD1743G0-IZ(2.8-12mm)(C)(O-STD),"1/3"" Progressive CMOS, ICR, 2560x1440:20fps(P)/(N), 2304x1296:25fps(P)/30fps(N),
+H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR range: up to 30m, DC12V & PoE, TF card slot, Support mobile monitoring via Hik-Connect *power supply no included
+-Z: motorized vari-focal lens",515000,1030000,MGA,images/ip-1-0_r26_c1_1.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-27,Hikvision Price 2026 Q4.xlsx,IP 1.0,27,Caméras IP,DS-2CD1153G0-I(2.8mm)(C)(O-STD),DS-2CD1153G0-I(2.8mm)(C)(O-STD),"1/2.7"" Progressive CMOS, ICR, 2560*1920:15fps(P)/(N), 2304x1296:25fps(P)/30fps(N),
+H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR range: up to 30m, DC12V & PoE,Support mobile monitoring via Hik-Connect *power supply no included",350000,700000,MGA,images/ip-1-0_r27_c1_10.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-29,Hikvision Price 2026 Q4.xlsx,IP 1.0,29,Caméras IP,DS-2CD1027G2H-LIU 4MM,DS-2CD1027G2H-LIU 4MM,"1/2.7"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",250000,500000,MGA,images/ip-1-0_r29_c1_4.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-30,Hikvision Price 2026 Q4.xlsx,IP 1.0,30,Caméras IP,DS-2CD1327G2H-LIU 2.8MM,DS-2CD1327G2H-LIU 2.8MM,"1/2.7"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",250000,500000,MGA,images/ip-1-0_r30_c1_6.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-32,Hikvision Price 2026 Q4.xlsx,IP 1.0,32,Caméras IP,DS-2CD1047G2H-LIU 4MM,DS-2CD1047G2H-LIU 4MM,"1/2.7"" Progressive CMOS, ICR,2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",385000,770000,MGA,images/ip-1-0_r32_c1_5.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-33,Hikvision Price 2026 Q4.xlsx,IP 1.0,33,Caméras IP,DS-2CD1347G2H-LIU 2.8MM,DS-2CD1347G2H-LIU 2.8MM,"1/2.7"" Progressive CMOS, ICR,2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",385000,770000,MGA,images/ip-1-0_r33_c1_7.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-35,Hikvision Price 2026 Q4.xlsx,IP 1.0,35,Caméras IP,DS-2CD1067G2H-LIU(4mm)(O-STD),DS-2CD1067G2H-LIU(4mm)(O-STD),"1/3"" Progressive CMOS, ICR,3200 × 1800: 20fps(P/N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",405000,810000,MGA,images/ip-1-0_r35_c1_26.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-36,Hikvision Price 2026 Q4.xlsx,IP 1.0,36,Caméras IP,DS-2CD1167G2H-LIU(2.8mm)(O-STD),DS-2CD1167G2H-LIU(2.8mm)(O-STD),"1/3"" Progressive CMOS, ICR,3200 × 1800: 20fps(P/N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone, DC12V & PoE, Support mobile monitoring via Hik-Connect
+*Build-in microphone
+*power supply is not included",405000,810000,MGA,images/ip-1-0_r36_c1_25.png,à vérifier les données et l'image
+surveillance-ip-1-0-38,Hikvision Price 2026 Q4.xlsx,IP 1.0,38,Caméras IP,DS-2CD1027G2-LUF(4mm)(O-STD)（new),DS-2CD1027G2-LUF(4mm)(O-STD)（new),"1/2.7"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*-UF: Build-in microphone & SD Card Slot (up to 256GB),
+*power supply is not included",285000,570000,MGA,images/ip-1-0_r38_c1_19.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-39,Hikvision Price 2026 Q4.xlsx,IP 1.0,39,Caméras IP,DS-2CD1327G2-LUF(2.8mm)(O-STD)（new),DS-2CD1327G2-LUF(2.8mm)(O-STD)（new),"1/2.7"" Progressive CMOS, ICR,1920 × 1080: 25fps(P)/30fps(N), H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*-UF: Build-in microphone & SD Card Slot (up to 256GB),
+*power supply is not included",285000,570000,MGA,images/ip-1-0_r39_c1_20.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-41,Hikvision Price 2026 Q4.xlsx,IP 1.0,41,Caméras IP,DS-2CD1047G2-LUF(4mm)(O-STD)（new),DS-2CD1047G2-LUF(4mm)(O-STD)（new),"1/2.7"" Progressive CMOS, ICR,2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*-UF: Build-in microphone & SD Card Slot (up to 256GB),
+*power supply is not included",405000,810000,MGA,images/ip-1-0_r41_c1_12.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-42,Hikvision Price 2026 Q4.xlsx,IP 1.0,42,Caméras IP,DS-2CD1347G2-LUF(2.8mm)(O-STD)（new),DS-2CD1347G2-LUF(2.8mm)(O-STD)（new),"1/2.7"" Progressive CMOS, ICR,2560 × 1440: 20fps(P)/(N), H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, Warm light range: up to 30m, DC12V & PoE,  Support mobile monitoring via Hik-Connect
+*-UF: Build-in microphone & SD Card Slot (up to 256GB),
+*power supply is not included",405000,810000,MGA,images/ip-1-0_r42_c1_13.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-43,Hikvision Price 2026 Q4.xlsx,IP 1.0,43,Caméras IP,DS-2CD1147G0(2.8mm)(C)(O-STD),DS-2CD1147G0(2.8mm)(C)(O-STD),"1/3"" Progressive CMOS, 2560x1440:20fps, H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, DC12V & PoE, Support mobile monitoring via Hik-Connect *NO supplement light *power supply not included",425000,850000,MGA,images/ip-1-0_r43_c1_11.png,à vérifier les données et l'image
+surveillance-ip-1-0-44,Hikvision Price 2026 Q4.xlsx,IP 1.0,44,Caméras IP,DS-2CD1T27G0-L(4mm)(C)(O-STD),DS-2CD1T27G0-L(4mm)(C)(O-STD),"1/2.8"" Progressive CMOS, 1920x1080:25fps(P)/30fps(N),
+H.265+/H.265/H.264+&H.264, DWDR, 3D DNR, BLC, up to 50m warm light, DC12V & PoE, Support mobile monitoring via Hik-Connect 
+*-UF: Built-in Microphone and MicroSD Card Slot (up to 256GB)
+*power supply not included",325000,650000,MGA,images/ip-1-0_r44_c1_8.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-45,Hikvision Price 2026 Q4.xlsx,IP 1.0,45,Caméras IP,DS-2CD1T47G0-L(4mm)(C)(O-STD),DS-2CD1T47G0-L(4mm)(C)(O-STD),"1/3"" Progressive CMOS, 2560x1440:20fps,
+H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, up to 50m warm light, DC12V & PoE, Support mobile monitoring via Hik-Connect 
+*-UF: Built-in Microphone and MicroSD Card Slot (up to 256GB)
+*power supply not included",455000,910000,MGA,images/ip-1-0_r45_c1_9.jpg,à vérifier les données et l'image
+surveillance-ip-1-0-46,Hikvision Price 2026 Q4.xlsx,IP 1.0,46,Caméras IP,DS-2CD1T47G2-LUF 4MM （new),DS-2CD1T47G2-LUF 4MM （new),"High quality imaging with 4 MP resolution
+24/7 colorful imaging
+Support Human and Vehicle Detection
+Water and dust resistant (IP67)
+Clear imaging even with strong back lighting due to 120 dB WDR
+Efficient H.265+ compression technology
+Support on-board storage up to 256GB (SD card slot)(Optional)
+Built-in microphone for real-time audio security(Optional)",495000,990000,MGA,images/ip-1-0_r46_c1_18.jpg,à vérifier les données et l'image
+surveillance-ptz-2,Hikvision Price 2026 Q4.xlsx,PTZ,2,Caméras PTZ,DS-2DE1C200IW-DE3(F1)(S7),DS-2DE1C200IW-DE3(F1)(S7),"· High quality imaging with 2 MP resolution
+· Digital WDR, HLC, BLC, 3D DNR
+· Hik-Connect cloud service and APP for remote management and views of devices
+· Good night-time performance with up to 15 m IR
+· Two-way audio with built-in microphone and speaker
+· Supports microSD/microSDHC/microSDXC card, up to 256 GB",425000,850000,MGA,images/ptz_r2_c1_3.jpg,à vérifier les données et l'image
+surveillance-ptz-3,Hikvision Price 2026 Q4.xlsx,PTZ,3,Caméras PTZ,DS-2DE7A432IW-AEB(O-STD)(T5),DS-2DE7A432IW-AEB(O-STD)(T5),"· 1/2.8"" progressive scan CMOS
+· High quality imaging with 2 MP resolution
+· Excellent low-light performance with powered-by-DarkFighter technology
+· Audio visual alarm: The white flashing light and audible warning can be triggered by certain events
+· 32× optical zoom and 16× digital zoom provide close up views over expansive areas
+· Expansive night view with up to 200 m IR distance
+· Focuses on human and vehicle targets classification based on deep learning
+· Face capture: Up to 5 faces captured at the same time",3450000,6900000,MGA,images/ptz_r3_c1_1.jpg,à vérifier les données et l'image
+surveillance-ptz-5,Hikvision Price 2026 Q4.xlsx,PTZ,5,Caméras PTZ,DS-2SE4C425MWG-E/26,DS-2SE4C425MWG-E/26,"Captures a large area and great details at the same time
+High quality panoramic imaging with 6 MP resolution and details imaging with 4 MP
+Excellent low-light performance with powered-by-DarkFighter technology and ColorVu technology
+Secures an expansive area with 25× optical zoom and 16× digital zoom
+Expansive night view with up to 100 m IR distance & 30 m white light
+Supports 12V DC & PoE+
+Focuses on human and vehicle targets classification based on deep learning",2950000,5900000,MGA,images/ptz_r5_c1_4.jpg,à vérifier les données et l'image
+surveillance-ptz-7,Hikvision Price 2026 Q4.xlsx,PTZ,7,Caméras PTZ,DS-2SE4C415MWG-E/14(F0),DS-2SE4C415MWG-E/14(F0),"Captures a large area and great details at the same time
+High quality imaging with 4 MP resolution
+Excellent low-light performance with powered-by-DarkFighter technology and ColorVu technology
+Secures an expansive area with 15× optical zoom and 16× digital zoom
+Supports WDR, HLC, BLC, 3D DNR, defog, regional exposure, regional focus
+Expansive night view with up to 100 m IR distance & 30 m white light
+Supports 12V DC & PoE+
+Focuses on human and vehicle targets classification based on deep learning",2600000,5200000,MGA,images/ptz_r7_c1_5.jpg,à vérifier les données et l'image
+surveillance-ptz-9,Hikvision Price 2026 Q4.xlsx,PTZ,9,Caméras PTZ,DS-1200KI,DS-1200KI,"Full-featured network keyboard
+Supports various cameras, NVRs, DVRs
+Flexible 4-axis joystick
+Buttons can be used to perform powerful functions
+128 x 64 screen displays all important information",1500000,3000000,MGA,images/ptz_r9_c1_2.png,à vérifier les données et l'image
+surveillance-solar-powered-security-camera-3,Hikvision Price 2026 Q4.xlsx,Solar-powered Security camera,3,Caméras solaires,DS-2XS2T41G0-ID(W)(/4G)/C04S05,,"High quality imaging with 4 MP resolution
+Standalone with solar panel and built-in battery
+Support human and vehicle detection
+Provide real-time security via built-in two-way audio
+Water and dust resistant (IP67)
+Support 4G (LTE-TDD/LTE-FDD/TD-SCDMA) communication",975000,1950000,MGA,images/solar-powered-security-camera_r3_c2_1.jpg,à vérifier
+surveillance-solar-powered-security-camera-4,Hikvision Price 2026 Q4.xlsx,Solar-powered Security camera,4,Caméras solaires,DS-2DE2C400IWG-K/4G/C09S20(2.8mm)(O-STD),,"1/3"" Progressive CMOS
+ Color: 0.007 lux @(F1.6, AGC ON), 0 lux with LED on
+ 2560x1440:15fps(P)/(N),
+H.265+/H.265/H.264+&H.264, WDR, 3D DNR, BLC, DC12V, Built-in Battery & Solar Panel, Build-in Micrphone & Speaker, Built-in 4GB eMMC, Support SD card slot (up to 256GB) ,Built-in 4G LTE module, Support mobile monitoring via Hik-Connect
+*0℃～+50℃ durable Battery",850000,1700000,MGA,images/solar-powered-security-camera_r4_c2_2.png;images/solar-powered-security-camera_r4_c8_3.png,à vérifier
+surveillance-solar-powered-security-camera-5,Hikvision Price 2026 Q4.xlsx,Solar-powered Security camera,5,Caméras solaires,DS-2CFSP4/4G(2.8mm)(O-STD)/EU,,"1/2.9"" Progressive Scan CMOS; H.265+/H.265/H.264+/H.264/MJPEG; 
+Color: 0.01 lux @(F1.6, AGC ON), 0 lux with LED on; 
+12.5fps/15fps(2560×1440, 1920×1080); 2 streams; 3D DNR; BLC; ICR;  EXIR LED; Solar panel & 5VDC;; Built-in memory card slot, support microSD/SDHC/SDXC card up to 256 GB; Build-in microphone and speaker; Support working between 0 °C to 45 °C (32 °F to 113 °F); Hik-Connect cloud service;",630000,1260000,MGA,images/solar-powered-security-camera_r5_c2_4.png,à vérifier
+surveillance-solar-powered-security-camera-6,Hikvision Price 2026 Q4.xlsx,Solar-powered Security camera,6,Caméras solaires,DS-2CFSP8-D/4G(2.8+4mm)(O-STD)/EU,,"1/3"" Progressive CMOS, ICR, Dual 2560 × 1440 : 15fps(P/N), H.265, DWDR, 3D DNR, BLC, IR or white light range: up to 30m, Built-in microphone & speaker, support two-way-talk, audio & strobe light alarm, Built-in 4G Cat 1 module, Support mobile monitoring via Hik-Connect",840000,1680000,MGA,images/solar-powered-security-camera_r6_c2_5.png;images/solar-powered-security-camera_r6_c8_6.png,à vérifier
+surveillance-monitor-3,Hikvision Price 2026 Q4.xlsx,MONITOR,3,Moniteurs,DS-D5043QE,DS-D5043QE,"LED backlit technology with full HD 1920 x 1080
+43"" LED backlight monitor
+16.7 million colors display images perfectly
+Multiple interfaces: HDMI, VGA, audio in
+Built-in speaker
+Wide viewing angle: Horizontal 178°, Vertical 178°
+24/7 operation
+LED backlit technology with full HD 1920×1080
+16.7 million color, display picture perfectly
+HDMI support up to 1080P
+Multiple inputs: HDMI, VGA
+Build-in speaker，Audio 5W*2
+Auto signal input Detection
+Smart engine for Phase/Image position/Color calibration
+Plastic casing",1550000,3100000,MGA,images/monitor_r3_c1_1.png,à vérifier les données et l'image
+surveillance-monitor-4,Hikvision Price 2026 Q4.xlsx,MONITOR,4,Moniteurs,DS-D5043U3-1V0S(EU),DS-D5043U3-1V0S(EU),"43"" 4K, HDMI input,USB multimedia play, with speaker, view angle:178°/178°, 300cd/㎡, ,VESA 200mm*200mm, base bracket included, 7*24h",1900000,3800000,MGA,images/monitor_r4_c1_15.png,à vérifier les données et l'image
+surveillance-monitor-5,Hikvision Price 2026 Q4.xlsx,MONITOR,5,Moniteurs,DS-D5032QE,DS-D5032QE,"31.5"" 1080P, HDMI/VGA input, view angle:178°/178°, 300cd/㎡, plastic casing, VESA, base bracket included, 7*24h",,,MGA,images/monitor_r5_c1_2.jpg,à vérifier
+surveillance-monitor-6,Hikvision Price 2026 Q4.xlsx,MONITOR,6,Moniteurs,DS-D5027FN01,DS-D5027FN01,"27"" 1080P, HDMI/VGA input,IPS technology, view angle:178°/178°, 5 ms Response Time, 75Hz refresh rate,",550000,1100000,MGA,images/monitor_r6_c1_10.jpg,à vérifier les données et l'image
+surveillance-monitor-7,Hikvision Price 2026 Q4.xlsx,MONITOR,7,Moniteurs,DS-D5024FN,DS-D5024FN,"23.8"" 1080P, HDMI/VGA input, view angle:178°/178°, plastic casing, VESA, base bracket included, 7*24h",465000,930000,MGA,images/monitor_r7_c1_3.jpg,à vérifier les données et l'image
+surveillance-monitor-8,Hikvision Price 2026 Q4.xlsx,MONITOR,8,Moniteurs,DS-D5022FN-C,DS-D5022FN-C,"21.5"" 1080P, HDMI/VGA input, view angle:178°/178°, plastic casing, VESA, base bracket included, 12V DC",395000,790000,MGA,images/monitor_r8_c1_4.jpg,à vérifier les données et l'image
+surveillance-monitor-10,Hikvision Price 2026 Q4.xlsx,MONITOR,10,Moniteurs,DS-D5B86RB/D (86-inch 4K Interactive Display),DS-D5B86RB/D (86-inch 4K Interactive Display),"UHD 4K display with resolution of 3840 × 2160.
+Anti-glare and anti-blocking design to ensure smooth interaction.
+Dual systems of Android and Windows（Optional with OPS） saving cost and easy to use, video conference software are recommonded to run under Windows system.
+Quick response, at most 50-points touch control and smooth writing experience.
+Built-in network switch chip saves a network switch.
+All-in-one design with tempered glass and intelligent temperature control, making it environmental-friendly and safety-guaranteed, support blue light protection.
+EDLA Certified",17650000,35300000,MGA,images/monitor_r10_c1_11.jpg,à vérifier les données et l'image
+surveillance-monitor-11,Hikvision Price 2026 Q4.xlsx,MONITOR,11,Moniteurs,DS-D5B65RB/FP (65-inch 4K Interactive Display),DS-D5B65RB/FP (65-inch 4K Interactive Display),"UHD 4K display with resolution of 3840 × 2160.
+Anti-glare and anti-blocking design to ensure smooth interaction.
+Dual systems of Android and Windows (optional with OPS) saving cost and easy to use, video conference software are recommonded to run under Windows system.
+Quick response, at most 50-point touch control and smooth writing experience.
+Built-in network switch chip saves a network switch.
+Multi-button design in front, convenient for classroom use.
+All-in-one design with tempered glass and intelligent temperature control, making it environmental-friendly and safety-guaranteed.
+Built-in Android 14 system, EDLA Certified",7600000,15200000,MGA,images/monitor_r11_c1_12.jpg,à vérifier les données et l'image
+surveillance-monitor-12,Hikvision Price 2026 Q4.xlsx,MONITOR,12,Moniteurs,DS-D5SC3B-B (Wireless Dongle),DS-D5SC3B-B (Wireless Dongle),"Support Windows/Mac OS.
+Type-C interface plug-and-play.
+Support Wi-Fi 2.4G/5G dual frequency.
+Support up to 4K resolution.
+Support reverse control by Windows/Mac.
+Add NFC module to support NFC screen mirroring with Android phones.
+Support indirectly charge for laptops.
+Support quick screen mirroring on Hikvision Interactive Flat Panel.",675000,1350000,MGA,images/monitor_r12_c1_13.jpg,à vérifier les données et l'image
+surveillance-monitor-13,Hikvision Price 2026 Q4.xlsx,MONITOR,13,Moniteurs,DS-D5SC3B-W (Wireless Dongle),DS-D5SC3B-W (Wireless Dongle),"Support Windows/Mac OS.
+Type-C interface plug-and-play.
+Support Wi-Fi 2.4G/5G dual frequency.
+Support up to 4K resolution.
+Support reverse control by Windows/Mac.
+Add NFC module to support NFC screen mirroring with Android phones.
+Support indirectly charge for laptops.
+Support quick screen mirroring on Hikvision Interactive Flat Panel.",675000,1350000,MGA,images/monitor_r13_c1_14.jpg,à vérifier les données et l'image
+surveillance-monitor-14,Hikvision Price 2026 Q4.xlsx,MONITOR,14,Moniteurs,DS-D5AC11T5-8S2,DS-D5AC11T5-8S2,,5100000,10200000,MGA,images/monitor_r14_c1_5.jpg,à vérifier les données et l'image
+surveillance-monitor-15,Hikvision Price 2026 Q4.xlsx,MONITOR,15,Moniteurs,DS-D5ABKY2-S,DS-D5ABKY2-S,,815000,1630000,MGA,images/monitor_r15_c1_9.jpg,à vérifier les données et l'image
+surveillance-monitor-16,Hikvision Price 2026 Q4.xlsx,MONITOR,16,Moniteurs,DS-D5ABKY2-M,DS-D5ABKY2-M,,1145000,2290000,MGA,images/monitor_r16_c1_6.jpg,à vérifier les données et l'image
+surveillance-monitor-18,Hikvision Price 2026 Q4.xlsx,MONITOR,18,Moniteurs,DS-D4430FO-CKI,DS-D4430FO-CKI,"Full color LED screen, Outdoor, Pixel pitch 3.076mm, 640 *960mm/cabinet,208 * 312 resolution/cabinet, IP65, ≥4500cd/m²",6500000,13000000,MGA,images/monitor_r18_c1_7.png,à vérifier les données et l'image
+surveillance-monitor-19,Hikvision Price 2026 Q4.xlsx,MONITOR,19,Moniteurs,DS-D42B04-N,DS-D42B04-N,"Full color LED controller with infomation release function, max. support 2.3MP with 4 RJ45 Ports",4250000,8500000,MGA,images/monitor_r19_c1_8.jpg,à vérifier les données et l'image
+surveillance-hdd-1,Hikvision Price 2026 Q4.xlsx,HDD,1,Disques durs,External Model,Series,,,,MGA,,à vérifier
+surveillance-hdd-2,Hikvision Price 2026 Q4.xlsx,HDD,2,Disques durs,ST1000VM002,HDD,,340000,680000,MGA,images/hdd_r2_c3_2.png,à vérifier les données et l'image
+surveillance-hdd-3,Hikvision Price 2026 Q4.xlsx,HDD,3,Disques durs,ST2000VX012,HDD,,550000,1100000,MGA,images/hdd_r3_c3_1.png,à vérifier les données et l'image
+surveillance-hdd-4,Hikvision Price 2026 Q4.xlsx,HDD,4,Disques durs,ST4000VX000,HDD,4000G/5900RPM/64M/ SATA 6Gb/s/RV Sensor,765000,1530000,MGA,images/hdd_r4_c3_5.png,à vérifier les données et l'image
+surveillance-hdd-5,Hikvision Price 2026 Q4.xlsx,HDD,5,Disques durs,ST6000VX001,HDD,6000G/5400RPM/256M/ SATA 6Gb/s/RV Sensor,895000,1790000,MGA,images/hdd_r5_c3_4.png,à vérifier les données et l'image
+surveillance-hdd-6,Hikvision Price 2026 Q4.xlsx,HDD,6,Disques durs,ST8000VX004,HDD,8TB/7200RPM/256M/SATA 6Gb/s/RV Sensor,1250000,2500000,MGA,images/hdd_r6_c3_3.png,à vérifier les données et l'image
+surveillance-hdd-7,Hikvision Price 2026 Q4.xlsx,HDD,7,Disques durs,ST10000VE000,HDD,,1850000,3700000,MGA,images/hdd_r7_c3_6.png,à vérifier les données et l'image
+surveillance-nvr-2,Hikvision Price 2026 Q4.xlsx,NVR,2,Enregistreurs vidéo,DS-7608NXI-K1(E),DS-7608NXI-K1(E),"80Mbps Bit Rate Input Max (up to 8-ch IP video), 2 SATA interfaces, 380 1U case, alarm I/O: 4/1",675000,1350000,MGA,images/nvr_r2_c1_1.png,à vérifier les données et l'image
+surveillance-nvr-3,Hikvision Price 2026 Q4.xlsx,NVR,3,Enregistreurs vidéo,DS-7616NXI-K2,DS-7616NXI-K2,"All-ch Motion Detection 2.0
+Up to 2-ch false alarm reduction through human and vehicle target classification based on deep learning
+Up to 1-ch video stream face recognition based on deep learning algorithm
+Up to 16 face databases with 20,000 face images in total
+Up to 2-ch @ 12MP or 3-ch @ 8MP or 6-ch @ 4MP or 12-ch @ 1080P decoding capacity",1050000,2100000,MGA,images/nvr_r3_c1_10.jpg,à vérifier les données et l'image
+surveillance-nvr-4,Hikvision Price 2026 Q4.xlsx,NVR,4,Enregistreurs vidéo,DS-7632NXI-K2,DS-7632NXI-K2,"All-ch Motion Detection 2.0
+Up to 2-ch false alarm reduction through human and vehicle target classification based on deep learning
+Up to 1-ch video stream face recognition based on deep learning algorithm
+Up to 16 face databases with 20,000 face images in total
+Up to 2-ch @ 12MP or 3-ch @ 8MP or 6-ch @ 4MP or 12-ch @ 1080P decoding capacity",1550000,3100000,MGA,images/nvr_r4_c1_9.jpg,à vérifier les données et l'image
+surveillance-nvr-5,Hikvision Price 2026 Q4.xlsx,NVR,5,Enregistreurs vidéo,DS-7732NXI-K4,DS-7732NXI-K4,"All-ch Motion Detection 2.0
+Up to 2-ch false alarm reduction through human and vehicle target classification based on deep learning
+Up to 1-ch video stream face recognition based on deep learning algorithm
+Up to 16 face databases with 20,000 face images in total
+Up to 2-ch @ 12MP or 3-ch @ 8MP or 6-ch @ 4MP or 12-ch @ 1080P decoding capacity",1850000,3700000,MGA,images/nvr_r5_c1_2.png,à vérifier les données et l'image
+surveillance-nvr-6,Hikvision Price 2026 Q4.xlsx,NVR,6,Enregistreurs vidéo,DS-7732NI-K4/16P,DS-7732NI-K4/16P,"256Mbps Bit Rate Input Max(up to 32-ch IP video), 4 SATA Interfaces, 16 independent PoE network interfaces, alarm I/O: 16/4, 1.5U case,19""",3150000,6300000,MGA,images/nvr_r6_c1_8.jpg,à vérifier les données et l'image
+surveillance-nvr-7,Hikvision Price 2026 Q4.xlsx,NVR,7,Enregistreurs vidéo,DS-7764NI-M4,DS-7764NI-M4,"64-ch 1.5U 8K NVR
+H.265+/H.265/H.264+/H.264 video formats
+Up to 64-ch IP camera inputs
+Up to 2-ch@32 MP/2-ch@24 MP/4-ch@12 MP/8-ch@8 MP/16-ch@4 MP/32-ch@1080p decoding capacity
+Up to 400 Mbps incoming bandwidth and 400 Mbps outgoing bandwidth
+2 HDMI and 1 VGA interfaces, 8K or dual 4K video outputs
+Up to 8-ch IP speakers can be connected",4850000,9700000,MGA,images/nvr_r7_c1_11.jpg,à vérifier les données et l'image
+surveillance-nvr-8,Hikvision Price 2026 Q4.xlsx,NVR,8,Enregistreurs vidéo,DS-7104NI-Q1/4P/M,DS-7104NI-Q1/4P/M,"40Mbps Bit Rate Input Max (up to 4-ch IP video) 1 SATA interface, 4 independent PoE network interfaces, mini 1U case(Metal)",465000,930000,MGA,images/nvr_r8_c1_7.jpg,à vérifier les données et l'image
+surveillance-nvr-9,Hikvision Price 2026 Q4.xlsx,NVR,9,Enregistreurs vidéo,DS-7108NI-Q1/M,DS-7108NI-Q1/M,"60Mbps Bit Rate Input Max (up to 8-ch IP video), 1 SATA interface, mini 1U case(Metal)",370000,740000,MGA,images/nvr_r9_c1_5.jpg,à vérifier les données et l'image
+surveillance-nvr-10,Hikvision Price 2026 Q4.xlsx,NVR,10,Enregistreurs vidéo,DS-7108NI-Q1/8P/M,DS-7108NI-Q1/8P/M,"60Mbps Bit Rate Input Max (up to 8-ch IP video) 1 SATA interface, 8 independent PoE network interfaces, mini 1U case(Metal)",645000,1290000,MGA,images/nvr_r10_c1_6.jpg,à vérifier les données et l'image
+surveillance-nvr-11,Hikvision Price 2026 Q4.xlsx,NVR,11,Enregistreurs vidéo,DS-7616NI-Q2,DS-7616NI-Q2,"160Mbps Bit Rate Input Max (up to 16-ch IP video), 2 SATA interfaces, 380 1U case",695000,1390000,MGA,images/nvr_r11_c1_3.jpg,à vérifier les données et l'image
+surveillance-nvr-12,Hikvision Price 2026 Q4.xlsx,NVR,12,Enregistreurs vidéo,DS-7616NI-Q2/16P,DS-7616NI-Q2/16P,"160Mbps Bit Rate Input Max (up to 16-ch IP video), 2 SATA interfaces, 16 independent PoE network interfaces,  380 1U case",1250000,2500000,MGA,images/nvr_r12_c1_4.jpg,à vérifier les données et l'image
+surveillance-transmission-4,Hikvision Price 2026 Q4.xlsx,Transmission,4,Accessoires et câblage,DS-1LN6U-W/CCA(O-STD),DS-1LN6U-W/CCA(O-STD),CCA（Copper content：27%）305 m cost-effective CAT6 CCA network cable Full diameter and full length                 Quality verified by Fluke test Guaranteed long PoE transmission distance,325000,650000,MGA,images/transmission_r4_c1_2.png,à vérifier les données et l'image
+surveillance-transmission-5,Hikvision Price 2026 Q4.xlsx,Transmission,5,Accessoires et câblage,DS-1LN6UZC0(O-STD) orange,DS-1LN6UZC0(O-STD) orange,"Stable electrical performance, compliant with ANSI/TIA-568.2-D, IEC61156, ISO/IEC11801.
+Sheath with strong mechanical properties, and high tensile and compressive strength, reducing damage during the project.
+Excellent performance in the Fluke 90-meter permanent link test while working continuously at 50°C high temperature.
+Excellent performance in the Fluke 100-meter channel test while being continuously loaded with 57 V/1 A DC power (PoE).
+Solid-Bare Copper conductor with less resistance, and better electrical properties and transmission performance.
+Compliant with RoHS 2.0.",575000,1150000,MGA,images/transmission_r5_c1_7.png,à vérifier les données et l'image
+surveillance-transmission-7,Hikvision Price 2026 Q4.xlsx,Transmission,7,Accessoires et câblage,DS-1M02,DS-1M02,"RJ45 Plug for Cat.6, gold plated, Polycarbonate, UL94V-2, 100 units/box",80000,160000,MGA,images/transmission_r7_c1_1.png,à vérifier les données et l'image
+surveillance-transmission-9,Hikvision Price 2026 Q4.xlsx,Transmission,9,Accessoires et câblage,DS-1H18S/E(C),DS-1H18S/E(C),"1 channel passive video UTP balun
+Pat press type terminal on top, clasp aside.
+Support device camera/DVR with POC
+Real-time transmit video signal, and high quality and stable video
+Compatible with HDCVI/TVI/AHD/CVBS
+Transmission distance: non-POC Camera Max. 250m；POC Camera Max. 150m.
+Superior anti-interference",15000,30000,MGA,images/transmission_r9_c1_6.jpg,à vérifier les données et l'image
+surveillance-transmission-12,Hikvision Price 2026 Q4.xlsx,Transmission,12,Accessoires et câblage,SAP code,model,,,,MGA,,à vérifier
+surveillance-transmission-13,Hikvision Price 2026 Q4.xlsx,Transmission,13,Accessoires et câblage,101700272,"DSA-12PFG-12 FEU 120100, DC12V/1A, Φ2.1, Europe standard plug","DSA-12PFG-12 FEU 120100, DC12V/1A, Φ2.1, Europe standard plug",101700272,203400544,MGA,,à vérifier
+surveillance-transmission-14,Hikvision Price 2026 Q4.xlsx,Transmission,14,Accessoires et câblage,101700275,"DSA-12PFG-12 FEU 120100, DC12V/1.5A, Φ2.1, Europe standard plug","DSA-12PFG-12 FEU 120100, DC12V/1.5A, Φ2.1, Europe standard plug",101700275,203400550,MGA,,à vérifier
+surveillance-transmission-16,Hikvision Price 2026 Q4.xlsx,Transmission,16,Accessoires et câblage,DS-2FA1225-D4(EUR),DS-2FA1225-D4(EUR),"12 VDC/1 A per channel
+Over current/short circuit/over voltage protection
+Complies with certification standards of information technology products; good EMC performance
+Compact size; applicable to cameras",60000,120000,MGA,images/transmission_r16_c1_3.png,à vérifier les données et l'image
+surveillance-transmission-17,Hikvision Price 2026 Q4.xlsx,Transmission,17,Accessoires et câblage,DS-2FA1205-D8(EUR),DS-2FA1205-D8(EUR),"12 VDC/1 A per channel
+Over current/short circuit/over voltage protection
+Complies with certification standards of information technology products; good EMC performance
+Compact size; applicable to cameras",80000,160000,MGA,images/transmission_r17_c1_4.png,à vérifier les données et l'image
+surveillance-transmission-18,Hikvision Price 2026 Q4.xlsx,Transmission,18,Accessoires et câblage,DS-2FA1208-C16,DS-2FA1208-C16,"12 VDC/1 A per channel
+Over current/short circuit/over voltage protection
+Complies with certification standards of information technology products; good EMC performance
+Compact size; applicable to cameras",90000,180000,MGA,images/transmission_r18_c1_5.png,à vérifier les données et l'image
+surveillance-switch-3,Hikvision Price 2026 Q4.xlsx,Switch,3,Switch réseau,DS-3E0505D-E,DS-3E0505D-E,"5 x 10/100/1000 Mbps ethernet ports
+Supports ADI/ADIX
+Store-and-forward switching
+Supports MAC address auto-learning and aging
+Simple, compact body design
+Supports desktop and wall-mounting
+Plug & play, easy to use.",48000,96000,MGA,images/switch_r3_c1_1.jpg,à vérifier les données et l'image
+surveillance-switch-4,Hikvision Price 2026 Q4.xlsx,Switch,4,Switch réseau,DS-3E0508D-E,DS-3E0508D-E,"8 x 10/100/1000 Mbps ethernet ports
+Supports ADI/ADIX
+Store-and-forward switching
+Supports MAC address auto-learning and aging
+Simple, compact body design
+Supports desktop and wall-mounting
+Plug & play, easy to use.",87000,174000,MGA,images/switch_r4_c1_4.jpg,à vérifier les données et l'image
+surveillance-switch-5,Hikvision Price 2026 Q4.xlsx,Switch,5,Switch réseau,DS-3E0516-E(B),DS-3E0516-E(B),"16 x 1000M Ethernet ports
+Supports IEEE 802.3, IEEE 802.3u and IEEE 802.3x
+1000M network access
+Wire-speed forwarding and non-blocking design
+Store-and-forward switching
+Solid high-strength metal shell
+Fan-free design with high reliability",285000,570000,MGA,images/switch_r5_c1_2.jpg,à vérifier les données et l'image
+surveillance-switch-6,Hikvision Price 2026 Q4.xlsx,Switch,6,Switch réseau,DS-3E0524-E(B),DS-3E0524-E(B),"24 x 1000M Ethernet ports
+Supports IEEE 802.3, IEEE 802.3u and IEEE 802.3x
+1000M network access
+Wire-speed forwarding and non-blocking design
+Store-and-forward switching
+Solid high-strength metal shell
+Fan-free design with high reliability",430000,860000,MGA,images/switch_r6_c1_3.jpg,à vérifier les données et l'image
+surveillance-switch-8,Hikvision Price 2026 Q4.xlsx,Switch,8,Switch réseau,DS-3E0106P-E/M (B),DS-3E0106P-E/M (B),"L2, Unmanaged, 4 10/100M RJ45 PoE ports, 2 10/100M RJ45 uplink port, 802.3af/at, PoE power budget 45W, max. 300m long distance transmission, 6KV surge protection",150000,300000,MGA,images/switch_r8_c1_10.png,à vérifier les données et l'image
+surveillance-switch-9,Hikvision Price 2026 Q4.xlsx,Switch,9,Switch réseau,DS-3E0310P-E/M (B),DS-3E0310P-E/M (B),"L2, Unmanaged, 8 10/100M RJ45 PoE ports, 2 Gigabit RJ45 uplink ports, 802.3af/at, PoE power budget 80W, max. 300m long distance transmission, 6KV surge protection",255000,510000,MGA,images/switch_r9_c1_9.png,à vérifier les données et l'image
+surveillance-switch-10,Hikvision Price 2026 Q4.xlsx,Switch,10,Switch réseau,DS-3E1318P-EI/M,DS-3E1318P-EI/M,"L2, Smart Managed, 16 10/100M RJ45 PoE ports, 1 Gigabit RJ45 port, 1 Gigabit combo port, 802.3af/at, PoE power budget  130W, Max. 300 meter PoE transmission, Supports Hik-Central/iVMS 4200/Hik-Partner Pro Unified Topology Management, cloud management, Rack mount",710000,1420000,MGA,images/switch_r10_c1_5.jpg,à vérifier les données et l'image
+surveillance-switch-12,Hikvision Price 2026 Q4.xlsx,Switch,12,Switch réseau,DS-3E1505P-EI/M(O-STD),DS-3E1505P-EI/M(O-STD),"L2, Smart Managed, 4 Gigabit RJ45 PoE ports, 1 Gigabit RJ45 port, 802.3af/at, PoE power budget 60W, Max. 300 meter PoE transmission, Supports Hik-Central/iVMS 4200/Hik-Partner Pro Unified Topology Management, cloud management, Rack mount",180000,360000,MGA,images/switch_r12_c1_7.png,à vérifier les données et l'image
+surveillance-switch-13,Hikvision Price 2026 Q4.xlsx,Switch,13,Switch réseau,DS-3E1520P-EI,DS-3E1520P-EI,"L2, Smart Managed, 16 Gigabit RJ45 PoE ports, 2 Gigabit RJ45 port, 2 Gigabit SFP port, 802.3af/at, PoE power budget  230W, HPP Cloud managed, VLAN, STP/RSTP loop prevention, PoE watchdog, Max. 300 meter PoE transmission, Rack mount",950000,1900000,MGA,images/switch_r13_c1_14.png,à vérifier les données et l'image
+surveillance-switch-14,Hikvision Price 2026 Q4.xlsx,Switch,14,Switch réseau,DS-3E1526P-EI/M(O-STD),DS-3E1526P-EI/M(O-STD),"L2, Smart Managed, 24 Gigabit RJ45 PoE ports, 1 Gigabit RJ45 port, 1 Gigabit SFP port, 802.3af/at, PoE power budget  230W, Max. 300 meter PoE transmission, Supports Hik-Central/iVMS 4200/Hik-Partner Pro Unified Topology Management, cloud management, Rack mount",1280000,2560000,MGA,images/switch_r14_c1_6.jpg,à vérifier les données et l'image
+surveillance-switch-15,Hikvision Price 2026 Q4.xlsx,Switch,15,Switch réseau,DS-3E1528P-EI,DS-3E1528P-EI,"L2, Smart Managed, 24 Gigabit RJ45 PoE ports, 2 Gigabit RJ45 port, 2 Gigabit SFP port, 802.3af/at, PoE power budget  370W, HPP Cloud managed, VLAN, STP/RSTP loop prevention, PoE watchdog, Max. 300 meter PoE transmission, Rack mount",1500000,3000000,MGA,images/switch_r15_c1_15.png,à vérifier les données et l'image
+surveillance-switch-17,Hikvision Price 2026 Q4.xlsx,Switch,17,Switch réseau,DS-3E0505P-E/M (B),DS-3E0505P-E/M (B),"L2, Unmanaged, 4 Gigabit POE ports, 1 Gigabit RJ45 uplink port, 802.3af/at, PoE power budget 45w",155000,310000,MGA,images/switch_r17_c1_13.png,à vérifier les données et l'image
+surveillance-switch-18,Hikvision Price 2026 Q4.xlsx,Switch,18,Switch réseau,DS-3E0510P-E/M,DS-3E0510P-E/M,"L2, Unmanaged, 8 Gigabit POE ports, 1 Gigabit RJ45 uplink port, 1 Gigabit SFP uplink port, 802.3af/at, PoE power budget 58w",330000,660000,MGA,images/switch_r18_c1_8.png,à vérifier les données et l'image
+surveillance-switch-19,Hikvision Price 2026 Q4.xlsx,Switch,19,Switch réseau,DS-3E0518P-E/M (B),DS-3E0518P-E/M (B),"L2, Unmanaged, 16 Gigabit POE ports, 2 Gigabit SFP uplink ports, 802.3af/at, PoE power budget 125w",850000,1700000,MGA,images/switch_r19_c1_11.png,à vérifier les données et l'image
+surveillance-switch-20,Hikvision Price 2026 Q4.xlsx,Switch,20,Switch réseau,DS-3E0526P-E/M (B),DS-3E0526P-E/M (B),"L2, Unmanaged, 24 Gigabit POE ports, 2 Gigabit SFP uplink ports, 802.3af/at, PoE power budget 225w",1150000,2300000,MGA,images/switch_r20_c1_12.png,à vérifier les données et l'image
+surveillance-cabinet-2,Hikvision Price 2026 Q4.xlsx,Cabinet,2,Baies et alimentation,DS-XS6404-S/B,DS-XS6404-S/B,600 × 450 × 281 mm Bear up to 40 kg (static load),385000,770000,MGA,images/cabinet_r2_c1_1.png,à vérifier les données et l'image
+surveillance-cabinet-3,Hikvision Price 2026 Q4.xlsx,Cabinet,3,Baies et alimentation,DS-XS6406-S/B,DS-XS6406-S/B,600 × 450 × 368 mm Bear up to 40 kg (static load),470000,940000,MGA,images/cabinet_r3_c1_2.png,à vérifier les données et l'image
+surveillance-cabinet-4,Hikvision Price 2026 Q4.xlsx,Cabinet,4,Baies et alimentation,DS-XS6409-S/B,DS-XS6409-S/B,600 × 450 × 501 mm  Bear up to 40 kg (static load).,525000,1050000,MGA,images/cabinet_r4_c1_3.png,à vérifier les données et l'image
+surveillance-cabinet-5,Hikvision Price 2026 Q4.xlsx,Cabinet,5,Baies et alimentation,DS-XS6412-S/B,DS-XS6412-S/B,600 × 450 × 635 mm Bear up to 40 kg (static load).,650000,1300000,MGA,images/cabinet_r5_c1_4.png,à vérifier les données et l'image
+surveillance-cabinet-6,Hikvision Price 2026 Q4.xlsx,Cabinet,6,Baies et alimentation,DS-XS6606-S/B,DS-XS6606-S/B,"6U, 600*600*370mm; Load bearing: 60kg;
+*Disassembled shipment, lower transportation costs
+Designed to house rack mount equipment for cabling, telecommunications, IT,industrial and home installations.The cabinet meets the 19-inch installation standard and is compatible with ETSI standard equipment installation, and the specific internal dimensions can be adjusted according to user requirements.",485000,970000,MGA,images/cabinet_r6_c1_10.png,à vérifier les données et l'image
+surveillance-cabinet-7,Hikvision Price 2026 Q4.xlsx,Cabinet,7,Baies et alimentation,DS-XS6609-S/B,DS-XS6609-S/B,"9U, 600*600*500mm; Load bearing: 60kg;
+*Disassembled shipment, lower transportation costs
+Designed to house rack mount equipment for cabling, telecommunications, IT,industrial and home installations.The cabinet meets the 19-inch installation standard and is compatible with ETSI standard equipment installation, and the specific internal dimensions can be adjusted according to user requirements.",575000,1150000,MGA,images/cabinet_r7_c1_11.png,à vérifier les données et l'image
+surveillance-cabinet-8,Hikvision Price 2026 Q4.xlsx,Cabinet,8,Baies et alimentation,DS-XPEUR08-Y/KYL,DS-XPEUR08-Y/KYL,"8-Unit PDU Socket
+Double-Break Switch with Indicator Light (× 1)
+Common Surge Protector Module (× 1)
+Internal Wiring (Rate: 16A/250V)
+4 Sets of M6 × 12 mm Phillips Screws and M6 Floating Nuts
+PDU Installation Manual
+1.5m, 3 × 1.5 mm² power input cable with DIN49441 plug
+Hanger (Angle: 0°/Horizontal, Thickness: 25 mm)
+462±5mm
+485 mm × 44.5 mm × 44.5 mm
+1U Aluminum Alloy, Black",175000,350000,MGA,images/cabinet_r8_c1_5.jpg,à vérifier les données et l'image
+surveillance-cabinet-9,Hikvision Price 2026 Q4.xlsx,Cabinet,9,Baies et alimentation,FD1238A2,FD1238A2,"220V
+50HZ
+180VAC
+2300±10%RPM
+80CFM
+6.4mmH20
+0.08Amp
+15Watts
+47dB(A)
+Counter-Clockwise
+Impedance Protected
+-20 °C to 80 °C
+20%~80%
+Sleeve
+30,000
+450g
+Die-cast Aluminum painted
+Thermoplastic PBT
+Copper wire, 30cm",130000,260000,MGA,images/cabinet_r9_c1_6.jpg,à vérifier les données et l'image
+surveillance-cabinet-10,Hikvision Price 2026 Q4.xlsx,Cabinet,10,Baies et alimentation,DS-XSPB04-S/B,DS-XSPB04-S/B,,60000,120000,MGA,images/cabinet_r10_c1_7.png,à vérifier les données et l'image
+surveillance-cabinet-12,Hikvision Price 2026 Q4.xlsx,Cabinet,12,Baies et alimentation,DS-UPS1000,DS-UPS1000,"Protection Method Overload, discharge, and overcharge protection
+Weight 7.5 kg
+Dimension 146 mm × 162 mm × 350 mm
+Operating Humidity 30 to 90 % RH @ 0 to 40°C (non-condensing)
+Capacity 1000 VA / 600 W",245000,490000,MGA,images/cabinet_r12_c1_8.jpg,à vérifier les données et l'image
+surveillance-cabinet-13,Hikvision Price 2026 Q4.xlsx,Cabinet,13,Baies et alimentation,DS-UPS2000(O-STD)/EU,DS-UPS2000(O-STD)/EU,"2000VA/1200W,220V Backup UPS with universal port sockets and European plug 12V/9Ah*2",615000,1230000,MGA,images/cabinet_r13_c1_9.jpg,à vérifier les données et l'image
+surveillance-cabinet-14,Hikvision Price 2026 Q4.xlsx,Cabinet,14,Baies et alimentation,DS-UPS3000,DS-UPS3000,"Protection Method Overload, discharge, and overcharge protection
+Weight 18.5 kg
+Dimension 412 mm × 145 mm × 210 mm (16.22"" × 5.71"" × 8.27"")
+Operating Humidity 30 to 90 % RH @ 0 to 40°C (non-condensing)
+Capacity 3000 VA / 1800 W",950000,1900000,MGA,,à vérifier
+surveillance-accessories-3,Hikvision Price 2026 Q4.xlsx, Accessories,3,Accessoires et câblage,DS-1280ZJ-XS,DS-1280ZJ-XS,,50000,100000,MGA,images/accessories_r3_c1_1.jpg,à vérifier les données et l'image
+surveillance-accessories-4,Hikvision Price 2026 Q4.xlsx, Accessories,4,Accessoires et câblage,DS-1280ZJ-S,DS-1280ZJ-S,,80000,160000,MGA,images/accessories_r4_c1_2.png,à vérifier les données et l'image
+surveillance-accessories-5,Hikvision Price 2026 Q4.xlsx, Accessories,5,Accessoires et câblage,DS-1280ZJ-DM46,DS-1280ZJ-DM46,,60000,120000,MGA,images/accessories_r5_c1_3.jpg,à vérifier les données et l'image
+surveillance-accessories-6,Hikvision Price 2026 Q4.xlsx, Accessories,6,Accessoires et câblage,DS-2280ZJ,DS-2280ZJ,,25000,50000,MGA,images/accessories_r6_c1_4.jpg,à vérifier les données et l'image
+surveillance-ac-router-ap-2,Hikvision Price 2026 Q4.xlsx,AC Router&AP,2,Réseau et connectivité,Wi-Fi 5 1200M Celling Access Point,DS-3WAP522-SI (Celling AP),"1200 Mbps Dual-band Wi-Fi 5 Gigabit ceiling mount indoor AP, 2x2 MIMO, 1 Gigabit port with PoE in, Max/Recommend user access is 256/80, HPP/HC unified cloud app management, Support batch managed via AC Router, Support standalone configuration via AP's web, DC 12V(Note: power adapter is not included, suggest using POE for power supply, no need aditional power adapter)",355000,710000,MGA,images/ac-router-ap_r2_c2_1.png,à vérifier les données et l'image
+surveillance-ac-router-ap-3,Hikvision Price 2026 Q4.xlsx,AC Router&AP,3,Réseau et connectivité,Wi-Fi 5 1200M In-Wall Access Point,DS-3WAP521-SI (In-Wall AP),"1200 Mbps Dual-band Wi-Fi 5 Gigabit in-Wall indoor AP, 2x2 MIMO, 2 Gigabit port with 1 PoE in, Max/Recommend user access is 128/50, HPP/HC unified cloud app management, Support batch managed via AC Router, Support standalone configuration via AP's web, 86 mm standard wall junction box",325000,650000,MGA,images/ac-router-ap_r3_c2_2.png,à vérifier les données et l'image
+surveillance-ac-router-ap-4,Hikvision Price 2026 Q4.xlsx,AC Router&AP,4,Réseau et connectivité,Wi-Fi 6 3000M Celling Access Point,DS-3WAP622E-SI（Celling AP）,"3000 Mbps Dual-band Wi-Fi 6 Gigabit ceiling mount indoor AP, 2x2 MIMO, 1 2.5G Multi-Giga port with PoE in, Max/Recommend user access is 256/100, HPP/HC unified cloud app management, Support batch managed via AC Router, Support standalone configuration via AP's web, DC 12V(Note: power adapter is not included, suggest using POE for power supply, no need aditional power adapter)",675000,1350000,MGA,images/ac-router-ap_r4_c2_4.png,à vérifier les données et l'image
+surveillance-ac-router-ap-5,Hikvision Price 2026 Q4.xlsx,AC Router&AP,5,Réseau et connectivité,Wi-Fi 6 3000M Outdoor Access Point,DS-3WAP623E-SI (Outdoor AP),"3000 Mbps Dual-band Wi-Fi 6 Gigabit outdoor AP, 2x2 MIMO, 1 Gigabit port with PoE in, IP68, Max/Recommend user access is 256/100, HPP/HC unified cloud app management, Support batch managed via AC Router, Support standalone configuration via AP's web, DC 12V(Note: power adapter is not included, suggest using POE for power supply, no need aditional power adapter)",855000,1710000,MGA,images/ac-router-ap_r5_c2_3.png,à vérifier les données et l'image
+surveillance-wireless-router-3,Hikvision Price 2026 Q4.xlsx,Wireless Router,3,Réseau et connectivité,11N 300M,DS-3WRE3N,"N300M WiFi4 wireless extender, 2.4GHz 300Mbps, 2 × 3-dBi antennas",60000,120000,MGA,images/wireless-router_r3_c1_8.png,à vérifier les données et l'image
+surveillance-wireless-router-4,Hikvision Price 2026 Q4.xlsx,Wireless Router,4,Réseau et connectivité,AC 1200M,DS-3WRE12C,"AC1200M Dual-band WiFi5 wireless extender, 5GHz: 867Mbps + 2.4GHz 300Mbps, 1 × 100 Mbps LAN port, 2 × 3-dBi antennas",95000,190000,MGA,images/wireless-router_r4_c1_9.png,à vérifier les données et l'image
+surveillance-wireless-router-6,Hikvision Price 2026 Q4.xlsx,Wireless Router,6,Réseau et connectivité,AC 1200M,DS-3WR12C,"AC1200M Dual-band WiFi5 wireless extender, 5GHz: 867Mbps + 2.4GHz 300Mbps, 1 × 100 Mbps LAN port, 2 × 5-dBi antennas",110000,220000,MGA,images/wireless-router_r6_c1_7.jpg,à vérifier les données et l'image
+surveillance-wireless-router-8,Hikvision Price 2026 Q4.xlsx,Wireless Router,8,Réseau et connectivité,AX 1800M Gigabit,DS-3WR18X,"AX1800M Dual-band WiFi 6 wireless router, 5GHz: 1201Mbps + 2.4GHz 574Mbps, 3 × 1000 Mbps LAN ports, 1 × 1000 Mbps WAN port, 5 × high gain antennas, Hik-Connect, Hik-partner Pro App",215000,430000,MGA,images/wireless-router_r8_c1_5.jpg,à vérifier les données et l'image
+surveillance-wireless-router-9,Hikvision Price 2026 Q4.xlsx,Wireless Router,9,Réseau et connectivité,AX 3000M Gigabit,DS-3WR30X,"AX3000M Dual-band WiFi 6 wireless router, 5GHz: 2402Mbps + 2.4GHz 3574Mbps, 4 × 10/100/1000Mbps Adaptive WAN/LAN Ports, 5 × high gain antennas, Hik-Connect, Hik-partner Pro App",250000,500000,MGA,images/wireless-router_r9_c1_6.jpg,à vérifier les données et l'image
+surveillance-wireless-router-10,Hikvision Price 2026 Q4.xlsx,Wireless Router,10,Réseau et connectivité,AX 3000M Gigabit,DS-3WR30X-V,"AX3000M Dual-band WiFi 6 wireless router, 5GHz: 2402Mbps + 2.4GHz 3574Mbps, 4 × 10/100/1000Mbps Adaptive WAN/LAN Ports, 5 × high gain antennas, Hik-Connect, Hik-partner Pro App",250000,500000,MGA,images/wireless-router_r10_c1_10.png,à vérifier les données et l'image
+surveillance-wireless-router-12,Hikvision Price 2026 Q4.xlsx,Wireless Router,12,Réseau et connectivité,Wireless Router,DS-3WR4G12C,"AC1200 Dual-band Wi-Fi
+4G Boost Faster Speed
+Instantly Access a Mobile Network With a SIM Card",235000,470000,MGA,images/wireless-router_r12_c1_4.jpg,à vérifier les données et l'image
+surveillance-wireless-router-14,Hikvision Price 2026 Q4.xlsx,Wireless Router,14,Réseau et connectivité,"AC 1200M Mesh 
+2 Pack",,"AC1200M Dual-band WiFi5 Mesh Wi-Fi S System, 5GHz: 867Mbps + 2.4GHz 300Mbps, 2 × 100 Mbps LAN ports, 1 × 100 Mbps WAN port, Hik-Connect, Hik-partner Pro App,Hikvision Mesh, 2 pcs",445000,890000,MGA,images/wireless-router_r14_c2_11.png,à vérifier
+surveillance-wireless-router-15,Hikvision Price 2026 Q4.xlsx,Wireless Router,15,Réseau et connectivité,"AC 1200M Mesh 
+3 Pack",,"AC1200M Dual-band WiFi5 Mesh Wi-Fi Router System, 5GHz: 867Mbps + 2.4GHz 300Mbps, 2 × 100 Mbps LAN ports, 1 × 100 Mbps WAN port, Hik-Connect, Hik-partner Pro App,Hikvision Mesh, 3 pcs",665000,1330000,MGA,images/wireless-router_r15_c2_12.png,à vérifier
+surveillance-wireless-router-17,Hikvision Price 2026 Q4.xlsx,Wireless Router,17,Réseau et connectivité,Wireless Devices,DS-3WF02C-5AC/O,"Outdoor 5GHz wireless bridge CPE, Max.distance 5km, 2×2 MIMO antenna with 867Mbps thoughput, 9dBi gain, output power 22dBm, 802.11a/n/ac, Angle H: 35°,  1 Gigabit RJ45, 1 Gigabit RJ45 with passive PoE input, TDMA, DFS, TPC, Smart Managed",240000,480000,MGA,images/wireless-router_r17_c1_1.jpg,à vérifier les données et l'image
+surveillance-wireless-router-18,Hikvision Price 2026 Q4.xlsx,Wireless Router,18,Réseau et connectivité,Wireless Devices,DS-3WF02C-5N/O,"Outdoor 5GHz wireless bridge CPE, Max.distance 5km, 2×2 MIMO antenna with 300Mbps thoughput, 10dBi gain, output power 24dBm, 802.11a/n, Angle H: 60° V: 16°,  1 10/100M RJ45, 1 10/100M RJ45 with passive PoE input",265000,530000,MGA,images/wireless-router_r18_c1_2.jpg,à vérifier les données et l'image
+surveillance-wireless-router-19,Hikvision Price 2026 Q4.xlsx,Wireless Router,19,Réseau et connectivité,Wireless Devices,DS-3WF0AC-2NT,"Elevator 2.4GHz wireless bridge, Max.distance 100m,  2×2 MIMO antenna with 300Mbps thoughput, 8dBi gain, output power 20dBm, IEEE802.11 b/g/n, Angle H: 65° V: 30°,1 10/100M RJ45 with 12v/1A passive PoE input",285000,570000,MGA,images/wireless-router_r19_c1_3.jpg,à vérifier les données et l'image
+surveillance-accessory-3,Hikvision Price 2026 Q4.xlsx,Accessory,3,Accessoires et câblage,HDMI Cable,"HDMI Cable, 4K30Hz, 1m, Gray,","HDMI Cable,  4K30Hz,  1m,  Gray, 200 pieces",10000,20000,MGA,,à vérifier
+surveillance-accessory-4,Hikvision Price 2026 Q4.xlsx,Accessory,4,Accessoires et câblage,"HDMI Cable, 4K30Hz, 2m, Gray,","HDMI Cable, 4K30Hz, 2m, Gray,","HDMI Cable,  4K30Hz, 2m, Gray, 100 pieces",15000,30000,MGA,images/accessory_r4_c1_1.png,à vérifier les données et l'image
+surveillance-accessory-5,Hikvision Price 2026 Q4.xlsx,Accessory,5,Accessoires et câblage,"HDMI Cable, 4K30Hz, 3m, Gray,","HDMI Cable, 4K30Hz, 3m, Gray,","HDMI Cable,  4K30Hz, 3m, Gray, 100 pieces",18000,36000,MGA,,à vérifier
+surveillance-accessory-6,Hikvision Price 2026 Q4.xlsx,Accessory,6,Accessoires et câblage,"HDMI Cable, 4K30Hz, 5m, Gray,","HDMI Cable, 4K30Hz, 5m, Gray,","HDMI Cable,  4K30Hz, 5m, Gray, 50 pieces",30000,60000,MGA,,à vérifier
+surveillance-accessory-7,Hikvision Price 2026 Q4.xlsx,Accessory,7,Accessoires et câblage,"HDMI Cable, 4K30Hz, 8m, Gray,","HDMI Cable, 4K30Hz, 8m, Gray,","HDMI Cable,  4K30Hz, 8m, Gray, 30 pieces",46000,92000,MGA,,à vérifier
+surveillance-accessory-8,Hikvision Price 2026 Q4.xlsx,Accessory,8,Accessoires et câblage,"HDMI Cable, 4K30Hz, 10m, Gray,","HDMI Cable, 4K30Hz, 10m, Gray,","HDMI Cable,  4K30Hz, 10m, Gray, 20 pieces",65000,130000,MGA,,à vérifier
+surveillance-accessory-9,Hikvision Price 2026 Q4.xlsx,Accessory,9,Accessoires et câblage,"HDMI Cable, 4K30Hz, 15m, Gray,","HDMI Cable, 4K30Hz, 15m, Gray,","HDMI Cable,  4K30Hz, 15m, Gray, 10 pieces",115000,230000,MGA,,à vérifier
+surveillance-accessory-12,Hikvision Price 2026 Q4.xlsx,Accessory,12,Accessoires et câblage,HDMI fiber optic cable,DS-1HF1TPZ0 20m,"HDMI fiber optic cable, HDMI2.0, TPU sheath, Not support flame retardant, Metal casing, 20m",215000,430000,MGA,images/accessory_r12_c1_2.png,à vérifier les données et l'image
+surveillance-accessory-13,Hikvision Price 2026 Q4.xlsx,Accessory,13,Accessoires et câblage,DS-1HF1TPZ0 25m,DS-1HF1TPZ0 25m,"HDMI fiber optic cable, HDMI2.0, TPU sheath, Not support flame retardant, Metal casing, 25m",245000,490000,MGA,,à vérifier
+surveillance-accessory-14,Hikvision Price 2026 Q4.xlsx,Accessory,14,Accessoires et câblage,DS-1HF1TPZ0 50m,DS-1HF1TPZ0 50m,"HDMI fiber optic cable, HDMI2.0, TPU sheath, Not support flame retardant, Metal casing, 50m",375000,750000,MGA,,à vérifier
+surveillance-accessory-15,Hikvision Price 2026 Q4.xlsx,Accessory,15,Accessoires et câblage,DS-1HF1TPZ0 100m,DS-1HF1TPZ0 100m,"HDMI fiber optic cable, HDMI2.0, TPU sheath, Not support flame retardant, Metal casing, 100m",655000,1310000,MGA,,à vérifier
+surveillance-accessory-18,Hikvision Price 2026 Q4.xlsx,Accessory,18,Accessoires et câblage,Cat5E,DS-1NP5EUDC0/E/Orange 1m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Orange, 1m",5000,10000,MGA,,à vérifier
+surveillance-accessory-19,Hikvision Price 2026 Q4.xlsx,Accessory,19,Accessoires et câblage,DS-1NP5EUDC0/E/Orange 2m,DS-1NP5EUDC0/E/Orange 2m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Orange, 2m",7000,14000,MGA,,à vérifier
+surveillance-accessory-20,Hikvision Price 2026 Q4.xlsx,Accessory,20,Accessoires et câblage,DS-1NP5EUDC0/E/Orange 5m,DS-1NP5EUDC0/E/Orange 5m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Orange, 5m",12000,24000,MGA,images/accessory_r20_c1_3.png,à vérifier les données et l'image
+surveillance-accessory-21,Hikvision Price 2026 Q4.xlsx,Accessory,21,Accessoires et câblage,DS-1NP5EUDC0/E/Orange 10m,DS-1NP5EUDC0/E/Orange 10m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Orange, 10m",20000,40000,MGA,,à vérifier
+surveillance-accessory-22,Hikvision Price 2026 Q4.xlsx,Accessory,22,Accessoires et câblage,DS-1NP5EUDC0/E/Blue 1m,DS-1NP5EUDC0/E/Blue 1m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Blue, 1m",5000,10000,MGA,,à vérifier
+surveillance-accessory-23,Hikvision Price 2026 Q4.xlsx,Accessory,23,Accessoires et câblage,DS-1NP5EUDC0/E/Blue 2m,DS-1NP5EUDC0/E/Blue 2m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Blue, 2m",7000,14000,MGA,,à vérifier
+surveillance-accessory-24,Hikvision Price 2026 Q4.xlsx,Accessory,24,Accessoires et câblage,DS-1NP5EUDC0/E/Blue 5m,DS-1NP5EUDC0/E/Blue 5m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Blue, 5m",12000,24000,MGA,,à vérifier
+surveillance-accessory-25,Hikvision Price 2026 Q4.xlsx,Accessory,25,Accessoires et câblage,DS-1NP5EUDC0/E/Blue 10m,DS-1NP5EUDC0/E/Blue 10m,"Patch cord, CAT5E, U/UTP, 26AWG, PVC sheath, Blue, 10m",20000,40000,MGA,,à vérifier
+surveillance-accessory-27,Hikvision Price 2026 Q4.xlsx,Accessory,27,Accessoires et câblage,Coaxial Cable with power,DS-1LH1SCAM592C(O-STD) 90m,"Coaxial Cable with power, mini RG59 Cable ,  CU, 26AWG,  2*Power  Cable（0.2）, PVC, Black, 90m",135000,270000,MGA,images/accessory_r27_c1_4.png,à vérifier les données et l'image
+surveillance-accessory-28,Hikvision Price 2026 Q4.xlsx,Accessory,28,Accessoires et câblage,DS-1LH1SCAM592C(O-STD) 180m,DS-1LH1SCAM592C(O-STD) 180m,"Coaxial Cable with power, mini RG59 Cable ,  CU, 26AWG,  2*Power  Cable（0.2）, PVC, Black, 180m",240000,480000,MGA,images/accessory_r28_c1_5.png,à vérifier les données et l'image
+surveillance-accessory-31,Hikvision Price 2026 Q4.xlsx,Accessory,31,Accessoires et câblage,Cable clamp,DS-1T03/E,"Cable clamp, 8P+6P, Supports crimping, wire stripping, and thread cutting, with dual blades, red and black handle",30000,60000,MGA,images/accessory_r31_c1_6.png,à vérifier les données et l'image
+surveillance-accessory-32,Hikvision Price 2026 Q4.xlsx,Accessory,32,Accessoires et câblage,DS-1T04/E,DS-1T04/E,"Cable clamp, 8P+6P+4P, Supports crimping, wire stripping, thread cutting, test, yellow and black handle",,,MGA,images/accessory_r32_c1_7.png,à vérifier
+alarms-wireless-intrusion-alarm-2,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,2,Systèmes d'alarme sans fil,Wireless Control Panel Kits,DS-PWA64-Kit-WB(O-STD),"64 zones, WiFi, 433MHz
+· DS-PWA64-L-WB x 1
+· DS-PKF1-WB x 1
+· DS-PDP15P-EG2-WB x 1
+· DS-PDMC-EG2-WB x 1",695000,1390000,MGA,images/wireless-intrusion-alarm_r2_c3_1.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-3,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,3,Systèmes d'alarme sans fil,Wireless Keypad,DS-PK1-E-WB(O-STD),"433 MHz two-way wireless communication
+AES-128 encryption
+Stay/away arming, disarming, alarm clearing for specified area or all areas
+LED indicates the programmed area
+One-Push fire alarm, panic alarm, and medical alarm. Silent/Audible alarm selectable. etc.
+Output control
+Full touch key design with LED backlight
+Fully remote configurable through App
+Multiple enrollment methods and easy installation design
+Easy replaceable battery
+Frequency hopping against jamming for reliable transmission",260000,520000,MGA,images/wireless-intrusion-alarm_r3_c3_2.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-4,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,4,Systèmes d'alarme sans fil,Keyfob,DS-PKF1-WB,"Two-way wireless, 433MHz
+Operation: stay/away arming and disarming
+Keyfob lock and unlock function
+Fully remote configurable through App
+Multiple enrollment method and easy installation design
+Easy replaceable battery with PCB protected
+Frequency hopping against jamming for reliable transmission",95000,190000,MGA,images/wireless-intrusion-alarm_r4_c3_12.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-5,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,5,Systèmes d'alarme sans fil,Wireless External Sounder,DS-PS1-E-WB(O-STD)/Red,"110dB, 1600m RF distance, IP65, 433Mhz",280000,560000,MGA,images/wireless-intrusion-alarm_r5_c3_3.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-6,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,6,Systèmes d'alarme sans fil,Wireless Internal Sounder,DS-PS1-I-WB(O-STD)/Red,,195000,390000,MGA,images/wireless-intrusion-alarm_r6_c3_4.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-7,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,7,Systèmes d'alarme sans fil,Wireless Emergency Button,DS-PDEB1-EG2-WB(O-STD),"Single button;CR2450;433MHz
+Fully remote configurable through App
+Multiple enrollment methods and easy installation design
+Effective emergency button
+Frequency hopping against jamming for reliable transmission",80000,160000,MGA,images/wireless-intrusion-alarm_r7_c3_5.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-8,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,8,Systèmes d'alarme sans fil,Wireless Portable Emergency Button,DS-PDEBP1-EG2-WB(O-STD),"Single button;CR2032;433MHz
+Accidental press protection
+Fully remote configurable through App
+IP54 daily environment protection
+Frequency hopping against jamming for reliable transmission
+Optional lanyard and wristband accessory available",90000,180000,MGA,images/wireless-intrusion-alarm_r8_c3_13.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-9,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,9,Systèmes d'alarme sans fil,Internal Detector Accessory,DS-PDP-IN-CR123A,,20000,40000,MGA,images/wireless-intrusion-alarm_r9_c3_25.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-10,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,10,Systèmes d'alarme sans fil,Order Product Name,Order Product Name,,,,MGA,,à vérifier
+alarms-wireless-intrusion-alarm-11,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,11,Systèmes d'alarme sans fil,Wireless Magnetic Contact,DS-PDMC-EG2-WB(O-STD),"1 reed switch;2 inputs;CR123A;433MHz
+Slim design for an unobtrusive (unnoticeable) installation
+Fully remote configurable through App
+Multiple enrollment methods and easy installation design
+Frequency hopping against jamming for reliable transmission",95000,190000,MGA,images/wireless-intrusion-alarm_r11_c3_6.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-12,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,12,Systèmes d'alarme sans fil,Wireless PIR AM Curtain Detector,DS-PDC10AM-EG2-WB(O-STD),"Detection range:10m;CR123A;433MHz
+· Slim design for window frame installation
+· IP65 weather resistance for outdoor application
+· Active IR anti-masking
+· Directional detection support
+· Multiple enrollment methods and easy installation
+· Frequency hopping against jamming for reliable transmission",170000,340000,MGA,images/wireless-intrusion-alarm_r12_c3_14.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-13,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,13,Systèmes d'alarme sans fil,PIRCAM,DS-PDPC12P-EG2-WB(O-STD),"● 433MHz two-way CAM-X wireless technology;
+● Frequency hooping against jamming for reliable transmission;
+● RF Range: 800m(open space);
+● PIR Detection Range: 12m / 85.9°;
+● Up to 30kg Pet-immunity;
+● Camera Lens Coverage: 88°(H), 68°(V);
+● Polarizing IR lens design, IR Range: 12m;
+● Auto day and night: Color / Black & White;
+● Large integrated memory buffer for image storage;
+● Support JPEG image capture with resolution of VGA, QVGA, QQVGA;
+● Multiple Enrolling Methods: Power up, Remote ID, QR Code;
+● Sealed Optics and Creep-Zone protection;
+● SEC(Smart Environment Control) - Advanced figital signal processing and 3D optics;
+● SSI(Signal Strength Indicators);
+● Environment Temperature Indication; 
+● Fully remote configurable through APP;
+● Installation Height: 1.8 to 2.4m;
+● Battery Type: 3 * CR123A batteries (included by default, easy replaceable)
+● Battery Life: 6 years (triggered twice every week, 20 QVGA frames captured for every alarm)",380000,760000,MGA,images/wireless-intrusion-alarm_r13_c3_15.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-14,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,14,Systèmes d'alarme sans fil,PIRCAM,DS-PDPC12PF-EG2-WB(O-STD),"● 433MHz two-way CAM-X wireless technology;
+● Frequency hooping against jamming for reliable transmission;
+● RF Range: 800m(open space);
+● PIR Detection Range: 12m / 85.9°;
+● Up to 30 kg Pet-immunity;
+● Camera Lens Coverage: 88°(H), 68°(V);
+● Fill Light:white light, IR Range: 12m;
+● Auto day and night: Color
+● Large integrated memory buffer for image storage;
+● Support JPEG image capture with resolution of VGA, QVGA, QQVGA;
+● Multiple Enrolling Methods: Power up, Remote ID, QR Code;
+● Sealed Optics and Creep-Zone protection;
+● SEC(Smart Environment Control) - Advanced figital signal processing and 3D optics;
+● SSI(Signal Strength Indicators);
+● Environment Temperature Indication; 
+● Fully remote configurable through APP;
+● Installation Height: 1.8 to 2.4m;
+● Battery Type: 3 * CR123A batteries (included by default, easy replaceable)
+● Battery Life: 6 years (triggered twice every week, 20 QVGA frames captured for every alarm)",380000,760000,MGA,images/wireless-intrusion-alarm_r14_c3_16.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-15,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,15,Systèmes d'alarme sans fil,Wireless Glass Break Detector,DS-PDBG8-EG2-WB(O-STD),"● 433MHz two-way Tri-X wireless technology;
+● Frequency hooping against jamming for reliable transmission;
+● RF Range: 1,000m(open space);
+● BG Detection Range: Up to 8m/120°
+● 2-ch External Zones for wired sensors;
+● Multiple Enrolling Methods: Power up, Remote ID, QR Code;
+● SSI(Signal Strength Indicators);
+● Environment Temperature Indication; 
+● Fully remote configurable through APP;
+● Wall/ceiling mount
+● Battery Type: 2 * CR123A battery (included by default, easy replaceable)
+● Battery Life: 5 years (triggered 10 times every day)",155000,310000,MGA,images/wireless-intrusion-alarm_r15_c3_17.png,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-16,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,16,Systèmes d'alarme sans fil,Wireless Internal PIR Detector,DS-PDP15P-EG2-WB(O-STD),"Detection Range: 15m / 85.9°
+Up to 30KG pet immunity
+SEC (Smart Environmental Control) - Advanced digital signal processing and 3D optics
+Fully remote configurable through App
+Multiple enrollment method and easy installation design
+Easy replaceable battery with PCB protected
+Frequency hopping against jamming for reliable transmission
+immunity;CR123A;433MHz",135000,270000,MGA,images/wireless-intrusion-alarm_r16_c3_7.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-17,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,17,Systèmes d'alarme sans fil,Wireless Double PIR Detector,DS-PDP18-HM-WB,"● High/Low mount adjustment
+● IP65 weather resistance for outdoor application
+● Multiple enrollment methods and easy installation
+● Frequency hopping against jamming for reliable transmission
+
+Detection range:18m
+CR123A
+433MHz",335000,670000,MGA,images/wireless-intrusion-alarm_r17_c3_26.png,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-18,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,18,Systèmes d'alarme sans fil,Repeater,DS-PR1-WB(O-STD),"433MHz two-way Tri-X and Cam-X wireless technology;
+Frequency hooping against jamming for reliable transmission;
+RF Range: 800m(open space);
+Multiple Enrolling Methods: Power up, Remote ID, QR Code
+SSI(Signal Strength Indication);
+Fully remote configuration through APP;
+Auto pairing with detectors and peripherals
+Long battery backup time
+PIRCAM suppported",355000,710000,MGA,images/wireless-intrusion-alarm_r18_c3_10.png,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-19,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,19,Systèmes d'alarme sans fil,Wireless Temperature Detector,DS-PDTPH-E-WB(O-STD),"Big screen display, modular design for multiple use applications
+Fully remote configurable through App
+Multiple enrollment method and easy installation design
+Frequency hopping against jamming for reliable transmission
+External probe included
+Extension Probe;AAA Battery;433MHz",160000,320000,MGA,images/wireless-intrusion-alarm_r19_c3_18.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-20,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,20,Systèmes d'alarme sans fil,Wireless Water Leak Detector,DS-PDWL-E-WB(O-STD),"Water-proof design for multiple use applications
+Fully remote configurable through App
+Multiple enrollment method and easy installation design
+Frequency hopping against jamming for reliable transmission
+External probe included
+Extension Probe;CR2450;433MHz",190000,380000,MGA,images/wireless-intrusion-alarm_r20_c3_19.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-21,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,21,Systèmes d'alarme sans fil,Smart Plug,DS-PSP1-WB(O-STD),"433MHz two-way wireless communication
+AES-128 encryption
+LED display
+Automation operating, one button turn on/off from APP/Keyfob/Keypad
+Setting scenarios by different events",135000,270000,MGA,images/wireless-intrusion-alarm_r21_c3_20.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-22,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,22,Systèmes d'alarme sans fil,Wireless I&O Expander,DS-PM1-O1L-WB," 433MHz two-way wireless communication
+ AES-128 encryption
+ LED display, show status of device and replay on/off display
+ Small case design, which can be put into hiding places easily
+ Automation operating, one button turn on/off from APP/Keyfob/Keypad
+ Setting scenarios by different events
+ With one tamper input, can be used as zone input for alarm",115000,230000,MGA,images/wireless-intrusion-alarm_r22_c3_23.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-23,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,23,Systèmes d'alarme sans fil,Wireless I&O Expander,DS-PM1-O1H-WB," 433MHz two-way wireless communication  AES-128 encryption  LED display, show status of device and replay on/off display  Small case design, which can be put into hiding places easily  Automation operating, one button turn on/off from APP/Keyfob/Keypad  Setting scenarios by different events",130000,260000,MGA,images/wireless-intrusion-alarm_r23_c3_24.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-24,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,24,Systèmes d'alarme sans fil,Wireless Photoelectric Smoke Detector,DS-PDSMK-S-WB(O-STD),"Chamber With Photoelectric Sensor
+CR17450;433MHz",210000,420000,MGA,images/wireless-intrusion-alarm_r24_c3_8.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-25,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,25,Systèmes d'alarme sans fil,Wireless PIR Ceiling Detector,DS-PDCL12-EG2-WB(O-STD),"CR123A;433MHz
+Detection Range: 12m / 360°
+SEC (Smart Environmental Control) - Advanced digital signal processing and 3D optics
+Fully remote configurable through App
+Multiple enrollment method and easy installation design
+Easy replaceable battery with PCB protected
+Frequency hopping against jamming for reliable transmission",125000,250000,MGA,images/wireless-intrusion-alarm_r25_c3_9.png,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-26,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,26,Systèmes d'alarme sans fil,Wireless Tag Reader,DS-PT1-WB,,215000,430000,MGA,images/wireless-intrusion-alarm_r26_c3_21.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-27,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,27,Systèmes d'alarme sans fil,Control Panel Accessory,DS-PT-M1,"Small and solid structure
+Convenient to carry with
+13.56MHz",10000,20000,MGA,images/wireless-intrusion-alarm_r27_c3_22.jpg,à vérifier les données et l'image
+alarms-wireless-intrusion-alarm-28,Hikvision  Alarm Price 2026 Q4.xlsx,Wireless Intrusion Alarm,28,Systèmes d'alarme sans fil,PIR bracket,DS-PDB-IN-Universalbracket,,10000,20000,MGA,images/wireless-intrusion-alarm_r28_c3_11.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-2,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,2,Systèmes d'alarme filaires,AX HYBRID PRO Panel,DS-PHA48-EP,"1. Speed-X technology
+2. BUS HD PIRCAM",390000,780000,MGA,images/wired-intrusion-alarm_r2_c3_1.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-3,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,3,Systèmes d'alarme filaires,AX HYBRID PRO Panel,DS-PHA64-LP,"1. Speed-X technology
+2. BUS HD PIRCAM",430000,860000,MGA,images/wired-intrusion-alarm_r3_c3_2.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-4,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,4,Systèmes d'alarme filaires,Wired Keypad,DS-PK1-LRT-HWE,,235000,470000,MGA,images/wired-intrusion-alarm_r4_c3_3.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-5,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,5,Systèmes d'alarme filaires,Wired I&O Expander,DS-PM1-I8O2-H,"1. Speed-X technology
+2. Cascade connection",120000,240000,MGA,images/wired-intrusion-alarm_r5_c3_4.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-6,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,6,Systèmes d'alarme filaires,Wired I&O Expander,DS-PM1-O4H-H,"1. Speed-X technology
+2. Cascade connection",210000,420000,MGA,images/wired-intrusion-alarm_r6_c3_19.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-7,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,7,Systèmes d'alarme filaires,Wired External Sounder,DS-PS1-R,,60000,120000,MGA,images/wired-intrusion-alarm_r7_c3_5.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-9,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,9,Systèmes d'alarme filaires,Communication Module,DS-PM2-G,,10000,20000,MGA,images/wired-intrusion-alarm_r9_c3_6.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-10,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,10,Systèmes d'alarme filaires,Communication Module,DS-PM2-P,,85000,170000,MGA,images/wired-intrusion-alarm_r10_c3_7.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-11,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,11,Systèmes d'alarme filaires,Communication Module,DS-PM2-S(EU),,295000,590000,MGA,images/wired-intrusion-alarm_r11_c3_8.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-12,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,12,Systèmes d'alarme filaires,Wired Internal DT Detector,DS-PDD12P-EG2,Dual-tech;Detection range:12m 85.9°;30Kg Pet-immunity;24GHz MW;NC;9-16 VDC,75000,150000,MGA,images/wired-intrusion-alarm_r12_c3_9.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-13,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,13,Systèmes d'alarme filaires,Wired External TT Detector,DS-PDTT15AM-LM,Triple Signal;Detection range:15m 90°;40Kg pet immunity;CR123A;EN G2,395000,790000,MGA,images/wired-intrusion-alarm_r13_c3_10.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-14,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,14,Systèmes d'alarme filaires,Wired BG Detector,DS-PDBG8-EG2,,50000,100000,MGA,images/wired-intrusion-alarm_r14_c3_11.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-15,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,15,Systèmes d'alarme filaires,Wired BG Detector,DS-PDPG12P-EG2,,100000,200000,MGA,images/wired-intrusion-alarm_r15_c3_12.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-16,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,16,Systèmes d'alarme filaires,Wired Internal PIR Detector,DS-PDCL12-EG2,,65000,130000,MGA,images/wired-intrusion-alarm_r16_c3_14.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-17,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,17,Systèmes d'alarme filaires,Wired Internal PIR Detector,DS-PDP18-EG2,Detection range:18m 85.9°;NC;10Kg pet immunity;9-16 VDC;EN G2,25000,50000,MGA,images/wired-intrusion-alarm_r17_c3_13.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-19,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,19,Systèmes d'alarme filaires,Wired Shock Detector,DS-PDSK-P,,45000,90000,MGA,images/wired-intrusion-alarm_r19_c3_15.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-20,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,20,Systèmes d'alarme filaires,Wired Magnetic Contact,DS-PD1-MC-WS,,10000,20000,MGA,images/wired-intrusion-alarm_r20_c3_16.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-21,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,21,Systèmes d'alarme filaires,Internal Detector Accessory,DS-PDB-IN-Ceilingbracket,,5000,10000,MGA,images/wired-intrusion-alarm_r21_c3_17.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-22,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,22,Systèmes d'alarme filaires,Internal Detector Accessory,DS-PDB-IN-Wallbracket,,7000,14000,MGA,images/wired-intrusion-alarm_r22_c3_18.jpg,à vérifier les données et l'image
+alarms-wired-intrusion-alarm-23,Hikvision  Alarm Price 2026 Q4.xlsx,Wired Intrusion Alarm,23,Systèmes d'alarme filaires,Keyfob,DS-PKF1-WE,,85000,170000,MGA,images/wired-intrusion-alarm_r23_c3_20.jpg,à vérifier les données et l'image

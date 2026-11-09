@@ -1,0 +1,6 @@
+{
+  "name": "D SECURE - Vidéosurveillance & Systèmes de Sécurité Madagascar",
+  "description": "Boutique en ligne officielle D SECURE : matériel professionnel de vidéosurveillance Hikvision, systèmes d'alarme sans fil et filaires, contrôle d'accès et équipement réseau à Madagascar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
