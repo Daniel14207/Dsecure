@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ActiveSection } from '../types/product';
-import { ShoppingBag, Phone, Menu, X, Shield, Search, CheckCircle2 } from 'lucide-react';
+import { ShoppingBag, Phone, Menu, X, Search, CheckCircle2, MessageCircle } from 'lucide-react';
 import { getDirectWhatsAppUrl } from '../utils/whatsapp';
+import { DSecureLogo } from './DSecureLogo';
 
 interface HeaderProps {
   activeSection: ActiveSection;
@@ -11,6 +12,7 @@ interface HeaderProps {
   searchQuery: string;
   onSearchChange: (q: string) => void;
   onOpenQA: () => void;
+  onOpenLiveChat?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -21,324 +23,253 @@ export const Header: React.FC<HeaderProps> = ({
   searchQuery,
   onSearchChange,
   onOpenQA,
+  onOpenLiveChat,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showSearchInput, setShowSearchInput] = useState(false);
+  const [showCatalogDropdown, setShowCatalogDropdown] = useState(false);
 
   const handleNavClick = (section: ActiveSection) => {
     onNavigate(section);
     setMobileMenuOpen(false);
+    setShowCatalogDropdown(false);
   };
 
+  const navItems: { label: string; section: ActiveSection }[] = [
+    { label: 'ACCUEIL', section: 'home' },
+    { label: 'SERVICES', section: 'services' },
+    { label: 'CAMÉRAS', section: 'cameras' },
+    { label: 'PACKS', section: 'packs' },
+    { label: 'ALARMES', section: 'alarms' },
+    { label: 'DVR & NVR', section: 'dvr_nvr' },
+    { label: 'ACCESSOIRES', section: 'accessories' },
+    { label: 'CONTACT', section: 'contact' },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-[#080808]/95 backdrop-blur-md border-b border-zinc-800/80">
-      {/* Top micro bar for trust and direct contact */}
-      <div className="bg-zinc-950 px-4 py-1.5 border-b border-zinc-900 text-xs text-zinc-400">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-zinc-200/90 shadow-xs">
+      {/* Top micro bar for fast trust and customer service */}
+      <div className="bg-[#080808] px-4 py-1.5 text-xs text-zinc-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-zinc-300 font-medium">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#D71920]" />
+            <span className="flex items-center gap-1.5 text-white font-medium">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#D71920] animate-pulse" />
               D SECURE Madagascar
             </span>
-            <span className="hidden sm:inline text-zinc-500">·</span>
-            <span className="hidden sm:inline text-zinc-400">Votre sécurité, notre priorité.</span>
-            <span className="hidden md:inline text-zinc-500">·</span>
-            <span className="hidden md:inline text-zinc-400">Matériel Hikvision Certifié Original</span>
+            <span className="hidden sm:inline text-zinc-600">|</span>
+            <span className="hidden sm:inline text-zinc-300">Votre sécurité, notre priorité.</span>
+            <span className="hidden md:inline text-zinc-600">|</span>
+            <span className="hidden md:inline text-zinc-400">Équipements Hikvision Certifiés 100% Originaux</span>
           </div>
 
-          <div className="flex items-center gap-4 text-zinc-400">
+          <div className="flex items-center gap-4 text-xs">
             <button
               onClick={onOpenQA}
-              className="text-zinc-500 hover:text-zinc-300 transition-colors text-[11px] flex items-center gap-1"
-              title="Audit conformité Excel & Photos"
+              className="text-zinc-400 hover:text-white transition-colors flex items-center gap-1 text-[11px]"
+              title="Audit conformité Excel & Catalogue officiel"
             >
-              <CheckCircle2 className="w-3 h-3 text-[#D71920]" />
-              <span className="hidden sm:inline">Contrôle Données Excel</span>
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#D71920]" />
+              <span className="hidden sm:inline">Audit Données Excel</span>
             </button>
+            <span className="text-zinc-600 hidden lg:inline">|</span>
             <a
               href="mailto:camhtech.mg@gmail.com"
-              className="hidden lg:inline hover:text-white transition-colors"
+              className="hidden lg:inline text-zinc-300 hover:text-white transition-colors"
             >
               camhtech.mg@gmail.com
             </a>
+            <span className="text-zinc-600 hidden sm:inline">|</span>
             <a
               href={getDirectWhatsAppUrl('Bonjour D SECURE, j\'aimerais me renseigner sur vos équipements.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-[#D71920] hover:text-red-400 font-semibold transition-colors"
+              className="flex items-center gap-1.5 text-white hover:text-red-400 font-bold transition-colors"
             >
-              <Phone className="w-3 h-3" />
+              <Phone className="w-3 h-3 text-[#D71920]" />
               <span>+261 33 75 565 84</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation Bar - Following Top Bar Contract */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-8">
-        {/* Zone 1: Brand Wordmark */}
+      {/* Main Navigation Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        {/* Brand Wordmark & True Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2.5 text-left shrink-0 group focus:outline-none"
+          className="focus:outline-none transition-transform hover:scale-[1.01] active:scale-[0.99] text-left"
+          aria-label="Accueil D SECURE"
         >
-          <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#D71920] group-hover:border-[#D71920]/60 transition-colors">
-            <Shield className="w-5 h-5" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-wider text-white group-hover:text-zinc-200 transition-colors font-mono">
-              D SECURE
-            </span>
-            <span className="text-[10px] uppercase tracking-widest text-[#D71920] font-bold">
-              Madagascar
-            </span>
-          </div>
+          <DSecureLogo variant="light" size="md" />
         </button>
 
-        {/* Zone 2: Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-300">
-          <button
-            onClick={() => handleNavClick('home')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'home'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Accueil
-          </button>
-          <button
-            onClick={() => handleNavClick('cameras')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'cameras'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Caméras de surveillance
-          </button>
-          <button
-            onClick={() => handleNavClick('alarms')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'alarms'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Systèmes d'alarme
-          </button>
-          <button
-            onClick={() => handleNavClick('packs')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'packs'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Packs vidéosurveillance
-          </button>
-          <button
-            onClick={() => handleNavClick('accessories')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'accessories'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Accessoires
-          </button>
-          <button
-            onClick={() => handleNavClick('network')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'network'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Réseau & Switch
-          </button>
-          <button
-            onClick={() => handleNavClick('services')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'services'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Services
-          </button>
-          <button
-            onClick={() => handleNavClick('about')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'about'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            À propos
-          </button>
-          <button
-            onClick={() => handleNavClick('contact')}
-            className={`whitespace-nowrap transition-colors py-1 ${
-              activeSection === 'contact'
-                ? 'text-[#D71920] font-bold border-b-2 border-[#D71920]'
-                : 'hover:text-white'
-            }`}
-          >
-            Contact
-          </button>
+        {/* Center Navigation Links (Upper-case matching design reference) */}
+        <nav className="hidden xl:flex items-center gap-6 text-[13px] font-bold tracking-wider text-zinc-800">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.section;
+            return (
+              <button
+                key={item.section}
+                onClick={() => handleNavClick(item.section)}
+                className={`relative py-2 transition-colors hover:text-[#D71920] ${
+                  isActive ? 'text-[#D71920]' : 'text-zinc-700'
+                }`}
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#D71920] rounded-full" />
+                )}
+              </button>
+            );
+          })}
         </nav>
 
-        {/* Zone 3: Actions (Search, Cart & WhatsApp CTA) */}
-        <div className="flex items-center gap-3 shrink-0">
-          {/* Quick search input */}
+        {/* Right Actions: Search, Cart, WhatsApp Button */}
+        <div className="flex items-center gap-3">
+          {/* Search Input */}
           <div className="relative hidden md:block">
             <input
               type="text"
               placeholder="Rechercher caméra, référence..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-48 lg:w-56 bg-zinc-900/90 text-sm text-white placeholder-zinc-500 rounded-lg pl-8 pr-3 py-1.5 border border-zinc-800 focus:outline-none focus:border-[#D71920] transition-all"
+              className="w-44 lg:w-52 bg-zinc-100 hover:bg-zinc-50 text-xs text-zinc-900 placeholder-zinc-500 rounded-full pl-8 pr-7 py-2 border border-zinc-200 focus:outline-none focus:border-[#D71920] focus:ring-1 focus:ring-[#D71920] transition-all"
             />
-            <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-2.5 top-2.5 pointer-events-none" />
+            <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-2.5 pointer-events-none" />
             {searchQuery && (
               <button
                 onClick={() => onSearchChange('')}
-                className="absolute right-2.5 top-2 text-xs text-zinc-500 hover:text-white"
+                className="absolute right-2.5 top-2 text-xs font-bold text-zinc-400 hover:text-zinc-700"
               >
                 ×
               </button>
             )}
           </div>
 
-          {/* Cart button */}
+          {/* Cart Button */}
           <button
             onClick={onOpenCart}
-            className="relative p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white transition-all flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#D71920]"
-            aria-label={`Panier d'achats avec ${cartCount} articles`}
+            className="relative p-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-800 transition-all flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#D71920]"
+            aria-label={`Panier d'achats (${cartCount} articles)`}
           >
-            <ShoppingBag className="w-5 h-5 text-zinc-200" />
+            <ShoppingBag className="w-5 h-5 text-zinc-800" />
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#D71920] text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-lg animate-scale-in">
+              <span className="absolute -top-1 -right-1 bg-[#D71920] text-white text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-scale-in">
                 {cartCount}
               </span>
             )}
           </button>
 
-          {/* Primary Action Button */}
+          {/* Red WhatsApp Button - matching design-reference.png */}
           <a
-            href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite demander un devis / catalogue.')}
+            href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite passer commande / demander un devis.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#D71920] hover:bg-[#b8141a] rounded-lg transition-colors shadow-md shadow-red-950/30 whitespace-nowrap"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-black tracking-wider uppercase text-white bg-[#D71920] hover:bg-[#b8141a] rounded-md shadow-md shadow-red-700/20 transition-all hover:shadow-lg hover:shadow-red-700/30"
           >
-            <span>Commander WhatsApp</span>
+            <MessageCircle className="w-4 h-4 fill-white" />
+            <span>WHATSAPP</span>
           </a>
 
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 lg:hidden text-zinc-300 hover:text-white focus:outline-none"
-            aria-label="Menu principal"
+            className="p-2 xl:hidden text-zinc-800 hover:text-black focus:outline-none"
+            aria-label="Menu de navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-zinc-950 border-b border-zinc-800 px-4 pt-3 pb-6 space-y-4">
+        <div className="xl:hidden bg-white border-b border-zinc-200 px-4 pt-3 pb-6 space-y-4 shadow-xl">
           <div className="relative">
             <input
               type="text"
-              placeholder="Rechercher une référence, produit..."
+              placeholder="Rechercher un équipement, modèle..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full bg-zinc-900 text-sm text-white placeholder-zinc-500 rounded-lg pl-9 pr-3 py-2 border border-zinc-800 focus:outline-none focus:border-[#D71920]"
+              className="w-full bg-zinc-100 text-sm text-zinc-900 placeholder-zinc-500 rounded-lg pl-9 pr-3 py-2.5 border border-zinc-200 focus:outline-none focus:border-[#D71920]"
             />
-            <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-3 pointer-events-none" />
+            <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-3.5 pointer-events-none" />
           </div>
 
-          <div className="grid grid-cols-2 gap-2 text-sm">
+          <div className="grid grid-cols-2 gap-2 text-xs font-bold">
+            {navItems.map((item) => (
+              <button
+                key={item.section}
+                onClick={() => handleNavClick(item.section)}
+                className={`p-3 rounded-lg text-left transition-colors ${
+                  activeSection === item.section
+                    ? 'text-white bg-[#D71920]'
+                    : 'text-zinc-800 bg-zinc-50 hover:bg-zinc-100'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
             <button
-              onClick={() => handleNavClick('home')}
-              className={`p-2 rounded text-left ${activeSection === 'home' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
+              onClick={() => handleNavClick('hdd')}
+              className={`p-3 rounded-lg text-left transition-colors ${
+                activeSection === 'hdd'
+                  ? 'text-white bg-[#D71920]'
+                  : 'text-zinc-800 bg-zinc-50 hover:bg-zinc-100'
+              }`}
             >
-              Accueil
+              DISQUES DURS
             </button>
             <button
-              onClick={() => handleNavClick('cameras')}
-              className={`p-2 rounded text-left ${activeSection === 'cameras' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
+              onClick={() => handleNavClick('monitors')}
+              className={`p-3 rounded-lg text-left transition-colors ${
+                activeSection === 'monitors'
+                  ? 'text-white bg-[#D71920]'
+                  : 'text-zinc-800 bg-zinc-50 hover:bg-zinc-100'
+              }`}
             >
-              Caméras
-            </button>
-            <button
-              onClick={() => handleNavClick('alarms')}
-              className={`p-2 rounded text-left ${activeSection === 'alarms' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
-            >
-              Alarmes
-            </button>
-            <button
-              onClick={() => handleNavClick('packs')}
-              className={`p-2 rounded text-left ${activeSection === 'packs' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
-            >
-              Packs Vidéo
-            </button>
-            <button
-              onClick={() => handleNavClick('accessories')}
-              className={`p-2 rounded text-left ${activeSection === 'accessories' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
-            >
-              Accessoires
+              MONITEURS
             </button>
             <button
               onClick={() => handleNavClick('network')}
-              className={`p-2 rounded text-left ${activeSection === 'network' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
+              className={`p-3 rounded-lg text-left transition-colors ${
+                activeSection === 'network'
+                  ? 'text-white bg-[#D71920]'
+                  : 'text-zinc-800 bg-zinc-50 hover:bg-zinc-100'
+              }`}
             >
-              Réseau / Switch
-            </button>
-            <button
-              onClick={() => handleNavClick('services')}
-              className={`p-2 rounded text-left ${activeSection === 'services' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
-            >
-              Services
+              RÉSEAU & SWITCH
             </button>
             <button
               onClick={() => handleNavClick('about')}
-              className={`p-2 rounded text-left ${activeSection === 'about' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
+              className={`p-3 rounded-lg text-left transition-colors ${
+                activeSection === 'about'
+                  ? 'text-white bg-[#D71920]'
+                  : 'text-zinc-800 bg-zinc-50 hover:bg-zinc-100'
+              }`}
             >
-              À propos
-            </button>
-            <button
-              onClick={() => handleNavClick('testimonials')}
-              className={`p-2 rounded text-left ${activeSection === 'testimonials' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
-            >
-              Avis clients
-            </button>
-            <button
-              onClick={() => handleNavClick('contact')}
-              className={`p-2 rounded text-left ${activeSection === 'contact' ? 'text-[#D71920] font-bold bg-zinc-900' : 'text-zinc-300'}`}
-            >
-              Contact
+              À PROPOS
             </button>
           </div>
 
-          <div className="pt-2 border-t border-zinc-900 flex flex-col gap-2">
+          <div className="pt-2 border-t border-zinc-100 flex flex-col gap-2">
             <a
               href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite passer commande.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 text-center text-sm font-bold text-white bg-[#D71920] rounded-lg"
+              className="w-full py-3 text-center text-xs font-black uppercase text-white bg-[#D71920] rounded-lg shadow-md flex items-center justify-center gap-2"
             >
-              Contacter via WhatsApp (+261 33 75 565 84)
+              <MessageCircle className="w-4 h-4 fill-white" />
+              Commander via WhatsApp (+261 33 75 565 84)
             </a>
             <button
               onClick={() => {
                 onOpenQA();
                 setMobileMenuOpen(false);
               }}
-              className="text-xs text-zinc-400 py-1 text-center"
+              className="text-xs text-zinc-500 py-1 text-center hover:text-zinc-800 flex items-center justify-center gap-1"
             >
-              Audit données Excel & Conformité
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#D71920]" />
+              Audit des données et conformité Excel
             </button>
           </div>
         </div>

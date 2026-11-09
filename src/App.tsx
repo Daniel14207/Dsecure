@@ -3,6 +3,7 @@ import { PRODUCTS } from './data/products';
 import { Product, CartItem, ActiveSection } from './types/product';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { PacksShowcaseSection } from './components/PacksShowcaseSection';
 import { CatalogSection } from './components/CatalogSection';
 import { ProductCard } from './components/ProductCard';
 import { ProductDetailModal } from './components/ProductDetailModal';
@@ -14,9 +15,9 @@ import { AboutSection } from './components/AboutSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
 import { DataQualityModal } from './components/DataQualityModal';
+import { FloatingWidgets } from './components/FloatingWidgets';
 import { Footer } from './components/Footer';
-import { Shield, ArrowRight, Eye, Bell, CheckCircle2, Phone, PackageCheck } from 'lucide-react';
-import { getDirectWhatsAppUrl } from './utils/whatsapp';
+import { ArrowRight, ShoppingCart, ShieldCheck } from 'lucide-react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<ActiveSection>('home');
@@ -38,12 +39,15 @@ export default function App() {
   const [initialQuoteService, setInitialQuoteService] = useState('Étude et devis gratuit');
   const [isQAOpen, setIsQAOpen] = useState(false);
 
-  // Subcategory filters for each main section
+  // Subcategory filters for main catalog sections
   const [cameraSubCat, setCameraSubCat] = useState('Tous');
   const [alarmSubCat, setAlarmSubCat] = useState('Tous');
   const [packSubCat, setPackSubCat] = useState('Tous');
+  const [dvrNvrSubCat, setDvrNvrSubCat] = useState('Tous');
   const [accessorySubCat, setAccessorySubCat] = useState('Tous');
+  const [hddSubCat, setHddSubCat] = useState('Tous');
   const [networkSubCat, setNetworkSubCat] = useState('Tous');
+  const [monitorSubCat, setMonitorSubCat] = useState('Tous');
 
   // Sync cart to localStorage
   useEffect(() => {
@@ -104,12 +108,12 @@ export default function App() {
   };
 
   // Quotation trigger
-  const handleOpenQuoteForService = (serviceName: string) => {
-    setInitialQuoteService(serviceName);
+  const handleOpenQuoteForService = (serviceName?: string) => {
+    setInitialQuoteService(serviceName || 'Étude et devis gratuit');
     setIsQuoteOpen(true);
   };
 
-  // Filtered dataset slices
+  // Filtered dataset slices for all 8 categories requested in Priority 3
   const cameraProducts = useMemo(() => {
     return PRODUCTS.filter((p) => p.topSection === 'cameras');
   }, []);
@@ -122,15 +126,27 @@ export default function App() {
     return PRODUCTS.filter((p) => p.topSection === 'packs');
   }, []);
 
+  const dvrNvrProducts = useMemo(() => {
+    return PRODUCTS.filter((p) => p.topSection === 'dvr_nvr');
+  }, []);
+
   const accessoryProducts = useMemo(() => {
     return PRODUCTS.filter((p) => p.topSection === 'accessories');
+  }, []);
+
+  const hddProducts = useMemo(() => {
+    return PRODUCTS.filter((p) => p.topSection === 'hdd');
   }, []);
 
   const networkProducts = useMemo(() => {
     return PRODUCTS.filter((p) => p.topSection === 'network');
   }, []);
 
-  // Related products for modal
+  const monitorProducts = useMemo(() => {
+    return PRODUCTS.filter((p) => p.topSection === 'monitors');
+  }, []);
+
+  // Related products for detail modal
   const relatedProducts = useMemo(() => {
     if (!selectedProduct) return [];
     return PRODUCTS.filter(
@@ -140,18 +156,27 @@ export default function App() {
     ).slice(0, 4);
   }, [selectedProduct]);
 
-  // Featured highlights for homepage
-  const featuredCameras = useMemo(() => {
-    return cameraProducts.filter((p) => p.image !== null).slice(0, 4);
-  }, [cameraProducts]);
+  // Featured "NOS PRODUITS PAR PIÈCE" for the homepage matching design reference
+  const productsParPiece = useMemo(() => {
+    // Select curated real products with original photos matching the reference layout
+    const selectedIds = [
+      'surveillance-analog-2', // EXIR IPF
+      'surveillance-analog-23', // ANALOGIQUE SMART
+      'surveillance-ip-1-0-3', // IP NUMERIQUE INTERIEUR
+      'surveillance-ip-1-0-4', // IP NUMERIQUE EXTERIEUR
+      'surveillance-wireless-alarm-11', // PACK ALARME / DETECTEUR
+      'surveillance-wireless-alarm-22', // FINGERPRINT / CLAVIER
+    ];
+    const found = selectedIds
+      .map((id) => PRODUCTS.find((p) => p.id === id))
+      .filter((p): p is Product => p !== undefined);
 
-  const featuredAlarms = useMemo(() => {
-    return alarmProducts.filter((p) => p.image !== null).slice(0, 4);
-  }, [alarmProducts]);
-
-  const featuredKits = useMemo(() => {
-    return packProducts.slice(0, 3);
-  }, [packProducts]);
+    if (found.length < 6) {
+      const additional = PRODUCTS.filter((p) => p.image !== null && !found.some((f) => f.id === p.id)).slice(0, 6 - found.length);
+      return [...found, ...additional];
+    }
+    return found;
+  }, []);
 
   // Navigate handler that scrolls to top
   const handleNavigate = (section: ActiveSection) => {
@@ -160,8 +185,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-zinc-100 flex flex-col font-sans">
-      {/* Header with Top Bar Contract */}
+    <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-[#D71920] selection:text-white">
+      {/* Header with light styling and true logo */}
       <Header
         activeSection={activeSection}
         onNavigate={handleNavigate}
@@ -176,152 +201,73 @@ export default function App() {
         {/* VIEW: HOME */}
         {activeSection === 'home' && (
           <div>
-            {/* Hero Section */}
+            {/* Hero Section matching design reference */}
             <Hero
               onNavigate={handleNavigate}
-              onOpenQuote={() => setIsQuoteOpen(true)}
+              onOpenQuote={() => handleOpenQuoteForService()}
             />
 
-            {/* Featured Cameras Section */}
-            <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-zinc-900">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D71920] uppercase tracking-wider mb-2">
-                    <Eye className="w-3.5 h-3.5" />
-                    <span>Haute Définition & Vision Nocturne</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                    Caméras de Surveillance Populaires
-                  </h2>
-                  <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-                    Sélection officielle Hikvision IP ColorVu, AcuSense et Caméras solaires autonomes 4G.
-                  </p>
-                </div>
+            {/* SECTION: NOS PRODUITS PAR PIÈCE matching design-reference.png */}
+            <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-zinc-200">
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <h2 className="text-2xl sm:text-3xl font-black text-[#080808] tracking-tight uppercase">
+                  NOS PRODUITS <span className="text-[#D71920]">PAR PIÈCE</span>
+                </h2>
+                <p className="mt-1.5 text-xs sm:text-sm text-zinc-500 font-medium">
+                  Vente par pièce disponible sans installation
+                </p>
+              </div>
 
+              {/* Grid of 6 product cards matching design reference */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                {productsParPiece.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onAddToCart={handleAddToCart}
+                    onSelect={setSelectedProduct}
+                    onDirectOrder={handleDirectOrder}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-10 text-center">
                 <button
                   onClick={() => handleNavigate('cameras')}
-                  className="text-xs font-bold text-[#D71920] hover:text-red-400 flex items-center gap-1.5 self-start sm:self-auto transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-zinc-900 hover:bg-black text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
                 >
-                  <span>Voir toutes les caméras ({cameraProducts.length})</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Voir tout le catalogue de caméras ({cameraProducts.length} modèles)</span>
+                  <ArrowRight className="w-4 h-4 text-[#D71920]" />
                 </button>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {featuredCameras.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onAddToCart={handleAddToCart}
-                    onSelect={setSelectedProduct}
-                    onDirectOrder={handleDirectOrder}
-                  />
-                ))}
-              </div>
             </section>
 
-            {/* Turnkey Packs Banner Highlight */}
-            <section className="py-16 bg-zinc-950 border-b border-zinc-900">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D71920] uppercase tracking-wider mb-2">
-                      <PackageCheck className="w-3.5 h-3.5" />
-                      <span>Solutions Clé en Main</span>
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                      Packs Vidéosurveillance Complets
-                    </h2>
-                    <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-                      Kits complets prêts à poser : Enregistreur DVR/NVR, caméras, câbles coaxiaux/réseau et alimentation.
-                    </p>
-                  </div>
+            {/* SECTION: NOS PACKS VIDÉOSURVEILLANCE matching design-reference.png */}
+            <PacksShowcaseSection onOpenQuote={handleOpenQuoteForService} />
 
-                  <button
-                    onClick={() => handleNavigate('packs')}
-                    className="text-xs font-bold text-[#D71920] hover:text-red-400 flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Découvrir tous les packs</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {featuredKits.map((product) => (
-                    <ProductCard
-                      key={product.id}
-                      product={product}
-                      onAddToCart={handleAddToCart}
-                      onSelect={setSelectedProduct}
-                      onDirectOrder={handleDirectOrder}
-                    />
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Featured Alarms Section */}
-            <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-zinc-900">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D71920] uppercase tracking-wider mb-2">
-                    <Bell className="w-3.5 h-3.5" />
-                    <span>Protection Anti-Intrusion Sans Fil</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                    Systèmes d'Alarme Hikvision AX PRO
-                  </h2>
-                  <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-                    Centrales sans fil 64 zones, détecteurs photo PIRCAM, sirènes extérieures 110dB et badges RFID.
-                  </p>
-                </div>
-
-                <button
-                  onClick={() => handleNavigate('alarms')}
-                  className="text-xs font-bold text-[#D71920] hover:text-red-400 flex items-center gap-1.5 self-start sm:self-auto transition-colors"
-                >
-                  <span>Voir tous les systèmes d'alarme ({alarmProducts.length})</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {featuredAlarms.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onAddToCart={handleAddToCart}
-                    onSelect={setSelectedProduct}
-                    onDirectOrder={handleDirectOrder}
-                  />
-                ))}
-              </div>
-            </section>
-
-            {/* Services Teaser */}
+            {/* SECTION: NOS SERVICES matching design-reference.png */}
             <ServicesSection onSelectServiceForQuote={handleOpenQuoteForService} />
 
-            {/* Testimonials */}
+            {/* SECTION: AVIS CLIENTS matching design-reference.png */}
             <TestimonialsSection />
 
-            {/* Contact & Map Banner */}
+            {/* SECTION: CONTACT matching design reference */}
             <ContactSection />
           </div>
         )}
 
-        {/* VIEW: CAMÉRAS DE SURVEILLANCE */}
+        {/* VIEW: 1. CAMÉRAS DE SURVEILLANCE */}
         {activeSection === 'cameras' && (
           <CatalogSection
-            title="Caméras de Surveillance & Enregistreurs"
-            subtitle="Gamme complète Hikvision originale : Caméras analogiques Turbo HD, Caméras IP AcuSense / ColorVu, Caméras PTZ motorisées, caméras solaires 4G et enregistreurs NVR/DVR."
+            title="Caméras de Surveillance Hikvision"
+            subtitle="Caméras IP Haute Définition AcuSense, ColorVu 24/7 vision nocturne couleur, caméras analogiques Turbo HD, PTZ motorisées et caméras solaires 4G autonomes."
             products={cameraProducts}
             subCategories={[
               'Tous',
               'Caméras IP',
               'Caméras analogiques',
-              'Caméras PTZ',
-              'Caméras solaires',
-              'Enregistreurs vidéo',
+              'Caméras PTZ motorisées',
+              'Caméras solaires 4G',
             ]}
             activeSubCategory={cameraSubCat}
             onSelectSubCategory={setCameraSubCat}
@@ -333,16 +279,16 @@ export default function App() {
           />
         )}
 
-        {/* VIEW: SYSTÈMES D'ALARME */}
+        {/* VIEW: 2. SYSTÈMES D'ALARME */}
         {activeSection === 'alarms' && (
           <CatalogSection
             title="Systèmes d'Alarme Anti-Intrusion"
-            subtitle="Protection périmétrique et intérieure : Centrales sans fil AX PRO 433MHz, détecteurs PIRCAM avec levée de doute photo, claviers, sirènes et systèmes filaires AX HYBRID PRO."
+            subtitle="Protection sans fil et filaire Hikvision AX PRO : centrales d'alarme, détecteurs PIRCAM avec levée de doute photo, claviers tactiles, sirènes extérieures 110dB et badges RFID."
             products={alarmProducts}
             subCategories={[
               'Tous',
-              "Systèmes d'alarme sans fil",
-              "Systèmes d'alarme filaires",
+              "Systèmes d alarme sans fil AX PRO",
+              "Systèmes d alarme filaires",
             ]}
             activeSubCategory={alarmSubCat}
             onSelectSubCategory={setAlarmSubCat}
@@ -354,15 +300,41 @@ export default function App() {
           />
         )}
 
-        {/* VIEW: PACKS VIDÉOSURVEILLANCE */}
+        {/* VIEW: 3. KITS VIDÉOSURVEILLANCE */}
         {activeSection === 'packs' && (
+          <div className="bg-white">
+            <PacksShowcaseSection onOpenQuote={handleOpenQuoteForService} />
+            <div className="border-t border-zinc-200">
+              <CatalogSection
+                title="Tous les Kits et Packs Vidéosurveillance"
+                subtitle="Kits complets pré-configurés avec enregistreur, caméras haute définition, câbles et alimentations."
+                products={packProducts}
+                subCategories={['Tous', 'Kits vidéosurveillance']}
+                activeSubCategory={packSubCat}
+                onSelectSubCategory={setPackSubCat}
+                onAddToCart={handleAddToCart}
+                onSelectProduct={setSelectedProduct}
+                onDirectOrder={handleDirectOrder}
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* VIEW: 4. DVR ET NVR */}
+        {activeSection === 'dvr_nvr' && (
           <CatalogSection
-            title="Packs & Kits Vidéosurveillance Prêts à Poser"
-            subtitle="Kits complets certifiés Hikvision incluant enregistreur DVR/NVR, caméras de sécurité haute définition, câbles pré-équipés 18m et alimentations dédiées."
-            products={packProducts}
-            subCategories={['Tous', 'Kits vidéosurveillance']}
-            activeSubCategory={packSubCat}
-            onSelectSubCategory={setPackSubCat}
+            title="Enregistreurs DVR et NVR Hikvision"
+            subtitle="Enregistreurs numériques 4, 8, 16 et 32 canaux : NVR 4K AcuSense avec intelligence artificielle et DVR Turbo HD Hybride eSSD."
+            products={dvrNvrProducts}
+            subCategories={[
+              'Tous',
+              'Enregistreurs NVR (Réseau IP)',
+              'Enregistreurs DVR (Turbo HD)',
+            ]}
+            activeSubCategory={dvrNvrSubCat}
+            onSelectSubCategory={setDvrNvrSubCat}
             onAddToCart={handleAddToCart}
             onSelectProduct={setSelectedProduct}
             onDirectOrder={handleDirectOrder}
@@ -371,18 +343,16 @@ export default function App() {
           />
         )}
 
-        {/* VIEW: ACCESSOIRES */}
+        {/* VIEW: 5. ACCESSOIRES ET CÂBLAGE */}
         {activeSection === 'accessories' && (
           <CatalogSection
-            title="Accessoires, Baies & Stockage"
-            subtitle="Disques durs de surveillance Seagate SkyHawk 1TB à 10TB, baies et coffrets muraux 6U/9U, onduleurs UPS 1000VA-3000VA, câbles réseau Cat5e/Cat6 et baluns vidéo."
+            title="Accessoires, Câblage & Fixations"
+            subtitle="Connectique de sécurité professionnelle : boîtiers de jonction étanches, baluns vidéo, câbles réseau Cat5e/Cat6, connecteurs BNC et blocs d'alimentation stabilisés."
             products={accessoryProducts}
             subCategories={[
               'Tous',
-              'Disques durs',
-              'Baies et alimentation',
-              'Accessoires et câblage',
-              'Moniteurs',
+              'Accessoires de fixation & Câblage',
+              'Transmission vidéo & Baluns',
             ]}
             activeSubCategory={accessorySubCat}
             onSelectSubCategory={setAccessorySubCat}
@@ -394,16 +364,35 @@ export default function App() {
           />
         )}
 
-        {/* VIEW: CONTRÔLE D'ACCÈS & RÉSEAU */}
+        {/* VIEW: 6. DISQUES DURS */}
+        {activeSection === 'hdd' && (
+          <CatalogSection
+            title="Disques Durs Spécial Vidéosurveillance"
+            subtitle="Disques durs Seagate SkyHawk et Western Digital Purple certifiés pour enregistrement continu 24h/24 7j/7 : capacités 1TB, 2TB, 4TB, 6TB, 8TB et 10TB."
+            products={hddProducts}
+            subCategories={['Tous', 'Disques durs de surveillance']}
+            activeSubCategory={hddSubCat}
+            onSelectSubCategory={setHddSubCat}
+            onAddToCart={handleAddToCart}
+            onSelectProduct={setSelectedProduct}
+            onDirectOrder={handleDirectOrder}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+          />
+        )}
+
+        {/* VIEW: 7. RÉSEAU ET CONNECTIVITÉ */}
         {activeSection === 'network' && (
           <CatalogSection
-            title="Switchs PoE, Réseau & Connectivité"
-            subtitle="Infrastructures réseau professionnelles pour vidéosurveillance : Switchs PoE 4/8/16/24 ports longue portée 300m, routeurs Wi-Fi 6, points d'accès plafonniers et ponts sans fil 5GHz."
+            title="Réseau, Switchs PoE & Connectivité"
+            subtitle="Infrastructures réseau sécurisées pour caméras IP : Switchs PoE longue portée 300m, routeurs Wi-Fi 6, points d'accès plafonniers et baies murales 19 pouces."
             products={networkProducts}
             subCategories={[
               'Tous',
-              'Switch réseau',
-              'Réseau et connectivité',
+              'Switchs PoE réseau',
+              'Baies & coffrets muraux',
+              'Routeurs Wi-Fi 6',
+              'Points d accès & Routeurs AC',
             ]}
             activeSubCategory={networkSubCat}
             onSelectSubCategory={setNetworkSubCat}
@@ -415,7 +404,24 @@ export default function App() {
           />
         )}
 
-        {/* VIEW: NOS SERVICES */}
+        {/* VIEW: 8. MONITEURS */}
+        {activeSection === 'monitors' && (
+          <CatalogSection
+            title="Moniteurs Professionnels de Vidéosurveillance"
+            subtitle="Écrans LED industriels Hikvision conçus pour affichage permanent 24/7 : diagonales 19 pouces, 21.5 pouces, 24 pouces, 27 pouces, 32 pouces et 43 pouces 4K UHD."
+            products={monitorProducts}
+            subCategories={['Tous', 'Moniteurs de surveillance']}
+            activeSubCategory={monitorSubCat}
+            onSelectSubCategory={setMonitorSubCat}
+            onAddToCart={handleAddToCart}
+            onSelectProduct={setSelectedProduct}
+            onDirectOrder={handleDirectOrder}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+          />
+        )}
+
+        {/* VIEW: SERVICES */}
         {activeSection === 'services' && (
           <ServicesSection onSelectServiceForQuote={handleOpenQuoteForService} />
         )}
@@ -429,6 +435,9 @@ export default function App() {
         {/* VIEW: CONTACT */}
         {activeSection === 'contact' && <ContactSection />}
       </main>
+
+      {/* Floating Action Buttons & Chat En Ligne Widget */}
+      <FloatingWidgets onOpenLiveChat={() => handleOpenQuoteForService()} />
 
       {/* Product Detail Modal */}
       <ProductDetailModal
@@ -482,7 +491,7 @@ export default function App() {
         onSelectProduct={setSelectedProduct}
       />
 
-      {/* Footer */}
+      {/* Footer matching design reference */}
       <Footer onNavigate={handleNavigate} onOpenQA={() => setIsQAOpen(true)} />
     </div>
   );

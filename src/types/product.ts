@@ -15,7 +15,7 @@ export interface Product {
   images: string[];
   validationStatus: string;
   issue: string | null;
-  topSection: 'cameras' | 'alarms' | 'packs' | 'accessories' | 'network';
+  topSection: 'cameras' | 'alarms' | 'packs' | 'dvr_nvr' | 'accessories' | 'hdd' | 'network' | 'monitors';
 }
 
 export interface CartItem {
@@ -35,8 +35,11 @@ export type ActiveSection =
   | 'cameras'
   | 'alarms'
   | 'packs'
+  | 'dvr_nvr'
   | 'accessories'
+  | 'hdd'
   | 'network'
+  | 'monitors'
   | 'services'
   | 'about'
   | 'testimonials'

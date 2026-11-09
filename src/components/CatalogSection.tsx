@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Product } from '../types/product';
 import { ProductCard } from './ProductCard';
-import { Search, SlidersHorizontal, ArrowUpDown, Image, AlertCircle } from 'lucide-react';
+import { Search, ArrowUpDown, Image, AlertCircle } from 'lucide-react';
 
 interface CatalogSectionProps {
   title: string;
@@ -41,7 +41,9 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
 
     // Subcategory filter
     if (activeSubCategory !== 'Tous') {
-      result = result.filter((p) => p.category === activeSubCategory || p.sourceSheet === activeSubCategory);
+      result = result.filter(
+        (p) => p.category === activeSubCategory || p.sourceSheet === activeSubCategory
+      );
     }
 
     // Only with image toggle
@@ -78,7 +80,6 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
     return result;
   }, [products, activeSubCategory, onlyWithImage, searchQuery, sortBy]);
 
-  const totalPages = Math.ceil(filteredProducts.length / pageSize) || 1;
   const paginatedProducts = filteredProducts.slice(0, page * pageSize);
 
   const handleSubCatClick = (cat: string) => {
@@ -90,10 +91,10 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
     <section className="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
       <div className="mb-8">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-black text-[#080808] tracking-tight uppercase">
           {title}
         </h2>
-        <p className="mt-1.5 text-xs sm:text-sm text-zinc-400">
+        <p className="mt-1.5 text-xs sm:text-sm text-zinc-500 font-medium">
           {subtitle}
         </p>
       </div>
@@ -102,15 +103,15 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
       <div className="space-y-4 mb-8">
         {/* Subcategories Segmented Buttons */}
         {subCategories.length > 1 && (
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
             {subCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleSubCatClick(cat)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-colors ${
+                className={`px-4 py-2 text-xs font-bold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                   activeSubCategory === cat
                     ? 'bg-[#D71920] text-white shadow-sm'
-                    : 'bg-zinc-900 text-zinc-300 hover:text-white hover:bg-zinc-800 border border-zinc-800'
+                    : 'bg-white text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 border border-zinc-200'
                 }`}
               >
                 {cat}
@@ -120,7 +121,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
         )}
 
         {/* Filter & Search Sub-row */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-zinc-900">
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-zinc-200">
           {/* Search box inside catalog */}
           <div className="relative flex-1 min-w-[220px] max-w-md">
             <input
@@ -131,13 +132,13 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                 onSearchChange(e.target.value);
                 setPage(1);
               }}
-              className="w-full bg-zinc-900 text-xs text-white placeholder-zinc-500 rounded-lg pl-8 pr-3 py-2 border border-zinc-800 focus:outline-none focus:border-[#D71920]"
+              className="w-full bg-white text-xs text-zinc-900 placeholder-zinc-400 rounded-lg pl-8 pr-7 py-2.5 border border-zinc-200 focus:outline-none focus:border-[#D71920] shadow-xs"
             />
-            <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-2.5 top-2.5 pointer-events-none" />
+            <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-2.5 top-3 pointer-events-none" />
             {searchQuery && (
               <button
                 onClick={() => onSearchChange('')}
-                className="absolute right-2.5 top-2 text-xs text-zinc-500 hover:text-white"
+                className="absolute right-2.5 top-2.5 text-xs font-bold text-zinc-400 hover:text-zinc-700"
               >
                 ×
               </button>
@@ -147,7 +148,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
           {/* Right Tools: Image toggle & Sort */}
           <div className="flex items-center gap-3 text-xs">
             {/* Image toggle */}
-            <label className="flex items-center gap-2 cursor-pointer text-zinc-400 hover:text-zinc-200 select-none">
+            <label className="flex items-center gap-2 cursor-pointer text-zinc-600 hover:text-zinc-900 select-none bg-white border border-zinc-200 px-3 py-2 rounded-lg shadow-xs">
               <input
                 type="checkbox"
                 checked={onlyWithImage}
@@ -155,30 +156,30 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                   setOnlyWithImage(e.target.checked);
                   setPage(1);
                 }}
-                className="rounded bg-zinc-900 border-zinc-700 text-[#D71920] focus:ring-0"
+                className="rounded border-zinc-300 text-[#D71920] focus:ring-0"
               />
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-1 font-semibold">
                 <Image className="w-3.5 h-3.5 text-zinc-500" />
                 <span>Avec photo</span>
               </span>
             </label>
 
             {/* Price sort */}
-            <div className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-800 rounded-lg px-2.5 py-1.5 text-zinc-300">
-              <ArrowUpDown className="w-3 h-3 text-zinc-500" />
+            <div className="flex items-center gap-1.5 bg-white border border-zinc-200 rounded-lg px-3 py-2 text-zinc-700 shadow-xs">
+              <ArrowUpDown className="w-3.5 h-3.5 text-zinc-400" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-transparent text-xs text-zinc-200 focus:outline-none cursor-pointer"
+                className="bg-transparent text-xs font-bold text-zinc-800 focus:outline-none cursor-pointer"
               >
-                <option value="default" className="bg-zinc-900 text-white">Tri par défaut</option>
-                <option value="price-asc" className="bg-zinc-900 text-white">Prix croissant</option>
-                <option value="price-desc" className="bg-zinc-900 text-white">Prix décroissant</option>
+                <option value="default">Tri par défaut</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
               </select>
             </div>
 
             {/* Count indicator */}
-            <span className="text-zinc-500 text-xs font-mono hidden sm:inline">
+            <span className="text-zinc-500 text-xs font-mono font-bold hidden sm:inline">
               {filteredProducts.length} {filteredProducts.length > 1 ? 'articles' : 'article'}
             </span>
           </div>
@@ -187,9 +188,9 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
 
       {/* Product Grid */}
       {paginatedProducts.length === 0 ? (
-        <div className="bg-zinc-950 rounded-2xl border border-zinc-900 p-12 text-center text-zinc-400">
-          <AlertCircle className="w-10 h-10 text-zinc-600 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-white mb-1">Aucun produit ne correspond</h3>
+        <div className="bg-white rounded-2xl border border-zinc-200 p-12 text-center text-zinc-500 shadow-xs">
+          <AlertCircle className="w-10 h-10 text-zinc-400 mx-auto mb-3" />
+          <h3 className="text-base font-bold text-zinc-900 mb-1">Aucun produit ne correspond</h3>
           <p className="text-xs text-zinc-500 max-w-sm mx-auto mb-4">
             Essayez de réinitialiser la recherche ou de changer de sous-catégorie.
           </p>
@@ -199,7 +200,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
               setOnlyWithImage(false);
               onSelectSubCategory('Tous');
             }}
-            className="py-2 px-4 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold rounded-lg border border-zinc-800 transition-colors"
+            className="py-2.5 px-5 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
           >
             Réinitialiser les filtres
           </button>
@@ -218,14 +219,14 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
         </div>
       )}
 
-      {/* Load More Button if remaining */}
+      {/* Load More Button */}
       {paginatedProducts.length < filteredProducts.length && (
         <div className="mt-12 text-center">
           <button
             onClick={() => setPage(page + 1)}
-            className="py-3 px-8 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold rounded-xl border border-zinc-800 transition-colors shadow-sm inline-flex items-center gap-2"
+            className="py-3 px-8 bg-white hover:bg-zinc-50 text-zinc-900 text-xs font-black uppercase tracking-wider rounded-xl border border-zinc-200 transition-colors shadow-xs inline-flex items-center gap-2 hover:border-[#D71920]"
           >
-            <span>Afficher plus de produits ({filteredProducts.length - paginatedProducts.length} restants)</span>
+            <span>Afficher plus ({filteredProducts.length - paginatedProducts.length} restants)</span>
           </button>
         </div>
       )}
