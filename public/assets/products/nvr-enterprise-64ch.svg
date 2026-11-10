@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="nvrBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </radialGradient>
+    <filter id="nvrShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="nvrBlack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="30%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#nvrBg)"/>
+
+  <g filter="url(#nvrShadow)" transform="translate(60, 160)">
+    <polygon points="40,0 470,0 490,40 20,40" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <g fill="#0f172a">
+      <ellipse cx="250" cy="20" rx="80" ry="10"/>
+      <ellipse cx="250" cy="12" rx="60" ry="6"/>
+    </g>
+
+    <polygon points="490,40 470,0 470,160 490,200" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <g transform="translate(473, 50)">
+      <circle cx="8" cy="40" r="14" fill="#020617"/>
+      <circle cx="8" cy="80" r="14" fill="#020617"/>
+    </g>
+
+    <rect x="20" y="40" width="470" height="160" rx="8" fill="url(#nvrBlack)" stroke="#475569" stroke-width="3"/>
+    <path d="M 20,40 L 490,40 L 490,48 L 60,48 L 50,60 L 20,60 Z" fill="#cbd5e1"/>
+
+    <text x="45" y="85" font-family="sans-serif" font-size="14" font-weight="900" fill="#ffffff" letter-spacing="2">HIKVISION</text>
+    <rect x="45" y="145" width="16" height="8" rx="2" fill="#020617" stroke="#64748b"/>
+    <rect x="68" y="145" width="16" height="8" rx="2" fill="#020617" stroke="#64748b"/>
+
+    <g transform="translate(340, 115)">
+      <circle cx="0" cy="0" r="12" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+      <polygon points="-2,-4 -7,0 -2,4" fill="#ffffff"/>
+      <circle cx="30" cy="-28" r="12" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+      <polygon points="26,-30 30,-35 34,-30" fill="#ffffff"/>
+      <circle cx="30" cy="28" r="12" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+      <polygon points="26,26 30,31 34,26" fill="#ffffff"/>
+      <circle cx="60" cy="0" r="12" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+      <polygon points="58,-4 63,0 58,4" fill="#ffffff"/>
+      <circle cx="-35" cy="0" r="11" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+      <circle cx="95" cy="0" r="11" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+      <circle cx="130" cy="-10" r="13" fill="#1e293b" stroke="#D71920" stroke-width="2.5"/>
+      <circle cx="130" cy="-10" r="4" fill="#D71920"/>
+    </g>
+
+    <g transform="translate(470, 130)">
+      <circle cx="0" cy="0" r="3" fill="#22c55e"/>
+      <circle cx="0" cy="12" r="3" fill="#3b82f6"/>
+      <circle cx="0" cy="24" r="3" fill="#e2e8f0"/>
+    </g>
+  </g>
+</svg>

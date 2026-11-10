@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="pircamBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </radialGradient>
+    <filter id="pirShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+    <linearGradient id="lensGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#pircamBg)"/>
+
+  <g filter="url(#pirShadow)" transform="translate(190, 80)">
+    <rect x="0" y="0" width="220" height="380" rx="36" fill="#ffffff" stroke="#e2e8f0" stroke-width="4"/>
+    
+    <g transform="translate(40, 45)">
+      <rect x="0" y="0" width="140" height="120" rx="18" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+      <circle cx="70" cy="55" r="32" fill="url(#lensGlass)" stroke="#64748b" stroke-width="3"/>
+      <circle cx="70" cy="55" r="18" fill="#020617"/>
+      <circle cx="64" cy="49" r="6" fill="#38bdf8" opacity="0.7"/>
+      <circle cx="22" cy="30" r="5" fill="#334155"/>
+      <circle cx="118" cy="30" r="5" fill="#334155"/>
+      <circle cx="22" cy="80" r="5" fill="#334155"/>
+      <circle cx="118" cy="80" r="5" fill="#334155"/>
+      <text x="70" y="105" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="bold" fill="#94a3b8">DAY/NIGHT CAM</text>
+    </g>
+
+    <g transform="translate(45, 190)">
+      <path d="M 15,10 Q 65,-5 115,10 L 105,95 Q 65,105 25,95 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+      <line x1="45" y1="15" x2="48" y2="90" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="65" y1="5" x2="65" y2="100" stroke="#cbd5e1" stroke-width="1.5"/>
+      <line x1="85" y1="15" x2="82" y2="90" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="65" cy="120" r="4" fill="#3b82f6"/>
+    </g>
+
+    <text x="110" y="340" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="900" fill="#0f172a" letter-spacing="2">HIKVISION</text>
+    <text x="110" y="358" text-anchor="middle" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#D71920">AX PRO · PIRCAM 12M</text>
+  </g>
+</svg>

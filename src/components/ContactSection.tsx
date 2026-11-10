@@ -45,88 +45,122 @@ export const ContactSection: React.FC = () => {
                 Nos Canaux Directs
               </h3>
 
-              <div className="space-y-4 text-xs text-zinc-700">
+              <div className="space-y-4 text-xs">
+                {/* 1. Official WhatsApp */}
                 <a
-                  href={getDirectWhatsAppUrl('Bonjour D SECURE, je vous écris pour une demande de renseignements.')}
+                  href={getDirectWhatsAppUrl('Bonjour D SECURE, je vous écris pour une demande de renseignements ou un devis.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 bg-zinc-50 hover:bg-emerald-50/40 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                  className="p-4 bg-zinc-50 hover:bg-emerald-50/50 rounded-xl border border-zinc-200 hover:border-emerald-500/50 flex items-center gap-4 transition-all group shadow-xs"
                 >
-                  <OfficialWhatsAppIcon size={36} />
-                  <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">WhatsApp Direct</span>
-                    <strong className="text-sm font-mono text-zinc-950 group-hover:text-emerald-600 transition-colors">
+                  <div className="shrink-0 group-hover:scale-105 transition-transform">
+                    <OfficialWhatsAppIcon size={44} />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-zinc-500 block text-[11px] font-bold uppercase tracking-wider">
+                      WhatsApp Direct
+                    </span>
+                    <strong className="text-base font-bold text-zinc-950 group-hover:text-emerald-600 transition-colors block truncate">
                       +261 33 75 565 84
                     </strong>
+                    <span className="text-[11px] text-emerald-600 font-medium flex items-center gap-1.5 mt-0.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Réponse rapide 7j/7
+                    </span>
                   </div>
                 </a>
 
+                {/* 2. Official Gmail */}
                 <a
                   href="mailto:dsecure.mg@gmail.com"
-                  className="p-3.5 bg-zinc-50 hover:bg-red-50/40 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                  className="p-4 bg-zinc-50 hover:bg-red-50/50 rounded-xl border border-zinc-200 hover:border-red-500/50 flex items-center gap-4 transition-all group shadow-xs"
                 >
-                  <OfficialGmailIcon size={36} />
-                  <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">Email Officiel</span>
-                    <strong className="text-sm text-zinc-950 group-hover:text-red-600 transition-colors">
+                  <div className="shrink-0 group-hover:scale-105 transition-transform">
+                    <OfficialGmailIcon size={44} />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-zinc-500 block text-[11px] font-bold uppercase tracking-wider">
+                      Email Officiel
+                    </span>
+                    <strong className="text-base font-bold text-zinc-950 group-hover:text-red-600 transition-colors block truncate">
                       dsecure.mg@gmail.com
                     </strong>
+                    <span className="text-[11px] text-zinc-500 font-medium block mt-0.5">
+                      Réponse et devis sous 24h
+                    </span>
                   </div>
                 </a>
 
+                {/* 3. Official Facebook */}
                 <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 bg-zinc-50 hover:bg-blue-50/40 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                  className="p-4 bg-zinc-50 hover:bg-blue-50/50 rounded-xl border border-zinc-200 hover:border-blue-500/50 flex items-center gap-4 transition-all group shadow-xs"
                 >
-                  <OfficialFacebookIcon size={36} />
-                  <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">Facebook Officiel</span>
-                    <strong className="text-sm text-zinc-950 group-hover:text-blue-600 transition-colors">
+                  <div className="shrink-0 group-hover:scale-105 transition-transform">
+                    <OfficialFacebookIcon size={44} />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-zinc-500 block text-[11px] font-bold uppercase tracking-wider">
+                      Page Facebook
+                    </span>
+                    <strong className="text-base font-bold text-zinc-950 group-hover:text-blue-600 transition-colors block truncate">
                       D SECURE
                     </strong>
+                    <span className="text-[11px] text-blue-600 font-medium block mt-0.5">
+                      Suivez-nous & actualités
+                    </span>
                   </div>
                 </a>
 
+                {/* 4. Technical Email */}
                 <a
                   href="mailto:camhtech.mg@gmail.com"
-                  className="p-3.5 bg-zinc-50 hover:bg-zinc-100 rounded-xl border border-zinc-200 flex items-center gap-3.5 transition-colors group"
+                  className="p-3.5 bg-zinc-50 hover:bg-zinc-100 rounded-xl border border-zinc-200 flex items-center gap-4 transition-all group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-zinc-800 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-11 h-11 rounded-full bg-zinc-800 text-white flex items-center justify-center shrink-0 shadow-xs">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">Email Technique</span>
-                    <strong className="text-sm text-zinc-950 group-hover:text-[#D71920] transition-colors">
+                  <div className="min-w-0">
+                    <span className="text-zinc-500 block text-[11px] font-bold uppercase tracking-wider">
+                      Support & Logistique
+                    </span>
+                    <strong className="text-sm text-zinc-950 group-hover:text-[#D71920] transition-colors block truncate">
                       camhtech.mg@gmail.com
                     </strong>
                   </div>
                 </a>
 
-                <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-700 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5" />
+                {/* 5. Working Hours */}
+                <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center gap-4">
+                  <div className="w-11 h-11 rounded-full bg-zinc-200 text-zinc-700 flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-zinc-600" />
                   </div>
                   <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">Horaires d'accueil</span>
-                    <strong className="text-xs text-zinc-950 block">
-                      Lun - Sam : 08h00 - 18h00
+                    <span className="text-zinc-500 block text-[11px] font-bold uppercase tracking-wider">
+                      Horaires d'accueil
+                    </span>
+                    <strong className="text-xs text-zinc-950 block font-bold">
+                      Lundi - Samedi : 08h00 - 18h00
                     </strong>
                     <span className="text-zinc-500 text-[11px]">Dimanche : Sur rendez-vous</span>
                   </div>
                 </div>
 
-                <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-lg bg-zinc-200 text-zinc-700 flex items-center justify-center shrink-0">
+                {/* 6. Headquarters */}
+                <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center gap-4">
+                  <div className="w-11 h-11 rounded-full bg-red-100 text-[#D71920] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-[#D71920]" />
                   </div>
                   <div>
-                    <span className="text-zinc-500 block text-[11px] font-bold">Siège & Zone d'activité</span>
-                    <strong className="text-xs text-zinc-950 block">
+                    <span className="text-zinc-500 block text-[11px] font-bold uppercase tracking-wider">
+                      Siège & Zone d'activité
+                    </span>
+                    <strong className="text-xs text-zinc-950 block font-bold">
                       Antananarivo, Madagascar
                     </strong>
-                    <span className="text-zinc-500 text-[11px]">Expédition et interventions sur toute la Grande Île</span>
+                    <span className="text-zinc-500 text-[11px]">Expéditions & interventions sur toute la Grande Île</span>
                   </div>
                 </div>
               </div>

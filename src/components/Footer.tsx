@@ -201,12 +201,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </h4>
             <div className="space-y-3">
               <a
-                href={getDirectWhatsAppUrl()}
+                href={getDirectWhatsAppUrl('Bonjour D SECURE, je souhaite me renseigner sur vos équipements.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 hover:text-white transition-colors text-zinc-300 group"
               >
-                <OfficialWhatsAppIcon size={20} />
+                <OfficialWhatsAppIcon size={22} />
                 <span className="font-bold group-hover:text-emerald-400 transition-colors">+261 33 75 565 84</span>
               </a>
 
@@ -214,8 +214,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href="mailto:dsecure.mg@gmail.com"
                 className="flex items-center gap-2.5 hover:text-white transition-colors text-zinc-300 group"
               >
-                <OfficialGmailIcon size={20} />
+                <OfficialGmailIcon size={22} />
                 <span className="font-medium group-hover:text-red-400 transition-colors">dsecure.mg@gmail.com</span>
+              </a>
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 hover:text-white transition-colors text-zinc-300 group"
+              >
+                <OfficialFacebookIcon size={22} />
+                <span className="font-medium group-hover:text-blue-400 transition-colors">D SECURE</span>
               </a>
 
               <a

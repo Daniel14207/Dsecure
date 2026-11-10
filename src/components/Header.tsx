@@ -167,7 +167,7 @@ export const Header: React.FC<HeaderProps> = ({
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-black tracking-wider uppercase text-white bg-[#D71920] hover:bg-[#b8141a] rounded-lg shadow-md shadow-red-700/20 transition-all hover:shadow-lg hover:shadow-red-700/30"
           >
-            <OfficialWhatsAppIcon size={18} />
+            <OfficialWhatsAppIcon size={18} variant="white" />
             <span>WHATSAPP</span>
           </a>
 
