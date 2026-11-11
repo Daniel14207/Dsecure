@@ -12,9 +12,9 @@
     "sellingPriceAr": 140000,
     "formattedPrice": "140 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/analog_r2_c1_9_58c86f3f.jpg",
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-EXIPF-3.6mm-O-STD.jpg",
     "images": [
-      "/assets/aistudio/analog_r2_c1_9_58c86f3f.jpg"
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-EXIPF-3.6mm-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -33,8 +33,10 @@
     "sellingPriceAr": 140000,
     "formattedPrice": "140 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76D0T-EXIPF-2.8mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76D0T-EXIPF-2.8mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -52,8 +54,10 @@
     "sellingPriceAr": 380000,
     "formattedPrice": "380 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16U0T-ITF.png",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16U0T-ITF.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -71,9 +75,9 @@
     "sellingPriceAr": 380000,
     "formattedPrice": "380 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/analog_r5_c1_13_7cef10b3.png",
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76U0T-ITMF.png",
     "images": [
-      "/assets/aistudio/analog_r5_c1_13_7cef10b3.png"
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76U0T-ITMF.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -92,8 +96,10 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__THC-B120-PC.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__THC-B120-PC.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -111,8 +117,10 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__THC-T120-PC.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__THC-T120-PC.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -130,9 +138,9 @@
     "sellingPriceAr": 300000,
     "formattedPrice": "300 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/analog_r10_c1_3_5408bd81.png",
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-LPXTS.png",
     "images": [
-      "/assets/aistudio/analog_r10_c1_3_5408bd81.png"
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-LPXTS.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -151,8 +159,10 @@
     "sellingPriceAr": 420000,
     "formattedPrice": "420 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70D0T-PTLXTS.png",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70D0T-PTLXTS.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -170,8 +180,10 @@
     "sellingPriceAr": 440000,
     "formattedPrice": "440 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE17K0T-LTS-3.6mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE17K0T-LTS-3.6mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -189,8 +201,10 @@
     "sellingPriceAr": 460000,
     "formattedPrice": "460 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70K0T-PTLTS-3.6mm-O-STD.png",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70K0T-PTLTS-3.6mm-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -208,8 +222,10 @@
     "sellingPriceAr": 589000,
     "formattedPrice": "589 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE19H0T-AIT3ZF.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE19H0T-AIT3ZF.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -227,8 +243,10 @@
     "sellingPriceAr": 590000,
     "formattedPrice": "590 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE12DF3T-PIRXOS.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE12DF3T-PIRXOS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -246,8 +264,10 @@
     "sellingPriceAr": 200000,
     "formattedPrice": "200 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-LPFS.png",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-LPFS.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -265,8 +285,10 @@
     "sellingPriceAr": 200000,
     "formattedPrice": "200 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76D0T-LPFS.png",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76D0T-LPFS.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -284,8 +306,10 @@
     "sellingPriceAr": 250000,
     "formattedPrice": "250 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16K0T-LPFS.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16K0T-LPFS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -303,9 +327,9 @@
     "sellingPriceAr": 250000,
     "formattedPrice": "250 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/analog_r23_c1_17_2896f0f9.jpg",
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76K0T-LPFS.jpg",
     "images": [
-      "/assets/aistudio/analog_r23_c1_17_2896f0f9.jpg"
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76K0T-LPFS.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -324,9 +348,9 @@
     "sellingPriceAr": 250000,
     "formattedPrice": "250 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/analog_r24_c1_11_c40cf9f9.png",
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16K0T-LFS.png",
     "images": [
-      "/assets/aistudio/analog_r24_c1_11_c40cf9f9.png"
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16K0T-LFS.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -345,8 +369,10 @@
     "sellingPriceAr": 260000,
     "formattedPrice": "260 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE10DF0T-LPFS.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE10DF0T-LPFS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -364,8 +390,10 @@
     "sellingPriceAr": 260000,
     "formattedPrice": "260 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70DF0T-LPFS.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70DF0T-LPFS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -383,8 +411,10 @@
     "sellingPriceAr": 400000,
     "formattedPrice": "400 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE10KF0T-PFS.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE10KF0T-PFS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -402,8 +432,10 @@
     "sellingPriceAr": 400000,
     "formattedPrice": "400 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70KF0T-PFS.jpg",
+    "images": [
+      "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70KF0T-PFS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -421,8 +453,10 @@
     "sellingPriceAr": 500000,
     "formattedPrice": "500 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__DS-7204HGHI-M1-T.jpg",
+    "images": [
+      "/images/DVR/DVR__DS-7204HGHI-M1-T.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -440,8 +474,10 @@
     "sellingPriceAr": 598500,
     "formattedPrice": "598 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__DS-7208HGHI-M1-T.jpg",
+    "images": [
+      "/images/DVR/DVR__DS-7208HGHI-M1-T.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -459,8 +495,10 @@
     "sellingPriceAr": 1026000,
     "formattedPrice": "1 026 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__DS-7216HGHI-M1-T.jpg",
+    "images": [
+      "/images/DVR/DVR__DS-7216HGHI-M1-T.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -478,8 +516,10 @@
     "sellingPriceAr": 2565000,
     "formattedPrice": "2 565 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__DS-7232HGHI-M2.jpg",
+    "images": [
+      "/images/DVR/DVR__DS-7232HGHI-M2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -497,8 +537,10 @@
     "sellingPriceAr": 674500,
     "formattedPrice": "674 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__iDS-7204HQHI-M1-S-STD-C.jpg",
+    "images": [
+      "/images/DVR/DVR__iDS-7204HQHI-M1-S-STD-C.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -516,8 +558,10 @@
     "sellingPriceAr": 921500,
     "formattedPrice": "921 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__iDS-7208HQHI-M1-S-STD-C.jpg",
+    "images": [
+      "/images/DVR/DVR__iDS-7208HQHI-M1-S-STD-C.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -535,8 +579,10 @@
     "sellingPriceAr": 1767000,
     "formattedPrice": "1 767 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__iDS-7216HQHI-M1-XT.jpg",
+    "images": [
+      "/images/DVR/DVR__iDS-7216HQHI-M1-XT.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -554,8 +600,10 @@
     "sellingPriceAr": 3420000,
     "formattedPrice": "3 420 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__IDS-7232HQHI-M2-S.png",
+    "images": [
+      "/images/DVR/DVR__IDS-7232HQHI-M2-S.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -573,8 +621,10 @@
     "sellingPriceAr": 1425000,
     "formattedPrice": "1 425 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__IDS-7204HUHI-M1-XT.png",
+    "images": [
+      "/images/DVR/DVR__IDS-7204HUHI-M1-XT.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -592,8 +642,10 @@
     "sellingPriceAr": 2565000,
     "formattedPrice": "2 565 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__IDS-7208HUHI-M1-XT.png",
+    "images": [
+      "/images/DVR/DVR__IDS-7208HUHI-M1-XT.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -611,8 +663,10 @@
     "sellingPriceAr": 5092000,
     "formattedPrice": "5 092 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__IDS-7216HUHI-M2-XT.png",
+    "images": [
+      "/images/DVR/DVR__IDS-7216HUHI-M2-XT.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -630,8 +684,10 @@
     "sellingPriceAr": 10165000,
     "formattedPrice": "10 165 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DVR/DVR__IDS-7332HUHI-M4-S.jpg",
+    "images": [
+      "/images/DVR/DVR__IDS-7332HUHI-M4-S.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -649,9 +705,9 @@
     "sellingPriceAr": 665000,
     "formattedPrice": "665 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/dvr_r16_c1_9_4cf29d1c.jpg",
+    "image": "/images/DVR/DVR__DS-E04HGHI-B.jpg",
     "images": [
-      "/assets/aistudio/dvr_r16_c1_9_4cf29d1c.jpg"
+      "/images/DVR/DVR__DS-E04HGHI-B.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -689,9 +745,9 @@
     "sellingPriceAr": 1330000,
     "formattedPrice": "1 330 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/hikvision-kit_r3_c1_1_295ddbc1.jpg",
+    "image": "/images/KITS_SURVEILLANCE/KITS_SURVEILLANCE__DS-J142I-7204HGHI-M1-plus-2-plus-2CAM-HYBRID.jpg",
     "images": [
-      "/assets/aistudio/hikvision-kit_r3_c1_1_295ddbc1.jpg"
+      "/images/KITS_SURVEILLANCE/KITS_SURVEILLANCE__DS-J142I-7204HGHI-M1-plus-2-plus-2CAM-HYBRID.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -729,8 +785,10 @@
     "sellingPriceAr": 788500,
     "formattedPrice": "788 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/KITS_SURVEILLANCE/KITS_SURVEILLANCE__DS-J142I-STD-NKS422W02H.png",
+    "images": [
+      "/images/KITS_SURVEILLANCE/KITS_SURVEILLANCE__DS-J142I-STD-NKS422W02H.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "packs"
@@ -748,8 +806,10 @@
     "sellingPriceAr": 940500,
     "formattedPrice": "940 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2043G2-I-4mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2043G2-I-4mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -767,8 +827,10 @@
     "sellingPriceAr": 940500,
     "formattedPrice": "940 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2143G2-I.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2143G2-I.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -786,8 +848,10 @@
     "sellingPriceAr": 1092500,
     "formattedPrice": "1 092 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2T43G2-2I.png",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2T43G2-2I.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -805,9 +869,9 @@
     "sellingPriceAr": 1273000,
     "formattedPrice": "1 273 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-2-0_r5_c1_8_8b064d4a.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2083G2-I-4mm-O-STD.jpg",
     "images": [
-      "/assets/aistudio/ip-2-0_r5_c1_8_8b064d4a.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2083G2-I-4mm-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -826,8 +890,10 @@
     "sellingPriceAr": 1273000,
     "formattedPrice": "1 273 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2183G2-I-2.8mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2183G2-I-2.8mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -845,8 +911,10 @@
     "sellingPriceAr": 3135000,
     "formattedPrice": "3 135 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2TD1217-3-QA-O-STD.png",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2TD1217-3-QA-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -864,9 +932,9 @@
     "sellingPriceAr": 3135000,
     "formattedPrice": "3 135 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-2-0_r9_c1_10_980b1157.png",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2TD2617-3-QA-O-STD.png",
     "images": [
-      "/assets/aistudio/ip-2-0_r9_c1_10_980b1157.png"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2TD2617-3-QA-O-STD.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -885,9 +953,9 @@
     "sellingPriceAr": 1320500,
     "formattedPrice": "1 320 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-2-0_r11_c1_4_3d61c4be.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2935FWD-IS-1.16mm-O-STD.jpg",
     "images": [
-      "/assets/aistudio/ip-2-0_r11_c1_4_3d61c4be.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2935FWD-IS-1.16mm-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -925,8 +993,10 @@
     "sellingPriceAr": 1121000,
     "formattedPrice": "1 121 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2523G2-I.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2523G2-I.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -944,8 +1014,10 @@
     "sellingPriceAr": 580000,
     "formattedPrice": "580 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF0AC-2NT.jpg",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF0AC-2NT.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -963,8 +1035,10 @@
     "sellingPriceAr": 940500,
     "formattedPrice": "940 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-2CD2027G1-L.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-2CD2027G1-L.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -982,8 +1056,10 @@
     "sellingPriceAr": 940500,
     "formattedPrice": "940 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-2CD2327G3E-L.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-2CD2327G3E-L.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1001,9 +1077,9 @@
     "sellingPriceAr": 300000,
     "formattedPrice": "300 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r3_c1_32_eef30959.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1021G0-I.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r3_c1_32_eef30959.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1021G0-I.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1022,9 +1098,9 @@
     "sellingPriceAr": 320000,
     "formattedPrice": "320 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r4_c1_33_11f56b3a.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1321G0-I.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r4_c1_33_11f56b3a.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1321G0-I.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1043,8 +1119,10 @@
     "sellingPriceAr": 430000,
     "formattedPrice": "430 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1023G2-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1023G2-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1062,8 +1140,10 @@
     "sellingPriceAr": 470000,
     "formattedPrice": "470 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1123G2-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1123G2-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1081,8 +1161,10 @@
     "sellingPriceAr": 617500,
     "formattedPrice": "617 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1043G2-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1043G2-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1100,9 +1182,9 @@
     "sellingPriceAr": 655500,
     "formattedPrice": "655 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r9_c1_17_6189ab9a.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1143G2-LIU.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r9_c1_17_6189ab9a.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1143G2-LIU.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1121,9 +1203,9 @@
     "sellingPriceAr": 617500,
     "formattedPrice": "617 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r11_c1_27_dac66d1d.png",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2H-LIUF-SL-4mm__PHOTO2.png",
     "images": [
-      "/assets/aistudio/ip-1-0_r11_c1_27_dac66d1d.png"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2H-LIUF-SL-4mm__PHOTO2.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1161,8 +1243,10 @@
     "sellingPriceAr": 722000,
     "formattedPrice": "722 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1B27G2H-LIUF-SL-4mm.png",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1B27G2H-LIUF-SL-4mm.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1180,9 +1264,9 @@
     "sellingPriceAr": 902500,
     "formattedPrice": "902 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r14_c1_30_dac66d1d.png",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2H-LIUF-SL-4mm-O-STD.png",
     "images": [
-      "/assets/aistudio/ip-1-0_r14_c1_30_dac66d1d.png"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2H-LIUF-SL-4mm-O-STD.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1201,8 +1285,10 @@
     "sellingPriceAr": 902500,
     "formattedPrice": "902 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2H-LIUF-SL-2.8mm.png",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2H-LIUF-SL-2.8mm.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1220,9 +1306,9 @@
     "sellingPriceAr": 1567500,
     "formattedPrice": "1 567 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r17_c1_34_a560fce1.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G3-LIU-LSRB.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r17_c1_34_a560fce1.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G3-LIU-LSRB.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1241,9 +1327,9 @@
     "sellingPriceAr": 1168500,
     "formattedPrice": "1 168 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r18_c1_35_a560fce1.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T27G3-LIU-LSRB.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r18_c1_35_a560fce1.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T27G3-LIU-LSRB.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1262,8 +1348,10 @@
     "sellingPriceAr": 693500,
     "formattedPrice": "693 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1063G2-LIU-4mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1063G2-LIU-4mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1281,8 +1369,10 @@
     "sellingPriceAr": 722000,
     "formattedPrice": "722 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1163G2-LIU-2.8mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1163G2-LIU-2.8mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1300,9 +1390,9 @@
     "sellingPriceAr": 779000,
     "formattedPrice": "779 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r22_c1_22_feccad00.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1083G2-LIU-4mm-O-STD.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r22_c1_22_feccad00.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1083G2-LIU-4mm-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1321,8 +1411,10 @@
     "sellingPriceAr": 817000,
     "formattedPrice": "817 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1183G2-LIU-2.8mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1183G2-LIU-2.8mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1340,8 +1432,10 @@
     "sellingPriceAr": 608000,
     "formattedPrice": "608 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T43G0-I-4mm-C-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T43G0-I-4mm-C-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1359,8 +1453,10 @@
     "sellingPriceAr": 978500,
     "formattedPrice": "978 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1643G0-IZ-2.8-12mm-C-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1643G0-IZ-2.8-12mm-C-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1378,8 +1474,10 @@
     "sellingPriceAr": 978500,
     "formattedPrice": "978 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1743G0-IZ-2.8-12mm-C-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1743G0-IZ-2.8-12mm-C-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1397,9 +1495,9 @@
     "sellingPriceAr": 665000,
     "formattedPrice": "665 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r27_c1_10_2d61c6cf.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1153G0-I-2.8mm-C-O-STD.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r27_c1_10_2d61c6cf.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1153G0-I-2.8mm-C-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1418,8 +1516,10 @@
     "sellingPriceAr": 500000,
     "formattedPrice": "500 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2H-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2H-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1437,8 +1537,10 @@
     "sellingPriceAr": 500000,
     "formattedPrice": "500 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1327G2H-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1327G2H-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1456,8 +1558,10 @@
     "sellingPriceAr": 731500,
     "formattedPrice": "731 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2H-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2H-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1475,8 +1579,10 @@
     "sellingPriceAr": 731500,
     "formattedPrice": "731 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2H-LIU.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2H-LIU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1494,8 +1600,10 @@
     "sellingPriceAr": 769500,
     "formattedPrice": "769 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1067G2H-LIU-4mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1067G2H-LIU-4mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1513,8 +1621,10 @@
     "sellingPriceAr": 769500,
     "formattedPrice": "769 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1167G2H-LIU-2.8mm-O-STD.png",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1167G2H-LIU-2.8mm-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1532,9 +1642,9 @@
     "sellingPriceAr": 570000,
     "formattedPrice": "570 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r38_c1_19_caf4277b.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2-LUF-4mm-O-STD.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r38_c1_19_caf4277b.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2-LUF-4mm-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1553,8 +1663,10 @@
     "sellingPriceAr": 570000,
     "formattedPrice": "570 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1327G2-LUF-2.8mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1327G2-LUF-2.8mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1572,9 +1684,9 @@
     "sellingPriceAr": 769500,
     "formattedPrice": "769 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r41_c1_12_caf4277b.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2-LUF-4mm-O-STD.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r41_c1_12_caf4277b.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2-LUF-4mm-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1593,8 +1705,10 @@
     "sellingPriceAr": 769500,
     "formattedPrice": "769 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2-LUF-2.8mm-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2-LUF-2.8mm-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1612,8 +1726,10 @@
     "sellingPriceAr": 807500,
     "formattedPrice": "807 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1147G0-2.8mm-C-O-STD.png",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1147G0-2.8mm-C-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1631,8 +1747,10 @@
     "sellingPriceAr": 617500,
     "formattedPrice": "617 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T27G0-L-4mm-C-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T27G0-L-4mm-C-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1650,8 +1768,10 @@
     "sellingPriceAr": 864500,
     "formattedPrice": "864 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G0-L-4mm-C-O-STD.jpg",
+    "images": [
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G0-L-4mm-C-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1669,9 +1789,9 @@
     "sellingPriceAr": 940500,
     "formattedPrice": "940 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ip-1-0_r46_c1_18_9897ae6b.jpg",
+    "image": "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G2-LUF.jpg",
     "images": [
-      "/assets/aistudio/ip-1-0_r46_c1_18_9897ae6b.jpg"
+      "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G2-LUF.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1690,8 +1810,10 @@
     "sellingPriceAr": 807500,
     "formattedPrice": "807 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2DE1C200IW-DE3-F1-S7.jpg",
+    "images": [
+      "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2DE1C200IW-DE3-F1-S7.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1709,8 +1831,10 @@
     "sellingPriceAr": 6555000,
     "formattedPrice": "6 555 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2DE7A432IW-AEB-O-STD-T5.jpg",
+    "images": [
+      "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2DE7A432IW-AEB-O-STD-T5.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1728,8 +1852,10 @@
     "sellingPriceAr": 5605000,
     "formattedPrice": "5 605 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2SE4C425MWG-E-26.jpg",
+    "images": [
+      "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2SE4C425MWG-E-26.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1747,9 +1873,9 @@
     "sellingPriceAr": 4940000,
     "formattedPrice": "4 940 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ptz_r7_c1_5_a6c9b58f.jpg",
+    "image": "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2SE4C415MWG-E-14-F0.jpg",
     "images": [
-      "/assets/aistudio/ptz_r7_c1_5_a6c9b58f.jpg"
+      "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2SE4C415MWG-E-14-F0.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1768,8 +1894,10 @@
     "sellingPriceAr": 2850000,
     "formattedPrice": "2 850 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-1200KI.png",
+    "images": [
+      "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-1200KI.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "cameras"
@@ -1787,9 +1915,9 @@
     "sellingPriceAr": 1852500,
     "formattedPrice": "1 852 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/solar-powered-security-camera_r3_c2_1_8c4d9aec.jpg",
+    "image": "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2XS2T41G0-ID-W-4G-C04S05.jpg",
     "images": [
-      "/assets/aistudio/solar-powered-security-camera_r3_c2_1_8c4d9aec.jpg"
+      "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2XS2T41G0-ID-W-4G-C04S05.jpg"
     ],
     "validationStatus": "à vérifier",
     "issue": "Référence manquante / à confirmer",
@@ -1808,8 +1936,10 @@
     "sellingPriceAr": 1615000,
     "formattedPrice": "1 615 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2DE2C400IWG-K-4G-C09S20-2.8mm-O-STD__PHOTO2.png",
+    "images": [
+      "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2DE2C400IWG-K-4G-C09S20-2.8mm-O-STD__PHOTO2.png"
+    ],
     "validationStatus": "à vérifier",
     "issue": "Référence manquante / à confirmer",
     "topSection": "cameras"
@@ -1827,8 +1957,10 @@
     "sellingPriceAr": 1197000,
     "formattedPrice": "1 197 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2CFSP4-4G-2.8mm-O-STD-EU.png",
+    "images": [
+      "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2CFSP4-4G-2.8mm-O-STD-EU.png"
+    ],
     "validationStatus": "à vérifier",
     "issue": "Référence manquante / à confirmer",
     "topSection": "cameras"
@@ -1846,8 +1978,10 @@
     "sellingPriceAr": 1596000,
     "formattedPrice": "1 596 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2CFSP8-D-4G-2.8-plus-4mm-O-STD-EU__PHOTO2.png",
+    "images": [
+      "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2CFSP8-D-4G-2.8-plus-4mm-O-STD-EU__PHOTO2.png"
+    ],
     "validationStatus": "à vérifier",
     "issue": "Référence manquante / à confirmer",
     "topSection": "cameras"
@@ -1865,8 +1999,10 @@
     "sellingPriceAr": 2945000,
     "formattedPrice": "2 945 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5043QE.png",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5043QE.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -1884,8 +2020,10 @@
     "sellingPriceAr": 3610000,
     "formattedPrice": "3 610 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5043U3-1V0S-EU.png",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5043U3-1V0S-EU.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -1903,9 +2041,9 @@
     "sellingPriceAr": null,
     "formattedPrice": "Prix sur demande",
     "currency": "Ar",
-    "image": "/assets/aistudio/monitor_r5_c1_2_a0c80a70.jpg",
+    "image": "/images/MONITEURS/MONITEURS__DS-D5032QE.jpg",
     "images": [
-      "/assets/aistudio/monitor_r5_c1_2_a0c80a70.jpg"
+      "/images/MONITEURS/MONITEURS__DS-D5032QE.jpg"
     ],
     "validationStatus": "à vérifier",
     "issue": "Prix source absent",
@@ -1924,9 +2062,9 @@
     "sellingPriceAr": 1045000,
     "formattedPrice": "1 045 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/monitor_r6_c1_10_872cbb3f.jpg",
+    "image": "/images/MONITEURS/MONITEURS__DS-D5027FN01.jpg",
     "images": [
-      "/assets/aistudio/monitor_r6_c1_10_872cbb3f.jpg"
+      "/images/MONITEURS/MONITEURS__DS-D5027FN01.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -1945,8 +2083,10 @@
     "sellingPriceAr": 883500,
     "formattedPrice": "883 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5024FN.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5024FN.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -1964,8 +2104,10 @@
     "sellingPriceAr": 750500,
     "formattedPrice": "750 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5022FN-C.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5022FN-C.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -1983,8 +2125,10 @@
     "sellingPriceAr": 33535000,
     "formattedPrice": "33 535 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5B86RB-D.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5B86RB-D.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -2002,8 +2146,10 @@
     "sellingPriceAr": 14440000,
     "formattedPrice": "14 440 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5B65RB-FP.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5B65RB-FP.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -2021,9 +2167,9 @@
     "sellingPriceAr": 1282500,
     "formattedPrice": "1 282 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/monitor_r12_c1_13_624f6e33.jpg",
+    "image": "/images/MONITEURS/MONITEURS__DS-D5SC3B-B.jpg",
     "images": [
-      "/assets/aistudio/monitor_r12_c1_13_624f6e33.jpg"
+      "/images/MONITEURS/MONITEURS__DS-D5SC3B-B.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2042,9 +2188,9 @@
     "sellingPriceAr": 1282500,
     "formattedPrice": "1 282 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/monitor_r13_c1_14_044c0312.jpg",
+    "image": "/images/MONITEURS/MONITEURS__DS-D5SC3B-W.jpg",
     "images": [
-      "/assets/aistudio/monitor_r13_c1_14_044c0312.jpg"
+      "/images/MONITEURS/MONITEURS__DS-D5SC3B-W.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2063,9 +2209,9 @@
     "sellingPriceAr": 9690000,
     "formattedPrice": "9 690 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/monitor_r14_c1_5_ec2c97c4.jpg",
+    "image": "/images/MONITEURS/MONITEURS__DS-D5AC11T5-8S2.jpg",
     "images": [
-      "/assets/aistudio/monitor_r14_c1_5_ec2c97c4.jpg"
+      "/images/MONITEURS/MONITEURS__DS-D5AC11T5-8S2.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2084,8 +2230,10 @@
     "sellingPriceAr": 1548500,
     "formattedPrice": "1 548 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5ABKY2-S.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5ABKY2-S.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -2103,8 +2251,10 @@
     "sellingPriceAr": 2175500,
     "formattedPrice": "2 175 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D5ABKY2-M.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D5ABKY2-M.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -2122,8 +2272,10 @@
     "sellingPriceAr": 12350000,
     "formattedPrice": "12 350 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D4430FO-CKI.png",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D4430FO-CKI.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -2141,8 +2293,10 @@
     "sellingPriceAr": 8075000,
     "formattedPrice": "8 075 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/MONITEURS/MONITEURS__DS-D42B04-N.jpg",
+    "images": [
+      "/images/MONITEURS/MONITEURS__DS-D42B04-N.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "monitors"
@@ -2179,8 +2333,10 @@
     "sellingPriceAr": 646000,
     "formattedPrice": "646 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png",
+    "images": [
+      "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "hdd"
@@ -2198,9 +2354,9 @@
     "sellingPriceAr": 1045000,
     "formattedPrice": "1 045 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/hdd_r3_c3_1_99ab58a0.png",
+    "image": "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png",
     "images": [
-      "/assets/aistudio/hdd_r3_c3_1_99ab58a0.png"
+      "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2219,8 +2375,10 @@
     "sellingPriceAr": 1453500,
     "formattedPrice": "1 453 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png",
+    "images": [
+      "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "hdd"
@@ -2238,9 +2396,9 @@
     "sellingPriceAr": 1700500,
     "formattedPrice": "1 700 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/hdd_r5_c3_4_99ab58a0.png",
+    "image": "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png",
     "images": [
-      "/assets/aistudio/hdd_r5_c3_4_99ab58a0.png"
+      "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2259,8 +2417,10 @@
     "sellingPriceAr": 2375000,
     "formattedPrice": "2 375 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png",
+    "images": [
+      "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "hdd"
@@ -2278,8 +2438,10 @@
     "sellingPriceAr": 3515000,
     "formattedPrice": "3 515 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png",
+    "images": [
+      "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "hdd"
@@ -2297,9 +2459,9 @@
     "sellingPriceAr": 1282500,
     "formattedPrice": "1 282 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/nvr_r2_c1_1_607b2ad6.png",
+    "image": "/images/NVR/NVR__DS-7608NXI-K1-E.png",
     "images": [
-      "/assets/aistudio/nvr_r2_c1_1_607b2ad6.png"
+      "/images/NVR/NVR__DS-7608NXI-K1-E.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2318,8 +2480,10 @@
     "sellingPriceAr": 1995000,
     "formattedPrice": "1 995 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7616NXI-K2.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7616NXI-K2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2337,9 +2501,9 @@
     "sellingPriceAr": 2945000,
     "formattedPrice": "2 945 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/nvr_r4_c1_9_365fded7.jpg",
+    "image": "/images/NVR/NVR__DS-7632NXI-K2.jpg",
     "images": [
-      "/assets/aistudio/nvr_r4_c1_9_365fded7.jpg"
+      "/images/NVR/NVR__DS-7632NXI-K2.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2358,9 +2522,9 @@
     "sellingPriceAr": 3515000,
     "formattedPrice": "3 515 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/nvr_r5_c1_2_d98d7f69.png",
+    "image": "/images/NVR/NVR__DS-7732NXI-K4.png",
     "images": [
-      "/assets/aistudio/nvr_r5_c1_2_d98d7f69.png"
+      "/images/NVR/NVR__DS-7732NXI-K4.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2379,9 +2543,9 @@
     "sellingPriceAr": 5985000,
     "formattedPrice": "5 985 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/nvr_r6_c1_8_d5977e04.jpg",
+    "image": "/images/NVR/NVR__DS-7732NI-K4-16P.jpg",
     "images": [
-      "/assets/aistudio/nvr_r6_c1_8_d5977e04.jpg"
+      "/images/NVR/NVR__DS-7732NI-K4-16P.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2400,8 +2564,10 @@
     "sellingPriceAr": 9215000,
     "formattedPrice": "9 215 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7764NI-M4.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7764NI-M4.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2419,8 +2585,10 @@
     "sellingPriceAr": 883500,
     "formattedPrice": "883 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7104NI-Q1-4P-M.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7104NI-Q1-4P-M.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2438,8 +2606,10 @@
     "sellingPriceAr": 703000,
     "formattedPrice": "703 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7108NI-Q1-M.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7108NI-Q1-M.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2457,8 +2627,10 @@
     "sellingPriceAr": 1225500,
     "formattedPrice": "1 225 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7108NI-Q1-8P-M.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7108NI-Q1-8P-M.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2476,8 +2648,10 @@
     "sellingPriceAr": 1320500,
     "formattedPrice": "1 320 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7616NI-Q2.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7616NI-Q2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2495,8 +2669,10 @@
     "sellingPriceAr": 2375000,
     "formattedPrice": "2 375 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/NVR/NVR__DS-7616NI-Q2-16P.jpg",
+    "images": [
+      "/images/NVR/NVR__DS-7616NI-Q2-16P.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "dvr_nvr"
@@ -2514,8 +2690,10 @@
     "sellingPriceAr": 617500,
     "formattedPrice": "617 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1LN6U-W-CCA-O-STD.png",
+    "images": [
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1LN6U-W-CCA-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -2533,8 +2711,10 @@
     "sellingPriceAr": 1092500,
     "formattedPrice": "1 092 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1LN6UZC0-O-STD.png",
+    "images": [
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1LN6UZC0-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -2552,9 +2732,9 @@
     "sellingPriceAr": 160000,
     "formattedPrice": "160 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/transmission_r7_c1_1_ac08cd3b.png",
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1M02.png",
     "images": [
-      "/assets/aistudio/transmission_r7_c1_1_ac08cd3b.png"
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1M02.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2573,8 +2753,10 @@
     "sellingPriceAr": 30000,
     "formattedPrice": "30 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1H18S-E-C.jpg",
+    "images": [
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1H18S-E-C.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -2649,8 +2831,10 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1225-D4-EUR.png",
+    "images": [
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1225-D4-EUR.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -2668,9 +2852,9 @@
     "sellingPriceAr": 160000,
     "formattedPrice": "160 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/transmission_r17_c1_4_4d17fbe8.png",
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1205-D8-EUR.png",
     "images": [
-      "/assets/aistudio/transmission_r17_c1_4_4d17fbe8.png"
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1205-D8-EUR.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2689,9 +2873,9 @@
     "sellingPriceAr": 180000,
     "formattedPrice": "180 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/transmission_r18_c1_5_5a3ba2d4.png",
+    "image": "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1208-C16.png",
     "images": [
-      "/assets/aistudio/transmission_r18_c1_5_5a3ba2d4.png"
+      "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1208-C16.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2710,9 +2894,9 @@
     "sellingPriceAr": 96000,
     "formattedPrice": "96 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/switch_r3_c1_1_72f74e66.jpg",
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0505D-E.jpg",
     "images": [
-      "/assets/aistudio/switch_r3_c1_1_72f74e66.jpg"
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0505D-E.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2731,8 +2915,10 @@
     "sellingPriceAr": 174000,
     "formattedPrice": "174 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0508D-E.jpg",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0508D-E.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2750,8 +2936,10 @@
     "sellingPriceAr": 570000,
     "formattedPrice": "570 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0516-E-B.jpg",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0516-E-B.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2769,8 +2957,10 @@
     "sellingPriceAr": 817000,
     "formattedPrice": "817 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0524-E-B.jpg",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0524-E-B.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2788,8 +2978,10 @@
     "sellingPriceAr": 300000,
     "formattedPrice": "300 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0106P-E-M.png",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0106P-E-M.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2807,8 +2999,10 @@
     "sellingPriceAr": 510000,
     "formattedPrice": "510 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0310P-E-M.png",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0310P-E-M.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2826,8 +3020,10 @@
     "sellingPriceAr": 1349000,
     "formattedPrice": "1 349 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E1318P-EI-M.jpg",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E1318P-EI-M.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2845,9 +3041,9 @@
     "sellingPriceAr": 360000,
     "formattedPrice": "360 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/switch_r12_c1_7_4844c0a5.png",
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E1505P-EI-M-O-STD.png",
     "images": [
-      "/assets/aistudio/switch_r12_c1_7_4844c0a5.png"
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E1505P-EI-M-O-STD.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2866,8 +3062,10 @@
     "sellingPriceAr": 1805000,
     "formattedPrice": "1 805 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E1520P-EI.png",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E1520P-EI.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2885,9 +3083,9 @@
     "sellingPriceAr": 2432000,
     "formattedPrice": "2 432 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/switch_r14_c1_6_503775f0.jpg",
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E1526P-EI-M-O-STD.jpg",
     "images": [
-      "/assets/aistudio/switch_r14_c1_6_503775f0.jpg"
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E1526P-EI-M-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2906,9 +3104,9 @@
     "sellingPriceAr": 2850000,
     "formattedPrice": "2 850 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/switch_r15_c1_15_44ab7a87.png",
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E1528P-EI.png",
     "images": [
-      "/assets/aistudio/switch_r15_c1_15_44ab7a87.png"
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E1528P-EI.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2927,8 +3125,10 @@
     "sellingPriceAr": 310000,
     "formattedPrice": "310 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0505P-E-M.png",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0505P-E-M.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2946,9 +3146,9 @@
     "sellingPriceAr": 627000,
     "formattedPrice": "627 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/switch_r18_c1_8_4dc4aa65.png",
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0510P-E-M.png",
     "images": [
-      "/assets/aistudio/switch_r18_c1_8_4dc4aa65.png"
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0510P-E-M.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -2967,8 +3167,10 @@
     "sellingPriceAr": 1615000,
     "formattedPrice": "1 615 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0518P-E-M.png",
+    "images": [
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0518P-E-M.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -2986,9 +3188,9 @@
     "sellingPriceAr": 2185000,
     "formattedPrice": "2 185 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/switch_r20_c1_12_84190b01.png",
+    "image": "/images/SWITCH_POE/SWITCH_POE__DS-3E0526P-E-M.png",
     "images": [
-      "/assets/aistudio/switch_r20_c1_12_84190b01.png"
+      "/images/SWITCH_POE/SWITCH_POE__DS-3E0526P-E-M.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3007,8 +3209,10 @@
     "sellingPriceAr": 731500,
     "formattedPrice": "731 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XS6404-S-B.png",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XS6404-S-B.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3026,8 +3230,10 @@
     "sellingPriceAr": 893000,
     "formattedPrice": "893 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XS6406-S-B.png",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XS6406-S-B.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3045,9 +3251,9 @@
     "sellingPriceAr": 997500,
     "formattedPrice": "997 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/cabinet_r4_c1_3_db5fdb85.png",
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XS6409-S-B.png",
     "images": [
-      "/assets/aistudio/cabinet_r4_c1_3_db5fdb85.png"
+      "/images/BAIES_RACK/BAIES_RACK__DS-XS6409-S-B.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3066,8 +3272,10 @@
     "sellingPriceAr": 1235000,
     "formattedPrice": "1 235 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XS6412-S-B.png",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XS6412-S-B.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3085,8 +3293,10 @@
     "sellingPriceAr": 921500,
     "formattedPrice": "921 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XS6606-S-B.png",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XS6606-S-B.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3104,8 +3314,10 @@
     "sellingPriceAr": 1092500,
     "formattedPrice": "1 092 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XS6609-S-B.png",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XS6609-S-B.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3123,8 +3335,10 @@
     "sellingPriceAr": 350000,
     "formattedPrice": "350 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XPEUR08-Y-KYL.jpg",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XPEUR08-Y-KYL.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3142,9 +3356,9 @@
     "sellingPriceAr": 260000,
     "formattedPrice": "260 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/cabinet_r9_c1_6_42cb49a0.jpg",
+    "image": "/images/BAIES_RACK/BAIES_RACK__A_IDENTIFIER.jpg",
     "images": [
-      "/assets/aistudio/cabinet_r9_c1_6_42cb49a0.jpg"
+      "/images/BAIES_RACK/BAIES_RACK__A_IDENTIFIER.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3163,8 +3377,10 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-XSPB04-S-B.png",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-XSPB04-S-B.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3182,8 +3398,10 @@
     "sellingPriceAr": 490000,
     "formattedPrice": "490 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-UPS1000.jpg",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-UPS1000.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3201,8 +3419,10 @@
     "sellingPriceAr": 1168500,
     "formattedPrice": "1 168 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/BAIES_RACK/BAIES_RACK__DS-UPS2000-O-STD-EU.jpg",
+    "images": [
+      "/images/BAIES_RACK/BAIES_RACK__DS-UPS2000-O-STD-EU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3239,8 +3459,10 @@
     "sellingPriceAr": 100000,
     "formattedPrice": "100 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-XS.jpg",
+    "images": [
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-XS.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -3258,8 +3480,10 @@
     "sellingPriceAr": 160000,
     "formattedPrice": "160 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-S.png",
+    "images": [
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-S.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -3277,9 +3501,9 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/accessories_r5_c1_3_73f60160.jpg",
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-DM46.jpg",
     "images": [
-      "/assets/aistudio/accessories_r5_c1_3_73f60160.jpg"
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-DM46.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3298,8 +3522,10 @@
     "sellingPriceAr": 50000,
     "formattedPrice": "50 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-2280ZJ.jpg",
+    "images": [
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-2280ZJ.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -3317,8 +3543,10 @@
     "sellingPriceAr": 674500,
     "formattedPrice": "674 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP522-SI.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP522-SI.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3336,9 +3564,9 @@
     "sellingPriceAr": 617500,
     "formattedPrice": "617 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/ac-router-ap_r3_c2_2_3cbaa76f.png",
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP521-SI.png",
     "images": [
-      "/assets/aistudio/ac-router-ap_r3_c2_2_3cbaa76f.png"
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP521-SI.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3357,8 +3585,10 @@
     "sellingPriceAr": 1282500,
     "formattedPrice": "1 282 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP622E-SI.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP622E-SI.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3376,8 +3606,10 @@
     "sellingPriceAr": 1624500,
     "formattedPrice": "1 624 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP623E-SI.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP623E-SI.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3395,9 +3627,9 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-router_r3_c1_8_3ab1a39b.png",
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRE3N.png",
     "images": [
-      "/assets/aistudio/wireless-router_r3_c1_8_3ab1a39b.png"
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRE3N.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3416,8 +3648,10 @@
     "sellingPriceAr": 190000,
     "formattedPrice": "190 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRE12C.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRE12C.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3435,9 +3669,9 @@
     "sellingPriceAr": 220000,
     "formattedPrice": "220 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-router_r6_c1_7_7fc0b986.jpg",
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR12C.jpg",
     "images": [
-      "/assets/aistudio/wireless-router_r6_c1_7_7fc0b986.jpg"
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR12C.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3456,8 +3690,10 @@
     "sellingPriceAr": 430000,
     "formattedPrice": "430 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR18X.jpg",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR18X.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3475,8 +3711,10 @@
     "sellingPriceAr": 500000,
     "formattedPrice": "500 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR30X.jpg",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR30X.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3494,8 +3732,10 @@
     "sellingPriceAr": 500000,
     "formattedPrice": "500 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR30X-V.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR30X-V.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3513,8 +3753,10 @@
     "sellingPriceAr": 470000,
     "formattedPrice": "470 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR4G12C.jpg",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR4G12C.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3532,8 +3774,10 @@
     "sellingPriceAr": 845500,
     "formattedPrice": "845 500 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRM12C-2.png",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRM12C-2.png"
+    ],
     "validationStatus": "à vérifier",
     "issue": "Référence manquante / à confirmer",
     "topSection": "network"
@@ -3551,9 +3795,9 @@
     "sellingPriceAr": 1263500,
     "formattedPrice": "1 263 500 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-router_r15_c2_12_431dc4d2.png",
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRM12C-3.png",
     "images": [
-      "/assets/aistudio/wireless-router_r15_c2_12_431dc4d2.png"
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRM12C-3.png"
     ],
     "validationStatus": "à vérifier",
     "issue": "Référence manquante / à confirmer",
@@ -3572,9 +3816,9 @@
     "sellingPriceAr": 480000,
     "formattedPrice": "480 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-router_r17_c1_1_aef31f44.jpg",
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF02C-5AC-O.jpg",
     "images": [
-      "/assets/aistudio/wireless-router_r17_c1_1_aef31f44.jpg"
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF02C-5AC-O.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3593,8 +3837,10 @@
     "sellingPriceAr": 530000,
     "formattedPrice": "530 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF02C-5N-O.jpg",
+    "images": [
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF02C-5N-O.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "network"
@@ -3612,9 +3858,9 @@
     "sellingPriceAr": 570000,
     "formattedPrice": "570 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-router_r19_c1_3_65442cf8.jpg",
+    "image": "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF0AC-2NT.jpg",
     "images": [
-      "/assets/aistudio/wireless-router_r19_c1_3_65442cf8.jpg"
+      "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF0AC-2NT.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3652,9 +3898,9 @@
     "sellingPriceAr": 30000,
     "formattedPrice": "30 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/accessory_r4_c1_1_9ce7f5b0.png",
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__HDMI-Cable-4K30Hz-2m-Gray.png",
     "images": [
-      "/assets/aistudio/accessory_r4_c1_1_9ce7f5b0.png"
+      "/images/ACCESSOIRES/ACCESSOIRES__HDMI-Cable-4K30Hz-2m-Gray.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -3768,8 +4014,10 @@
     "sellingPriceAr": 430000,
     "formattedPrice": "430 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1HF1TPZ0.png",
+    "images": [
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1HF1TPZ0.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -3882,8 +4130,10 @@
     "sellingPriceAr": 24000,
     "formattedPrice": "24 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1NP5EUDC0-E-Orange.png",
+    "images": [
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1NP5EUDC0-E-Orange.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "accessories"
@@ -3996,9 +4246,9 @@
     "sellingPriceAr": 270000,
     "formattedPrice": "270 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/accessory_r27_c1_4_f4c17122.png",
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1LH1SCAM592C-O-STD.png",
     "images": [
-      "/assets/aistudio/accessory_r27_c1_4_f4c17122.png"
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1LH1SCAM592C-O-STD.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -4017,9 +4267,9 @@
     "sellingPriceAr": 480000,
     "formattedPrice": "480 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/accessory_r28_c1_5_7074a455.png",
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1LH1SCAM592C-O-STD.png",
     "images": [
-      "/assets/aistudio/accessory_r28_c1_5_7074a455.png"
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1LH1SCAM592C-O-STD.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -4038,9 +4288,9 @@
     "sellingPriceAr": 60000,
     "formattedPrice": "60 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/accessory_r31_c1_6_b6503b8c.png",
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1T03-E.png",
     "images": [
-      "/assets/aistudio/accessory_r31_c1_6_b6503b8c.png"
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1T03-E.png"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -4059,8 +4309,10 @@
     "sellingPriceAr": null,
     "formattedPrice": "Prix sur demande",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ACCESSOIRES/ACCESSOIRES__DS-1T04-E.png",
+    "images": [
+      "/images/ACCESSOIRES/ACCESSOIRES__DS-1T04-E.png"
+    ],
     "validationStatus": "à vérifier",
     "issue": "Prix source absent",
     "topSection": "accessories"
@@ -4078,8 +4330,10 @@
     "sellingPriceAr": 1390000,
     "formattedPrice": "1 390 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PWA64-Kit-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PWA64-Kit-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4097,8 +4351,10 @@
     "sellingPriceAr": 520000,
     "formattedPrice": "520 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PK1-E-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PK1-E-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4116,8 +4372,10 @@
     "sellingPriceAr": 190000,
     "formattedPrice": "190 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PKF1-WB.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PKF1-WB.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4135,8 +4393,10 @@
     "sellingPriceAr": 560000,
     "formattedPrice": "560 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PS1-E-WB-O-STD-Red.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PS1-E-WB-O-STD-Red.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4154,8 +4414,10 @@
     "sellingPriceAr": 390000,
     "formattedPrice": "390 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PS1-I-WB-O-STD-Red.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PS1-I-WB-O-STD-Red.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4173,8 +4435,10 @@
     "sellingPriceAr": 160000,
     "formattedPrice": "160 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDEB1-EG2-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDEB1-EG2-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4192,8 +4456,10 @@
     "sellingPriceAr": 180000,
     "formattedPrice": "180 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDEBP1-EG2-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDEBP1-EG2-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4211,8 +4477,10 @@
     "sellingPriceAr": 40000,
     "formattedPrice": "40 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP-IN-CR123A.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP-IN-CR123A.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4249,9 +4517,9 @@
     "sellingPriceAr": 190000,
     "formattedPrice": "190 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-intrusion-alarm_r11_c3_6_01a14db1.jpg",
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDMC-EG2-WB-O-STD.jpg",
     "images": [
-      "/assets/aistudio/wireless-intrusion-alarm_r11_c3_6_01a14db1.jpg"
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDMC-EG2-WB-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -4270,8 +4538,10 @@
     "sellingPriceAr": 340000,
     "formattedPrice": "340 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDC10AM-EG2-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDC10AM-EG2-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4289,8 +4559,10 @@
     "sellingPriceAr": 760000,
     "formattedPrice": "760 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDPC12P-EG2-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDPC12P-EG2-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4308,8 +4580,10 @@
     "sellingPriceAr": 760000,
     "formattedPrice": "760 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDPC12PF-EG2-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDPC12PF-EG2-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4327,8 +4601,10 @@
     "sellingPriceAr": 310000,
     "formattedPrice": "310 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDBG8-EG2-WB-O-STD.png",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDBG8-EG2-WB-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4346,8 +4622,10 @@
     "sellingPriceAr": 270000,
     "formattedPrice": "270 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP15P-EG2-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP15P-EG2-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4365,8 +4643,10 @@
     "sellingPriceAr": 670000,
     "formattedPrice": "670 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP18-HM-WB.png",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP18-HM-WB.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4384,8 +4664,10 @@
     "sellingPriceAr": 710000,
     "formattedPrice": "710 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PR1-WB-O-STD.png",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PR1-WB-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4403,8 +4685,10 @@
     "sellingPriceAr": 320000,
     "formattedPrice": "320 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDTPH-E-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDTPH-E-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4422,8 +4706,10 @@
     "sellingPriceAr": 380000,
     "formattedPrice": "380 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDWL-E-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDWL-E-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4441,8 +4727,10 @@
     "sellingPriceAr": 270000,
     "formattedPrice": "270 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PSP1-WB-O-STD.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PSP1-WB-O-STD.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4460,9 +4748,9 @@
     "sellingPriceAr": 230000,
     "formattedPrice": "230 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-intrusion-alarm_r22_c3_23_431cb522.jpg",
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PM1-O1L-WB.jpg",
     "images": [
-      "/assets/aistudio/wireless-intrusion-alarm_r22_c3_23_431cb522.jpg"
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PM1-O1L-WB.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -4481,8 +4769,10 @@
     "sellingPriceAr": 260000,
     "formattedPrice": "260 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PM1-O1H-WB.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PM1-O1H-WB.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4500,9 +4790,9 @@
     "sellingPriceAr": 420000,
     "formattedPrice": "420 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wireless-intrusion-alarm_r24_c3_8_a85d89bb.jpg",
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDSMK-S-WB-O-STD.jpg",
     "images": [
-      "/assets/aistudio/wireless-intrusion-alarm_r24_c3_8_a85d89bb.jpg"
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDSMK-S-WB-O-STD.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
@@ -4521,8 +4811,10 @@
     "sellingPriceAr": 250000,
     "formattedPrice": "250 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDCL12-EG2-WB-O-STD.png",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDCL12-EG2-WB-O-STD.png"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4540,8 +4832,10 @@
     "sellingPriceAr": 430000,
     "formattedPrice": "430 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PT1-WB.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PT1-WB.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4559,8 +4853,10 @@
     "sellingPriceAr": 20000,
     "formattedPrice": "20 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PT-M1.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PT-M1.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4578,8 +4874,10 @@
     "sellingPriceAr": 20000,
     "formattedPrice": "20 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDB-IN-Universalbracket.jpg",
+    "images": [
+      "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDB-IN-Universalbracket.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
     "topSection": "alarms"
@@ -4597,8 +4895,10 @@
     "sellingPriceAr": 780000,
     "formattedPrice": "780 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PHA48-EP.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PHA48-EP.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4616,8 +4916,10 @@
     "sellingPriceAr": 860000,
     "formattedPrice": "860 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PHA64-LP.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PHA64-LP.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4635,8 +4937,10 @@
     "sellingPriceAr": 470000,
     "formattedPrice": "470 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PK1-LRT-HWE.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PK1-LRT-HWE.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4654,8 +4958,10 @@
     "sellingPriceAr": 240000,
     "formattedPrice": "240 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM1-I8O2-H.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM1-I8O2-H.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4673,8 +4979,10 @@
     "sellingPriceAr": 420000,
     "formattedPrice": "420 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM1-O4H-H.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM1-O4H-H.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4692,9 +5000,9 @@
     "sellingPriceAr": 120000,
     "formattedPrice": "120 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wired-intrusion-alarm_r7_c3_5_d5abe121.jpg",
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PS1-R.jpg",
     "images": [
-      "/assets/aistudio/wired-intrusion-alarm_r7_c3_5_d5abe121.jpg"
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PS1-R.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
@@ -4713,9 +5021,9 @@
     "sellingPriceAr": 20000,
     "formattedPrice": "20 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wired-intrusion-alarm_r9_c3_6_6ca72311.jpg",
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-G.jpg",
     "images": [
-      "/assets/aistudio/wired-intrusion-alarm_r9_c3_6_6ca72311.jpg"
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-G.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
@@ -4734,8 +5042,10 @@
     "sellingPriceAr": 170000,
     "formattedPrice": "170 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-P.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-P.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4753,8 +5063,10 @@
     "sellingPriceAr": 590000,
     "formattedPrice": "590 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-S-EU.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-S-EU.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4772,8 +5084,10 @@
     "sellingPriceAr": 150000,
     "formattedPrice": "150 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDD12P-EG2.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDD12P-EG2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4791,8 +5105,10 @@
     "sellingPriceAr": 790000,
     "formattedPrice": "790 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDTT15AM-LM.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDTT15AM-LM.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4810,8 +5126,10 @@
     "sellingPriceAr": 100000,
     "formattedPrice": "100 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDBG8-EG2.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDBG8-EG2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4829,8 +5147,10 @@
     "sellingPriceAr": 200000,
     "formattedPrice": "200 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDPG12P-EG2.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDPG12P-EG2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4848,8 +5168,10 @@
     "sellingPriceAr": 130000,
     "formattedPrice": "130 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDCL12-EG2.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDCL12-EG2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4867,8 +5189,10 @@
     "sellingPriceAr": 50000,
     "formattedPrice": "50 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDP18-EG2.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDP18-EG2.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4886,8 +5210,10 @@
     "sellingPriceAr": 90000,
     "formattedPrice": "90 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDSK-P.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDSK-P.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4905,9 +5231,9 @@
     "sellingPriceAr": 20000,
     "formattedPrice": "20 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wired-intrusion-alarm_r20_c3_16_f91306d0.jpg",
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PD1-MC-WS.jpg",
     "images": [
-      "/assets/aistudio/wired-intrusion-alarm_r20_c3_16_f91306d0.jpg"
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PD1-MC-WS.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
@@ -4926,9 +5252,9 @@
     "sellingPriceAr": 10000,
     "formattedPrice": "10 000 Ar",
     "currency": "Ar",
-    "image": "/assets/aistudio/wired-intrusion-alarm_r21_c3_17_d3cc7b4b.jpg",
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDB-IN-Ceilingbracket.jpg",
     "images": [
-      "/assets/aistudio/wired-intrusion-alarm_r21_c3_17_d3cc7b4b.jpg"
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDB-IN-Ceilingbracket.jpg"
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
@@ -4947,8 +5273,10 @@
     "sellingPriceAr": 14000,
     "formattedPrice": "14 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDB-IN-Wallbracket.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDB-IN-Wallbracket.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
@@ -4966,8 +5294,10 @@
     "sellingPriceAr": 170000,
     "formattedPrice": "170 000 Ar",
     "currency": "Ar",
-    "image": null,
-    "images": [],
+    "image": "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PKF1-WE.jpg",
+    "images": [
+      "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PKF1-WE.jpg"
+    ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": "Colonne prix intitulée Sub-D Price 2023 Q2 : confirmer tarif actuel",
     "topSection": "alarms"
