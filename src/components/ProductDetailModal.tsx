@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product } from '../types/product';
 import { X, ShoppingBag, ArrowUpRight, ShieldCheck, Check, Phone, AlertTriangle, ShoppingCart } from 'lucide-react';
 import { formatAr, getDirectWhatsAppUrl } from '../utils/whatsapp';
@@ -23,6 +23,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const [quantity, setQuantity] = useState(1);
   const [imageError, setImageError] = useState(false);
   const [addedToast, setAddedToast] = useState(false);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [product?.id, product?.image]);
 
   if (!product) return null;
 

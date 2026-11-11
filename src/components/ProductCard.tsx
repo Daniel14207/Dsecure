@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product } from '../types/product';
 import { ShoppingBag, ArrowUpRight, ShieldCheck, AlertCircle, Eye, ShoppingCart } from 'lucide-react';
 
@@ -17,6 +17,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [imageError, setImageError] = useState(false);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [product.id, product.image]);
 
   const handleDecrease = (e: React.MouseEvent) => {
     e.stopPropagation();

@@ -159,12 +159,12 @@ export default function App() {
   const productsParPiece = useMemo(() => {
     // Select curated real products with original photos matching the reference layout
     const selectedIds = [
-      'surveillance-analog-2', // EXIR IPF
-      'surveillance-analog-23', // ANALOGIQUE SMART
-      'surveillance-ip-1-0-3', // IP NUMERIQUE INTERIEUR
-      'surveillance-ip-1-0-4', // IP NUMERIQUE EXTERIEUR
-      'surveillance-wireless-alarm-11', // PACK ALARME / DETECTEUR
-      'surveillance-wireless-alarm-22', // FINGERPRINT / CLAVIER
+      'surveillance-analog-2', // DS-2CE16D0T-EXIPF
+      'surveillance-analog-23', // DS-2CE76K0T-LPFS
+      'surveillance-ip-1-0-3', // DS-2CD1021G0-I
+      'surveillance-ip-1-0-4', // DS-2CD1321G0-I
+      'alarms-wireless-intrusion-alarm-11', // DS-PDMC-EG2-WB
+      'alarms-wireless-intrusion-alarm-22', // DS-PM1-O1L-WB
     ];
     const found = selectedIds
       .map((id) => PRODUCTS.find((p) => p.id === id))
