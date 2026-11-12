@@ -69,6 +69,29 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       url = generateCartOrderWhatsAppUrl(activeItems, customer);
     }
 
+    // Persist real order to backend API for admin dashboard
+    try {
+      fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customer,
+          items: activeItems.map((item) => ({
+            productId: item.product.id,
+            reference: item.product.reference,
+            name: item.product.name,
+            quantity: item.quantity,
+            unitPriceAr: item.product.sellingPriceAr || 0,
+            totalPriceAr: (item.product.sellingPriceAr || 0) * item.quantity,
+            image: item.product.image,
+          })),
+          totalAmountAr: orderTotal,
+        }),
+      }).catch((err) => console.error('Error saving order:', err));
+    } catch (e) {
+      console.error('Order tracking error:', e);
+    }
+
     // Open WhatsApp
     window.open(url, '_blank', 'noopener,noreferrer');
     onOrderSuccess();

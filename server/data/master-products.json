@@ -18,7 +18,9 @@
     ],
     "validationStatus": "à vérifier les données et l'image",
     "issue": null,
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.404Z"
   },
   {
     "id": "surveillance-analog-3",

@@ -81,6 +81,36 @@ ${bomDetails}
 
 Merci de me confirmer la disponibilité et de planifier l'installation à Antananarivo.`;
 
+    // Persist real pack order to backend API
+    try {
+      fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customer: {
+            fullName: 'Client Pack Vidéosurveillance',
+            phone: 'Contact via WhatsApp',
+            address: 'Antananarivo (Pose offerte)',
+            note: `Commande Pack: ${pack.name}`,
+          },
+          items: [
+            {
+              productId: pack.id,
+              reference: pack.id,
+              name: pack.name,
+              quantity: 1,
+              unitPriceAr: pack.totalPriceAr,
+              totalPriceAr: pack.totalPriceAr,
+              image: pack.image,
+            },
+          ],
+          totalAmountAr: pack.totalPriceAr,
+        }),
+      }).catch((e) => console.error('Pack order error:', e));
+    } catch (e) {
+      console.error('Error logging pack order:', e);
+    }
+
     window.open(getDirectWhatsAppUrl(text), '_blank', 'noopener,noreferrer');
   };
 

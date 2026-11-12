@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ord-1794478276419",
+    "orderNumber": "CMD-2026-001",
+    "customer": {
+      "fullName": "Rakoto Andry",
+      "phone": "0340000000",
+      "address": "Analakely, Antananarivo"
+    },
+    "items": [
+      {
+        "productId": "surveillance-analog-2",
+        "reference": "DS-2CE16D0T-EXIPF",
+        "name": "Caméra Bullet Turbo HD 2MP",
+        "quantity": 2,
+        "unitPriceAr": 140000,
+        "totalPriceAr": 280000,
+        "image": null
+      }
+    ],
+    "totalAmountAr": 280000,
+    "formattedTotal": "280 000 Ar",
+    "status": "Nouvelle commande",
+    "createdAt": "2026-11-12T10:11:16.518Z",
+    "updatedAt": "2026-11-12T10:11:16.518Z"
+  }
+]

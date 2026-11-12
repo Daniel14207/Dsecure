@@ -127,15 +127,21 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     {product.formattedPrice}
                   </span>
                 </div>
-                {product.sellingPriceAr ? (
-                  <span className="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
-                    Garantie & Support inclus
-                  </span>
-                ) : (
-                  <span className="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                    Sur devis personnalisé
-                  </span>
-                )}
+                <div>
+                  {product.isAvailable === false ? (
+                    <span className="text-xs text-red-600 font-black bg-red-50 px-2.5 py-1 rounded border border-red-200 uppercase tracking-wide">
+                      INDISPONIBLE
+                    </span>
+                  ) : product.sellingPriceAr ? (
+                    <span className="text-xs text-emerald-700 font-bold bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 uppercase tracking-wide">
+                      DISPONIBLE EN STOCK
+                    </span>
+                  ) : (
+                    <span className="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                      Sur devis personnalisé
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Technical Specifications Breakdown */}
@@ -177,20 +183,33 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {/* Add to Cart button */}
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 py-3 px-4 bg-zinc-900 hover:bg-black text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 shadow-xs"
+                  disabled={product.isAvailable === false}
+                  className={`flex-1 py-3 px-4 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 shadow-xs ${
+                    product.isAvailable === false
+                      ? 'bg-zinc-200 text-zinc-400 cursor-not-allowed'
+                      : 'bg-zinc-900 hover:bg-black text-white'
+                  }`}
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  <span>Ajouter au panier</span>
+                  <span>{product.isAvailable === false ? 'Indisponible au panier' : 'Ajouter au panier'}</span>
                 </button>
               </div>
 
               {/* Direct WhatsApp Order */}
               <button
                 onClick={() => onDirectOrder(product, quantity)}
-                className="w-full py-3.5 px-4 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-black uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-2 shadow-md shadow-red-700/20"
+                className={`w-full py-3.5 px-4 text-white text-xs font-black uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-2 shadow-md ${
+                  product.isAvailable === false
+                    ? 'bg-zinc-800 hover:bg-zinc-900 shadow-zinc-800/20'
+                    : 'bg-[#D71920] hover:bg-[#b8141a] shadow-red-700/20'
+                }`}
               >
                 <ShoppingCart className="w-4 h-4 fill-white" />
-                <span>Commander immédiatement via WhatsApp</span>
+                <span>
+                  {product.isAvailable === false
+                    ? 'Réserver sur commande via WhatsApp'
+                    : 'Commander immédiatement via WhatsApp'}
+                </span>
               </button>
 
               {addedToast && (

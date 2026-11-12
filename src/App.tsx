@@ -21,6 +21,29 @@ import { ArrowRight, ShoppingCart, ShieldCheck } from 'lucide-react';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<ActiveSection>('home');
+  const [products, setProducts] = useState<Product[]>(PRODUCTS);
+
+  // Synchronize with live backend products store
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.products) && data.products.length > 0) {
+          setProducts(data.products);
+        }
+      })
+      .catch((err) => console.log('Using static products cache', err));
+  }, []);
+
+  // Track anonymous page visits
+  useEffect(() => {
+    fetch('/api/analytics/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page: `/${activeSection}` }),
+    }).catch(() => {});
+  }, [activeSection]);
+
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('dsecure_cart');
@@ -32,6 +55,18 @@ export default function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  // Track product view
+  useEffect(() => {
+    if (selectedProduct) {
+      fetch('/api/analytics/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: selectedProduct.id }),
+      }).catch(() => {});
+    }
+  }, [selectedProduct]);
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [singleOrderProduct, setSingleOrderProduct] = useState<{ product: Product; quantity: number } | null>(null);
@@ -112,52 +147,51 @@ export default function App() {
     setIsQuoteOpen(true);
   };
 
-  // Filtered dataset slices for all 8 categories requested in Priority 3
+  // Filtered dataset slices for all 8 categories
   const cameraProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'cameras');
-  }, []);
+    return products.filter((p) => p.topSection === 'cameras');
+  }, [products]);
 
   const alarmProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'alarms');
-  }, []);
+    return products.filter((p) => p.topSection === 'alarms');
+  }, [products]);
 
   const packProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'packs');
-  }, []);
+    return products.filter((p) => p.topSection === 'packs');
+  }, [products]);
 
   const dvrNvrProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'dvr_nvr');
-  }, []);
+    return products.filter((p) => p.topSection === 'dvr_nvr');
+  }, [products]);
 
   const accessoryProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'accessories');
-  }, []);
+    return products.filter((p) => p.topSection === 'accessories');
+  }, [products]);
 
   const hddProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'hdd');
-  }, []);
+    return products.filter((p) => p.topSection === 'hdd');
+  }, [products]);
 
   const networkProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'network');
-  }, []);
+    return products.filter((p) => p.topSection === 'network');
+  }, [products]);
 
   const monitorProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => p.topSection === 'monitors');
-  }, []);
+    return products.filter((p) => p.topSection === 'monitors');
+  }, [products]);
 
   // Related products for detail modal
   const relatedProducts = useMemo(() => {
     if (!selectedProduct) return [];
-    return PRODUCTS.filter(
+    return products.filter(
       (p) =>
         p.id !== selectedProduct.id &&
         (p.category === selectedProduct.category || p.topSection === selectedProduct.topSection)
     ).slice(0, 4);
-  }, [selectedProduct]);
+  }, [selectedProduct, products]);
 
-  // Featured "NOS PRODUITS PAR PIÈCE" for the homepage matching design reference
+  // Featured "NOS PRODUITS PAR PIÈCE" for the homepage
   const productsParPiece = useMemo(() => {
-    // Select curated real products with original photos matching the reference layout
     const selectedIds = [
       'surveillance-analog-2', // DS-2CE16D0T-EXIPF
       'surveillance-analog-23', // DS-2CE76K0T-LPFS
@@ -167,15 +201,15 @@ export default function App() {
       'alarms-wireless-intrusion-alarm-22', // DS-PM1-O1L-WB
     ];
     const found = selectedIds
-      .map((id) => PRODUCTS.find((p) => p.id === id))
+      .map((id) => products.find((p) => p.id === id))
       .filter((p): p is Product => p !== undefined);
 
     if (found.length < 6) {
-      const additional = PRODUCTS.filter((p) => p.image !== null && !found.some((f) => f.id === p.id)).slice(0, 6 - found.length);
+      const additional = products.filter((p) => p.image !== null && !found.some((f) => f.id === p.id)).slice(0, 6 - found.length);
       return [...found, ...additional];
     }
     return found;
-  }, []);
+  }, [products]);
 
   // Navigate handler that scrolls to top
   const handleNavigate = (section: ActiveSection) => {
@@ -435,7 +469,10 @@ export default function App() {
 
         {/* VIEW: GESTIONNAIRE / PORTAIL ADMINISTRATEUR PRIVÉ */}
         {activeSection === 'admin' && (
-          <AdminPortal onBackToPublicSite={() => handleNavigate('home')} />
+          <AdminPortal
+            onBackToPublicSite={() => handleNavigate('home')}
+            onCatalogUpdated={(updatedProducts) => setProducts(updatedProducts)}
+          />
         )}
       </main>
 

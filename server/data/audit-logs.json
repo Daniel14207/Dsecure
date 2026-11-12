@@ -1,0 +1,92 @@
+[
+  {
+    "id": "log-1794478350425-303v",
+    "timestamp": "2026-11-12T10:12:30.425Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478317930-ks1m",
+    "timestamp": "2026-11-12T10:11:57.930Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478302528-2vp1",
+    "timestamp": "2026-11-12T10:11:42.528Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478276519-uv47",
+    "timestamp": "2026-11-12T10:11:16.519Z",
+    "action": "ORDER_CREATED",
+    "entityId": "ord-1794478276419",
+    "entityName": "CMD-2026-001",
+    "details": "Nouvelle commande de Rakoto Andry (280 000 Ar)",
+    "user": "Système Web Public"
+  },
+  {
+    "id": "log-1794478266409-j8tv",
+    "timestamp": "2026-11-12T10:11:06.409Z",
+    "action": "AVAILABILITY_TOGGLED",
+    "entityId": "surveillance-analog-2",
+    "entityName": "DS-2CE16D0T-EXIPF(3.6mm)(O-STD)",
+    "details": "Disponibilité modifiée : DISPONIBLE",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478266384-0cry",
+    "timestamp": "2026-11-12T10:11:06.384Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478220141-214m",
+    "timestamp": "2026-11-12T10:10:20.141Z",
+    "action": "AVAILABILITY_TOGGLED",
+    "entityId": "surveillance-analog-2",
+    "entityName": "DS-2CE16D0T-EXIPF(3.6mm)(O-STD)",
+    "details": "Disponibilité modifiée : INDISPONIBLE",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478220119-tqzk",
+    "timestamp": "2026-11-12T10:10:20.119Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478214893-iqbg",
+    "timestamp": "2026-11-12T10:10:14.893Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  },
+  {
+    "id": "log-1794478195628-gbud",
+    "timestamp": "2026-11-12T10:09:55.628Z",
+    "action": "ADMIN_LOGIN",
+    "entityId": "admin",
+    "entityName": "Direction D SECURE",
+    "details": "Connexion administrateur réussie depuis IP 127.0.0.1",
+    "user": "Direction D SECURE"
+  }
+]

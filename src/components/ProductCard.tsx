@@ -116,6 +116,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Pricing & Order Actions */}
         <div className="mt-4 pt-3 border-t border-zinc-100">
+          {/* Availability & Price Display */}
           <div className="flex items-baseline justify-between mb-3">
             <div>
               <span className="text-[10px] uppercase font-bold tracking-wider text-zinc-400 block">
@@ -125,11 +126,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 {product.formattedPrice}
               </span>
             </div>
-            {product.sellingPriceAr !== null && (
-              <span className="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">
-                Disponible
-              </span>
-            )}
+
+            <div>
+              {product.isAvailable === false ? (
+                <span className="text-[10px] text-red-600 font-black bg-red-50 border border-red-200 px-2 py-0.5 rounded tracking-wide uppercase">
+                  INDISPONIBLE
+                </span>
+              ) : product.sellingPriceAr !== null ? (
+                <span className="text-[10px] text-emerald-700 font-bold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded tracking-wide uppercase">
+                  DISPONIBLE
+                </span>
+              ) : (
+                <span className="text-[10px] text-zinc-500 font-bold bg-zinc-100 px-2 py-0.5 rounded">
+                  Sur devis
+                </span>
+              )}
+            </div>
           </div>
 
           {/* Quantity and Actions Bar */}
@@ -137,12 +149,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {/* Stepper */}
             <div
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center bg-zinc-100 border border-zinc-200 rounded-lg p-0.5 text-xs text-zinc-700"
+              className={`flex items-center bg-zinc-100 border border-zinc-200 rounded-lg p-0.5 text-xs text-zinc-700 ${
+                product.isAvailable === false ? 'opacity-50 pointer-events-none' : ''
+              }`}
             >
               <button
                 onClick={handleDecrease}
                 className="w-7 h-7 flex items-center justify-center hover:bg-white rounded text-zinc-600 hover:text-black font-bold transition-colors"
                 aria-label="Diminuer la quantité"
+                disabled={product.isAvailable === false}
               >
                 -
               </button>
@@ -153,6 +168,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 onClick={handleIncrease}
                 className="w-7 h-7 flex items-center justify-center hover:bg-white rounded text-zinc-600 hover:text-black font-bold transition-colors"
                 aria-label="Augmenter la quantité"
+                disabled={product.isAvailable === false}
               >
                 +
               </button>
@@ -161,21 +177,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {/* Add to cart button */}
             <button
               onClick={handleAdd}
-              className="p-2.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 border border-zinc-200 rounded-lg transition-colors flex items-center justify-center"
-              title="Ajouter au panier"
+              disabled={product.isAvailable === false}
+              className={`p-2.5 rounded-lg border transition-colors flex items-center justify-center ${
+                product.isAvailable === false
+                  ? 'bg-zinc-100 text-zinc-300 border-zinc-200 cursor-not-allowed'
+                  : 'bg-zinc-100 hover:bg-zinc-200 text-zinc-800 border-zinc-200'
+              }`}
+              title={product.isAvailable === false ? 'Matériel temporairement indisponible' : 'Ajouter au panier'}
               aria-label="Ajouter au panier"
             >
               <ShoppingBag className="w-4 h-4 text-zinc-700" />
             </button>
 
-            {/* Direct WhatsApp Order - matching red button with cart icon from design reference */}
+            {/* Direct WhatsApp Order */}
             <button
               onClick={handleWhatsApp}
-              className="flex-1 py-2 px-2.5 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-black tracking-wider uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm shadow-red-700/20 active:scale-98"
-              title="Commander via WhatsApp"
+              className={`flex-1 py-2 px-2.5 text-white text-xs font-black tracking-wider uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm active:scale-98 ${
+                product.isAvailable === false
+                  ? 'bg-zinc-800 hover:bg-zinc-900 shadow-zinc-800/20'
+                  : 'bg-[#D71920] hover:bg-[#b8141a] shadow-red-700/20'
+              }`}
+              title={product.isAvailable === false ? 'Réserver ou commander sur demande via WhatsApp' : 'Commander via WhatsApp'}
             >
               <ShoppingCart className="w-3.5 h-3.5 fill-white" />
-              <span>COMMANDER</span>
+              <span>{product.isAvailable === false ? 'SUR COMMANDE' : 'COMMANDER'}</span>
             </button>
           </div>
         </div>

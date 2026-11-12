@@ -12,7 +12,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-EXIPF-3.6mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.404Z"
   },
   {
     "id": "surveillance-analog-3",
@@ -27,7 +29,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76D0T-EXIPF-2.8mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-4",
@@ -42,7 +46,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16U0T-ITF.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-5",
@@ -57,7 +63,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76U0T-ITMF.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-7",
@@ -72,7 +80,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__THC-B120-PC.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-8",
@@ -87,7 +97,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__THC-T120-PC.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-10",
@@ -102,7 +114,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-LPXTS.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-11",
@@ -117,7 +131,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70D0T-PTLXTS.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-13",
@@ -132,7 +148,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE17K0T-LTS-3.6mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-14",
@@ -147,7 +165,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70K0T-PTLTS-3.6mm-O-STD.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-16",
@@ -162,7 +182,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE19H0T-AIT3ZF.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-18",
@@ -177,7 +199,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE12DF3T-PIRXOS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-20",
@@ -192,7 +216,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16D0T-LPFS.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-21",
@@ -207,7 +233,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76D0T-LPFS.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-22",
@@ -222,7 +250,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16K0T-LPFS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-23",
@@ -237,7 +267,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE76K0T-LPFS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-24",
@@ -252,7 +284,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE16K0T-LFS.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-26",
@@ -267,7 +301,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE10DF0T-LPFS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-27",
@@ -282,7 +318,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70DF0T-LPFS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-28",
@@ -297,7 +335,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE10KF0T-PFS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-analog-29",
@@ -312,7 +352,9 @@
     "images": [
       "/images/CAMERAS_ANALOGIQUES/CAMERAS_ANALOGIQUES__DS-2CE70KF0T-PFS.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-3",
@@ -327,7 +369,9 @@
     "images": [
       "/images/DVR/DVR__DS-7204HGHI-M1-T.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-4",
@@ -342,7 +386,9 @@
     "images": [
       "/images/DVR/DVR__DS-7208HGHI-M1-T.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-5",
@@ -357,7 +403,9 @@
     "images": [
       "/images/DVR/DVR__DS-7216HGHI-M1-T.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-6",
@@ -372,7 +420,9 @@
     "images": [
       "/images/DVR/DVR__DS-7232HGHI-M2.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-7",
@@ -387,7 +437,9 @@
     "images": [
       "/images/DVR/DVR__iDS-7204HQHI-M1-S-STD-C.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-8",
@@ -402,7 +454,9 @@
     "images": [
       "/images/DVR/DVR__iDS-7208HQHI-M1-S-STD-C.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-9",
@@ -417,7 +471,9 @@
     "images": [
       "/images/DVR/DVR__iDS-7216HQHI-M1-XT.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-10",
@@ -432,7 +488,9 @@
     "images": [
       "/images/DVR/DVR__IDS-7232HQHI-M2-S.png"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-11",
@@ -447,7 +505,9 @@
     "images": [
       "/images/DVR/DVR__IDS-7204HUHI-M1-XT.png"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-12",
@@ -462,7 +522,9 @@
     "images": [
       "/images/DVR/DVR__IDS-7208HUHI-M1-XT.png"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-13",
@@ -477,7 +539,9 @@
     "images": [
       "/images/DVR/DVR__IDS-7216HUHI-M2-XT.png"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-14",
@@ -492,7 +556,9 @@
     "images": [
       "/images/DVR/DVR__IDS-7332HUHI-M4-S.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-16",
@@ -507,7 +573,9 @@
     "images": [
       "/images/DVR/DVR__DS-E04HGHI-B.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-dvr-17",
@@ -520,7 +588,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hikvision-kit-3",
@@ -535,7 +605,9 @@
     "images": [
       "/images/KITS_SURVEILLANCE/KITS_SURVEILLANCE__DS-J142I-7204HGHI-M1-plus-2-plus-2CAM-HYBRID.jpg"
     ],
-    "topSection": "packs"
+    "topSection": "packs",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hikvision-kit-4",
@@ -548,7 +620,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "packs"
+    "topSection": "packs",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hikvision-kit-6",
@@ -563,7 +637,9 @@
     "images": [
       "/images/KITS_SURVEILLANCE/KITS_SURVEILLANCE__DS-J142I-STD-NKS422W02H.png"
     ],
-    "topSection": "packs"
+    "topSection": "packs",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-2",
@@ -578,7 +654,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2043G2-I-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-3",
@@ -593,7 +671,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2143G2-I.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-4",
@@ -608,7 +688,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2T43G2-2I.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-5",
@@ -623,7 +705,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2083G2-I-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-6",
@@ -638,7 +722,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2183G2-I-2.8mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-8",
@@ -653,7 +739,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2TD1217-3-QA-O-STD.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-9",
@@ -668,7 +756,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2TD2617-3-QA-O-STD.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-11",
@@ -683,7 +773,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2935FWD-IS-1.16mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-12",
@@ -696,7 +788,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-14",
@@ -711,7 +805,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD2523G2-I.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-15",
@@ -726,7 +822,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF0AC-2NT.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-17",
@@ -741,7 +839,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-2CD2027G1-L.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-2-0-18",
@@ -756,7 +856,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-2CD2327G3E-L.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-3",
@@ -771,7 +873,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1021G0-I.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-4",
@@ -786,7 +890,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1321G0-I.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-6",
@@ -801,7 +907,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1023G2-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-7",
@@ -816,7 +924,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1123G2-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-8",
@@ -831,7 +941,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1043G2-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-9",
@@ -846,7 +958,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1143G2-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-11",
@@ -861,7 +975,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2H-LIUF-SL-4mm__PHOTO2.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-12",
@@ -874,7 +990,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-13",
@@ -889,7 +1007,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1B27G2H-LIUF-SL-4mm.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-14",
@@ -904,7 +1024,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2H-LIUF-SL-4mm-O-STD.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-15",
@@ -919,7 +1041,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2H-LIUF-SL-2.8mm.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-17",
@@ -934,7 +1058,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G3-LIU-LSRB.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-18",
@@ -949,7 +1075,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T27G3-LIU-LSRB.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-20",
@@ -964,7 +1092,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1063G2-LIU-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-21",
@@ -979,7 +1109,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1163G2-LIU-2.8mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-22",
@@ -994,7 +1126,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1083G2-LIU-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-23",
@@ -1009,7 +1143,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1183G2-LIU-2.8mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-24",
@@ -1024,7 +1160,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T43G0-I-4mm-C-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-25",
@@ -1039,7 +1177,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1643G0-IZ-2.8-12mm-C-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-26",
@@ -1054,7 +1194,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1743G0-IZ-2.8-12mm-C-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-27",
@@ -1069,7 +1211,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1153G0-I-2.8mm-C-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-29",
@@ -1084,7 +1228,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2H-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-30",
@@ -1099,7 +1245,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1327G2H-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-32",
@@ -1114,7 +1262,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2H-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-33",
@@ -1129,7 +1279,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2H-LIU.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-35",
@@ -1144,7 +1296,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1067G2H-LIU-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-36",
@@ -1159,7 +1313,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1167G2H-LIU-2.8mm-O-STD.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-38",
@@ -1174,7 +1330,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1027G2-LUF-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-39",
@@ -1189,7 +1347,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1327G2-LUF-2.8mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-41",
@@ -1204,7 +1364,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1047G2-LUF-4mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-42",
@@ -1219,7 +1381,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1347G2-LUF-2.8mm-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-43",
@@ -1234,7 +1398,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1147G0-2.8mm-C-O-STD.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-44",
@@ -1249,7 +1415,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T27G0-L-4mm-C-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-45",
@@ -1264,7 +1432,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G0-L-4mm-C-O-STD.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ip-1-0-46",
@@ -1279,7 +1449,9 @@
     "images": [
       "/images/CAMERAS_IP/CAMERAS_IP__DS-2CD1T47G2-LUF.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ptz-2",
@@ -1294,7 +1466,9 @@
     "images": [
       "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2DE1C200IW-DE3-F1-S7.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ptz-3",
@@ -1309,7 +1483,9 @@
     "images": [
       "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2DE7A432IW-AEB-O-STD-T5.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ptz-5",
@@ -1324,7 +1500,9 @@
     "images": [
       "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2SE4C425MWG-E-26.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ptz-7",
@@ -1339,7 +1517,9 @@
     "images": [
       "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-2SE4C415MWG-E-14-F0.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ptz-9",
@@ -1354,7 +1534,9 @@
     "images": [
       "/images/CAMERAS_PTZ/CAMERAS_PTZ__DS-1200KI.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-solar-powered-security-camera-3",
@@ -1369,7 +1551,9 @@
     "images": [
       "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2XS2T41G0-ID-W-4G-C04S05.jpg"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-solar-powered-security-camera-4",
@@ -1384,7 +1568,9 @@
     "images": [
       "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2DE2C400IWG-K-4G-C09S20-2.8mm-O-STD__PHOTO2.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-solar-powered-security-camera-5",
@@ -1399,7 +1585,9 @@
     "images": [
       "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2CFSP4-4G-2.8mm-O-STD-EU.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-solar-powered-security-camera-6",
@@ -1414,7 +1602,9 @@
     "images": [
       "/images/CAMERAS_SOLAIRES_4G/CAMERAS_SOLAIRES_4G__DS-2CFSP8-D-4G-2.8-plus-4mm-O-STD-EU__PHOTO2.png"
     ],
-    "topSection": "cameras"
+    "topSection": "cameras",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-3",
@@ -1429,7 +1619,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5043QE.png"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-4",
@@ -1444,7 +1636,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5043U3-1V0S-EU.png"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-5",
@@ -1459,7 +1653,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5032QE.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-6",
@@ -1474,7 +1670,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5027FN01.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-7",
@@ -1489,7 +1687,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5024FN.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-8",
@@ -1504,7 +1704,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5022FN-C.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-10",
@@ -1519,7 +1721,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5B86RB-D.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-11",
@@ -1534,7 +1738,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5B65RB-FP.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-12",
@@ -1549,7 +1755,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5SC3B-B.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-13",
@@ -1564,7 +1772,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5SC3B-W.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-14",
@@ -1579,7 +1789,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5AC11T5-8S2.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-15",
@@ -1594,7 +1806,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5ABKY2-S.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-16",
@@ -1609,7 +1823,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D5ABKY2-M.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-18",
@@ -1624,7 +1840,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D4430FO-CKI.png"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-monitor-19",
@@ -1639,7 +1857,9 @@
     "images": [
       "/images/MONITEURS/MONITEURS__DS-D42B04-N.jpg"
     ],
-    "topSection": "monitors"
+    "topSection": "monitors",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-1",
@@ -1652,7 +1872,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-2",
@@ -1667,7 +1889,9 @@
     "images": [
       "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-3",
@@ -1682,7 +1906,9 @@
     "images": [
       "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-4",
@@ -1697,7 +1923,9 @@
     "images": [
       "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-5",
@@ -1712,7 +1940,9 @@
     "images": [
       "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-6",
@@ -1727,7 +1957,9 @@
     "images": [
       "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-hdd-7",
@@ -1742,7 +1974,9 @@
     "images": [
       "/images/DISQUES_DURS/DISQUES_DURS__A_IDENTIFIER.png"
     ],
-    "topSection": "hdd"
+    "topSection": "hdd",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-2",
@@ -1757,7 +1991,9 @@
     "images": [
       "/images/NVR/NVR__DS-7608NXI-K1-E.png"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-3",
@@ -1772,7 +2008,9 @@
     "images": [
       "/images/NVR/NVR__DS-7616NXI-K2.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-4",
@@ -1787,7 +2025,9 @@
     "images": [
       "/images/NVR/NVR__DS-7632NXI-K2.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-5",
@@ -1802,7 +2042,9 @@
     "images": [
       "/images/NVR/NVR__DS-7732NXI-K4.png"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-6",
@@ -1817,7 +2059,9 @@
     "images": [
       "/images/NVR/NVR__DS-7732NI-K4-16P.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-7",
@@ -1832,7 +2076,9 @@
     "images": [
       "/images/NVR/NVR__DS-7764NI-M4.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-8",
@@ -1847,7 +2093,9 @@
     "images": [
       "/images/NVR/NVR__DS-7104NI-Q1-4P-M.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-9",
@@ -1862,7 +2110,9 @@
     "images": [
       "/images/NVR/NVR__DS-7108NI-Q1-M.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-10",
@@ -1877,7 +2127,9 @@
     "images": [
       "/images/NVR/NVR__DS-7108NI-Q1-8P-M.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-11",
@@ -1892,7 +2144,9 @@
     "images": [
       "/images/NVR/NVR__DS-7616NI-Q2.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-nvr-12",
@@ -1907,7 +2161,9 @@
     "images": [
       "/images/NVR/NVR__DS-7616NI-Q2-16P.jpg"
     ],
-    "topSection": "dvr_nvr"
+    "topSection": "dvr_nvr",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-4",
@@ -1922,7 +2178,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1LN6U-W-CCA-O-STD.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-5",
@@ -1937,7 +2195,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1LN6UZC0-O-STD.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-7",
@@ -1952,7 +2212,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1M02.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-9",
@@ -1967,7 +2229,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-1H18S-E-C.jpg"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-12",
@@ -1980,7 +2244,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-13",
@@ -1993,7 +2259,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-14",
@@ -2006,7 +2274,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-16",
@@ -2021,7 +2291,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1225-D4-EUR.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-17",
@@ -2036,7 +2308,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1205-D8-EUR.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-transmission-18",
@@ -2051,7 +2325,9 @@
     "images": [
       "/images/TRANSMISSION_ALIMENTATION/TRANSMISSION_ALIMENTATION__DS-2FA1208-C16.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-3",
@@ -2066,7 +2342,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0505D-E.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-4",
@@ -2081,7 +2359,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0508D-E.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-5",
@@ -2096,7 +2376,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0516-E-B.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-6",
@@ -2111,7 +2393,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0524-E-B.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-8",
@@ -2126,7 +2410,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0106P-E-M.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-9",
@@ -2141,7 +2427,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0310P-E-M.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-10",
@@ -2156,7 +2444,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E1318P-EI-M.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-12",
@@ -2171,7 +2461,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E1505P-EI-M-O-STD.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-13",
@@ -2186,7 +2478,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E1520P-EI.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-14",
@@ -2201,7 +2495,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E1526P-EI-M-O-STD.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-15",
@@ -2216,7 +2512,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E1528P-EI.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-17",
@@ -2231,7 +2529,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0505P-E-M.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-18",
@@ -2246,7 +2546,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0510P-E-M.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-19",
@@ -2261,7 +2563,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0518P-E-M.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-switch-20",
@@ -2276,7 +2580,9 @@
     "images": [
       "/images/SWITCH_POE/SWITCH_POE__DS-3E0526P-E-M.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-2",
@@ -2291,7 +2597,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XS6404-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-3",
@@ -2306,7 +2614,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XS6406-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-4",
@@ -2321,7 +2631,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XS6409-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-5",
@@ -2336,7 +2648,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XS6412-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-6",
@@ -2351,7 +2665,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XS6606-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-7",
@@ -2366,7 +2682,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XS6609-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-8",
@@ -2381,7 +2699,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XPEUR08-Y-KYL.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-9",
@@ -2396,7 +2716,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__A_IDENTIFIER.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-10",
@@ -2411,7 +2733,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-XSPB04-S-B.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-12",
@@ -2426,7 +2750,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-UPS1000.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-13",
@@ -2441,7 +2767,9 @@
     "images": [
       "/images/BAIES_RACK/BAIES_RACK__DS-UPS2000-O-STD-EU.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-cabinet-14",
@@ -2454,7 +2782,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessories-3",
@@ -2469,7 +2799,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-XS.jpg"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessories-4",
@@ -2484,7 +2816,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-S.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessories-5",
@@ -2499,7 +2833,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1280ZJ-DM46.jpg"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessories-6",
@@ -2514,7 +2850,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-2280ZJ.jpg"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ac-router-ap-2",
@@ -2529,7 +2867,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP522-SI.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ac-router-ap-3",
@@ -2544,7 +2884,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP521-SI.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ac-router-ap-4",
@@ -2559,7 +2901,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP622E-SI.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-ac-router-ap-5",
@@ -2574,7 +2918,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WAP623E-SI.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-3",
@@ -2589,7 +2935,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRE3N.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-4",
@@ -2604,7 +2952,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRE12C.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-6",
@@ -2619,7 +2969,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR12C.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-8",
@@ -2634,7 +2986,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR18X.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-9",
@@ -2649,7 +3003,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR30X.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-10",
@@ -2664,7 +3020,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR30X-V.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-12",
@@ -2679,7 +3037,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WR4G12C.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-14",
@@ -2694,7 +3054,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRM12C-2.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-15",
@@ -2709,7 +3071,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WRM12C-3.png"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-17",
@@ -2724,7 +3088,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF02C-5AC-O.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-18",
@@ -2739,7 +3105,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF02C-5N-O.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-wireless-router-19",
@@ -2754,7 +3122,9 @@
     "images": [
       "/images/ROUTEURS_WIFI/ROUTEURS_WIFI__DS-3WF0AC-2NT.jpg"
     ],
-    "topSection": "network"
+    "topSection": "network",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-3",
@@ -2767,7 +3137,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-4",
@@ -2782,7 +3154,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__HDMI-Cable-4K30Hz-2m-Gray.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-5",
@@ -2795,7 +3169,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-6",
@@ -2808,7 +3184,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-7",
@@ -2821,7 +3199,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-8",
@@ -2834,7 +3214,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-9",
@@ -2847,7 +3229,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-12",
@@ -2862,7 +3246,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1HF1TPZ0.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-13",
@@ -2875,7 +3261,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-14",
@@ -2888,7 +3276,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-15",
@@ -2901,7 +3291,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-18",
@@ -2914,7 +3306,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-19",
@@ -2927,7 +3321,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-20",
@@ -2942,7 +3338,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1NP5EUDC0-E-Orange.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-21",
@@ -2955,7 +3353,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-22",
@@ -2968,7 +3368,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-23",
@@ -2981,7 +3383,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-24",
@@ -2994,7 +3398,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-25",
@@ -3007,7 +3413,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-27",
@@ -3022,7 +3430,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1LH1SCAM592C-O-STD.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-28",
@@ -3037,7 +3447,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1LH1SCAM592C-O-STD.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-31",
@@ -3052,7 +3464,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1T03-E.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "surveillance-accessory-32",
@@ -3067,7 +3481,9 @@
     "images": [
       "/images/ACCESSOIRES/ACCESSOIRES__DS-1T04-E.png"
     ],
-    "topSection": "accessories"
+    "topSection": "accessories",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-2",
@@ -3082,7 +3498,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PWA64-Kit-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-3",
@@ -3097,7 +3515,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PK1-E-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-4",
@@ -3112,7 +3532,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PKF1-WB.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-5",
@@ -3127,7 +3549,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PS1-E-WB-O-STD-Red.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-6",
@@ -3142,7 +3566,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PS1-I-WB-O-STD-Red.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-7",
@@ -3157,7 +3583,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDEB1-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-8",
@@ -3172,7 +3600,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDEBP1-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-9",
@@ -3187,7 +3617,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP-IN-CR123A.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-10",
@@ -3200,7 +3632,9 @@
     "currency": "Ar",
     "image": null,
     "images": [],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-11",
@@ -3215,7 +3649,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDMC-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-12",
@@ -3230,7 +3666,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDC10AM-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-13",
@@ -3245,7 +3683,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDPC12P-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-14",
@@ -3260,7 +3700,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDPC12PF-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-15",
@@ -3275,7 +3717,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDBG8-EG2-WB-O-STD.png"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-16",
@@ -3290,7 +3734,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP15P-EG2-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-17",
@@ -3305,7 +3751,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDP18-HM-WB.png"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-18",
@@ -3320,7 +3768,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PR1-WB-O-STD.png"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-19",
@@ -3335,7 +3785,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDTPH-E-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-20",
@@ -3350,7 +3802,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDWL-E-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-21",
@@ -3365,7 +3819,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PSP1-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-22",
@@ -3380,7 +3836,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PM1-O1L-WB.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-23",
@@ -3395,7 +3853,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PM1-O1H-WB.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-24",
@@ -3410,7 +3870,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDSMK-S-WB-O-STD.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-25",
@@ -3425,7 +3887,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDCL12-EG2-WB-O-STD.png"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-26",
@@ -3440,7 +3904,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PT1-WB.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-27",
@@ -3455,7 +3921,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PT-M1.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wireless-intrusion-alarm-28",
@@ -3470,7 +3938,9 @@
     "images": [
       "/images/ALARMES_SANS_FIL/ALARMES_SANS_FIL__DS-PDB-IN-Universalbracket.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-2",
@@ -3485,7 +3955,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PHA48-EP.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-3",
@@ -3500,7 +3972,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PHA64-LP.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-4",
@@ -3515,7 +3989,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PK1-LRT-HWE.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-5",
@@ -3530,7 +4006,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM1-I8O2-H.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-6",
@@ -3545,7 +4023,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM1-O4H-H.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-7",
@@ -3560,7 +4040,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PS1-R.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-9",
@@ -3575,7 +4057,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-G.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-10",
@@ -3590,7 +4074,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-P.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-11",
@@ -3605,7 +4091,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PM2-S-EU.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-12",
@@ -3620,7 +4108,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDD12P-EG2.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-13",
@@ -3635,7 +4125,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDTT15AM-LM.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-14",
@@ -3650,7 +4142,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDBG8-EG2.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-15",
@@ -3665,7 +4159,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDPG12P-EG2.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-16",
@@ -3680,7 +4176,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDCL12-EG2.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-17",
@@ -3695,7 +4193,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDP18-EG2.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-19",
@@ -3710,7 +4210,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDSK-P.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-20",
@@ -3725,7 +4227,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PD1-MC-WS.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-21",
@@ -3740,7 +4244,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDB-IN-Ceilingbracket.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-22",
@@ -3755,7 +4261,9 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PDB-IN-Wallbracket.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   },
   {
     "id": "alarms-wired-intrusion-alarm-23",
@@ -3770,6 +4278,8 @@
     "images": [
       "/images/ALARMES_FILAIRES/ALARMES_FILAIRES__DS-PKF1-WE.jpg"
     ],
-    "topSection": "alarms"
+    "topSection": "alarms",
+    "isAvailable": true,
+    "updatedAt": "2026-11-12T10:11:06.406Z"
   }
 ]
