@@ -49,6 +49,8 @@ export interface SurveillancePack {
   totalPriceAr: number;
   formattedPrice: string;
   installationIncluded: boolean;
+  isActive?: boolean;
+  updatedAt?: string;
 }
 
 /**

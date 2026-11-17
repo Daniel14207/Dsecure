@@ -11,6 +11,7 @@ export interface Product {
   images: string[];
   topSection: 'cameras' | 'alarms' | 'packs' | 'dvr_nvr' | 'accessories' | 'hdd' | 'network' | 'monitors';
   isAvailable?: boolean; // true = En stock / Disponible, false = Indisponible temporairement
+  displayOrder?: number; // Ordre d'affichage personnalisé
   updatedAt?: string;
 }
 
@@ -41,11 +42,15 @@ export interface AdminAuditSummary {
   averageMarginPercent: number;
   sheetDistribution: { [key: string]: number };
   categoriesCount: number;
+  activeCategoriesCount: number;
+  packsCount: number;
+  activePacksCount: number;
   ordersCount: number;
   pendingOrdersCount: number;
   completedOrdersCount: number;
   customersCount: number;
   totalVisits: number;
+  uniqueVisitorsCount: number;
 }
 
 export type OrderStatus =
@@ -88,6 +93,7 @@ export interface Customer {
   id: string;
   fullName: string;
   phone: string;
+  whatsapp?: string;
   address: string;
   totalOrders: number;
   totalSpentAr: number;
@@ -95,6 +101,7 @@ export interface Customer {
   firstOrderAt: string;
   lastOrderAt: string;
   orderIds: string[];
+  orders?: Order[];
 }
 
 export interface AuditLogEntry {
@@ -106,9 +113,17 @@ export interface AuditLogEntry {
     | 'PRODUCT_DELETED'
     | 'AVAILABILITY_TOGGLED'
     | 'PRICE_MODIFIED'
+    | 'REFERENCE_MODIFIED'
+    | 'IMAGE_MODIFIED'
+    | 'IMAGE_UPLOADED'
+    | 'PACK_CREATED'
     | 'PACK_MODIFIED'
+    | 'PACK_DELETED'
     | 'CATEGORY_MODIFIED'
-    | 'ORDER_STATUS_CHANGED';
+    | 'ORDER_CREATED'
+    | 'ORDER_STATUS_CHANGED'
+    | 'BACKUP_CREATED'
+    | 'ADMIN_LOGIN';
   entityId: string;
   entityName: string;
   details: string;
@@ -118,10 +133,14 @@ export interface AuditLogEntry {
 export interface AnalyticsData {
   totalVisits: number;
   todayVisits: number;
+  uniqueVisitorsCount: number;
+  lastDate: string;
   pageViews: Record<string, number>;
+  categoryViews: Record<string, number>;
   productViews: Record<string, number>;
   dailyVisits: Array<{ date: string; visits: number }>;
-  lastVisitedAt: string;
+  monthlyVisits: Array<{ month: string; visits: number }>;
+  lastVisitedAt: string | null;
 }
 
 export interface CategoryItem {
@@ -129,6 +148,7 @@ export interface CategoryItem {
   name: string;
   topSection: 'cameras' | 'alarms' | 'packs' | 'dvr_nvr' | 'accessories' | 'hdd' | 'network' | 'monitors';
   description?: string;
+  image?: string | null;
   productCount: number;
   isActive: boolean;
   order: number;

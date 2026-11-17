@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Check,
   ShieldCheck,
@@ -27,6 +27,20 @@ interface PacksShowcaseSectionProps {
 }
 
 export const PacksShowcaseSection: React.FC<PacksShowcaseSectionProps> = ({ onOpenQuote }) => {
+  // Synchronized packs list from backend
+  const [packs, setPacks] = useState<SurveillancePack[]>(SURVEILLANCE_PACKS);
+
+  useEffect(() => {
+    fetch('/api/packs')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.packs)) {
+          setPacks(data.packs);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   // Primary technology tab
   const [techTab, setTechTab] = useState<'analog' | 'ip'>('analog');
 
@@ -40,7 +54,8 @@ export const PacksShowcaseSection: React.FC<PacksShowcaseSectionProps> = ({ onOp
   const [selectedPackBOM, setSelectedPackBOM] = useState<SurveillancePack | null>(null);
 
   // Filtered packs
-  const filteredPacks = SURVEILLANCE_PACKS.filter((pack) => {
+  const filteredPacks = packs.filter((pack) => {
+    if (pack.isActive === false) return false;
     if (pack.family !== techTab) return false;
     if (subFamilyFilter !== 'all' && pack.subFamily !== subFamilyFilter) return false;
     if (cameraFilter !== 'all' && pack.camerasCount !== cameraFilter) return false;

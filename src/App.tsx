@@ -20,11 +20,15 @@ import { Footer } from './components/Footer';
 import { ArrowRight, ShoppingCart, ShieldCheck } from 'lucide-react';
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState<ActiveSection>('home');
+  const [activeSection, setActiveSection] = useState<ActiveSection>(() => {
+    if (typeof window !== 'undefined' && window.location.pathname === '/admin') {
+      return 'admin';
+    }
+    return 'home';
+  });
   const [products, setProducts] = useState<Product[]>(PRODUCTS);
 
-  // Synchronize with live backend products store
-  useEffect(() => {
+  const fetchLiveProducts = () => {
     fetch('/api/products')
       .then((res) => res.json())
       .then((data) => {
@@ -33,14 +37,22 @@ export default function App() {
         }
       })
       .catch((err) => console.log('Using static products cache', err));
+  };
+
+  // Synchronize with live backend products store
+  useEffect(() => {
+    fetchLiveProducts();
   }, []);
 
-  // Track anonymous page visits
+  // Track anonymous page and category visits
   useEffect(() => {
+    if (activeSection === 'admin') return;
+    const categorySections = ['cameras', 'alarms', 'packs', 'dvr_nvr', 'accessories', 'hdd', 'network', 'monitors'];
+    const category = categorySections.includes(activeSection) ? activeSection : undefined;
     fetch('/api/analytics/track', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ page: `/${activeSection}` }),
+      body: JSON.stringify({ page: `/${activeSection}`, category }),
     }).catch(() => {});
   }, [activeSection]);
 

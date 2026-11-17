@@ -75,10 +75,26 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
         const pb = b.sellingPriceAr ?? -1;
         return pb - pa;
       });
+    } else {
+      result = [...result].sort((a, b) => {
+        const oa = typeof a.displayOrder === 'number' ? a.displayOrder : Number.MAX_SAFE_INTEGER;
+        const ob = typeof b.displayOrder === 'number' ? b.displayOrder : Number.MAX_SAFE_INTEGER;
+        return oa - ob;
+      });
     }
 
     return result;
   }, [products, activeSubCategory, onlyWithImage, searchQuery, sortBy]);
+
+  const effectiveSubCategories = useMemo(() => {
+    const set = new Set(subCategories);
+    products.forEach((p) => {
+      if (p.category && !set.has(p.category)) {
+        set.add(p.category);
+      }
+    });
+    return Array.from(set);
+  }, [subCategories, products]);
 
   const paginatedProducts = filteredProducts.slice(0, page * pageSize);
 
@@ -102,9 +118,9 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
       {/* Control Bar: Subcategories Tabs & Tools */}
       <div className="space-y-4 mb-8">
         {/* Subcategories Segmented Buttons */}
-        {subCategories.length > 1 && (
+        {effectiveSubCategories.length > 1 && (
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            {subCategories.map((cat) => (
+            {effectiveSubCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleSubCatClick(cat)}

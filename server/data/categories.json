@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cat-cameras",
+    "name": "Caméras de Surveillance",
+    "topSection": "cameras",
+    "description": "Caméras IP AcuSense, ColorVu, analogiques Turbo HD, PTZ motorisées et caméras solaires 4G",
+    "isActive": true,
+    "order": 1
+  },
+  {
+    "id": "cat-alarms",
+    "name": "Systèmes d'Alarme",
+    "topSection": "alarms",
+    "description": "Protection sans fil et filaire AX PRO, PIRCAM, claviers et sirènes 110dB",
+    "isActive": true,
+    "order": 2
+  },
+  {
+    "id": "cat-packs",
+    "name": "Kits & Packs Vidéosurveillance",
+    "topSection": "packs",
+    "description": "Solutions clés en main prêtes à installer avec caméras, enregistreur et pose offerte",
+    "isActive": true,
+    "order": 3
+  },
+  {
+    "id": "cat-dvr-nvr",
+    "name": "Enregistreurs DVR & NVR",
+    "topSection": "dvr_nvr",
+    "description": "Enregistreurs numériques haute performance avec compression H.265+ et ports PoE",
+    "isActive": true,
+    "order": 4
+  },
+  {
+    "id": "cat-accessories",
+    "name": "Accessoires & Câblage",
+    "topSection": "accessories",
+    "description": "Câbles coaxiaux KX6, cordons RJ45, connecteurs BNC, boîtiers étanches et supports",
+    "isActive": true,
+    "order": 5
+  },
+  {
+    "id": "cat-hdd",
+    "name": "Disques Durs de Surveillance",
+    "topSection": "hdd",
+    "description": "Disques internes certifiés Seagate SkyHawk et WD Purple pour écriture 24/7",
+    "isActive": true,
+    "order": 6
+  },
+  {
+    "id": "cat-network",
+    "name": "Réseau & Switchs PoE",
+    "topSection": "network",
+    "description": "Switchs PoE industriels, routeurs 4G longue portée et ponts sans fil",
+    "isActive": true,
+    "order": 7
+  },
+  {
+    "id": "cat-monitors",
+    "name": "Moniteurs & Écrans",
+    "topSection": "monitors",
+    "description": "Écrans professionnels de vidéosurveillance Full HD et 4K",
+    "isActive": true,
+    "order": 8
+  }
+]

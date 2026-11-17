@@ -1,0 +1,23 @@
+{
+  "totalVisits": 0,
+  "todayVisits": 0,
+  "uniqueVisitorsCount": 0,
+  "visitorHashes": [],
+  "lastDate": "2026-11-17",
+  "pageViews": {},
+  "categoryViews": {},
+  "productViews": {},
+  "dailyVisits": [
+    {
+      "date": "2026-11-17",
+      "visits": 0
+    }
+  ],
+  "monthlyVisits": [
+    {
+      "month": "2026-11",
+      "visits": 0
+    }
+  ],
+  "lastVisitedAt": null
+}

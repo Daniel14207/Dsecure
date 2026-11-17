@@ -1,21 +1,17 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import {
   Lock,
-  Unlock,
   Shield,
-  FileSpreadsheet,
   DollarSign,
   TrendingUp,
   Download,
   AlertTriangle,
   CheckCircle2,
   Search,
-  ArrowUpDown,
   LogOut,
   RefreshCw,
   Eye,
-  FileText,
-  Key,
+  EyeOff,
   Layers,
   Plus,
   Trash2,
@@ -23,13 +19,9 @@ import {
   Image as ImageIcon,
   Check,
   X,
-  User,
   Users,
   ShoppingCart,
   Package,
-  Calendar,
-  Phone,
-  MapPin,
   Clock,
   BarChart3,
   Database,
@@ -38,8 +30,13 @@ import {
   ExternalLink,
   ShieldCheck,
   AlertCircle,
-  Sparkles,
-  ChevronDown
+  Upload,
+  FolderKanban,
+  Power,
+  Calculator,
+  ChevronLeft,
+  ChevronRight,
+  Menu
 } from 'lucide-react';
 import {
   AdminProduct,
@@ -52,12 +49,31 @@ import {
   CategoryItem,
   OrderStatus
 } from '../types/product';
-import { SURVEILLANCE_PACKS } from '../data/surveillancePacks';
+import { SurveillancePack, PackComponentBOM } from '../data/surveillancePacks';
 import { formatAr } from '../utils/whatsapp';
 
 interface AdminPortalProps {
   onBackToPublicSite: () => void;
   onCatalogUpdated?: (products: Product[]) => void;
+}
+
+type AdminTab =
+  | 'overview'
+  | 'products'
+  | 'availability'
+  | 'prices'
+  | 'categories'
+  | 'packs'
+  | 'orders'
+  | 'customers'
+  | 'analytics'
+  | 'audit';
+
+interface AvailableImageItem {
+  path: string;
+  name: string;
+  category: string;
+  usedBy?: string[];
 }
 
 export const AdminPortal: React.FC<AdminPortalProps> = ({
@@ -69,7 +85,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     return sessionStorage.getItem('dsecure_admin_token');
   });
 
-  // Login form state - starts strictly empty
+  // Login form state - strictly empty on open
   const [passwordInput, setPasswordInput] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState('');
@@ -79,55 +95,71 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   const lastActivityRef = useRef<number>(Date.now());
   const [sessionTimeRemaining, setSessionTimeRemaining] = useState<number>(30 * 60);
 
-  // Active Admin Tab
-  const [activeTab, setActiveTab] = useState<
-    | 'overview'
-    | 'products'
-    | 'availability'
-    | 'prices'
-    | 'categories'
-    | 'packs'
-    | 'orders'
-    | 'customers'
-    | 'analytics'
-    | 'audit'
-  >('overview');
+  // Navigation & mobile sidebar
+  const [activeTab, setActiveTab] = useState<AdminTab>('overview');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Main datasets
+  // Datasets
   const [products, setProducts] = useState<AdminProduct[]>([]);
+  const [packs, setPacks] = useState<SurveillancePack[]>([]);
   const [summary, setSummary] = useState<AdminAuditSummary | null>(null);
   const [orders, setOrders] = useState<Order[]>([]);
   const [customers, setCustomers] = useState<Customer[]>([]);
-  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
+  const [analytics, setAnalytics] = useState<(AnalyticsData & { topProducts?: any[] }) | null>(null);
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [categories, setCategories] = useState<CategoryItem[]>([]);
-  const [availableImages, setAvailableImages] = useState<Array<{ path: string; name: string; category: string }>>([]);
+  const [availableImages, setAvailableImages] = useState<AvailableImageItem[]>([]);
+  const [serverBackups, setServerBackups] = useState<Array<{ name: string; sizeFormatted: string; createdAt: string }>>([]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [toastMessage, setToastMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  // Table filters & search
+  // Filters & Pagination
   const [productSearch, setProductSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [availabilityFilter, setAvailabilityFilter] = useState<'all' | 'available' | 'unavailable'>('all');
+  const [productPage, setProductPage] = useState(1);
+  const [productPageSize, setProductPageSize] = useState(30);
   const [orderStatusFilter, setOrderStatusFilter] = useState<string>('all');
+  const [imageSearchQuery, setImageSearchQuery] = useState('');
 
-  // Modals state
+  // Product Modals
   const [isEditProductModalOpen, setIsEditProductModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Partial<AdminProduct> | null>(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [productToDelete, setProductToDelete] = useState<AdminProduct | null>(null);
-  const [selectedOrderDetails, setSelectedOrderDetails] = useState<Order | null>(null);
+
+  // Image Picker & Upload Modals
   const [isImagePickerOpen, setIsImagePickerOpen] = useState(false);
-  const [imagePickerTargetProduct, setImagePickerTargetProduct] = useState<AdminProduct | null>(null);
+  const [imagePickerCallback, setImagePickerCallback] = useState<((path: string) => void) | null>(null);
+  const [pendingUploadPreview, setPendingUploadPreview] = useState<{
+    filename: string;
+    mimeType: string;
+    dataBase64: string;
+  } | null>(null);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
   const [imagePreviewUrl, setImagePreviewUrl] = useState<string | null>(null);
-  const [isAddCategoryModalOpen, setIsAddCategoryModalOpen] = useState(false);
-  const [newCategoryName, setNewCategoryName] = useState('');
-  const [newCategorySection, setNewCategorySection] = useState<'cameras' | 'alarms' | 'packs' | 'dvr_nvr' | 'accessories' | 'hdd' | 'network' | 'monitors'>('accessories');
+
+  // Category Modals
+  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
+  const [editingCategory, setEditingCategory] = useState<Partial<CategoryItem> & { renameProductsCategory?: boolean } | null>(null);
+  const [assignCategoryTarget, setAssignCategoryTarget] = useState<CategoryItem | null>(null);
+  const [selectedProductIdsForAssign, setSelectedProductIdsForAssign] = useState<string[]>([]);
+  const [assignSearch, setAssignSearch] = useState('');
+
+  // Pack Modals
+  const [isPackModalOpen, setIsPackModalOpen] = useState(false);
+  const [editingPack, setEditingPack] = useState<Partial<SurveillancePack> | null>(null);
+  const [packToDelete, setPackToDelete] = useState<SurveillancePack | null>(null);
+
+  // Orders & Customers Modals
+  const [selectedOrderDetails, setSelectedOrderDetails] = useState<Order | null>(null);
+  const [orderNotesInput, setOrderNotesInput] = useState('');
+  const [selectedCustomerDetails, setSelectedCustomerDetails] = useState<Customer | null>(null);
 
   const showToast = (text: string, type: 'success' | 'error' = 'success') => {
     setToastMessage({ type, text });
-    setTimeout(() => setToastMessage(null), 3500);
+    setTimeout(() => setToastMessage(null), 4000);
   };
 
   // -------------------------------------------------------------
@@ -150,7 +182,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       const elapsedSec = Math.floor((Date.now() - lastActivityRef.current) / 1000);
       const remaining = 30 * 60 - elapsedSec;
       if (remaining <= 0) {
-        handleLogout('Session fermée automatiquement pour inactivité (30 min).');
+        handleLogout('Session fermée automatiquement après 30 minutes d\'inactivité.');
       } else {
         setSessionTimeRemaining(remaining);
       }
@@ -182,7 +214,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       const res = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: passwordInput.trim() }),
+        body: JSON.stringify({ password: passwordInput }),
       });
 
       const data = await res.json();
@@ -196,8 +228,8 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       sessionStorage.setItem('dsecure_admin_token', data.token);
       setPasswordInput('');
       lastActivityRef.current = Date.now();
-      showToast('Authentification réussie. Bienvenue dans votre espace administrateur.');
-    } catch (err: any) {
+      showToast('Connexion sécurisée établie. Bienvenue dans l\'espace D SECURE.');
+    } catch {
       setLoginError('Erreur de communication avec le serveur.');
     } finally {
       setIsLoggingIn(false);
@@ -216,13 +248,16 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     setToken(null);
     sessionStorage.removeItem('dsecure_admin_token');
     setPasswordInput('');
+    setProducts([]);
+    setOrders([]);
+    setCustomers([]);
     if (reason) {
       setLoginError(reason);
     }
   };
 
   // -------------------------------------------------------------
-  // DATA FETCHING
+  // DATA LOADING
   // -------------------------------------------------------------
   const loadAllAdminData = async () => {
     if (!token) return;
@@ -231,70 +266,52 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     try {
       const headers = { Authorization: `Bearer ${token}` };
 
-      // 1. Dashboard summary
       const sRes = await fetch('/api/admin/dashboard-stats', { headers });
       if (sRes.status === 401) {
         handleLogout('Votre session a expiré. Veuillez vous reconnecter.');
         return;
       }
       const sData = await sRes.json();
-      if (sData.success) {
-        setSummary(sData.summary);
-      }
+      if (sData.success) setSummary(sData.summary);
 
-      // 2. Products
-      const pRes = await fetch('/api/admin/products', { headers });
-      const pData = await pRes.json();
+      const [pRes, pkRes, oRes, cRes, aRes, lRes, catRes, imgRes, bkpRes] = await Promise.all([
+        fetch('/api/admin/products', { headers }),
+        fetch('/api/admin/packs', { headers }),
+        fetch('/api/admin/orders', { headers }),
+        fetch('/api/admin/customers', { headers }),
+        fetch('/api/admin/analytics', { headers }),
+        fetch('/api/admin/audit-logs', { headers }),
+        fetch('/api/admin/categories', { headers }),
+        fetch('/api/admin/available-images', { headers }),
+        fetch('/api/admin/backups', { headers }),
+      ]);
+
+      const [pData, pkData, oData, cData, aData, lData, catData, imgData, bkpData] = await Promise.all([
+        pRes.json(),
+        pkRes.json(),
+        oRes.json(),
+        cRes.json(),
+        aRes.json(),
+        lRes.json(),
+        catRes.json(),
+        imgRes.json(),
+        bkpRes.json(),
+      ]);
+
       if (pData.success) {
         setProducts(pData.products);
-        if (onCatalogUpdated) {
-          onCatalogUpdated(pData.products);
-        }
+        if (onCatalogUpdated) onCatalogUpdated(pData.products);
       }
-
-      // 3. Orders
-      const oRes = await fetch('/api/admin/orders', { headers });
-      const oData = await oRes.json();
-      if (oData.success) {
-        setOrders(oData.orders);
-      }
-
-      // 4. Customers
-      const cRes = await fetch('/api/admin/customers', { headers });
-      const cData = await cRes.json();
-      if (cData.success) {
-        setCustomers(cData.customers);
-      }
-
-      // 5. Analytics
-      const aRes = await fetch('/api/admin/analytics', { headers });
-      const aData = await aRes.json();
-      if (aData.success) {
-        setAnalytics(aData.analytics);
-      }
-
-      // 6. Audit logs
-      const lRes = await fetch('/api/admin/audit-logs', { headers });
-      const lData = await lRes.json();
-      if (lData.success) {
-        setAuditLogs(lData.logs);
-      }
-
-      // 7. Categories
-      const catRes = await fetch('/api/admin/categories', { headers });
-      const catData = await catRes.json();
-      if (catData.success) {
-        setCategories(catData.categories);
-      }
-
-      // 8. Available images gallery
-      const imgRes = await fetch('/api/admin/available-images', { headers });
-      const imgData = await imgRes.json();
-      if (imgData.success) {
-        setAvailableImages(imgData.images);
-      }
-    } catch (err: any) {
-      console.error('Error fetching admin data:', err);
+      if (pkData.success) setPacks(pkData.packs);
+      if (oData.success) setOrders(oData.orders);
+      if (cData.success) setCustomers(cData.customers);
+      if (aData.success) setAnalytics(aData.analytics);
+      if (lData.success) setAuditLogs(lData.logs);
+      if (catData.success) setCategories(catData.categories);
+      if (imgData.success) setAvailableImages(imgData.images);
+      if (bkpData.success) setServerBackups(bkpData.backups);
+    } catch (err) {
+      console.error('Error loading admin data:', err);
       showToast('Erreur lors du chargement des données administratives.', 'error');
     } finally {
       setIsLoading(false);
@@ -308,7 +325,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   }, [token]);
 
   // -------------------------------------------------------------
-  // PRODUCT OPERATIONS
+  // PRODUCT CRUD HANDLERS
   // -------------------------------------------------------------
   const handleToggleAvailability = async (product: AdminProduct) => {
     const nextStatus = !(product.isAvailable !== false);
@@ -324,26 +341,23 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
       const data = await res.json();
       if (data.success) {
-        setProducts((prev) =>
-          prev.map((p) => (p.id === product.id ? { ...p, isAvailable: nextStatus } : p))
+        const nextProducts = products.map((p) =>
+          p.id === product.id ? { ...p, isAvailable: nextStatus } : p
         );
-        if (onCatalogUpdated) {
-          onCatalogUpdated(products.map((p) => (p.id === product.id ? { ...p, isAvailable: nextStatus } : p)));
-        }
-        showToast(
-          `Statut de ${product.reference} mis à jour : ${nextStatus ? 'DISPONIBLE' : 'INDISPONIBLE'}`
-        );
+        setProducts(nextProducts);
+        if (onCatalogUpdated) onCatalogUpdated(nextProducts);
+        showToast(`${product.reference} : ${nextStatus ? 'DISPONIBLE' : 'INDISPONIBLE'}`);
       } else {
-        showToast('Erreur lors de la modification de disponibilité.', 'error');
+        showToast(data.error || 'Erreur lors de la modification.', 'error');
       }
-    } catch (e) {
-      showToast('Erreur serveur.', 'error');
+    } catch {
+      showToast('Erreur réseau.', 'error');
     }
   };
 
   const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!editingProduct || !editingProduct.reference || !editingProduct.name) {
+    if (!editingProduct || !editingProduct.reference?.trim() || !editingProduct.name?.trim()) {
       showToast('La référence et le nom du matériel sont obligatoires.', 'error');
       return;
     }
@@ -367,9 +381,9 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
         setIsEditProductModalOpen(false);
         setEditingProduct(null);
         await loadAllAdminData();
-        showToast(isNew ? 'Nouveau matériel ajouté avec succès !' : 'Matériel modifié avec succès !');
+        showToast(isNew ? 'Nouveau matériel ajouté au catalogue !' : 'Matériel mis à jour et synchronisé !');
       } else {
-        showToast(data.error || 'Erreur lors de l\'enregistrement.', 'error');
+        showToast(data.error || "Erreur lors de l'enregistrement.", 'error');
       }
     } catch {
       showToast('Erreur réseau.', 'error');
@@ -386,11 +400,10 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
       const data = await res.json();
       if (data.success) {
-        setProducts((prev) => prev.filter((p) => p.id !== productToDelete.id));
         setIsDeleteModalOpen(false);
         setProductToDelete(null);
-        showToast(`Matériel ${productToDelete.reference} supprimé définitivement.`);
-        loadAllAdminData();
+        await loadAllAdminData();
+        showToast(data.message || 'Matériel supprimé (sauvegarde créée).');
       } else {
         showToast(data.error || 'Erreur lors de la suppression.', 'error');
       }
@@ -399,8 +412,10 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     }
   };
 
-  // Quick price update
-  const handleQuickPriceUpdate = async (productId: string, newSellingPrice: number) => {
+  const handleInlinePriceRefSave = async (
+    productId: string,
+    updates: { reference: string; name: string; sellingPriceAr: number | null; originalPriceAr: number | null }
+  ) => {
     try {
       const res = await fetch(`/api/admin/products/${productId}`, {
         method: 'PUT',
@@ -408,23 +423,249 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ sellingPriceAr: newSellingPrice }),
+        body: JSON.stringify(updates),
       });
 
       const data = await res.json();
       if (data.success) {
-        setProducts((prev) =>
-          prev.map((p) => (p.id === productId ? { ...p, ...data.product } : p))
-        );
-        showToast(`Prix mis à jour : ${formatAr(newSellingPrice)}`);
+        await loadAllAdminData();
+        showToast(`Référence & prix mis à jour (${updates.reference}) — Packs synchronisés !`);
+      } else {
+        showToast(data.error || 'Erreur mise à jour.', 'error');
       }
     } catch {
-      showToast('Erreur mise à jour prix.', 'error');
+      showToast('Erreur serveur.', 'error');
     }
   };
 
-  // Update order status
-  const handleUpdateOrderStatus = async (orderId: string, newStatus: OrderStatus) => {
+  // -------------------------------------------------------------
+  // IMAGE UPLOAD & SELECTION HANDLERS
+  // -------------------------------------------------------------
+  const openImagePicker = (onSelect: (imagePath: string) => void) => {
+    setImagePickerCallback(() => onSelect);
+    setPendingUploadPreview(null);
+    setImageSearchQuery('');
+    setIsImagePickerOpen(true);
+  };
+
+  const handleFileSelectForUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!['image/jpeg', 'image/jpg', 'image/png', 'image/webp'].includes(file.type)) {
+      showToast('Format non supporté. Utilisez JPG, PNG ou WEBP.', 'error');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      showToast('Image trop lourde (maximum 5 Mo).', 'error');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      setPendingUploadPreview({
+        filename: file.name,
+        mimeType: file.type,
+        dataBase64: result,
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleConfirmImageUpload = async () => {
+    if (!pendingUploadPreview) return;
+    setIsUploadingImage(true);
+    try {
+      const res = await fetch('/api/admin/upload-image', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(pendingUploadPreview),
+      });
+
+      const data = await res.json();
+      if (data.success && data.imagePath) {
+        showToast('Nouvelle image importée et validée !');
+        if (imagePickerCallback) {
+          imagePickerCallback(data.imagePath);
+        }
+        setPendingUploadPreview(null);
+        setIsImagePickerOpen(false);
+        loadAllAdminData();
+      } else {
+        showToast(data.error || "Erreur lors de l'import image.", 'error');
+      }
+    } catch {
+      showToast('Erreur réseau lors de l\'envoi.', 'error');
+    } finally {
+      setIsUploadingImage(false);
+    }
+  };
+
+  // -------------------------------------------------------------
+  // CATEGORY CRUD HANDLERS
+  // -------------------------------------------------------------
+  const handleSaveCategory = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingCategory || !editingCategory.name?.trim()) {
+      showToast('Le nom de la catégorie est obligatoire.', 'error');
+      return;
+    }
+
+    try {
+      const isNew = !editingCategory.id;
+      const url = isNew ? '/api/admin/categories' : `/api/admin/categories/${editingCategory.id}`;
+      const method = isNew ? 'POST' : 'PUT';
+
+      const res = await fetch(url, {
+        method,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(editingCategory),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setIsCategoryModalOpen(false);
+        setEditingCategory(null);
+        await loadAllAdminData();
+        showToast(isNew ? 'Catégorie créée avec succès !' : 'Catégorie mise à jour !');
+      } else {
+        showToast(data.error || 'Erreur catégorie.', 'error');
+      }
+    } catch {
+      showToast('Erreur réseau.', 'error');
+    }
+  };
+
+  const handleAssignProductsToCategory = async () => {
+    if (!assignCategoryTarget || selectedProductIdsForAssign.length === 0) return;
+    try {
+      const res = await fetch(`/api/admin/categories/${assignCategoryTarget.id}/assign-products`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ productIds: selectedProductIdsForAssign }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setAssignCategoryTarget(null);
+        setSelectedProductIdsForAssign([]);
+        await loadAllAdminData();
+        showToast(`${data.updatedCount} matériel(s) déplacé(s) vers "${assignCategoryTarget.name}"`);
+      } else {
+        showToast(data.error || 'Erreur association.', 'error');
+      }
+    } catch {
+      showToast('Erreur serveur.', 'error');
+    }
+  };
+
+  // -------------------------------------------------------------
+  // PACKS CRUD HANDLERS
+  // -------------------------------------------------------------
+  const handleSavePack = async (e: React.FormEvent, syncFromCatalog = false) => {
+    e.preventDefault();
+    if (!editingPack || !editingPack.name?.trim()) {
+      showToast('Le nom du pack est obligatoire.', 'error');
+      return;
+    }
+
+    try {
+      const isNew = !editingPack.id;
+      const url = isNew ? '/api/admin/packs' : `/api/admin/packs/${editingPack.id}`;
+      const method = isNew ? 'POST' : 'PUT';
+
+      const res = await fetch(url, {
+        method,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...editingPack, syncFromCatalog }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setIsPackModalOpen(false);
+        setEditingPack(null);
+        await loadAllAdminData();
+        showToast(isNew ? 'Nouveau pack créé avec succès !' : 'Pack mis à jour et synchronisé !');
+      } else {
+        showToast(data.error || 'Erreur enregistrement pack.', 'error');
+      }
+    } catch {
+      showToast('Erreur réseau.', 'error');
+    }
+  };
+
+  const handleTogglePack = async (pack: SurveillancePack) => {
+    try {
+      const nextActive = !(pack.isActive !== false);
+      const res = await fetch(`/api/admin/packs/${pack.id}/toggle`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ isActive: nextActive }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        await loadAllAdminData();
+        showToast(`Pack "${pack.name}" ${nextActive ? 'ACTIVÉ' : 'DÉSACTIVÉ'}`);
+      }
+    } catch {
+      showToast('Erreur réseau.', 'error');
+    }
+  };
+
+  const handleRecalculateAllPacks = async () => {
+    try {
+      const res = await fetch('/api/admin/packs/recalculate-all', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      if (data.success) {
+        await loadAllAdminData();
+        showToast('Tous les packs ont été recalculés d\'après les prix actuels du catalogue !');
+      }
+    } catch {
+      showToast('Erreur recalcul packs.', 'error');
+    }
+  };
+
+  const handleDeletePack = async () => {
+    if (!packToDelete) return;
+    try {
+      const res = await fetch(`/api/admin/packs/${packToDelete.id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      if (data.success) {
+        setPackToDelete(null);
+        await loadAllAdminData();
+        showToast(`Pack "${packToDelete.name}" supprimé (sauvegarde effectuée).`);
+      }
+    } catch {
+      showToast('Erreur suppression pack.', 'error');
+    }
+  };
+
+  // -------------------------------------------------------------
+  // ORDERS & BACKUPS HANDLERS
+  // -------------------------------------------------------------
+  const handleUpdateOrderStatus = async (orderId: string, newStatus: OrderStatus, notes?: string) => {
     try {
       const res = await fetch(`/api/admin/orders/${orderId}/status`, {
         method: 'PATCH',
@@ -432,49 +673,66 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ status: newStatus }),
+        body: JSON.stringify({ status: newStatus, internalNotes: notes }),
       });
 
       const data = await res.json();
       if (data.success) {
-        setOrders((prev) =>
-          prev.map((o) => (o.id === orderId ? { ...o, status: newStatus, updatedAt: new Date().toISOString() } : o))
-        );
-        showToast(`Statut commande mis à jour : ${newStatus}`);
+        setOrders((prev) => prev.map((o) => (o.id === orderId ? data.order : o)));
+        if (selectedOrderDetails?.id === orderId) {
+          setSelectedOrderDetails(data.order);
+        }
+        showToast(`Commande ${data.order.orderNumber} : ${newStatus}`);
+        loadAllAdminData();
       }
     } catch {
       showToast('Erreur mise à jour commande.', 'error');
     }
   };
 
-  // Apply chosen image to product
-  const handleApplyImageToProduct = async (imagePath: string) => {
-    if (!imagePickerTargetProduct) return;
+  const handleDownloadDatabaseBackup = async () => {
     try {
-      const res = await fetch(`/api/admin/products/${imagePickerTargetProduct.id}`, {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ image: imagePath }),
+      const res = await fetch('/api/admin/export-database', {
+        headers: { Authorization: `Bearer ${token}` },
       });
-
-      const data = await res.json();
-      if (data.success) {
-        setProducts((prev) =>
-          prev.map((p) => (p.id === imagePickerTargetProduct.id ? { ...p, image: imagePath } : p))
-        );
-        setIsImagePickerOpen(false);
-        setImagePickerTargetProduct(null);
-        showToast(`Image associée avec succès au produit ${imagePickerTargetProduct.reference} !`);
+      if (!res.ok) {
+        showToast('Échec du téléchargement sécurisé.', 'error');
+        return;
       }
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `D_SECURE_BACKUP_${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+      showToast('Sauvegarde JSON téléchargée avec succès.');
     } catch {
-      showToast('Erreur association image.', 'error');
+      showToast('Erreur lors de l\'export.', 'error');
     }
   };
 
-  // Filtered products list
+  const handleCreateServerBackup = async () => {
+    try {
+      const res = await fetch('/api/admin/backups', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      if (data.success) {
+        await loadAllAdminData();
+        showToast(`Sauvegarde serveur créée : ${data.filename}`);
+      }
+    } catch {
+      showToast('Erreur création sauvegarde.', 'error');
+    }
+  };
+
+  // -------------------------------------------------------------
+  // FILTERED & PAGINATED DATA
+  // -------------------------------------------------------------
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
       if (categoryFilter !== 'all' && p.topSection !== categoryFilter && p.category !== categoryFilter) {
@@ -485,33 +743,61 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
       if (productSearch.trim()) {
         const query = productSearch.toLowerCase();
-        const matchRef = p.reference.toLowerCase().includes(query);
-        const matchName = p.name.toLowerCase().includes(query);
-        const matchDesc = p.description ? p.description.toLowerCase().includes(query) : false;
+        const matchRef = (p.reference || '').toLowerCase().includes(query);
+        const matchName = (p.name || '').toLowerCase().includes(query);
+        const matchDesc = (p.description || '').toLowerCase().includes(query);
         if (!matchRef && !matchName && !matchDesc) return false;
       }
       return true;
     });
   }, [products, categoryFilter, availabilityFilter, productSearch]);
 
-  // Format session time mm:ss
+  const totalProductPages = Math.max(1, Math.ceil(filteredProducts.length / productPageSize));
+  const paginatedProducts = useMemo(() => {
+    const start = (productPage - 1) * productPageSize;
+    return filteredProducts.slice(start, start + productPageSize);
+  }, [filteredProducts, productPage, productPageSize]);
+
+  useEffect(() => {
+    setProductPage(1);
+  }, [productSearch, categoryFilter, availabilityFilter, productPageSize]);
+
+  const filteredAvailableImages = useMemo(() => {
+    if (!imageSearchQuery.trim()) return availableImages;
+    const q = imageSearchQuery.toLowerCase();
+    return availableImages.filter(
+      (img) => img.name.toLowerCase().includes(q) || img.category.toLowerCase().includes(q)
+    );
+  }, [availableImages, imageSearchQuery]);
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
+  const navTabs: Array<{ id: AdminTab; label: string; icon: React.ReactNode; badge?: number | string }> = [
+    { id: 'overview', label: "Vue d'ensemble", icon: <BarChart3 className="w-4 h-4" /> },
+    { id: 'products', label: 'Matériels', icon: <Package className="w-4 h-4" />, badge: products.length },
+    { id: 'availability', label: 'Disponibilité', icon: <CheckCircle2 className="w-4 h-4" /> },
+    { id: 'prices', label: 'Prix & Références', icon: <DollarSign className="w-4 h-4" /> },
+    { id: 'categories', label: 'Catégories', icon: <FolderKanban className="w-4 h-4" />, badge: categories.length },
+    { id: 'packs', label: 'Packs Vidéosurveillance', icon: <ShieldCheck className="w-4 h-4" />, badge: packs.length },
+    { id: 'orders', label: 'Commandes', icon: <ShoppingCart className="w-4 h-4" />, badge: orders.length },
+    { id: 'customers', label: 'Clients', icon: <Users className="w-4 h-4" />, badge: customers.length },
+    { id: 'analytics', label: 'Visiteurs', icon: <TrendingUp className="w-4 h-4" />, badge: summary?.totalVisits || 0 },
+    { id: 'audit', label: 'Journal & Sauvegardes', icon: <Database className="w-4 h-4" /> },
+  ];
+
   // -------------------------------------------------------------
-  // VIEW: 1. LOGIN SCREEN (Strictly secured & empty initial fields)
+  // VIEW 1: SECURED LOGIN PORTAL
   // -------------------------------------------------------------
   if (!token) {
     return (
       <div className="min-h-screen bg-zinc-950 text-white flex flex-col justify-center items-center p-4 selection:bg-[#D71920] selection:text-white">
         <div className="w-full max-w-md bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-8 relative overflow-hidden">
-          {/* Brand Accent Bar */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D71920] via-red-600 to-zinc-900" />
 
-          {/* Header */}
           <div className="text-center mb-8">
             <div className="w-14 h-14 bg-black border border-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#D71920] shadow-inner">
               <Shield className="w-7 h-7" />
@@ -521,23 +807,21 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
               ESPACE ADMINISTRATEUR
             </h1>
             <p className="text-xs text-zinc-400 mt-1 font-medium">
-              Portail interne D SECURE &bull; Accès sécurisé aux données confidentielles
+              Portail interne D SECURE &middot; Accès sécurisé aux données confidentielles
             </p>
           </div>
 
-          {/* Error Banner */}
           {loginError && (
-            <div className="mb-6 p-3.5 bg-red-950/80 border border-red-800/80 text-red-200 rounded-xl text-xs flex items-start gap-2.5 animate-in fade-in">
+            <div className="mb-6 p-3.5 bg-red-950/80 border border-red-800/80 text-red-200 rounded-xl text-xs flex items-start gap-2.5">
               <AlertTriangle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
               <div className="leading-snug">{loginError}</div>
             </div>
           )}
 
-          {/* Form */}
-          <form onSubmit={handleLogin} className="space-y-5">
+          <form onSubmit={handleLogin} className="space-y-5" autoComplete="off">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
-                Mot de Passe Propriétaire
+                Mot de passe administrateur
               </label>
 
               <div className="relative">
@@ -545,25 +829,25 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                   type={showPassword ? 'text' : 'password'}
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
-                  placeholder="Entrez votre mot de passe secret..."
-                  autoComplete="off"
+                  placeholder="Saisissez votre mot de passe..."
+                  autoComplete="new-password"
                   autoFocus
                   required
-                  className="w-full px-4 py-3 bg-black border border-zinc-700 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-hidden focus:border-[#D71920] focus:ring-1 focus:ring-[#D71920] transition-all font-mono"
+                  className="w-full px-4 py-3 pr-11 bg-black border border-zinc-700 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-hidden focus:border-[#D71920] focus:ring-1 focus:ring-[#D71920] transition-all font-mono"
                 />
 
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors"
-                  aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
+                  aria-label={showPassword ? 'Masquer' : 'Afficher'}
                 >
-                  <Eye className="w-4 h-4" />
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
 
               <span className="text-[10px] text-zinc-500 mt-1.5 block">
-                Session protégée par chiffrement côté serveur & protection anti-brute force.
+                Authentification côté serveur (scrypt) &middot; Protection anti-tentatives &middot; Expiration 30 min.
               </span>
             </div>
 
@@ -575,7 +859,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
               {isLoggingIn ? (
                 <>
                   <RefreshCw className="w-4 h-4 animate-spin" />
-                  <span>VÉRIFICATION SÉCURISÉE...</span>
+                  <span>VÉRIFICATION EN COURS...</span>
                 </>
               ) : (
                 <>
@@ -586,7 +870,6 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
             </button>
           </form>
 
-          {/* Footer return */}
           <div className="mt-8 pt-5 border-t border-zinc-800 text-center">
             <button
               onClick={onBackToPublicSite}
@@ -601,7 +884,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   }
 
   // -------------------------------------------------------------
-  // VIEW: 2. AUTHENTICATED DASHBOARD
+  // VIEW 2: FULL PROFESSIONAL ADMIN WORKSPACE
   // -------------------------------------------------------------
   return (
     <div className="min-h-screen bg-zinc-100 text-zinc-900 flex flex-col font-sans">
@@ -625,33 +908,44 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
       {/* Top Admin Header */}
       <header className="bg-zinc-950 text-white border-b border-zinc-800 sticky top-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#D71920] text-white flex items-center justify-center font-black text-sm tracking-wider shadow-sm">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300"
+              aria-label="Menu administration"
+            >
+              <Menu className="w-4 h-4" />
+            </button>
+
+            <div className="w-9 h-9 rounded-xl bg-[#D71920] text-white flex items-center justify-center font-black text-sm tracking-wider shadow-sm shrink-0">
               DS
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-black text-sm tracking-tight uppercase">D SECURE GESTION</span>
-                <span className="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.2 rounded-full">
-                  EN DIRECT
+                <span className="font-black text-sm tracking-tight uppercase">D SECURE ADMIN</span>
+                <span className="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full hidden sm:inline">
+                  SYNCHRONISÉ
                 </span>
               </div>
-              <span className="text-[11px] text-zinc-400 block">Portail Propriétaire & Administration</span>
+              <span className="text-[11px] text-zinc-400 hidden sm:block">
+                Portail Propriétaire &middot; Gestion Complète & Confidentialité
+              </span>
             </div>
           </div>
 
-          {/* Session timer & Action buttons */}
-          <div className="flex items-center gap-3 sm:gap-4 text-xs">
+          <div className="flex items-center gap-2 sm:gap-3 text-xs">
             <div className="hidden md:flex items-center gap-2 bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800 text-zinc-300">
               <Clock className="w-3.5 h-3.5 text-zinc-400" />
-              <span>Inactivité : <strong className="font-mono text-white">{formatTime(sessionTimeRemaining)}</strong></span>
+              <span>
+                Inactivité : <strong className="font-mono text-white">{formatTime(sessionTimeRemaining)}</strong>
+              </span>
             </div>
 
             <button
               onClick={loadAllAdminData}
               disabled={isLoading}
-              title="Rafraîchir les données"
+              title="Actualiser toutes les données"
               className="p-2 text-zinc-400 hover:text-white rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 transition-colors"
             >
               <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
@@ -662,7 +956,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 transition-colors font-medium text-xs"
             >
               <ExternalLink className="w-3.5 h-3.5" />
-              <span>Voir le site public</span>
+              <span>Site Public</span>
             </button>
 
             <button
@@ -670,1132 +964,1415 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-950/80 hover:bg-red-900 text-red-200 border border-red-800/80 transition-colors font-bold text-xs"
             >
               <LogOut className="w-3.5 h-3.5" />
-              <span>Déconnexion</span>
+              <span className="hidden sm:inline">Déconnexion</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Main Container */}
-      <div className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
-        {/* Navigation Tabs Bar */}
-        <div className="bg-white rounded-xl border border-zinc-200 p-1.5 shadow-xs overflow-x-auto">
-          <div className="flex items-center gap-1 min-w-max">
-            <button
-              onClick={() => setActiveTab('overview')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'overview'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <BarChart3 className="w-3.5 h-3.5" />
-              <span>Vue d&apos;ensemble</span>
-            </button>
+      {/* Main Workspace with Responsive Sidebar */}
+      <div className="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 py-6 flex flex-col lg:flex-row gap-6">
+        {/* Sidebar Navigation (Desktop persistent / Mobile drawer) */}
+        <aside
+          className={`lg:w-64 shrink-0 ${
+            mobileMenuOpen ? 'block' : 'hidden lg:block'
+          }`}
+        >
+          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-3 sticky top-22 space-y-1">
+            <div className="px-3 py-2 text-[10px] font-black uppercase tracking-wider text-zinc-400">
+              Navigation Interne
+            </div>
+            {navTabs.map((tab) => {
+              const active = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                    active
+                      ? 'bg-zinc-950 text-white shadow-sm'
+                      : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100'
+                  }`}
+                >
+                  <span className="flex items-center gap-2.5">
+                    <span className={active ? 'text-[#D71920]' : 'text-zinc-400'}>{tab.icon}</span>
+                    <span>{tab.label}</span>
+                  </span>
+                  {tab.badge !== undefined && (
+                    <span
+                      className={`text-[10px] font-mono px-1.5 py-0.5 rounded-md ${
+                        active ? 'bg-zinc-800 text-zinc-200' : 'bg-zinc-100 text-zinc-600'
+                      }`}
+                    >
+                      {tab.badge}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
 
-            <button
-              onClick={() => setActiveTab('products')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'products'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <Package className="w-3.5 h-3.5" />
-              <span>Matériels ({products.length})</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('availability')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'availability'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Disponibilité</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('prices')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'prices'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <DollarSign className="w-3.5 h-3.5 text-[#D71920]" />
-              <span>Prix & Marges</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('categories')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'categories'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <Layers className="w-3.5 h-3.5" />
-              <span>Catégories ({categories.length})</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('packs')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'packs'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-red-600" />
-              <span>Packs Vidéosurveillance (12)</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('orders')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'orders'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <ShoppingCart className="w-3.5 h-3.5 text-[#D71920]" />
-              <span>Commandes ({orders.length})</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('customers')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'customers'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <Users className="w-3.5 h-3.5" />
-              <span>Clients ({customers.length})</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('analytics')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'analytics'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <TrendingUp className="w-3.5 h-3.5 text-blue-600" />
-              <span>Visiteurs ({summary?.totalVisits || 0})</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('audit')}
-              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === 'audit'
-                  ? 'bg-zinc-900 text-white shadow-xs'
-                  : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
-              }`}
-            >
-              <Database className="w-3.5 h-3.5 text-purple-600" />
-              <span>Journal & Sauvegardes</span>
-            </button>
+            <div className="pt-3 mt-3 border-t border-zinc-100 px-2">
+              <button
+                onClick={handleDownloadDatabaseBackup}
+                className="w-full py-2 px-3 bg-zinc-50 hover:bg-zinc-100 text-zinc-700 border border-zinc-200 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition-colors"
+              >
+                <Download className="w-3.5 h-3.5 text-[#D71920]" />
+                <span>Sauvegarde JSON</span>
+              </button>
+            </div>
           </div>
-        </div>
+        </aside>
 
-        {/* ========================================================= */}
-        {/* TAB 1: VUE D'ENSEMBLE (KPIs Réels)                         */}
-        {/* ========================================================= */}
-        {activeTab === 'overview' && (
-          <div className="space-y-6">
-            {/* Top KPI Cards Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-              <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
-                <span className="text-[10px] font-black uppercase tracking-wider text-zinc-400 block">
-                  Total Matériels
-                </span>
-                <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
-                  {summary?.totalCount || products.length}
-                </span>
-                <span className="text-[11px] text-zinc-500 mt-1 block">
-                  Dans le catalogue actif
-                </span>
+        {/* Main Content Panel */}
+        <div className="flex-1 min-w-0 space-y-6">
+          {/* ========================================================= */}
+          {/* TAB 1: VUE D'ENSEMBLE (ALL REAL KPIs)                     */}
+          {/* ========================================================= */}
+          {activeTab === 'overview' && (
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-lg font-black uppercase tracking-tight text-zinc-950">
+                  Vue d&apos;Ensemble &mdash; Activité Réelle D SECURE
+                </h2>
+                <p className="text-xs text-zinc-500">
+                  Indicateurs calculés exclusivement à partir de la base de données du site
+                </p>
               </div>
 
-              <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
-                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-600 block">
-                  Disponibles
-                </span>
-                <span className="text-2xl font-black text-emerald-600 font-mono mt-1 block">
-                  {summary?.availableCount || products.filter((p) => p.isAvailable !== false).length}
-                </span>
-                <span className="text-[11px] text-zinc-500 mt-1 block">
-                  En stock / commandable
-                </span>
+              {/* 9 Real KPI Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3.5">
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-zinc-400 block">
+                    Total Matériels
+                  </span>
+                  <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
+                    {summary?.totalCount ?? products.length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Catalogue complet</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-emerald-600 block">
+                    Disponibles
+                  </span>
+                  <span className="text-2xl font-black text-emerald-600 font-mono mt-1 block">
+                    {summary?.availableCount ?? products.filter((p) => p.isAvailable !== false).length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Actifs en stock</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-red-600 block">
+                    Indisponibles
+                  </span>
+                  <span className="text-2xl font-black text-red-600 font-mono mt-1 block">
+                    {summary?.unavailableCount ?? products.filter((p) => p.isAvailable === false).length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Visibles sur demande</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-zinc-500 block">
+                    Catégories
+                  </span>
+                  <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
+                    {summary?.categoriesCount ?? categories.length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">
+                    {summary?.activeCategoriesCount ?? categories.filter((c) => c.isActive !== false).length} actives
+                  </span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-blue-600 block">
+                    Visiteurs / Visites
+                  </span>
+                  <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
+                    {summary?.uniqueVisitorsCount ?? 0} <span className="text-sm text-zinc-400">/ {summary?.totalVisits ?? 0}</span>
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">
+                    {analytics?.todayVisits ?? 0} visites aujourd&apos;hui
+                  </span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[#D71920] block">
+                    Commandes Reçues
+                  </span>
+                  <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
+                    {summary?.ordersCount ?? orders.length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Total enregistré</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-600 block">
+                    En Attente
+                  </span>
+                  <span className="text-2xl font-black text-amber-600 font-mono mt-1 block">
+                    {summary?.pendingOrdersCount ?? 0}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">À traiter / confirmer</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 block">
+                    Commandes Traitées
+                  </span>
+                  <span className="text-2xl font-black text-emerald-700 font-mono mt-1 block">
+                    {summary?.completedOrdersCount ?? 0}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Confirmées & livrées</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-purple-600 block">
+                    Clients Enregistrés
+                  </span>
+                  <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
+                    {summary?.customersCount ?? customers.length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Ayant passé commande</span>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-zinc-500 block">
+                    Packs Actifs
+                  </span>
+                  <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
+                    {summary?.activePacksCount ?? packs.filter((p) => p.isActive !== false).length}
+                  </span>
+                  <span className="text-[11px] text-zinc-500 mt-1 block">Sur {packs.length} configurés</span>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
-                <span className="text-[10px] font-black uppercase tracking-wider text-red-600 block">
-                  Indisponibles
-                </span>
-                <span className="text-2xl font-black text-red-600 font-mono mt-1 block">
-                  {summary?.unavailableCount || products.filter((p) => p.isAvailable === false).length}
-                </span>
-                <span className="text-[11px] text-zinc-500 mt-1 block">
-                  Temporairement absents
-                </span>
+              {/* Financial Confidential Card */}
+              <div className="bg-zinc-950 text-white rounded-2xl p-6 border border-zinc-800 shadow-lg">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <div>
+                    <h3 className="text-sm font-black uppercase tracking-wider text-[#D71920]">
+                      SYNTHÈSE FINANCIÈRE CONFIDENTIELLE (USAGE INTERNE EXCLUSIF)
+                    </h3>
+                    <p className="text-xs text-zinc-400 mt-0.5">
+                      Jamais exposée aux visiteurs publics &middot; Calculée sur les prix d&apos;achat et de vente réels
+                    </p>
+                  </div>
+                  <span className="text-[10px] font-bold bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded">
+                    {summary?.withPriceCount ?? 0} articles chiffrés
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
+                    <span className="text-[10px] font-bold text-zinc-400 uppercase block">Valeur Catalogue Vente</span>
+                    <span className="text-xl font-black font-mono text-white mt-1 block">
+                      {formatAr(summary?.totalSellingValueAr)}
+                    </span>
+                  </div>
+                  <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
+                    <span className="text-[10px] font-bold text-zinc-400 uppercase block">Coût Achat Interne</span>
+                    <span className="text-xl font-black font-mono text-zinc-300 mt-1 block">
+                      {formatAr(summary?.totalPurchaseValueAr)}
+                    </span>
+                  </div>
+                  <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
+                    <span className="text-[10px] font-bold text-emerald-400 uppercase block">Marge Brute Potentielle</span>
+                    <span className="text-xl font-black font-mono text-emerald-400 mt-1 block">
+                      +{formatAr(summary?.grossMarginAr)}
+                    </span>
+                  </div>
+                  <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
+                    <span className="text-[10px] font-bold text-red-400 uppercase block">Taux de Marge Moyen</span>
+                    <span className="text-xl font-black font-mono text-red-400 mt-1 block">
+                      +{summary?.averageMarginPercent || 0}%
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
-                <span className="text-[10px] font-black uppercase tracking-wider text-[#D71920] block">
-                  Commandes Reçues
-                </span>
-                <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
-                  {orders.length}
-                </span>
-                <span className="text-[11px] text-zinc-500 mt-1 block">
-                  {orders.filter((o) => o.status === 'Nouvelle commande').length} nouvelle(s)
-                </span>
-              </div>
+              {/* Quick Actions & Recent Activity */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-xs space-y-3">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-2">
+                    Actions Rapides
+                  </h4>
 
-              <div className="bg-white p-4 rounded-xl border border-zinc-200 shadow-xs">
-                <span className="text-[10px] font-black uppercase tracking-wider text-blue-600 block">
-                  Visiteurs du Site
-                </span>
-                <span className="text-2xl font-black text-zinc-900 font-mono mt-1 block">
-                  {summary?.totalVisits || analytics?.totalVisits || 0}
-                </span>
-                <span className="text-[11px] text-zinc-500 mt-1 block">
-                  {analytics?.todayVisits || 0} aujourd&apos;hui
-                </span>
+                  <button
+                    onClick={() => {
+                      setEditingProduct({
+                        name: '',
+                        reference: '',
+                        category: 'Caméras IP',
+                        topSection: 'cameras',
+                        sellingPriceAr: 0,
+                        isAvailable: true,
+                      });
+                      setIsEditProductModalOpen(true);
+                    }}
+                    className="w-full py-2.5 px-3 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>Ajouter un matériel</span>
+                  </button>
+
+                  <button
+                    onClick={() => setActiveTab('prices')}
+                    className="w-full py-2.5 px-3 bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <DollarSign className="w-4 h-4 text-[#D71920]" />
+                    <span>Modifier prix & références</span>
+                  </button>
+
+                  <button
+                    onClick={() => setActiveTab('packs')}
+                    className="w-full py-2.5 px-3 bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-300 text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <ShieldCheck className="w-4 h-4 text-red-600" />
+                    <span>Gérer les packs vidéosurveillance</span>
+                  </button>
+                </div>
+
+                <div className="lg:col-span-2 bg-white p-5 rounded-2xl border border-zinc-200 shadow-xs">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3 flex items-center justify-between">
+                    <span>Activité Récente du Site</span>
+                    <button
+                      onClick={() => setActiveTab('audit')}
+                      className="text-[11px] font-bold text-[#D71920] hover:underline"
+                    >
+                      Tout voir &rarr;
+                    </button>
+                  </h4>
+
+                  <div className="divide-y divide-zinc-100 max-h-64 overflow-y-auto">
+                    {auditLogs.length === 0 ? (
+                      <div className="text-xs text-zinc-400 py-8 text-center">
+                        Aucune modification ou commande enregistrée pour l&apos;instant.
+                      </div>
+                    ) : (
+                      auditLogs.slice(0, 8).map((log) => (
+                        <div key={log.id} className="py-2.5 flex items-start justify-between text-xs gap-3">
+                          <div>
+                            <span className="font-bold text-zinc-900">{log.entityName || log.entityId}</span>
+                            <span className="text-zinc-500 block text-[11px]">{log.details}</span>
+                          </div>
+                          <span className="text-[10px] text-zinc-400 whitespace-nowrap font-mono">
+                            {new Date(log.timestamp).toLocaleString('fr-FR', {
+                              day: '2-digit',
+                              month: '2-digit',
+                              hour: '2-digit',
+                              minute: '2-digit',
+                            })}
+                          </span>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
+          )}
 
-            {/* Financial Overview (Confidential Admin) */}
-            <div className="bg-zinc-950 text-white rounded-2xl p-6 border border-zinc-800 shadow-lg">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h3 className="text-sm font-black uppercase tracking-wider text-[#D71920]">
-                    SYNTHÈSE FINANCIÈRE CONFIDENTIELLE (D SECURE)
-                  </h3>
-                  <p className="text-xs text-zinc-400 mt-0.5">
-                    Calculée sur les prix d&apos;achat réels et les prix de vente publics actuels
-                  </p>
+          {/* ========================================================= */}
+          {/* TAB 2: GESTION COMPLÈTE DES MATÉRIELS                     */}
+          {/* ========================================================= */}
+          {activeTab === 'products' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+                <div className="flex flex-wrap items-center gap-2 flex-1">
+                  <div className="relative flex-1 min-w-[200px]">
+                    <input
+                      type="text"
+                      value={productSearch}
+                      onChange={(e) => setProductSearch(e.target.value)}
+                      placeholder="Rechercher par référence, nom, description..."
+                      className="w-full pl-9 pr-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-hidden focus:border-[#D71920]"
+                    />
+                    <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  </div>
+
+                  <select
+                    value={categoryFilter}
+                    onChange={(e) => setCategoryFilter(e.target.value)}
+                    className="px-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-hidden"
+                  >
+                    <option value="all">Toutes les sections</option>
+                    <option value="cameras">Caméras de Surveillance</option>
+                    <option value="alarms">Systèmes d&apos;Alarme</option>
+                    <option value="dvr_nvr">Enregistreurs DVR / NVR</option>
+                    <option value="accessories">Accessoires & Câblage</option>
+                    <option value="hdd">Disques Durs</option>
+                    <option value="network">Réseau & Switchs PoE</option>
+                    <option value="monitors">Moniteurs</option>
+                    <option value="packs">Packs Vidéosurveillance</option>
+                  </select>
+
+                  <select
+                    value={availabilityFilter}
+                    onChange={(e) => setAvailabilityFilter(e.target.value as any)}
+                    className="px-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-hidden"
+                  >
+                    <option value="all">Tous statuts</option>
+                    <option value="available">Disponibles</option>
+                    <option value="unavailable">Indisponibles</option>
+                  </select>
                 </div>
-                <span className="text-[10px] font-bold bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded">
-                  Usage Interne Exclusif
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-                <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
-                  <span className="text-[10px] font-bold text-zinc-400 uppercase block">Valeur Totale Vente</span>
-                  <span className="text-xl font-black font-mono text-white mt-1 block">
-                    {formatAr(summary?.totalSellingValueAr)}
-                  </span>
-                </div>
-
-                <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
-                  <span className="text-[10px] font-bold text-zinc-400 uppercase block">Coût Total Achat</span>
-                  <span className="text-xl font-black font-mono text-zinc-300 mt-1 block">
-                    {formatAr(summary?.totalPurchaseValueAr)}
-                  </span>
-                </div>
-
-                <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
-                  <span className="text-[10px] font-bold text-emerald-400 uppercase block">Marge Brute Globale</span>
-                  <span className="text-xl font-black font-mono text-emerald-400 mt-1 block">
-                    +{formatAr(summary?.grossMarginAr)}
-                  </span>
-                </div>
-
-                <div className="bg-zinc-900 p-4 rounded-xl border border-zinc-800">
-                  <span className="text-[10px] font-bold text-red-400 uppercase block">Marge Moyenne</span>
-                  <span className="text-xl font-black font-mono text-red-400 mt-1 block">
-                    +{summary?.averageMarginPercent || 0}%
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Actions & Recent Activity */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Quick Actions */}
-              <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-xs space-y-3">
-                <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-2">
-                  Raccourcis de Gestion
-                </h4>
 
                 <button
                   onClick={() => {
                     setEditingProduct({
                       name: '',
                       reference: '',
-                      category: 'Caméras de Surveillance',
+                      category: 'Caméras IP',
                       topSection: 'cameras',
                       sellingPriceAr: 0,
                       isAvailable: true,
                     });
                     setIsEditProductModalOpen(true);
                   }}
-                  className="w-full py-2.5 px-3 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs"
+                  className="py-2 px-4 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs whitespace-nowrap"
                 >
                   <Plus className="w-4 h-4" />
-                  <span>Ajouter un nouveau matériel</span>
-                </button>
-
-                <button
-                  onClick={() => setActiveTab('prices')}
-                  className="w-full py-2.5 px-3 bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs"
-                >
-                  <DollarSign className="w-4 h-4 text-[#D71920]" />
-                  <span>Modifier rapidement un prix</span>
-                </button>
-
-                <button
-                  onClick={() => setActiveTab('availability')}
-                  className="w-full py-2.5 px-3 bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-300 text-xs font-bold uppercase rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  <span>Gérer les disponibilités</span>
+                  <span>Nouveau Matériel</span>
                 </button>
               </div>
 
-              {/* Recent Activity Log */}
-              <div className="lg:col-span-2 bg-white p-5 rounded-2xl border border-zinc-200 shadow-xs">
-                <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3 flex items-center justify-between">
-                  <span>Dernières Activités du Site</span>
-                  <span className="text-[10px] font-mono text-zinc-400">Journal d&apos;audit en temps réel</span>
-                </h4>
-
-                <div className="divide-y divide-zinc-100 max-h-64 overflow-y-auto">
-                  {auditLogs.length === 0 ? (
-                    <div className="text-xs text-zinc-400 py-6 text-center">Aucune activité enregistrée.</div>
-                  ) : (
-                    auditLogs.slice(0, 8).map((log) => (
-                      <div key={log.id} className="py-2.5 flex items-start justify-between text-xs gap-3">
-                        <div>
-                          <span className="font-bold text-zinc-900">{log.entityName || log.entityId}</span>
-                          <span className="text-zinc-500 block text-[11px]">{log.details}</span>
-                        </div>
-                        <span className="text-[10px] text-zinc-400 whitespace-nowrap font-mono">
-                          {new Date(log.timestamp).toLocaleDateString('fr-FR', {
-                            hour: '2-digit',
-                            minute: '2-digit',
-                          })}
-                        </span>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================= */}
-        {/* TAB 2: GESTION COMPLÈTE DES MATÉRIELS                     */}
-        {/* ========================================================= */}
-        {activeTab === 'products' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            {/* Controls Bar */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-              <div className="flex flex-wrap items-center gap-2 w-full md:w-auto flex-1">
-                {/* Search Input */}
-                <div className="relative flex-1 min-w-[200px] max-w-sm">
-                  <input
-                    type="text"
-                    value={productSearch}
-                    onChange={(e) => setProductSearch(e.target.value)}
-                    placeholder="Rechercher par référence, nom..."
-                    className="w-full pl-9 pr-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-hidden focus:border-[#D71920]"
-                  />
-                  <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                </div>
-
-                {/* Category Filter */}
-                <select
-                  value={categoryFilter}
-                  onChange={(e) => setCategoryFilter(e.target.value)}
-                  className="px-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-hidden"
-                >
-                  <option value="all">Toutes les sections</option>
-                  <option value="cameras">Caméras de Surveillance</option>
-                  <option value="alarms">Systèmes d&apos;Alarme</option>
-                  <option value="dvr_nvr">Enregistreurs DVR / NVR</option>
-                  <option value="accessories">Accessoires & Câblage</option>
-                  <option value="hdd">Disques Durs</option>
-                  <option value="network">Réseau & Switchs PoE</option>
-                  <option value="monitors">Moniteurs</option>
-                  <option value="packs">Packs Vidéosurveillance</option>
-                </select>
-
-                {/* Availability Filter */}
-                <select
-                  value={availabilityFilter}
-                  onChange={(e) => setAvailabilityFilter(e.target.value as any)}
-                  className="px-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-hidden"
-                >
-                  <option value="all">Toutes disponibilités</option>
-                  <option value="available">Disponibles uniquement</option>
-                  <option value="unavailable">Indisponibles uniquement</option>
-                </select>
-              </div>
-
-              {/* Add New Product Button */}
-              <button
-                onClick={() => {
-                  setEditingProduct({
-                    name: '',
-                    reference: '',
-                    category: 'Caméras de Surveillance',
-                    topSection: 'cameras',
-                    sellingPriceAr: 0,
-                    isAvailable: true,
-                  });
-                  setIsEditProductModalOpen(true);
-                }}
-                className="py-2 px-4 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center gap-1.5 shadow-xs whitespace-nowrap"
-              >
-                <Plus className="w-4 h-4" />
-                <span>Nouveau Matériel</span>
-              </button>
-            </div>
-
-            {/* Products Table */}
-            <div className="overflow-x-auto rounded-xl border border-zinc-200">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
-                    <th className="py-2.5 px-3">Photo</th>
-                    <th className="py-2.5 px-3">Référence Exacte</th>
-                    <th className="py-2.5 px-3">Désignation</th>
-                    <th className="py-2.5 px-3">Section</th>
-                    <th className="py-2.5 px-3 text-right">Prix Achat</th>
-                    <th className="py-2.5 px-3 text-right">Prix Vente</th>
-                    <th className="py-2.5 px-3 text-center">Disponibilité</th>
-                    <th className="py-2.5 px-3 text-center">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-100">
-                  {filteredProducts.slice(0, 100).map((product) => (
-                    <tr key={product.id} className="hover:bg-zinc-50/80 transition-colors">
-                      {/* Photo Thumbnail */}
-                      <td className="py-2 px-3">
-                        <div
-                          onClick={() => {
-                            if (product.image) setImagePreviewUrl(product.image);
-                          }}
-                          className="w-10 h-10 rounded-lg bg-zinc-100 border border-zinc-200 p-1 flex items-center justify-center cursor-pointer hover:border-zinc-400 overflow-hidden"
-                          title="Cliquez pour agrandir"
-                        >
-                          {product.image ? (
-                            <img
-                              src={product.image}
-                              alt={product.reference}
-                              className="max-h-full max-w-full object-contain"
-                              onError={(e) => {
-                                (e.target as HTMLImageElement).style.display = 'none';
-                              }}
-                            />
-                          ) : (
-                            <ImageIcon className="w-4 h-4 text-zinc-300" />
-                          )}
-                        </div>
-                      </td>
-
-                      {/* Reference SKU */}
-                      <td className="py-2 px-3 font-mono font-bold text-[#D71920]">
-                        {product.reference}
-                      </td>
-
-                      {/* Name */}
-                      <td className="py-2 px-3">
-                        <div className="font-semibold text-zinc-900 max-w-xs truncate" title={product.name}>
-                          {product.name}
-                        </div>
-                        <div className="text-[10px] text-zinc-400 truncate max-w-xs">{product.category}</div>
-                      </td>
-
-                      {/* Section */}
-                      <td className="py-2 px-3">
-                        <span className="text-[10px] bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded font-bold uppercase">
-                          {product.topSection}
-                        </span>
-                      </td>
-
-                      {/* Purchase Price (Admin only) */}
-                      <td className="py-2 px-3 text-right font-mono text-zinc-500">
-                        {formatAr(product.originalPriceAr)}
-                      </td>
-
-                      {/* Selling Price */}
-                      <td className="py-2 px-3 text-right font-mono font-bold text-zinc-950">
-                        {product.formattedPrice}
-                      </td>
-
-                      {/* Availability Toggle */}
-                      <td className="py-2 px-3 text-center">
-                        <button
-                          onClick={() => handleToggleAvailability(product)}
-                          className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide transition-all ${
-                            product.isAvailable !== false
-                              ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
-                              : 'bg-red-100 text-red-800 hover:bg-red-200'
-                          }`}
-                          title="Cliquez pour basculer le statut"
-                        >
-                          {product.isAvailable !== false ? 'DISPONIBLE' : 'INDISPONIBLE'}
-                        </button>
-                      </td>
-
-                      {/* Actions */}
-                      <td className="py-2 px-3 text-center">
-                        <div className="flex items-center justify-center gap-1">
-                          {/* Edit Details */}
-                          <button
-                            onClick={() => {
-                              setEditingProduct(product);
-                              setIsEditProductModalOpen(true);
-                            }}
-                            className="p-1.5 text-zinc-600 hover:text-black hover:bg-zinc-200 rounded-md transition-colors"
-                            title="Modifier ce matériel"
-                          >
-                            <Edit3 className="w-3.5 h-3.5" />
-                          </button>
-
-                          {/* Choose Photo */}
-                          <button
-                            onClick={() => {
-                              setImagePickerTargetProduct(product);
-                              setIsImagePickerOpen(true);
-                            }}
-                            className="p-1.5 text-zinc-600 hover:text-blue-600 hover:bg-zinc-200 rounded-md transition-colors"
-                            title="Changer la photo"
-                          >
-                            <ImageIcon className="w-3.5 h-3.5" />
-                          </button>
-
-                          {/* Delete */}
-                          <button
-                            onClick={() => {
-                              setProductToDelete(product);
-                              setIsDeleteModalOpen(true);
-                            }}
-                            className="p-1.5 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors"
-                            title="Supprimer ce matériel"
-                          >
-                            <Trash2 className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {filteredProducts.length > 100 && (
-              <div className="text-center text-xs text-zinc-400 pt-2 font-mono">
-                Affichage des 100 premiers matériels sur {filteredProducts.length} correspondants.
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* ========================================================= */}
-        {/* TAB 3: GESTION DE LA DISPONIBILITÉ                       */}
-        {/* ========================================================= */}
-        {activeTab === 'availability' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            {/* Explanatory Rule Banner */}
-            <div className="p-4 bg-red-50/70 border border-red-200 rounded-xl text-xs text-zinc-800 space-y-1">
-              <strong className="text-[#D71920] font-black uppercase tracking-wider block">
-                Règle Fondamentale de Disponibilité des Matériels D SECURE :
-              </strong>
-              <p className="leading-relaxed">
-                Lorsqu&apos;un matériel est marqué <strong>INDISPONIBLE</strong>, il n&apos;est jamais effacé du site public.
-                La fiche produit reste consultable avec sa photographie, son nom, sa référence et son prix, avec le badge rouge officiel <strong>« INDISPONIBLE »</strong>.
-                Le client peut réserver ou demander des informations via WhatsApp. Dès que vous le réactivez ici, le statut redevient instantanément <strong>« DISPONIBLE »</strong>.
-              </p>
-            </div>
-
-            {/* Quick summary counts */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-xl text-center">
-                <span className="text-xs uppercase font-bold text-emerald-800 block">Matériels Actuellement Disponibles</span>
-                <span className="text-3xl font-black font-mono text-emerald-700 mt-1 block">
-                  {products.filter((p) => p.isAvailable !== false).length}
-                </span>
-              </div>
-              <div className="bg-red-50 border border-red-200 p-4 rounded-xl text-center">
-                <span className="text-xs uppercase font-bold text-red-800 block">Matériels Indisponibles (Sur Commande)</span>
-                <span className="text-3xl font-black font-mono text-red-700 mt-1 block">
-                  {products.filter((p) => p.isAvailable === false).length}
-                </span>
-              </div>
-            </div>
-
-            {/* Fast Toggle Table */}
-            <div className="overflow-x-auto rounded-xl border border-zinc-200">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
-                    <th className="py-2.5 px-3">Référence</th>
-                    <th className="py-2.5 px-3">Nom du Matériel</th>
-                    <th className="py-2.5 px-3">Catégorie</th>
-                    <th className="py-2.5 px-3 text-center">Statut Public Actuel</th>
-                    <th className="py-2.5 px-3 text-center">Action Directe</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-100">
-                  {products.map((product) => (
-                    <tr key={product.id} className="hover:bg-zinc-50/80 transition-colors">
-                      <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">{product.reference}</td>
-                      <td className="py-2.5 px-3 font-semibold text-zinc-900">{product.name}</td>
-                      <td className="py-2.5 px-3 text-zinc-500">{product.category}</td>
-                      <td className="py-2.5 px-3 text-center">
-                        {product.isAvailable !== false ? (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
-                            <Check className="w-3 h-3" />
-                            DISPONIBLE
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-red-700 bg-red-100/80 px-2.5 py-0.5 rounded-full">
-                            <X className="w-3 h-3" />
-                            INDISPONIBLE
-                          </span>
-                        )}
-                      </td>
-                      <td className="py-2.5 px-3 text-center">
-                        <button
-                          onClick={() => handleToggleAvailability(product)}
-                          className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                            product.isAvailable !== false
-                              ? 'bg-red-50 hover:bg-red-100 text-red-700 border border-red-200'
-                              : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200'
-                          }`}
-                        >
-                          {product.isAvailable !== false ? 'Marquer Indisponible' : 'Marquer Disponible'}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================= */}
-        {/* TAB 4: GESTION RAPIDE DES PRIX & MARGES                  */}
-        {/* ========================================================= */}
-        {activeTab === 'prices' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                  Modification Rapide des Prix & Références
-                </h3>
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  Modifiez directement le prix de vente d&apos;un équipement pour actualisation immédiate sur le site public
-                </p>
-              </div>
-
-              <div className="relative max-w-xs">
-                <input
-                  type="text"
-                  value={productSearch}
-                  onChange={(e) => setProductSearch(e.target.value)}
-                  placeholder="Filtrer par référence..."
-                  className="pl-8 pr-3 py-1.5 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
-                />
-                <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
-              </div>
-            </div>
-
-            <div className="overflow-x-auto rounded-xl border border-zinc-200">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
-                    <th className="py-2.5 px-3">Référence</th>
-                    <th className="py-2.5 px-3">Désignation</th>
-                    <th className="py-2.5 px-3 text-right">Prix Achat (Confidentiel)</th>
-                    <th className="py-2.5 px-3 text-right">Prix Vente Actuel</th>
-                    <th className="py-2.5 px-3 text-right">Nouveau Prix Vente (Ar)</th>
-                    <th className="py-2.5 px-3 text-center">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-100">
-                  {filteredProducts.slice(0, 50).map((product) => {
-                    return (
-                      <PriceRow
-                        key={product.id}
-                        product={product}
-                        onSave={handleQuickPriceUpdate}
-                      />
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================= */}
-        {/* TAB 5: GESTION DES CATÉGORIES                             */}
-        {/* ========================================================= */}
-        {activeTab === 'categories' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                  Gestion des Catégories du Catalogue
-                </h3>
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  Organisez les familles de matériels et préservez l&apos;architecture de navigation
-                </p>
-              </div>
-
-              <button
-                onClick={() => setIsAddCategoryModalOpen(true)}
-                className="py-2 px-3 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center gap-1.5"
-              >
-                <Plus className="w-4 h-4" />
-                <span>Ajouter une catégorie</span>
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {categories.map((cat) => (
-                <div key={cat.id} className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] uppercase font-bold text-[#D71920] tracking-wider font-mono">
-                        {cat.topSection}
-                      </span>
-                      <span className="text-[10px] font-bold bg-zinc-200 text-zinc-700 px-2 py-0.5 rounded">
-                        {cat.productCount} matériels
-                      </span>
-                    </div>
-
-                    <h4 className="font-extrabold text-sm text-zinc-900">{cat.name}</h4>
-                    <p className="text-xs text-zinc-500 mt-1 line-clamp-2">{cat.description || 'Section officielle du catalogue.'}</p>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs">
-                    <span className="text-emerald-700 font-bold flex items-center gap-1">
-                      <Check className="w-3 h-3" /> Active
-                    </span>
-                    <button
-                      onClick={() => {
-                        setCategoryFilter(cat.topSection);
-                        setActiveTab('products');
-                      }}
-                      className="text-zinc-600 hover:text-black font-bold flex items-center gap-1"
-                    >
-                      <span>Voir les matériels</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================= */}
-        {/* TAB 6: GESTION DES PACKS                                  */}
-        {/* ========================================================= */}
-        {activeTab === 'packs' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                  Gestion des Packs Vidéosurveillance Clés en Main (12 Packs)
-                </h3>
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  Distinction rigoureuse entre packs ANALOGIQUES Turbo HD et packs IP NUMÉRIQUES PoE
-                </p>
-              </div>
-
-              <span className="text-xs font-bold text-zinc-600 bg-zinc-100 px-3 py-1 rounded-lg">
-                Calcul automatique BOM vérifié
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {SURVEILLANCE_PACKS.map((pack) => (
-                <div key={pack.id} className="bg-zinc-50 rounded-xl border border-zinc-200 p-4 flex flex-col justify-between">
-                  <div>
-                    <div className="aspect-16/10 bg-white rounded-lg border border-zinc-200 p-2 flex items-center justify-center overflow-hidden mb-3">
-                      <img
-                        src={pack.image}
-                        alt={pack.name}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-[#D71920] text-white">
-                        {pack.technology}
-                      </span>
-                      <span className="text-[10px] font-bold text-zinc-500 font-mono">
-                        {pack.camerasCount} Cams
-                      </span>
-                    </div>
-
-                    <h4 className="font-extrabold text-sm text-zinc-900 leading-snug">{pack.name}</h4>
-                    <p className="text-xs text-zinc-500 mt-1 line-clamp-2">{pack.tagline}</p>
-
-                    <div className="mt-3 text-xs bg-white p-2.5 rounded-lg border border-zinc-200 space-y-1">
-                      <div className="flex justify-between">
-                        <span className="text-zinc-500">Composants BOM :</span>
-                        <span className="font-bold text-zinc-800">{pack.bom.length} matériels</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-zinc-500">Pose à Tana :</span>
-                        <span className="font-bold text-emerald-600">OFFERTE (0 Ar)</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between">
-                    <div>
-                      <span className="text-[10px] text-zinc-400 uppercase font-bold block">Prix Total Pack</span>
-                      <span className="text-base font-black text-zinc-950 font-mono">
-                        {pack.formattedPrice}
-                      </span>
-                    </div>
-
-                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded">
-                      Prêt à la vente
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================= */}
-        {/* TAB 7: HISTORIQUE DES COMMANDES CLIENTS                   */}
-        {/* ========================================================= */}
-        {activeTab === 'orders' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                  Historique Réel des Commandes Clients
-                </h3>
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  Commandes reçues en ligne depuis le panier ou via réservation WhatsApp
-                </p>
-              </div>
-
-              {/* Status filter */}
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-500 font-bold">Filtrer par statut :</span>
-                <select
-                  value={orderStatusFilter}
-                  onChange={(e) => setOrderStatusFilter(e.target.value)}
-                  className="px-3 py-1.5 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
-                >
-                  <option value="all">Toutes les commandes</option>
-                  <option value="Nouvelle commande">Nouvelles commandes</option>
-                  <option value="En attente de confirmation">En attente</option>
-                  <option value="Confirmée">Confirmées</option>
-                  <option value="En préparation">En préparation</option>
-                  <option value="Livrée">Livrées</option>
-                  <option value="Annulée">Annulées</option>
-                </select>
-              </div>
-            </div>
-
-            {orders.length === 0 ? (
-              <div className="text-center py-16 bg-zinc-50 rounded-xl border border-dashed border-zinc-300 p-8 text-zinc-500 text-xs">
-                <ShoppingCart className="w-10 h-10 mx-auto text-zinc-300 mb-2" />
-                <strong className="text-zinc-800 text-sm block">Aucune commande enregistrée pour l&apos;instant</strong>
-                <p className="mt-1 max-w-sm mx-auto">
-                  Dès qu&apos;un client valide une commande sur le site ou via WhatsApp, elle apparaîtra instantanément ici avec son montant et ses matériels.
-                </p>
-              </div>
-            ) : (
+              {/* Products Table */}
               <div className="overflow-x-auto rounded-xl border border-zinc-200">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
                     <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
-                      <th className="py-2.5 px-3">N° Commande</th>
-                      <th className="py-2.5 px-3">Date</th>
-                      <th className="py-2.5 px-3">Client</th>
-                      <th className="py-2.5 px-3">Téléphone</th>
-                      <th className="py-2.5 px-3">Articles</th>
-                      <th className="py-2.5 px-3 text-right">Montant Total</th>
+                      <th className="py-2.5 px-3">Photo</th>
+                      <th className="py-2.5 px-3">Référence</th>
+                      <th className="py-2.5 px-3">Désignation & Catégorie</th>
+                      <th className="py-2.5 px-3 text-center">Ordre</th>
+                      <th className="py-2.5 px-3 text-right">Achat (Conf.)</th>
+                      <th className="py-2.5 px-3 text-right">Prix Vente</th>
                       <th className="py-2.5 px-3 text-center">Statut</th>
-                      <th className="py-2.5 px-3 text-center">Détails</th>
+                      <th className="py-2.5 px-3 text-center">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-100">
-                    {orders
-                      .filter((o) => (orderStatusFilter === 'all' ? true : o.status === orderStatusFilter))
-                      .map((order) => (
-                        <tr key={order.id} className="hover:bg-zinc-50/80 transition-colors">
-                          <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">
-                            {order.orderNumber}
-                          </td>
-                          <td className="py-2.5 px-3 text-zinc-500 font-mono">
-                            {new Date(order.createdAt).toLocaleDateString('fr-FR', {
-                              day: '2-digit',
-                              month: '2-digit',
-                              year: 'numeric',
-                              hour: '2-digit',
-                              minute: '2-digit',
-                            })}
-                          </td>
-                          <td className="py-2.5 px-3 font-bold text-zinc-900">
-                            {order.customer.fullName}
-                          </td>
-                          <td className="py-2.5 px-3 font-mono text-zinc-700">
-                            {order.customer.phone}
-                          </td>
-                          <td className="py-2.5 px-3 text-zinc-600">
-                            {order.items.reduce((s, it) => s + it.quantity, 0)} article(s)
-                          </td>
-                          <td className="py-2.5 px-3 text-right font-mono font-bold text-zinc-950">
-                            {order.formattedTotal}
-                          </td>
-                          <td className="py-2.5 px-3 text-center">
-                            <select
-                              value={order.status}
-                              onChange={(e) => handleUpdateOrderStatus(order.id, e.target.value as OrderStatus)}
-                              className="text-[11px] font-bold py-1 px-2 rounded-lg bg-zinc-50 border border-zinc-200 cursor-pointer"
-                            >
-                              <option value="Nouvelle commande">Nouvelle commande</option>
-                              <option value="En attente de confirmation">En attente</option>
-                              <option value="Confirmée">Confirmée</option>
-                              <option value="En préparation">En préparation</option>
-                              <option value="Livrée">Livrée</option>
-                              <option value="Annulée">Annulée</option>
-                            </select>
-                          </td>
-                          <td className="py-2.5 px-3 text-center">
+                    {paginatedProducts.map((product) => (
+                      <tr key={product.id} className="hover:bg-zinc-50/80 transition-colors">
+                        <td className="py-2 px-3">
+                          <div
+                            onClick={() => product.image && setImagePreviewUrl(product.image)}
+                            className="w-11 h-11 rounded-lg bg-zinc-50 border border-zinc-200 p-1 flex items-center justify-center cursor-pointer hover:border-zinc-400 overflow-hidden"
+                            title={product.image ? 'Cliquez pour agrandir' : 'Aucune image'}
+                          >
+                            {product.image ? (
+                              <img
+                                src={product.image}
+                                alt={product.reference}
+                                className="max-h-full max-w-full object-contain"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <ImageIcon className="w-4 h-4 text-zinc-300" />
+                            )}
+                          </div>
+                        </td>
+
+                        <td className="py-2 px-3 font-mono font-bold text-[#D71920] whitespace-nowrap">
+                          {product.reference}
+                        </td>
+
+                        <td className="py-2 px-3">
+                          <div className="font-semibold text-zinc-900 max-w-xs truncate" title={product.name}>
+                            {product.name}
+                          </div>
+                          <div className="text-[10px] text-zinc-500">
+                            {product.category} &bull; <span className="uppercase">{product.topSection}</span>
+                          </div>
+                        </td>
+
+                        <td className="py-2 px-3 text-center font-mono text-zinc-500">
+                          {product.displayOrder ?? '—'}
+                        </td>
+
+                        <td className="py-2 px-3 text-right font-mono text-zinc-500 whitespace-nowrap">
+                          {formatAr(product.originalPriceAr)}
+                        </td>
+
+                        <td className="py-2 px-3 text-right font-mono font-bold text-zinc-950 whitespace-nowrap">
+                          {product.formattedPrice}
+                        </td>
+
+                        <td className="py-2 px-3 text-center">
+                          <button
+                            onClick={() => handleToggleAvailability(product)}
+                            className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide transition-all ${
+                              product.isAvailable !== false
+                                ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+                                : 'bg-red-100 text-red-800 hover:bg-red-200'
+                            }`}
+                          >
+                            {product.isAvailable !== false ? 'DISPONIBLE' : 'INDISPONIBLE'}
+                          </button>
+                        </td>
+
+                        <td className="py-2 px-3 text-center">
+                          <div className="flex items-center justify-center gap-1">
                             <button
-                              onClick={() => setSelectedOrderDetails(order)}
-                              className="px-2.5 py-1 bg-zinc-900 hover:bg-black text-white text-[11px] font-bold rounded-md"
+                              onClick={() => {
+                                setEditingProduct(product);
+                                setIsEditProductModalOpen(true);
+                              }}
+                              className="p-1.5 text-zinc-600 hover:text-black hover:bg-zinc-200 rounded-md transition-colors"
+                              title="Modifier la fiche complète"
                             >
-                              Voir
+                              <Edit3 className="w-3.5 h-3.5" />
                             </button>
-                          </td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </div>
-        )}
 
-        {/* ========================================================= */}
-        {/* TAB 8: GESTION DES CLIENTS                                */}
-        {/* ========================================================= */}
-        {activeTab === 'customers' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                Répertoire des Clients Réels ({customers.length})
-              </h3>
-              <p className="text-xs text-zinc-500 mt-0.5">
-                Compilé exclusivement à partir des commandes et coordonnées réelles soumises sur le site
-              </p>
-            </div>
+                            <button
+                              onClick={() =>
+                                openImagePicker(async (newImgPath) => {
+                                  const res = await fetch(`/api/admin/products/${product.id}`, {
+                                    method: 'PUT',
+                                    headers: {
+                                      Authorization: `Bearer ${token}`,
+                                      'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({ image: newImgPath }),
+                                  });
+                                  const d = await res.json();
+                                  if (d.success) {
+                                    await loadAllAdminData();
+                                    showToast(`Image remplacée pour ${product.reference} !`);
+                                  }
+                                })
+                              }
+                              className="p-1.5 text-zinc-600 hover:text-blue-600 hover:bg-zinc-200 rounded-md transition-colors"
+                              title="Remplacer ou importer une photo"
+                            >
+                              <ImageIcon className="w-3.5 h-3.5" />
+                            </button>
 
-            {customers.length === 0 ? (
-              <div className="text-center py-16 bg-zinc-50 rounded-xl border border-dashed border-zinc-300 p-8 text-zinc-500 text-xs">
-                <Users className="w-10 h-10 mx-auto text-zinc-300 mb-2" />
-                <strong className="text-zinc-800 text-sm block">Aucun client enregistré pour l&apos;instant</strong>
-                <p className="mt-1">
-                  Les clients ayant passé commande ou demandé un devis s&apos;afficheront automatiquement ici.
-                </p>
-              </div>
-            ) : (
-              <div className="overflow-x-auto rounded-xl border border-zinc-200">
-                <table className="w-full text-left text-xs border-collapse">
-                  <thead>
-                    <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
-                      <th className="py-2.5 px-3">Nom du Client</th>
-                      <th className="py-2.5 px-3">Téléphone / WhatsApp</th>
-                      <th className="py-2.5 px-3">Adresse de Livraison</th>
-                      <th className="py-2.5 px-3 text-center">Commandes</th>
-                      <th className="py-2.5 px-3 text-right">Total Dépensé</th>
-                      <th className="py-2.5 px-3">Dernière Commande</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-zinc-100">
-                    {customers.map((c) => (
-                      <tr key={c.id} className="hover:bg-zinc-50/80 transition-colors">
-                        <td className="py-2.5 px-3 font-bold text-zinc-900">{c.fullName}</td>
-                        <td className="py-2.5 px-3 font-mono text-zinc-700">{c.phone}</td>
-                        <td className="py-2.5 px-3 text-zinc-600">{c.address}</td>
-                        <td className="py-2.5 px-3 text-center font-mono font-bold text-[#D71920]">
-                          {c.totalOrders}
-                        </td>
-                        <td className="py-2.5 px-3 text-right font-mono font-bold text-zinc-950">
-                          {c.formattedTotalSpent}
-                        </td>
-                        <td className="py-2.5 px-3 text-zinc-500 font-mono">
-                          {new Date(c.lastOrderAt).toLocaleDateString('fr-FR')}
+                            <button
+                              onClick={() => {
+                                setProductToDelete(product);
+                                setIsDeleteModalOpen(true);
+                              }}
+                              className="p-1.5 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors"
+                              title="Supprimer avec confirmation"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-            )}
-          </div>
-        )}
 
-        {/* ========================================================= */}
-        {/* TAB 9: SUIVI DES VISITEURS & ANALYTICS                   */}
-        {/* ========================================================= */}
-        {activeTab === 'analytics' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-6">
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                Statistiques de Fréquentation & Visiteurs (Anonymisées)
-              </h3>
-              <p className="text-xs text-zinc-500 mt-0.5">
-                Mesure d&apos;audience réelle sans cookies intrusifs ni collecte de données personnelles
-              </p>
-            </div>
-
-            {/* Metrics cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
-                <span className="text-[10px] font-bold text-zinc-400 uppercase block">Visites Totales</span>
-                <span className="text-3xl font-black font-mono text-zinc-900 mt-1 block">
-                  {analytics?.totalVisits || summary?.totalVisits || 0}
-                </span>
-              </div>
-              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
-                <span className="text-[10px] font-bold text-emerald-600 uppercase block">Visites Aujourd&apos;hui</span>
-                <span className="text-3xl font-black font-mono text-emerald-600 mt-1 block">
-                  {analytics?.todayVisits || 0}
-                </span>
-              </div>
-              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
-                <span className="text-[10px] font-bold text-[#D71920] uppercase block">Dernier Passage</span>
-                <span className="text-sm font-bold font-mono text-zinc-700 mt-2 block">
-                  {analytics?.lastVisitedAt
-                    ? new Date(analytics.lastVisitedAt).toLocaleTimeString('fr-FR', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                      })
-                    : 'Aujourd\'hui'}
-                </span>
-              </div>
-            </div>
-
-            {/* Pages Breakdown */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
-                <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3">
-                  Pages les Plus Consultées
-                </h4>
-                <div className="space-y-2 text-xs">
-                  {analytics && Object.entries(analytics.pageViews).map(([page, count]) => (
-                    <div key={page} className="flex justify-between items-center py-1.5 border-b border-zinc-200/60">
-                      <span className="font-mono text-zinc-800">{page}</span>
-                      <span className="font-mono font-bold text-[#D71920]">{count} vues</span>
-                    </div>
-                  ))}
+              {/* Pagination Footer */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-xs text-zinc-600">
+                <div className="flex items-center gap-2">
+                  <span>
+                    Affichage {(productPage - 1) * productPageSize + 1}&ndash;
+                    {Math.min(productPage * productPageSize, filteredProducts.length)} sur {filteredProducts.length} matériels
+                  </span>
+                  <select
+                    value={productPageSize}
+                    onChange={(e) => setProductPageSize(Number(e.target.value))}
+                    className="px-2 py-1 bg-zinc-50 border border-zinc-300 rounded text-xs"
+                  >
+                    <option value={30}>30 / page</option>
+                    <option value={60}>60 / page</option>
+                    <option value={300}>Tout afficher</option>
+                  </select>
                 </div>
-              </div>
 
-              {/* Traffic timeline */}
-              <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
-                <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3">
-                  Historique Journalier Récent
-                </h4>
-                <div className="space-y-2 text-xs">
-                  {analytics && analytics.dailyVisits.slice(-7).map((day) => (
-                    <div key={day.date} className="flex justify-between items-center py-1.5 border-b border-zinc-200/60">
-                      <span className="font-mono text-zinc-700">{day.date}</span>
-                      <span className="font-mono font-bold text-zinc-900">{day.visits} visites</span>
-                    </div>
-                  ))}
+                <div className="flex items-center gap-1.5">
+                  <button
+                    disabled={productPage <= 1}
+                    onClick={() => setProductPage((p) => p - 1)}
+                    className="px-2.5 py-1 border border-zinc-300 rounded-lg disabled:opacity-40 hover:bg-zinc-100 flex items-center gap-1"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5" /> Précédent
+                  </button>
+                  <span className="px-2 font-mono font-bold">
+                    Page {productPage} / {totalProductPages}
+                  </span>
+                  <button
+                    disabled={productPage >= totalProductPages}
+                    onClick={() => setProductPage((p) => p + 1)}
+                    className="px-2.5 py-1 border border-zinc-300 rounded-lg disabled:opacity-40 hover:bg-zinc-100 flex items-center gap-1"
+                  >
+                    Suivant <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* ========================================================= */}
-        {/* TAB 10: JOURNAL D'AUDIT & SAUVEGARDES                     */}
-        {/* ========================================================= */}
-        {activeTab === 'audit' && (
-          <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
-                  Journal des Opérations & Sauvegarde Complète
-                </h3>
-                <p className="text-xs text-zinc-500 mt-0.5">
-                  Historique certifié de toutes les modifications administratives et export de sécurité
+          {/* ========================================================= */}
+          {/* TAB 3: DISPONIBILITÉ DES MATÉRIELS                        */}
+          {/* ========================================================= */}
+          {activeTab === 'availability' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div className="p-4 bg-red-50/70 border border-red-200 rounded-xl text-xs text-zinc-800 space-y-1">
+                <strong className="text-[#D71920] font-black uppercase tracking-wider block">
+                  Règle de Disponibilité D SECURE (Conservation Visibilité) :
+                </strong>
+                <p>
+                  Un matériel désactivé reste <strong>toujours visible sur le site public</strong> (avec photo, nom, référence, description),
+                  mais affiche le badge rouge <strong>« INDISPONIBLE »</strong> et le bouton « SUR COMMANDE ».
+                  Dès réactivation ici, il repasse instantanément à <strong>« DISPONIBLE »</strong>.
                 </p>
               </div>
 
-              <a
-                href="/api/admin/export-database"
-                target="_blank"
-                rel="noreferrer"
-                className="py-2.5 px-4 bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center gap-1.5 shadow-xs"
-              >
-                <Download className="w-4 h-4 text-[#D71920]" />
-                <span>Exporter la Base JSON</span>
-              </a>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+                <div className="grid grid-cols-2 gap-3 flex-1 max-w-md">
+                  <div className="bg-emerald-50 border border-emerald-200 px-4 py-2.5 rounded-xl flex items-center justify-between">
+                    <span className="text-xs font-bold text-emerald-800">Disponibles</span>
+                    <span className="text-lg font-black font-mono text-emerald-700">
+                      {products.filter((p) => p.isAvailable !== false).length}
+                    </span>
+                  </div>
+                  <div className="bg-red-50 border border-red-200 px-4 py-2.5 rounded-xl flex items-center justify-between">
+                    <span className="text-xs font-bold text-red-800">Indisponibles</span>
+                    <span className="text-lg font-black font-mono text-red-700">
+                      {products.filter((p) => p.isAvailable === false).length}
+                    </span>
+                  </div>
+                </div>
 
-            {/* Audit table */}
-            <div className="overflow-x-auto rounded-xl border border-zinc-200">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
-                    <th className="py-2.5 px-3">Horodatage</th>
-                    <th className="py-2.5 px-3">Type d&apos;Action</th>
-                    <th className="py-2.5 px-3">Cible</th>
-                    <th className="py-2.5 px-3">Détails de l&apos;Opération</th>
-                    <th className="py-2.5 px-3">Auteur</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-100">
-                  {auditLogs.map((log) => (
-                    <tr key={log.id} className="hover:bg-zinc-50/80 transition-colors">
-                      <td className="py-2.5 px-3 font-mono text-zinc-500 whitespace-nowrap">
-                        {new Date(log.timestamp).toLocaleString('fr-FR')}
-                      </td>
-                      <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">
-                        {log.action}
-                      </td>
-                      <td className="py-2.5 px-3 font-semibold text-zinc-900">
-                        {log.entityName || log.entityId}
-                      </td>
-                      <td className="py-2.5 px-3 text-zinc-700">{log.details}</td>
-                      <td className="py-2.5 px-3 text-zinc-500">{log.user}</td>
+                <div className="relative min-w-[240px]">
+                  <input
+                    type="text"
+                    value={productSearch}
+                    onChange={(e) => setProductSearch(e.target.value)}
+                    placeholder="Rechercher référence ou nom..."
+                    className="w-full pl-9 pr-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
+                  />
+                  <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                </div>
+              </div>
+
+              <div className="overflow-x-auto rounded-xl border border-zinc-200">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
+                      <th className="py-2.5 px-3">Référence</th>
+                      <th className="py-2.5 px-3">Matériel</th>
+                      <th className="py-2.5 px-3">Catégorie</th>
+                      <th className="py-2.5 px-3 text-center">Statut Public</th>
+                      <th className="py-2.5 px-3 text-center">Basculer</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100">
+                    {paginatedProducts.map((product) => (
+                      <tr key={product.id} className="hover:bg-zinc-50/80 transition-colors">
+                        <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">{product.reference}</td>
+                        <td className="py-2.5 px-3 font-semibold text-zinc-900">{product.name}</td>
+                        <td className="py-2.5 px-3 text-zinc-500">{product.category}</td>
+                        <td className="py-2.5 px-3 text-center">
+                          {product.isAvailable !== false ? (
+                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
+                              <Check className="w-3 h-3" /> DISPONIBLE
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-red-700 bg-red-100/80 px-2.5 py-0.5 rounded-full">
+                              <X className="w-3 h-3" /> INDISPONIBLE
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-2.5 px-3 text-center">
+                          <button
+                            onClick={() => handleToggleAvailability(product)}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                              product.isAvailable !== false
+                                ? 'bg-red-50 hover:bg-red-100 text-red-700 border border-red-200'
+                                : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200'
+                            }`}
+                          >
+                            {product.isAvailable !== false ? 'Désactiver (Indisponible)' : 'Activer (Disponible)'}
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 4: GESTION DES PRIX & RÉFÉRENCES                      */}
+          {/* ========================================================= */}
+          {activeTab === 'prices' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                    Modification Rapide des Prix, Références & Désignations
+                  </h3>
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    Les modifications sont enregistrées sur le serveur, journalisées et recalculent automatiquement les packs associés.
+                  </p>
+                </div>
+
+                <div className="relative min-w-[260px]">
+                  <input
+                    type="text"
+                    value={productSearch}
+                    onChange={(e) => setProductSearch(e.target.value)}
+                    placeholder="Rechercher par nom ou référence..."
+                    className="w-full pl-9 pr-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
+                  />
+                  <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                </div>
+              </div>
+
+              <div className="overflow-x-auto rounded-xl border border-zinc-200">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
+                      <th className="py-2.5 px-3">Référence Exacte</th>
+                      <th className="py-2.5 px-3">Désignation Commerciale</th>
+                      <th className="py-2.5 px-3 text-right">Achat Interne (Ar)</th>
+                      <th className="py-2.5 px-3 text-right">Prix Vente Public (Ar)</th>
+                      <th className="py-2.5 px-3 text-center">Marge</th>
+                      <th className="py-2.5 px-3 text-center">Enregistrer</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100">
+                    {paginatedProducts.map((product) => (
+                      <PriceRefRow
+                        key={product.id}
+                        product={product}
+                        onSave={handleInlinePriceRefSave}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="flex items-center justify-between text-xs text-zinc-600 pt-1">
+                <span>
+                  Page {productPage} / {totalProductPages} ({filteredProducts.length} résultats)
+                </span>
+                <div className="flex gap-2">
+                  <button
+                    disabled={productPage <= 1}
+                    onClick={() => setProductPage((p) => p - 1)}
+                    className="px-3 py-1 border border-zinc-300 rounded-lg disabled:opacity-40"
+                  >
+                    Précédent
+                  </button>
+                  <button
+                    disabled={productPage >= totalProductPages}
+                    onClick={() => setProductPage((p) => p + 1)}
+                    className="px-3 py-1 border border-zinc-300 rounded-lg disabled:opacity-40"
+                  >
+                    Suivant
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 5: GESTION COMPLÈTE DES CATÉGORIES                    */}
+          {/* ========================================================= */}
+          {activeTab === 'categories' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                    Gestion des Catégories & Attribution des Matériels
+                  </h3>
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    Ajoutez, modifiez, réordonnez ou désactivez des catégories et déplacez des matériels sans jamais les supprimer.
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => {
+                    setEditingCategory({
+                      name: '',
+                      topSection: 'accessories',
+                      description: '',
+                      image: '',
+                      order: categories.length + 1,
+                      isActive: true,
+                    });
+                    setIsCategoryModalOpen(true);
+                  }}
+                  className="py-2 px-4 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center gap-1.5"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Ajouter une catégorie</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                {categories.map((cat) => (
+                  <div
+                    key={cat.id}
+                    className={`p-4 rounded-xl border flex flex-col justify-between transition-all ${
+                      cat.isActive !== false ? 'bg-zinc-50 border-zinc-200' : 'bg-zinc-100/70 border-zinc-300 opacity-75'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-start justify-between gap-2 mb-3">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-11 h-11 rounded-lg bg-white border border-zinc-200 p-1 flex items-center justify-center shrink-0 overflow-hidden">
+                            {cat.image ? (
+                              <img src={cat.image} alt={cat.name} className="max-h-full max-w-full object-contain" />
+                            ) : (
+                              <Layers className="w-5 h-5 text-zinc-300" />
+                            )}
+                          </div>
+                          <div>
+                            <span className="text-[10px] uppercase font-bold text-[#D71920] tracking-wider font-mono block">
+                              Position #{cat.order} &bull; {cat.topSection}
+                            </span>
+                            <h4 className="font-extrabold text-sm text-zinc-900 leading-tight">{cat.name}</h4>
+                          </div>
+                        </div>
+
+                        <span className="text-[10px] font-bold bg-white border border-zinc-200 text-zinc-700 px-2 py-0.5 rounded shrink-0">
+                          {cat.productCount} prod.
+                        </span>
+                      </div>
+
+                      <p className="text-xs text-zinc-600 line-clamp-2">
+                        {cat.description || 'Catégorie officielle du catalogue D SECURE.'}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-2 text-xs">
+                      <span
+                        className={`font-bold flex items-center gap-1 text-[11px] ${
+                          cat.isActive !== false ? 'text-emerald-700' : 'text-red-600'
+                        }`}
+                      >
+                        <Power className="w-3 h-3" />
+                        {cat.isActive !== false ? 'Active' : 'Désactivée'}
+                      </span>
+
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => {
+                            setAssignCategoryTarget(cat);
+                            setSelectedProductIdsForAssign([]);
+                            setAssignSearch('');
+                          }}
+                          className="px-2.5 py-1 bg-white hover:bg-zinc-100 border border-zinc-300 rounded-md text-[11px] font-bold text-zinc-700"
+                        >
+                          Associer matériels
+                        </button>
+
+                        <button
+                          onClick={() => {
+                            setEditingCategory({ ...cat, renameProductsCategory: true });
+                            setIsCategoryModalOpen(true);
+                          }}
+                          className="px-2.5 py-1 bg-zinc-900 hover:bg-black text-white rounded-md text-[11px] font-bold"
+                        >
+                          Modifier
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 6: GESTION DES PACKS VIDÉOSURVEILLANCE                */}
+          {/* ========================================================= */}
+          {activeTab === 'packs' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                    Gestion des Packs Vidéosurveillance ({packs.length} packs)
+                  </h3>
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    Séparation stricte Analogique / IP Numérique PoE &middot; Calcul automatique depuis les prix du catalogue
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <button
+                    onClick={handleRecalculateAllPacks}
+                    className="py-2 px-3 bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center gap-1.5"
+                  >
+                    <Calculator className="w-3.5 h-3.5 text-[#D71920]" />
+                    <span>Recalculer les prix (BOM)</span>
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setEditingPack({
+                        family: 'analog',
+                        subFamily: 'analog-exir',
+                        subFamilyLabel: 'Analogique EXIR',
+                        name: 'NOUVEAU PACK SUR-MESURE',
+                        tagline: 'Solution complète prête à installer',
+                        badge: 'Nouveau Pack',
+                        technology: 'Analogique Turbo HD (Coaxial)',
+                        camerasCount: 4,
+                        resolution: 'Full HD 1080p',
+                        nightVision: 'Infrarouge EXIR 20m',
+                        cameraModel: '',
+                        recorderModel: '',
+                        storage: 'Disque dur 500 Go',
+                        cabling: '1 Rouleau câble coaxial 100m',
+                        powerSupply: 'Bloc alimentation C4',
+                        image: '/images/packs/pack_analog_exir_4.jpg',
+                        highlights: ['Installation offerte à Antananarivo'],
+                        bom: [
+                          {
+                            ref: 'INST-TANA-OFFERTE',
+                            name: 'Pose et paramétrage application mobile',
+                            category: 'Services techniques',
+                            role: 'Installation professionnelle à Antananarivo',
+                            quantity: 1,
+                            unitPriceAr: 0,
+                            totalPriceAr: 0,
+                            isOffered: true,
+                          },
+                        ],
+                        isActive: true,
+                        installationIncluded: true,
+                      });
+                      setIsPackModalOpen(true);
+                    }}
+                    className="py-2 px-4 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg transition-colors flex items-center gap-1.5"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>Nouveau Pack</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                {packs.map((pack) => (
+                  <div
+                    key={pack.id}
+                    className={`rounded-xl border p-4 flex flex-col justify-between transition-all ${
+                      pack.isActive !== false ? 'bg-zinc-50 border-zinc-200' : 'bg-zinc-100 border-zinc-300 opacity-70'
+                    }`}
+                  >
+                    <div>
+                      <div className="aspect-16/10 bg-white rounded-lg border border-zinc-200 p-2 flex items-center justify-center overflow-hidden mb-3 relative">
+                        <img
+                          src={pack.image}
+                          alt={pack.name}
+                          className="max-h-full max-w-full object-contain"
+                        />
+                        <span
+                          className={`absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded ${
+                            pack.isActive !== false
+                              ? 'bg-emerald-600 text-white'
+                              : 'bg-zinc-600 text-white'
+                          }`}
+                        >
+                          {pack.isActive !== false ? 'ACTIF' : 'DÉSACTIVÉ'}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <span
+                          className={`text-[10px] font-black uppercase px-2 py-0.5 rounded text-white ${
+                            pack.family === 'ip' ? 'bg-[#D71920]' : 'bg-zinc-900'
+                          }`}
+                        >
+                          {pack.family === 'ip' ? 'IP NUMÉRIQUE PoE' : 'ANALOGIQUE TURBO HD'}
+                        </span>
+                        <span className="text-[10px] font-bold text-zinc-500 font-mono">
+                          {pack.camerasCount} Cams
+                        </span>
+                      </div>
+
+                      <h4 className="font-extrabold text-sm text-zinc-900 leading-snug">{pack.name}</h4>
+                      <p className="text-xs text-zinc-500 mt-1 line-clamp-2">{pack.tagline}</p>
+
+                      <div className="mt-3 text-xs bg-white p-2.5 rounded-lg border border-zinc-200 space-y-1">
+                        <div className="flex justify-between">
+                          <span className="text-zinc-500">Nomenclature BOM :</span>
+                          <span className="font-bold text-zinc-800">{pack.bom.length} lignes</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-zinc-500">Total Calculé :</span>
+                          <span className="font-mono font-black text-[#D71920]">{pack.formattedPrice}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between gap-2">
+                      <button
+                        onClick={() => handleTogglePack(pack)}
+                        className={`px-2.5 py-1.5 rounded-lg text-[11px] font-bold border ${
+                          pack.isActive !== false
+                            ? 'bg-white text-zinc-700 border-zinc-300 hover:bg-zinc-100'
+                            : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                        }`}
+                      >
+                        {pack.isActive !== false ? 'Désactiver' : 'Activer'}
+                      </button>
+
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => {
+                            setEditingPack(JSON.parse(JSON.stringify(pack)));
+                            setIsPackModalOpen(true);
+                          }}
+                          className="px-3 py-1.5 bg-zinc-900 hover:bg-black text-white text-[11px] font-bold rounded-lg flex items-center gap-1"
+                        >
+                          <Edit3 className="w-3 h-3" />
+                          <span>Éditer BOM</span>
+                        </button>
+                        <button
+                          onClick={() => setPackToDelete(pack)}
+                          className="p-1.5 text-zinc-400 hover:text-red-600 rounded-lg"
+                          title="Supprimer ce pack"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 7: HISTORIQUE DES COMMANDES CLIENTS                   */}
+          {/* ========================================================= */}
+          {activeTab === 'orders' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                    Historique Réel des Commandes ({orders.length})
+                  </h3>
+                  <p className="text-xs text-zinc-500 mt-0.5">
+                    Uniquement les commandes réellement validées par vos clients sur le site D SECURE
+                  </p>
+                </div>
+
+                <select
+                  value={orderStatusFilter}
+                  onChange={(e) => setOrderStatusFilter(e.target.value)}
+                  className="px-3 py-1.5 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
+                >
+                  <option value="all">Tous les statuts</option>
+                  <option value="Nouvelle commande">Nouvelle commande</option>
+                  <option value="En attente de confirmation">En attente de confirmation</option>
+                  <option value="Confirmée">Confirmée</option>
+                  <option value="En préparation">En préparation</option>
+                  <option value="Livrée">Livrée</option>
+                  <option value="Annulée">Annulée</option>
+                </select>
+              </div>
+
+              {orders.length === 0 ? (
+                <div className="text-center py-16 bg-zinc-50 rounded-xl border border-dashed border-zinc-300 p-8 text-zinc-500 text-xs">
+                  <ShoppingCart className="w-10 h-10 mx-auto text-zinc-300 mb-2" />
+                  <strong className="text-zinc-800 text-sm block">Aucune commande enregistrée pour l&apos;instant</strong>
+                  <p className="mt-1 max-w-md mx-auto">
+                    Les commandes passées via le panier, la commande directe produit ou les packs apparaîtront automatiquement ici. Aucune commande fictive n&apos;est générée.
+                  </p>
+                </div>
+              ) : (
+                <div className="overflow-x-auto rounded-xl border border-zinc-200">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
+                        <th className="py-2.5 px-3">N° Commande</th>
+                        <th className="py-2.5 px-3">Date</th>
+                        <th className="py-2.5 px-3">Client & Adresse</th>
+                        <th className="py-2.5 px-3">Téléphone / WhatsApp</th>
+                        <th className="py-2.5 px-3">Articles</th>
+                        <th className="py-2.5 px-3 text-right">Montant Total</th>
+                        <th className="py-2.5 px-3 text-center">Statut</th>
+                        <th className="py-2.5 px-3 text-center">Détails</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-zinc-100">
+                      {orders
+                        .filter((o) => (orderStatusFilter === 'all' ? true : o.status === orderStatusFilter))
+                        .map((order) => (
+                          <tr key={order.id} className="hover:bg-zinc-50/80 transition-colors">
+                            <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">
+                              {order.orderNumber}
+                            </td>
+                            <td className="py-2.5 px-3 text-zinc-500 font-mono whitespace-nowrap">
+                              {new Date(order.createdAt).toLocaleString('fr-FR', {
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                              })}
+                            </td>
+                            <td className="py-2.5 px-3">
+                              <div className="font-bold text-zinc-900">{order.customer.fullName}</div>
+                              <div className="text-[10px] text-zinc-500">{order.customer.address}</div>
+                            </td>
+                            <td className="py-2.5 px-3 font-mono text-zinc-700">{order.customer.phone}</td>
+                            <td className="py-2.5 px-3 text-zinc-600">
+                              {order.items.reduce((s, it) => s + it.quantity, 0)} art.
+                            </td>
+                            <td className="py-2.5 px-3 text-right font-mono font-bold text-zinc-950">
+                              {order.formattedTotal}
+                            </td>
+                            <td className="py-2.5 px-3 text-center">
+                              <select
+                                value={order.status}
+                                onChange={(e) => handleUpdateOrderStatus(order.id, e.target.value as OrderStatus)}
+                                className="text-[11px] font-bold py-1 px-2 rounded-lg bg-zinc-50 border border-zinc-200 cursor-pointer"
+                              >
+                                <option value="Nouvelle commande">Nouvelle commande</option>
+                                <option value="En attente de confirmation">En attente de confirmation</option>
+                                <option value="Confirmée">Confirmée</option>
+                                <option value="En préparation">En préparation</option>
+                                <option value="Livrée">Livrée</option>
+                                <option value="Annulée">Annulée</option>
+                              </select>
+                            </td>
+                            <td className="py-2.5 px-3 text-center">
+                              <button
+                                onClick={() => {
+                                  setSelectedOrderDetails(order);
+                                  setOrderNotesInput(order.internalNotes || '');
+                                }}
+                                className="px-2.5 py-1 bg-zinc-900 hover:bg-black text-white text-[11px] font-bold rounded-md"
+                              >
+                                Ouvrir
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 8: GESTION DES CLIENTS                                */}
+          {/* ========================================================= */}
+          {activeTab === 'customers' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+              <div>
+                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                  Base Clients Confidentielle ({customers.length})
+                </h3>
+                <p className="text-xs text-zinc-500 mt-0.5">
+                  Accessible exclusivement après authentification administrateur &middot; Données issues uniquement des commandes réelles
+                </p>
+              </div>
+
+              {customers.length === 0 ? (
+                <div className="text-center py-16 bg-zinc-50 rounded-xl border border-dashed border-zinc-300 p-8 text-zinc-500 text-xs">
+                  <Users className="w-10 h-10 mx-auto text-zinc-300 mb-2" />
+                  <strong className="text-zinc-800 text-sm block">Aucun client enregistré</strong>
+                  <p className="mt-1">Les fiches clients sont créées automatiquement dès réception d&apos;une commande réelle.</p>
+                </div>
+              ) : (
+                <div className="overflow-x-auto rounded-xl border border-zinc-200">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
+                        <th className="py-2.5 px-3">Client</th>
+                        <th className="py-2.5 px-3">Téléphone / WhatsApp</th>
+                        <th className="py-2.5 px-3">Adresse fournie</th>
+                        <th className="py-2.5 px-3 text-center">Commandes</th>
+                        <th className="py-2.5 px-3 text-right">Volume Total</th>
+                        <th className="py-2.5 px-3">Dernière Commande</th>
+                        <th className="py-2.5 px-3 text-center">Historique</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-zinc-100">
+                      {customers.map((c) => (
+                        <tr key={c.id} className="hover:bg-zinc-50/80 transition-colors">
+                          <td className="py-2.5 px-3 font-bold text-zinc-900">{c.fullName}</td>
+                          <td className="py-2.5 px-3 font-mono text-zinc-700">{c.phone}</td>
+                          <td className="py-2.5 px-3 text-zinc-600">{c.address}</td>
+                          <td className="py-2.5 px-3 text-center font-mono font-bold text-[#D71920]">
+                            {c.totalOrders}
+                          </td>
+                          <td className="py-2.5 px-3 text-right font-mono font-bold text-zinc-950">
+                            {c.formattedTotalSpent}
+                          </td>
+                          <td className="py-2.5 px-3 text-zinc-500 font-mono">
+                            {new Date(c.lastOrderAt).toLocaleDateString('fr-FR')}
+                          </td>
+                          <td className="py-2.5 px-3 text-center">
+                            <button
+                              onClick={() => setSelectedCustomerDetails(c)}
+                              className="px-2.5 py-1 bg-zinc-900 hover:bg-black text-white text-[11px] font-bold rounded-md"
+                            >
+                              Voir ({c.totalOrders})
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 9: SUIVI DES VISITEURS DU SITE                        */}
+          {/* ========================================================= */}
+          {activeTab === 'analytics' && (
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-6">
+              <div>
+                <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                  Statistiques Réelles de Fréquentation (Anonymisées)
+                </h3>
+                <p className="text-xs text-zinc-500 mt-0.5">
+                  Comptage anonyme par hachage journalier sans stockage d&apos;adresse IP ni données personnelles
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <span className="text-[10px] font-bold text-zinc-400 uppercase block">Visiteurs Uniques</span>
+                  <span className="text-3xl font-black font-mono text-zinc-900 mt-1 block">
+                    {analytics?.uniqueVisitorsCount ?? 0}
+                  </span>
+                </div>
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <span className="text-[10px] font-bold text-zinc-400 uppercase block">Visites Totales (Vues)</span>
+                  <span className="text-3xl font-black font-mono text-zinc-900 mt-1 block">
+                    {analytics?.totalVisits ?? 0}
+                  </span>
+                </div>
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <span className="text-[10px] font-bold text-emerald-600 uppercase block">Visites Aujourd&apos;hui</span>
+                  <span className="text-3xl font-black font-mono text-emerald-600 mt-1 block">
+                    {analytics?.todayVisits ?? 0}
+                  </span>
+                </div>
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <span className="text-[10px] font-bold text-[#D71920] uppercase block">Dernière Activité</span>
+                  <span className="text-sm font-bold font-mono text-zinc-700 mt-2 block">
+                    {analytics?.lastVisitedAt
+                      ? new Date(analytics.lastVisitedAt).toLocaleString('fr-FR', {
+                          day: '2-digit',
+                          month: '2-digit',
+                          hour: '2-digit',
+                          minute: '2-digit',
+                        })
+                      : 'En attente'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* Pages les plus consultées */}
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3">
+                    Pages les Plus Consultées
+                  </h4>
+                  <div className="space-y-2 text-xs">
+                    {analytics && Object.keys(analytics.pageViews).length > 0 ? (
+                      Object.entries(analytics.pageViews)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([page, count]) => (
+                          <div key={page} className="flex justify-between items-center py-1.5 border-b border-zinc-200/60">
+                            <span className="font-mono text-zinc-800">{page}</span>
+                            <span className="font-mono font-bold text-[#D71920]">{count} vue(s)</span>
+                          </div>
+                        ))
+                    ) : (
+                      <div className="text-zinc-400 py-4 text-center">Aucune visite de page enregistrée.</div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Catégories les plus consultées */}
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3">
+                    Catégories les Plus Consultées
+                  </h4>
+                  <div className="space-y-2 text-xs">
+                    {analytics && analytics.categoryViews && Object.keys(analytics.categoryViews).length > 0 ? (
+                      Object.entries(analytics.categoryViews)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([cat, count]) => (
+                          <div key={cat} className="flex justify-between items-center py-1.5 border-b border-zinc-200/60">
+                            <span className="font-bold uppercase text-zinc-800">{cat}</span>
+                            <span className="font-mono font-bold text-zinc-900">{count} vue(s)</span>
+                          </div>
+                        ))
+                    ) : (
+                      <div className="text-zinc-400 py-4 text-center">Aucune consultation de catégorie enregistrée.</div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Produits les plus consultés */}
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-3">
+                    Produits les Plus Consultés
+                  </h4>
+                  <div className="space-y-2 text-xs max-h-60 overflow-y-auto">
+                    {analytics?.topProducts && analytics.topProducts.length > 0 ? (
+                      analytics.topProducts.map((tp: any) => (
+                        <div key={tp.productId} className="flex justify-between items-center py-1.5 border-b border-zinc-200/60 gap-2">
+                          <div className="truncate">
+                            <span className="font-mono font-bold text-[#D71920]">{tp.reference}</span>
+                            <span className="text-zinc-600 block text-[11px] truncate">{tp.name}</span>
+                          </div>
+                          <span className="font-mono font-bold text-zinc-900 shrink-0">{tp.views} vue(s)</span>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="text-zinc-400 py-4 text-center">Aucune fiche produit ouverte pour l&apos;instant.</div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Évolution quotidienne & mensuelle */}
+                <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 space-y-4">
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-2">
+                      Évolution Quotidienne
+                    </h4>
+                    <div className="space-y-1.5 text-xs">
+                      {analytics?.dailyVisits?.slice(-7).map((day) => (
+                        <div key={day.date} className="flex justify-between items-center py-1 border-b border-zinc-200/60">
+                          <span className="font-mono text-zinc-700">{day.date}</span>
+                          <span className="font-mono font-bold text-zinc-900">{day.visits} visite(s)</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-wider text-zinc-900 mb-2">
+                      Évolution Mensuelle
+                    </h4>
+                    <div className="space-y-1.5 text-xs">
+                      {analytics?.monthlyVisits?.slice(-6).map((m) => (
+                        <div key={m.month} className="flex justify-between items-center py-1 border-b border-zinc-200/60">
+                          <span className="font-mono text-zinc-700">{m.month}</span>
+                          <span className="font-mono font-bold text-[#D71920]">{m.visits} visite(s)</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ========================================================= */}
+          {/* TAB 10: JOURNAL D'AUDIT & SAUVEGARDES                     */}
+          {/* ========================================================= */}
+          {activeTab === 'audit' && (
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl border border-zinc-200 shadow-xs p-5 space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900">
+                      Sauvegardes & Journal d&apos;Audit Administratif
+                    </h3>
+                    <p className="text-xs text-zinc-500 mt-0.5">
+                      Historique horodaté des modifications (prix, références, catégories, statuts) sans jamais stocker de mot de passe.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-2">
+                    <button
+                      onClick={handleCreateServerBackup}
+                      className="py-2 px-3.5 bg-zinc-900 hover:bg-black text-white text-xs font-bold uppercase rounded-lg flex items-center gap-1.5"
+                    >
+                      <Save className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Instantanné Serveur</span>
+                    </button>
+
+                    <button
+                      onClick={handleDownloadDatabaseBackup}
+                      className="py-2 px-3.5 bg-[#D71920] hover:bg-[#b8141a] text-white text-xs font-bold uppercase rounded-lg flex items-center gap-1.5"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Télécharger JSON</span>
+                    </button>
+                  </div>
+                </div>
+
+                {serverBackups.length > 0 && (
+                  <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 text-xs">
+                    <span className="font-bold text-zinc-700 uppercase text-[10px] block mb-2">
+                      Derniers instantanés serveur automatiques/manuels ({serverBackups.length}) :
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {serverBackups.slice(0, 6).map((b) => (
+                        <span key={b.name} className="px-2.5 py-1 bg-white border border-zinc-200 rounded font-mono text-[11px] text-zinc-700">
+                          {b.name} ({b.sizeFormatted})
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="overflow-x-auto rounded-xl border border-zinc-200">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-zinc-50 border-b border-zinc-200 text-[11px] font-black text-zinc-500 uppercase tracking-wider">
+                        <th className="py-2.5 px-3">Date & Heure</th>
+                        <th className="py-2.5 px-3">Opération</th>
+                        <th className="py-2.5 px-3">Élément</th>
+                        <th className="py-2.5 px-3">Détails</th>
+                        <th className="py-2.5 px-3">Auteur</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-zinc-100">
+                      {auditLogs.length === 0 ? (
+                        <tr>
+                          <td colSpan={5} className="py-8 text-center text-zinc-400">
+                            Aucune entrée dans le journal.
+                          </td>
+                        </tr>
+                      ) : (
+                        auditLogs.map((log) => (
+                          <tr key={log.id} className="hover:bg-zinc-50/80 transition-colors">
+                            <td className="py-2.5 px-3 font-mono text-zinc-500 whitespace-nowrap">
+                              {new Date(log.timestamp).toLocaleString('fr-FR')}
+                            </td>
+                            <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">{log.action}</td>
+                            <td className="py-2.5 px-3 font-semibold text-zinc-900">
+                              {log.entityName || log.entityId}
+                            </td>
+                            <td className="py-2.5 px-3 text-zinc-700">{log.details}</td>
+                            <td className="py-2.5 px-3 text-zinc-500">{log.user}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* ========================================================= */}
-      {/* MODAL: ADD / EDIT PRODUCT                                 */}
+      {/* MODAL: ADD / EDIT PRODUCT (With Display Order & Image)     */}
       {/* ========================================================= */}
       {isEditProductModalOpen && editingProduct && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-zinc-200 animate-in fade-in zoom-in-95">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-zinc-200 my-8">
             <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-5">
               <h3 className="text-base font-black uppercase text-zinc-900 tracking-tight">
                 {editingProduct.id ? 'Modifier le Matériel' : 'Ajouter un Nouveau Matériel'}
@@ -1814,9 +2391,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
             <form onSubmit={handleSaveProduct} className="space-y-4 text-xs">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold text-zinc-700 uppercase mb-1">
-                    Référence Exacte (SKU) *
-                  </label>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Référence Exacte *</label>
                   <input
                     type="text"
                     required
@@ -1828,25 +2403,21 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block font-bold text-zinc-700 uppercase mb-1">
-                    Désignation Complète *
-                  </label>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Nom / Désignation *</label>
                   <input
                     type="text"
                     required
                     value={editingProduct.name || ''}
                     onChange={(e) => setEditingProduct({ ...editingProduct, name: e.target.value })}
                     className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg text-zinc-900"
-                    placeholder="ex: Caméra Bullet Turbo HD 2MP EXIR"
+                    placeholder="ex: Caméra Bullet Turbo HD 2MP"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                  <label className="block font-bold text-zinc-700 uppercase mb-1">
-                    Catégorie Principale
-                  </label>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Section Principale</label>
                   <select
                     value={editingProduct.topSection || 'cameras'}
                     onChange={(e) => setEditingProduct({ ...editingProduct, topSection: e.target.value as any })}
@@ -1864,27 +2435,39 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block font-bold text-zinc-700 uppercase mb-1">
-                    Sous-Catégorie / Libellé
-                  </label>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Sous-Catégorie</label>
                   <input
                     type="text"
                     value={editingProduct.category || ''}
                     onChange={(e) => setEditingProduct({ ...editingProduct, category: e.target.value })}
                     className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg"
-                    placeholder="ex: Caméras analogiques"
+                    placeholder="ex: Caméras IP"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Ordre d&apos;affichage</label>
+                  <input
+                    type="number"
+                    value={editingProduct.displayOrder ?? ''}
+                    onChange={(e) =>
+                      setEditingProduct({
+                        ...editingProduct,
+                        displayOrder: e.target.value === '' ? undefined : Number(e.target.value),
+                      })
+                    }
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono"
+                    placeholder="ex: 1, 2, 3..."
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold text-zinc-700 uppercase mb-1">
-                    Prix d&apos;Achat (Confidentiel Ar)
-                  </label>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Prix d&apos;Achat (Confidentiel Ar)</label>
                   <input
                     type="number"
-                    value={editingProduct.originalPriceAr || ''}
+                    value={editingProduct.originalPriceAr ?? ''}
                     onChange={(e) =>
                       setEditingProduct({
                         ...editingProduct,
@@ -1892,66 +2475,66 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                       })
                     }
                     className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono"
-                    placeholder="ex: 70000"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-bold text-zinc-700 uppercase mb-1">
-                    Prix de Vente Public (Ar) *
-                  </label>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Prix de Vente Public (Ar)</label>
                   <input
                     type="number"
-                    required
-                    value={editingProduct.sellingPriceAr || ''}
+                    value={editingProduct.sellingPriceAr ?? ''}
                     onChange={(e) =>
                       setEditingProduct({
                         ...editingProduct,
-                        sellingPriceAr: e.target.value ? Number(e.target.value) : 0,
+                        sellingPriceAr: e.target.value ? Number(e.target.value) : null,
                       })
                     }
                     className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono font-bold text-zinc-950"
-                    placeholder="ex: 140000"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block font-bold text-zinc-700 uppercase mb-1">
-                  Description & Spécifications Techniques
-                </label>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Description & Spécifications</label>
                 <textarea
                   rows={3}
                   value={editingProduct.description || ''}
                   onChange={(e) => setEditingProduct({ ...editingProduct, description: e.target.value })}
                   className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg leading-relaxed"
-                  placeholder="Spécifications capteur, résolution, portée nocturne..."
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-zinc-700 uppercase mb-1">
-                  Chemin / URL de la Photographie
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={editingProduct.image || ''}
-                    onChange={(e) => setEditingProduct({ ...editingProduct, image: e.target.value })}
-                    className="flex-1 px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono text-xs"
-                    placeholder="/images/CAMERAS_IP/... ou URL"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setImagePickerTargetProduct(editingProduct as AdminProduct);
-                      setIsImagePickerOpen(true);
-                    }}
-                    className="px-3 py-2 bg-zinc-800 hover:bg-black text-white text-xs font-bold rounded-lg flex items-center gap-1"
-                  >
-                    <ImageIcon className="w-3.5 h-3.5" />
-                    <span>Choisir Photo</span>
-                  </button>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Photographie du Matériel</label>
+                <div className="flex items-center gap-3">
+                  <div className="w-16 h-16 rounded-xl bg-zinc-50 border border-zinc-200 p-1 flex items-center justify-center shrink-0">
+                    {editingProduct.image ? (
+                      <img src={editingProduct.image} alt="Aperçu" className="max-h-full max-w-full object-contain" />
+                    ) : (
+                      <ImageIcon className="w-6 h-6 text-zinc-300" />
+                    )}
+                  </div>
+                  <div className="flex-1 space-y-2">
+                    <input
+                      type="text"
+                      value={editingProduct.image || ''}
+                      onChange={(e) => setEditingProduct({ ...editingProduct, image: e.target.value })}
+                      className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono text-xs"
+                      placeholder="/images/... (laisser inchangé pour conserver l'originale)"
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        openImagePicker((path) =>
+                          setEditingProduct((prev) => (prev ? { ...prev, image: path } : prev))
+                        )
+                      }
+                      className="px-3 py-1.5 bg-zinc-900 hover:bg-black text-white text-xs font-bold rounded-lg inline-flex items-center gap-1.5"
+                    >
+                      <Upload className="w-3.5 h-3.5 text-[#D71920]" />
+                      <span>Importer ou Choisir une Photographie</span>
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -1964,7 +2547,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                   className="w-4 h-4 text-[#D71920] rounded"
                 />
                 <label htmlFor="prod-available" className="font-bold text-zinc-800 cursor-pointer">
-                  Matériel actuellement disponible en stock (Actif)
+                  Matériel disponible en stock (Statut public : DISPONIBLE)
                 </label>
               </div>
 
@@ -1984,7 +2567,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                   className="px-5 py-2 bg-[#D71920] hover:bg-[#b8141a] text-white font-bold rounded-lg uppercase tracking-wide flex items-center gap-1.5 shadow-sm"
                 >
                   <Save className="w-4 h-4" />
-                  <span>Enregistrer les modifications</span>
+                  <span>Enregistrer</span>
                 </button>
               </div>
             </form>
@@ -1993,42 +2576,571 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       )}
 
       {/* ========================================================= */}
-      {/* MODAL: DELETE PRODUCT CONFIRMATION                        */}
+      {/* MODAL: ADD / EDIT CATEGORY                                */}
+      {/* ========================================================= */}
+      {isCategoryModalOpen && editingCategory && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-zinc-200">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-5">
+              <h3 className="text-base font-black uppercase text-zinc-900">
+                {editingCategory.id ? 'Modifier la Catégorie' : 'Nouvelle Catégorie'}
+              </h3>
+              <button onClick={() => setIsCategoryModalOpen(false)} className="text-zinc-400 hover:text-black">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSaveCategory} className="space-y-4 text-xs">
+              <div>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Nom de la Catégorie *</label>
+                <input
+                  type="text"
+                  required
+                  value={editingCategory.name || ''}
+                  onChange={(e) => setEditingCategory({ ...editingCategory, name: e.target.value })}
+                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-bold"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Section Technique</label>
+                  <select
+                    value={editingCategory.topSection || 'accessories'}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, topSection: e.target.value as any })}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg"
+                  >
+                    <option value="cameras">cameras</option>
+                    <option value="alarms">alarms</option>
+                    <option value="packs">packs</option>
+                    <option value="dvr_nvr">dvr_nvr</option>
+                    <option value="accessories">accessories</option>
+                    <option value="hdd">hdd</option>
+                    <option value="network">network</option>
+                    <option value="monitors">monitors</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Position d&apos;affichage</label>
+                  <input
+                    type="number"
+                    value={editingCategory.order ?? 1}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, order: Number(e.target.value) })}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Description</label>
+                <textarea
+                  rows={2}
+                  value={editingCategory.description || ''}
+                  onChange={(e) => setEditingCategory({ ...editingCategory, description: e.target.value })}
+                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg"
+                />
+              </div>
+
+              <div>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Image de la Catégorie</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={editingCategory.image || ''}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, image: e.target.value })}
+                    className="flex-1 px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono"
+                    placeholder="/images/..."
+                  />
+                  <button
+                    type="button"
+                    onClick={() =>
+                      openImagePicker((path) =>
+                        setEditingCategory((prev) => (prev ? { ...prev, image: path } : prev))
+                      )
+                    }
+                    className="px-3 py-2 bg-zinc-900 text-white rounded-lg font-bold"
+                  >
+                    Choisir
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-2 pt-1">
+                <label className="flex items-center gap-2 font-bold text-zinc-800 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={editingCategory.isActive !== false}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, isActive: e.target.checked })}
+                  />
+                  <span>Catégorie active sur le site</span>
+                </label>
+
+                {editingCategory.id && (
+                  <label className="flex items-center gap-2 font-medium text-zinc-600 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={editingCategory.renameProductsCategory !== false}
+                      onChange={(e) =>
+                        setEditingCategory({ ...editingCategory, renameProductsCategory: e.target.checked })
+                      }
+                    />
+                    <span>Mettre à jour le libellé sur les produits associés (sans suppression)</span>
+                  </label>
+                )}
+              </div>
+
+              <div className="pt-4 border-t border-zinc-200 flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsCategoryModalOpen(false)}
+                  className="px-4 py-2 border border-zinc-300 rounded-lg font-bold"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-[#D71920] text-white rounded-lg font-bold uppercase"
+                >
+                  Enregistrer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* MODAL: ASSIGN / MOVE PRODUCTS TO CATEGORY                 */}
+      {/* ========================================================= */}
+      {assignCategoryTarget && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-zinc-200 max-h-[85vh] flex flex-col">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-4">
+              <div>
+                <h3 className="text-base font-black uppercase text-zinc-900">
+                  Associer des matériels &rarr; {assignCategoryTarget.name}
+                </h3>
+                <p className="text-xs text-zinc-500">
+                  Déplacez des équipements existants vers cette catégorie sans perte de données
+                </p>
+              </div>
+              <button onClick={() => setAssignCategoryTarget(null)} className="text-zinc-400 hover:text-black">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="mb-3 relative">
+              <input
+                type="text"
+                value={assignSearch}
+                onChange={(e) => setAssignSearch(e.target.value)}
+                placeholder="Filtrer les matériels par référence ou nom..."
+                className="w-full pl-9 pr-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
+              />
+              <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            </div>
+
+            <div className="flex-1 overflow-y-auto border border-zinc-200 rounded-xl divide-y divide-zinc-100 text-xs">
+              {products
+                .filter((p) => {
+                  if (!assignSearch.trim()) return true;
+                  const q = assignSearch.toLowerCase();
+                  return p.reference.toLowerCase().includes(q) || p.name.toLowerCase().includes(q);
+                })
+                .slice(0, 80)
+                .map((p) => {
+                  const checked = selectedProductIdsForAssign.includes(p.id);
+                  return (
+                    <label
+                      key={p.id}
+                      className="flex items-center justify-between p-2.5 hover:bg-zinc-50 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={() => {
+                            setSelectedProductIdsForAssign((prev) =>
+                              checked ? prev.filter((id) => id !== p.id) : [...prev, p.id]
+                            );
+                          }}
+                        />
+                        <div>
+                          <span className="font-mono font-bold text-[#D71920]">{p.reference}</span>
+                          <span className="text-zinc-700 ml-2">{p.name}</span>
+                        </div>
+                      </div>
+                      <span className="text-[10px] text-zinc-400">{p.category}</span>
+                    </label>
+                  );
+                })}
+            </div>
+
+            <div className="pt-4 mt-4 border-t border-zinc-200 flex items-center justify-between">
+              <span className="text-xs font-bold text-zinc-600">
+                {selectedProductIdsForAssign.length} matériel(s) sélectionné(s)
+              </span>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setAssignCategoryTarget(null)}
+                  className="px-4 py-2 border border-zinc-300 rounded-lg text-xs font-bold"
+                >
+                  Annuler
+                </button>
+                <button
+                  disabled={selectedProductIdsForAssign.length === 0}
+                  onClick={handleAssignProductsToCategory}
+                  className="px-4 py-2 bg-[#D71920] text-white rounded-lg text-xs font-bold uppercase disabled:opacity-40"
+                >
+                  Appliquer l&apos;association
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* MODAL: ADD / EDIT PACK WITH BOM EDITOR                    */}
+      {/* ========================================================= */}
+      {isPackModalOpen && editingPack && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full p-6 shadow-2xl border border-zinc-200 my-8 max-h-[92vh] flex flex-col">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-4">
+              <div>
+                <h3 className="text-base font-black uppercase text-zinc-900">
+                  {editingPack.id ? `Modifier Pack : ${editingPack.name}` : 'Créer un Nouveau Pack Vidéosurveillance'}
+                </h3>
+                <p className="text-xs text-zinc-500">
+                  Séparation stricte Analogique / IP Numérique PoE contrôlée automatiquement
+                </p>
+              </div>
+              <button onClick={() => setIsPackModalOpen(false)} className="text-zinc-400 hover:text-black">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form
+              onSubmit={(e) => handleSavePack(e, false)}
+              className="flex-1 overflow-y-auto space-y-4 text-xs pr-1"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="sm:col-span-2">
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Nom Commercial du Pack *</label>
+                  <input
+                    type="text"
+                    required
+                    value={editingPack.name || ''}
+                    onChange={(e) => setEditingPack({ ...editingPack, name: e.target.value })}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Famille Technologique *</label>
+                  <select
+                    value={editingPack.family || 'analog'}
+                    onChange={(e) => {
+                      const fam = e.target.value as 'analog' | 'ip';
+                      setEditingPack({
+                        ...editingPack,
+                        family: fam,
+                        subFamily: fam === 'ip' ? 'ip-poe' : 'analog-exir',
+                        technology: fam === 'ip' ? 'IP Numérique PoE (Câble Ethernet RJ45)' : 'Analogique Turbo HD (Coaxial)',
+                      });
+                    }}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-bold"
+                  >
+                    <option value="analog">ANALOGIQUE (Turbo HD)</option>
+                    <option value="ip">IP NUMÉRIQUE (PoE)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Gamme</label>
+                  <select
+                    value={editingPack.subFamily || 'analog-exir'}
+                    onChange={(e) => setEditingPack({ ...editingPack, subFamily: e.target.value as any })}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg"
+                  >
+                    {editingPack.family === 'ip' ? (
+                      <>
+                        <option value="ip-poe">IP PoE 2MP AcuSense</option>
+                        <option value="ip-pro">IP PoE 4MP Ultra HD</option>
+                      </>
+                    ) : (
+                      <>
+                        <option value="analog-exir">Analogique EXIR</option>
+                        <option value="analog-colorvu">Smart ColorVu</option>
+                        <option value="analog-hybrid">Smart Hybrid Light</option>
+                      </>
+                    )}
+                  </select>
+                </div>
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Nombre de Caméras</label>
+                  <input
+                    type="number"
+                    value={editingPack.camerasCount || 4}
+                    onChange={(e) => setEditingPack({ ...editingPack, camerasCount: Number(e.target.value) })}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="block font-bold text-zinc-700 uppercase mb-1">Badge Commercial</label>
+                  <input
+                    type="text"
+                    value={editingPack.badge || ''}
+                    onChange={(e) => setEditingPack({ ...editingPack, badge: e.target.value })}
+                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Image Commerciale du Pack</label>
+                <div className="flex items-center gap-3">
+                  <div className="w-20 h-14 bg-zinc-50 border border-zinc-200 rounded-lg p-1 flex items-center justify-center shrink-0">
+                    {editingPack.image ? (
+                      <img src={editingPack.image} alt="Pack" className="max-h-full max-w-full object-contain" />
+                    ) : (
+                      <ImageIcon className="w-5 h-5 text-zinc-300" />
+                    )}
+                  </div>
+                  <input
+                    type="text"
+                    value={editingPack.image || ''}
+                    onChange={(e) => setEditingPack({ ...editingPack, image: e.target.value })}
+                    className="flex-1 px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg font-mono"
+                  />
+                  <button
+                    type="button"
+                    onClick={() =>
+                      openImagePicker((path) =>
+                        setEditingPack((prev) => (prev ? { ...prev, image: path } : prev))
+                      )
+                    }
+                    className="px-3 py-2 bg-zinc-900 text-white rounded-lg font-bold"
+                  >
+                    Choisir / Importer
+                  </button>
+                </div>
+              </div>
+
+              {/* BOM Editor Table */}
+              <div className="border border-zinc-200 rounded-xl p-3 bg-zinc-50 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-black uppercase text-zinc-900">
+                    Nomenclature Technique (BOM) & Composants
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const currentBom = editingPack.bom || [];
+                      setEditingPack({
+                        ...editingPack,
+                        bom: [
+                          ...currentBom,
+                          {
+                            ref: '',
+                            name: '',
+                            category: 'Équipement',
+                            role: 'Composant pack',
+                            quantity: 1,
+                            unitPriceAr: 0,
+                            totalPriceAr: 0,
+                          },
+                        ],
+                      });
+                    }}
+                    className="px-2.5 py-1 bg-zinc-900 text-white rounded-md font-bold text-[11px] flex items-center gap-1"
+                  >
+                    <Plus className="w-3 h-3" /> Ajouter ligne BOM
+                  </button>
+                </div>
+
+                <div className="space-y-2">
+                  {(editingPack.bom || []).map((item: PackComponentBOM, idx: number) => (
+                    <div
+                      key={idx}
+                      className="grid grid-cols-12 gap-2 items-center bg-white p-2 rounded-lg border border-zinc-200"
+                    >
+                      <input
+                        type="text"
+                        value={item.ref}
+                        onChange={(e) => {
+                          const next = [...(editingPack.bom || [])];
+                          next[idx] = { ...next[idx], ref: e.target.value };
+                          setEditingPack({ ...editingPack, bom: next });
+                        }}
+                        placeholder="Référence"
+                        className="col-span-3 px-2 py-1 border border-zinc-300 rounded font-mono text-[11px]"
+                      />
+                      <input
+                        type="text"
+                        value={item.name}
+                        onChange={(e) => {
+                          const next = [...(editingPack.bom || [])];
+                          next[idx] = { ...next[idx], name: e.target.value };
+                          setEditingPack({ ...editingPack, bom: next });
+                        }}
+                        placeholder="Désignation"
+                        className="col-span-4 px-2 py-1 border border-zinc-300 rounded text-[11px]"
+                      />
+                      <input
+                        type="number"
+                        min={1}
+                        value={item.quantity}
+                        onChange={(e) => {
+                          const qty = Number(e.target.value) || 1;
+                          const next = [...(editingPack.bom || [])];
+                          next[idx] = {
+                            ...next[idx],
+                            quantity: qty,
+                            totalPriceAr: next[idx].isOffered ? 0 : qty * next[idx].unitPriceAr,
+                          };
+                          setEditingPack({ ...editingPack, bom: next });
+                        }}
+                        className="col-span-1 px-2 py-1 border border-zinc-300 rounded font-mono text-center text-[11px]"
+                      />
+                      <input
+                        type="number"
+                        value={item.unitPriceAr}
+                        disabled={Boolean(item.isOffered)}
+                        onChange={(e) => {
+                          const up = Number(e.target.value) || 0;
+                          const next = [...(editingPack.bom || [])];
+                          next[idx] = {
+                            ...next[idx],
+                            unitPriceAr: up,
+                            totalPriceAr: next[idx].isOffered ? 0 : next[idx].quantity * up,
+                          };
+                          setEditingPack({ ...editingPack, bom: next });
+                        }}
+                        className="col-span-2 px-2 py-1 border border-zinc-300 rounded font-mono text-right text-[11px]"
+                      />
+                      <div className="col-span-2 flex items-center justify-between pl-1">
+                        <span className="font-mono font-bold text-[11px]">
+                          {item.isOffered ? 'OFFERT' : formatAr(item.quantity * item.unitPriceAr)}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const next = (editingPack.bom || []).filter((_, i) => i !== idx);
+                            setEditingPack({ ...editingPack, bom: next });
+                          }}
+                          className="text-zinc-400 hover:text-red-600"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between pt-2 border-t border-zinc-200">
+                  <label className="flex items-center gap-2 font-bold text-zinc-700 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={editingPack.isActive !== false}
+                      onChange={(e) => setEditingPack({ ...editingPack, isActive: e.target.checked })}
+                    />
+                    <span>Pack actif sur le site public</span>
+                  </label>
+                  <div className="text-right">
+                    <span className="text-[10px] uppercase font-bold text-zinc-500 block">Total BOM Calculé</span>
+                    <span className="text-lg font-black font-mono text-[#D71920]">
+                      {formatAr(
+                        (editingPack.bom || []).reduce(
+                          (s, it) => s + (it.isOffered ? 0 : (Number(it.unitPriceAr) || 0) * (Number(it.quantity) || 1)),
+                          0
+                        )
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-zinc-200 flex flex-wrap justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsPackModalOpen(false)}
+                  className="px-4 py-2 border border-zinc-300 rounded-lg font-bold"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => handleSavePack(e as any, true)}
+                  className="px-4 py-2 bg-zinc-900 hover:bg-black text-white rounded-lg font-bold flex items-center gap-1"
+                >
+                  <Calculator className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Synchroniser prix catalogue & Enregistrer</span>
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-[#D71920] hover:bg-[#b8141a] text-white rounded-lg font-bold uppercase flex items-center gap-1"
+                >
+                  <Save className="w-3.5 h-3.5" />
+                  <span>Enregistrer tel quel</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* MODAL: DELETE CONFIRMATIONS (Product / Pack)              */}
       {/* ========================================================= */}
       {isDeleteModalOpen && productToDelete && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-zinc-200 animate-in fade-in zoom-in-95">
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-zinc-200">
             <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
               <AlertTriangle className="w-6 h-6" />
             </div>
-
-            <h3 className="text-center text-base font-black uppercase text-zinc-900 tracking-tight">
-              Confirmer la suppression
-            </h3>
-
+            <h3 className="text-center text-base font-black uppercase text-zinc-900">Confirmer la suppression</h3>
             <p className="text-center text-xs text-zinc-600 mt-2">
-              Êtes-vous sûr de vouloir supprimer définitivement le matériel :
+              Une sauvegarde automatique sera créée avant de supprimer :
             </p>
             <div className="my-3 p-3 bg-zinc-50 rounded-lg border border-zinc-200 text-center font-mono text-xs font-bold text-red-600">
               {productToDelete.reference} &bull; {productToDelete.name}
             </div>
-            <p className="text-center text-[11px] text-zinc-400">
-              Cette action retirera le matériel du catalogue et de la base de données.
-            </p>
-
-            <div className="mt-6 flex items-center gap-2">
+            <div className="mt-5 flex gap-2">
               <button
-                onClick={() => {
-                  setIsDeleteModalOpen(false);
-                  setProductToDelete(null);
-                }}
-                className="flex-1 py-2.5 border border-zinc-300 rounded-lg text-xs font-bold text-zinc-700 hover:bg-zinc-100"
+                onClick={() => setIsDeleteModalOpen(false)}
+                className="flex-1 py-2.5 border border-zinc-300 rounded-lg text-xs font-bold"
               >
                 Annuler
               </button>
               <button
                 onClick={handleDeleteProduct}
-                className="flex-1 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold uppercase tracking-wider shadow-sm"
+                className="flex-1 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold uppercase"
+              >
+                Supprimer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {packToDelete && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-zinc-200">
+            <h3 className="text-center text-base font-black uppercase text-zinc-900">Supprimer ce pack ?</h3>
+            <p className="text-center text-xs text-zinc-600 mt-2 font-bold">{packToDelete.name}</p>
+            <div className="mt-5 flex gap-2">
+              <button
+                onClick={() => setPackToDelete(null)}
+                className="flex-1 py-2.5 border border-zinc-300 rounded-lg text-xs font-bold"
+              >
+                Annuler
+              </button>
+              <button
+                onClick={handleDeletePack}
+                className="flex-1 py-2.5 bg-red-600 text-white rounded-lg text-xs font-bold uppercase"
               >
                 Supprimer
               </button>
@@ -2038,24 +3150,24 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       )}
 
       {/* ========================================================= */}
-      {/* MODAL: IMAGE PICKER & PREVIEW GALLERY                     */}
+      {/* MODAL: IMAGE UPLOAD & GALLERY PICKER (With Preview!)      */}
       {/* ========================================================= */}
       {isImagePickerOpen && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[85vh] flex flex-col p-6 shadow-2xl border border-zinc-200">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[88vh] flex flex-col p-6 shadow-2xl border border-zinc-200">
             <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-4">
               <div>
                 <h3 className="text-base font-black uppercase text-zinc-900 tracking-tight">
-                  Sélecteur de Photographies Authentiques ({availableImages.length} photos)
+                  Importer ou Choisir une Photographie ({availableImages.length} disponibles)
                 </h3>
                 <p className="text-xs text-zinc-500">
-                  Choisissez une photographie originale du matériel pour l&apos;associer directement
+                  Importez un fichier avec prévisualisation ou sélectionnez une photo authentique du dépôt
                 </p>
               </div>
               <button
                 onClick={() => {
                   setIsImagePickerOpen(false);
-                  setImagePickerTargetProduct(null);
+                  setPendingUploadPreview(null);
                 }}
                 className="text-zinc-400 hover:text-black p-1 rounded-lg"
               >
@@ -2063,27 +3175,104 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 p-1">
-              {availableImages.map((img, i) => (
+            {/* Upload New Image Area with Preview before validation */}
+            <div className="mb-4 p-4 bg-zinc-50 rounded-xl border border-dashed border-zinc-300">
+              {!pendingUploadPreview ? (
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                  <div className="flex items-center gap-2.5">
+                    <Upload className="w-5 h-5 text-[#D71920]" />
+                    <div>
+                      <strong className="text-zinc-900 block">Ajouter une nouvelle photographie</strong>
+                      <span className="text-zinc-500">Formats acceptés : JPG, PNG, WEBP (max 5 Mo)</span>
+                    </div>
+                  </div>
+                  <label className="px-4 py-2 bg-[#D71920] hover:bg-[#b8141a] text-white font-bold uppercase rounded-lg cursor-pointer transition-colors">
+                    <span>Sélectionner un fichier</span>
+                    <input
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp"
+                      onChange={handleFileSelectForUpload}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
+              ) : (
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-20 h-20 bg-white rounded-lg border border-zinc-200 p-1 flex items-center justify-center">
+                      <img
+                        src={pendingUploadPreview.dataBase64}
+                        alt="Prévisualisation"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold uppercase text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">
+                        Prévisualisation avant validation
+                      </span>
+                      <strong className="block text-zinc-900 mt-1">{pendingUploadPreview.filename}</strong>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setPendingUploadPreview(null)}
+                      className="px-3 py-2 border border-zinc-300 rounded-lg font-bold"
+                    >
+                      Annuler
+                    </button>
+                    <button
+                      type="button"
+                      disabled={isUploadingImage}
+                      onClick={handleConfirmImageUpload}
+                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold uppercase rounded-lg"
+                    >
+                      {isUploadingImage ? 'Envoi...' : 'Valider et Utiliser'}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Search Existing Gallery */}
+            <div className="mb-3 relative">
+              <input
+                type="text"
+                value={imageSearchQuery}
+                onChange={(e) => setImageSearchQuery(e.target.value)}
+                placeholder="Filtrer les photos existantes par référence..."
+                className="w-full pl-9 pr-3 py-2 text-xs bg-zinc-50 border border-zinc-300 rounded-lg"
+              />
+              <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            </div>
+
+            <div className="flex-1 overflow-y-auto grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 p-1">
+              {filteredAvailableImages.map((img, i) => (
                 <div
                   key={i}
                   onClick={() => {
-                    if (editingProduct) {
-                      setEditingProduct({ ...editingProduct, image: img.path });
-                      setIsImagePickerOpen(false);
-                    } else if (imagePickerTargetProduct) {
-                      handleApplyImageToProduct(img.path);
+                    if (imagePickerCallback) {
+                      imagePickerCallback(img.path);
                     }
+                    setIsImagePickerOpen(false);
                   }}
                   className="bg-zinc-50 border border-zinc-200 rounded-xl p-2 flex flex-col items-center justify-between cursor-pointer hover:border-[#D71920] hover:shadow-md transition-all group"
                 >
-                  <div className="aspect-square w-full flex items-center justify-center p-1 overflow-hidden">
+                  <div className="aspect-square w-full flex items-center justify-center p-1 overflow-hidden relative">
                     <img
                       src={img.path}
                       alt={img.name}
                       className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform"
                       loading="lazy"
                     />
+                    {img.usedBy && img.usedBy.length > 0 && (
+                      <span
+                        title={`Déjà utilisée par : ${img.usedBy.join(', ')}`}
+                        className="absolute top-0 right-0 bg-amber-100 text-amber-800 text-[9px] font-bold px-1 rounded"
+                      >
+                        {img.usedBy.length}x
+                      </span>
+                    )}
                   </div>
                   <span className="text-[10px] font-mono font-bold text-zinc-700 truncate w-full text-center mt-1">
                     {img.name.replace(/\.[^/.]+$/, '')}
@@ -2096,52 +3285,45 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       )}
 
       {/* ========================================================= */}
-      {/* MODAL: ORDER DETAILS                                      */}
+      {/* MODAL: ORDER DETAILS & NOTES                              */}
       {/* ========================================================= */}
       {selectedOrderDetails && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-zinc-200 animate-in fade-in zoom-in-95">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-zinc-200">
             <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-4">
               <div>
                 <span className="text-xs font-mono font-bold text-[#D71920]">
                   COMMANDE {selectedOrderDetails.orderNumber}
                 </span>
-                <h3 className="text-base font-black uppercase text-zinc-900 tracking-tight">
-                  Détail de la Commande
-                </h3>
+                <h3 className="text-base font-black uppercase text-zinc-900">Détail Complet</h3>
               </div>
-              <button
-                onClick={() => setSelectedOrderDetails(null)}
-                className="text-zinc-400 hover:text-black p-1 rounded-lg"
-              >
+              <button onClick={() => setSelectedOrderDetails(null)} className="text-zinc-400 hover:text-black">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <div className="space-y-4 text-xs">
-              {/* Customer info */}
               <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 grid grid-cols-2 gap-3">
                 <div>
                   <span className="text-[10px] uppercase font-bold text-zinc-400 block">Client</span>
                   <span className="font-bold text-zinc-900">{selectedOrderDetails.customer.fullName}</span>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Téléphone</span>
+                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Téléphone / WhatsApp</span>
                   <span className="font-mono font-bold text-zinc-900">{selectedOrderDetails.customer.phone}</span>
                 </div>
                 <div className="col-span-2">
-                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Adresse de Livraison</span>
+                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Adresse</span>
                   <span className="text-zinc-700">{selectedOrderDetails.customer.address}</span>
                 </div>
                 {selectedOrderDetails.customer.note && (
                   <div className="col-span-2">
-                    <span className="text-[10px] uppercase font-bold text-zinc-400 block">Note du Client</span>
+                    <span className="text-[10px] uppercase font-bold text-zinc-400 block">Note Client</span>
                     <span className="text-zinc-600 italic">&ldquo;{selectedOrderDetails.customer.note}&rdquo;</span>
                   </div>
                 )}
               </div>
 
-              {/* Items List */}
               <div className="border border-zinc-200 rounded-xl overflow-hidden">
                 <table className="w-full text-left text-xs">
                   <thead className="bg-zinc-50 border-b border-zinc-200 text-[10px] font-bold uppercase text-zinc-500">
@@ -2149,7 +3331,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                       <th className="py-2 px-3">Qté</th>
                       <th className="py-2 px-3">Référence</th>
                       <th className="py-2 px-3">Désignation</th>
-                      <th className="py-2 px-3 text-right">Prix Unitaire</th>
+                      <th className="py-2 px-3 text-right">P.U.</th>
                       <th className="py-2 px-3 text-right">Total</th>
                     </tr>
                   </thead>
@@ -2167,33 +3349,97 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
                 </table>
               </div>
 
-              {/* Total & Status */}
-              <div className="flex justify-between items-center p-3 bg-zinc-900 text-white rounded-xl">
-                <div>
-                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Statut Actuel</span>
-                  <span className="font-bold text-sm text-[#D71920]">{selectedOrderDetails.status}</span>
+              <div>
+                <label className="block font-bold text-zinc-700 uppercase mb-1">Notes internes D SECURE</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={orderNotesInput}
+                    onChange={(e) => setOrderNotesInput(e.target.value)}
+                    placeholder="Suivi livraison, technicien assigné..."
+                    className="flex-1 px-3 py-2 bg-zinc-50 border border-zinc-300 rounded-lg"
+                  />
+                  <button
+                    onClick={() =>
+                      handleUpdateOrderStatus(selectedOrderDetails.id, selectedOrderDetails.status, orderNotesInput)
+                    }
+                    className="px-3 py-2 bg-zinc-900 text-white rounded-lg font-bold"
+                  >
+                    Enregistrer note
+                  </button>
                 </div>
+              </div>
+
+              <div className="flex justify-between items-center p-3 bg-zinc-950 text-white rounded-xl">
+                <select
+                  value={selectedOrderDetails.status}
+                  onChange={(e) =>
+                    handleUpdateOrderStatus(selectedOrderDetails.id, e.target.value as OrderStatus, orderNotesInput)
+                  }
+                  className="bg-zinc-900 text-white border border-zinc-700 rounded-lg px-3 py-1.5 font-bold"
+                >
+                  <option value="Nouvelle commande">Nouvelle commande</option>
+                  <option value="En attente de confirmation">En attente de confirmation</option>
+                  <option value="Confirmée">Confirmée</option>
+                  <option value="En préparation">En préparation</option>
+                  <option value="Livrée">Livrée</option>
+                  <option value="Annulée">Annulée</option>
+                </select>
                 <div className="text-right">
-                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Montant Total</span>
+                  <span className="text-[10px] uppercase font-bold text-zinc-400 block">Total Commande</span>
                   <span className="text-lg font-black font-mono text-white">{selectedOrderDetails.formattedTotal}</span>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-5 pt-3 border-t border-zinc-200 flex justify-end">
-              <button
-                onClick={() => setSelectedOrderDetails(null)}
-                className="px-4 py-2 bg-zinc-900 text-white text-xs font-bold rounded-lg uppercase"
-              >
-                Fermer
-              </button>
             </div>
           </div>
         </div>
       )}
 
       {/* ========================================================= */}
-      {/* MODAL: IMAGE PREVIEW                                      */}
+      {/* MODAL: CUSTOMER ORDER HISTORY                             */}
+      {/* ========================================================= */}
+      {selectedCustomerDetails && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-zinc-200">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200 mb-4">
+              <div>
+                <h3 className="text-base font-black uppercase text-zinc-900">
+                  {selectedCustomerDetails.fullName}
+                </h3>
+                <p className="text-xs text-zinc-500 font-mono">
+                  {selectedCustomerDetails.phone} &bull; {selectedCustomerDetails.address}
+                </p>
+              </div>
+              <button onClick={() => setSelectedCustomerDetails(null)} className="text-zinc-400 hover:text-black">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="space-y-2 max-h-80 overflow-y-auto text-xs">
+              {(selectedCustomerDetails.orders || []).map((ord) => (
+                <div key={ord.id} className="p-3 bg-zinc-50 rounded-xl border border-zinc-200 flex items-center justify-between">
+                  <div>
+                    <span className="font-mono font-bold text-[#D71920]">{ord.orderNumber}</span>
+                    <span className="text-zinc-500 ml-2">
+                      {new Date(ord.createdAt).toLocaleDateString('fr-FR')}
+                    </span>
+                    <span className="block text-[11px] text-zinc-700 mt-0.5">
+                      {ord.items.map((i) => `${i.quantity}x ${i.reference}`).join(', ')}
+                    </span>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-mono font-bold block">{ord.formattedTotal}</span>
+                    <span className="text-[10px] font-bold text-zinc-600">{ord.status}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* MODAL: IMAGE FULL PREVIEW                                 */}
       {/* ========================================================= */}
       {imagePreviewUrl && (
         <div
@@ -2219,51 +3465,113 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   );
 };
 
-// Component for in-line price editing row
-interface PriceRowProps {
+// Inline editing row for Prices & References tab
+interface PriceRefRowProps {
   product: AdminProduct;
-  onSave: (id: string, price: number) => void;
+  onSave: (
+    id: string,
+    updates: { reference: string; name: string; sellingPriceAr: number | null; originalPriceAr: number | null }
+  ) => void;
 }
 
-const PriceRow: React.FC<PriceRowProps> = ({ product, onSave }) => {
-  const [val, setVal] = useState<number>(product.sellingPriceAr || 0);
+const PriceRefRow: React.FC<PriceRefRowProps> = ({ product, onSave }) => {
+  const [refVal, setRefVal] = useState(product.reference);
+  const [nameVal, setNameVal] = useState(product.name);
+  const [sellVal, setSellVal] = useState<string>(product.sellingPriceAr ? String(product.sellingPriceAr) : '');
+  const [buyVal, setBuyVal] = useState<string>(product.originalPriceAr ? String(product.originalPriceAr) : '');
   const [dirty, setDirty] = useState(false);
+
+  useEffect(() => {
+    setRefVal(product.reference);
+    setNameVal(product.name);
+    setSellVal(product.sellingPriceAr ? String(product.sellingPriceAr) : '');
+    setBuyVal(product.originalPriceAr ? String(product.originalPriceAr) : '');
+    setDirty(false);
+  }, [product]);
+
+  const parsedSell = sellVal ? Number(sellVal) : null;
+  const parsedBuy = buyVal ? Number(buyVal) : null;
+  const marginPct =
+    parsedSell && parsedBuy && parsedBuy > 0
+      ? Math.round(((parsedSell - parsedBuy) / parsedBuy) * 100)
+      : null;
 
   return (
     <tr className="hover:bg-zinc-50 transition-colors">
-      <td className="py-2.5 px-3 font-mono font-bold text-[#D71920]">{product.reference}</td>
-      <td className="py-2.5 px-3 font-semibold text-zinc-900 max-w-xs truncate">{product.name}</td>
-      <td className="py-2.5 px-3 text-right font-mono text-zinc-500">
-        {formatAr(product.originalPriceAr)}
-      </td>
-      <td className="py-2.5 px-3 text-right font-mono font-bold text-zinc-800">
-        {product.formattedPrice}
-      </td>
-      <td className="py-2.5 px-3 text-right">
+      <td className="py-2 px-2.5">
         <input
-          type="number"
-          value={val}
+          type="text"
+          value={refVal}
           onChange={(e) => {
-            setVal(Number(e.target.value) || 0);
+            setRefVal(e.target.value);
             setDirty(true);
           }}
+          className="w-44 px-2 py-1 font-mono text-xs font-bold text-[#D71920] border border-zinc-300 rounded focus:border-[#D71920] focus:outline-hidden"
+        />
+      </td>
+      <td className="py-2 px-2.5">
+        <input
+          type="text"
+          value={nameVal}
+          onChange={(e) => {
+            setNameVal(e.target.value);
+            setDirty(true);
+          }}
+          className="w-full min-w-[200px] px-2 py-1 text-xs font-semibold text-zinc-900 border border-zinc-300 rounded focus:border-[#D71920] focus:outline-hidden"
+        />
+      </td>
+      <td className="py-2 px-2.5 text-right">
+        <input
+          type="number"
+          value={buyVal}
+          onChange={(e) => {
+            setBuyVal(e.target.value);
+            setDirty(true);
+          }}
+          placeholder="—"
+          className="w-28 px-2 py-1 text-right font-mono text-xs border border-zinc-300 rounded focus:border-[#D71920] focus:outline-hidden"
+        />
+      </td>
+      <td className="py-2 px-2.5 text-right">
+        <input
+          type="number"
+          value={sellVal}
+          onChange={(e) => {
+            setSellVal(e.target.value);
+            setDirty(true);
+          }}
+          placeholder="Sur devis"
           className="w-28 px-2 py-1 text-right font-mono text-xs font-bold border border-zinc-300 rounded focus:border-[#D71920] focus:outline-hidden"
         />
       </td>
-      <td className="py-2.5 px-3 text-center">
+      <td className="py-2 px-2.5 text-center font-mono font-bold">
+        {marginPct !== null ? (
+          <span className={marginPct >= 0 ? 'text-emerald-700' : 'text-red-600'}>
+            {marginPct >= 0 ? `+${marginPct}%` : `${marginPct}%`}
+          </span>
+        ) : (
+          <span className="text-zinc-400">—</span>
+        )}
+      </td>
+      <td className="py-2 px-2.5 text-center">
         <button
           onClick={() => {
-            onSave(product.id, val);
+            onSave(product.id, {
+              reference: refVal.trim(),
+              name: nameVal.trim(),
+              sellingPriceAr: parsedSell,
+              originalPriceAr: parsedBuy,
+            });
             setDirty(false);
           }}
           disabled={!dirty}
-          className={`px-2.5 py-1 text-[11px] font-bold rounded uppercase transition-colors ${
+          className={`px-3 py-1 text-[11px] font-bold rounded uppercase transition-colors ${
             dirty
               ? 'bg-[#D71920] text-white hover:bg-[#b8141a]'
               : 'bg-zinc-100 text-zinc-400 cursor-not-allowed'
           }`}
         >
-          Enregistrer
+          Valider
         </button>
       </td>
     </tr>
