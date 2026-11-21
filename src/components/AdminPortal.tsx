@@ -80,10 +80,15 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   onBackToPublicSite,
   onCatalogUpdated,
 }) => {
-  // Session token
-  const [token, setToken] = useState<string | null>(() => {
-    return sessionStorage.getItem('dsecure_admin_token');
-  });
+  // Session token held strictly in memory
+  const [token, setToken] = useState<string | null>(null);
+  const [storageInfo, setStorageInfo] = useState<{
+    mode: string;
+    persistent: boolean;
+    runtime: string;
+    blobEnabled: boolean;
+    warning: string | null;
+  } | null>(null);
 
   // Login form state - strictly empty on open
   const [passwordInput, setPasswordInput] = useState('');
@@ -197,6 +202,17 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     };
   }, [token]);
 
+  const safeParseApiJson = async (res: Response): Promise<any> => {
+    const rawText = await res.text();
+    try {
+      return rawText ? JSON.parse(rawText) : {};
+    } catch {
+      throw new Error(
+        `Réponse invalide du serveur (HTTP ${res.status}). Vérifiez que les fonctions API (/api) sont bien déployées.`
+      );
+    }
+  };
+
   // -------------------------------------------------------------
   // AUTHENTICATION
   // -------------------------------------------------------------
@@ -217,20 +233,24 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
         body: JSON.stringify({ password: passwordInput }),
       });
 
-      const data = await res.json();
+      const data = await safeParseApiJson(res);
       if (!res.ok || !data.success) {
-        setLoginError(data.error || 'Mot de passe administrateur incorrect.');
+        setLoginError(data.error || `Accès refusé (HTTP ${res.status}).`);
         setIsLoggingIn(false);
         return;
       }
 
       setToken(data.token);
-      sessionStorage.setItem('dsecure_admin_token', data.token);
+      if (data.storageInfo) setStorageInfo(data.storageInfo);
       setPasswordInput('');
       lastActivityRef.current = Date.now();
       showToast('Connexion sécurisée établie. Bienvenue dans l\'espace D SECURE.');
-    } catch {
-      setLoginError('Erreur de communication avec le serveur.');
+    } catch (err: any) {
+      setLoginError(
+        err?.message && !err.message.includes('Failed to fetch')
+          ? err.message
+          : 'Erreur de communication avec le serveur (/api/admin/login inaccessible).'
+      );
     } finally {
       setIsLoggingIn(false);
     }
@@ -246,7 +266,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       } catch {}
     }
     setToken(null);
-    sessionStorage.removeItem('dsecure_admin_token');
+    setStorageInfo(null);
     setPasswordInput('');
     setProducts([]);
     setOrders([]);
@@ -271,8 +291,9 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
         handleLogout('Votre session a expiré. Veuillez vous reconnecter.');
         return;
       }
-      const sData = await sRes.json();
+      const sData = await safeParseApiJson(sRes);
       if (sData.success) setSummary(sData.summary);
+      if (sData.storageInfo) setStorageInfo(sData.storageInfo);
 
       const [pRes, pkRes, oRes, cRes, aRes, lRes, catRes, imgRes, bkpRes] = await Promise.all([
         fetch('/api/admin/products', { headers }),
@@ -287,15 +308,15 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       ]);
 
       const [pData, pkData, oData, cData, aData, lData, catData, imgData, bkpData] = await Promise.all([
-        pRes.json(),
-        pkRes.json(),
-        oRes.json(),
-        cRes.json(),
-        aRes.json(),
-        lRes.json(),
-        catRes.json(),
-        imgRes.json(),
-        bkpRes.json(),
+        safeParseApiJson(pRes),
+        safeParseApiJson(pkRes),
+        safeParseApiJson(oRes),
+        safeParseApiJson(cRes),
+        safeParseApiJson(aRes),
+        safeParseApiJson(lRes),
+        safeParseApiJson(catRes),
+        safeParseApiJson(imgRes),
+        safeParseApiJson(bkpRes),
       ]);
 
       if (pData.success) {
@@ -464,6 +485,33 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     const reader = new FileReader();
     reader.onload = () => {
       const result = reader.result as string;
+      // Vercel Serverless body limit is ~4.5MB; compress images > 2.2MB automatically on canvas
+      if (file.size > 2.2 * 1024 * 1024) {
+        const img = new Image();
+        img.onload = () => {
+          const maxDim = 1600;
+          const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+          const canvas = document.createElement('canvas');
+          canvas.width = Math.round(img.width * scale);
+          canvas.height = Math.round(img.height * scale);
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            const targetMime = file.type === 'image/png' ? 'image/webp' : 'image/jpeg';
+            const compressed = canvas.toDataURL(targetMime, 0.85);
+            setPendingUploadPreview({
+              filename: file.name,
+              mimeType: targetMime,
+              dataBase64: compressed,
+            });
+            return;
+          }
+          setPendingUploadPreview({ filename: file.name, mimeType: file.type, dataBase64: result });
+        };
+        img.src = result;
+        return;
+      }
+
       setPendingUploadPreview({
         filename: file.name,
         mimeType: file.type,
@@ -924,9 +972,15 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-black text-sm tracking-tight uppercase">D SECURE ADMIN</span>
-                <span className="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full hidden sm:inline">
-                  SYNCHRONISÉ
-                </span>
+                {storageInfo && !storageInfo.persistent ? (
+                  <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full hidden sm:inline">
+                    STOCKAGE TEMPORAIRE
+                  </span>
+                ) : (
+                  <span className="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full hidden sm:inline">
+                    SYNCHRONISÉ
+                  </span>
+                )}
               </div>
               <span className="text-[11px] text-zinc-400 hidden sm:block">
                 Portail Propriétaire &middot; Gestion Complète & Confidentialité
@@ -1028,6 +1082,18 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 
         {/* Main Content Panel */}
         <div className="flex-1 min-w-0 space-y-6">
+          {storageInfo && !storageInfo.persistent && storageInfo.warning && (
+            <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-xs flex items-start gap-3 shadow-xs">
+              <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+              <div className="space-y-1">
+                <p className="font-black uppercase tracking-wide text-amber-900">
+                  Configuration base de données requise sur Vercel
+                </p>
+                <p className="leading-relaxed">{storageInfo.warning}</p>
+              </div>
+            </div>
+          )}
+
           {/* ========================================================= */}
           {/* TAB 1: VUE D'ENSEMBLE (ALL REAL KPIs)                     */}
           {/* ========================================================= */}
